@@ -258,9 +258,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013072532296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0db0fc630647ec4384f7458d3feec01, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b89f30eace2e4cb5ac4609fbf03cf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnManager: {fileID: 114000012326154048, guid: 041f4b80c3396d346a03e631485972f5,
+  m_spawnManager: {fileID: 114000012326154048, guid: 2f6290249fe3349bbb8739dd9aaaa18e,
     type: 2}
   m_nextTileSpawnLocation: {fileID: 1000010057283532}
