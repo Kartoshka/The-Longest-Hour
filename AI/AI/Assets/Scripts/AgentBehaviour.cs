@@ -10,11 +10,6 @@ public class AgentBehaviour : MonoBehaviour {
     {
         agent = gameObject.GetComponent<Agent>();
     }
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	public virtual void Update ()
     {
