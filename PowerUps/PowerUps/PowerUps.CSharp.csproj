@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{870B8662-C134-DD97-DF2C-03DBC53A3B35}</ProjectGuid>
+    <ProjectGuid>{DC934633-06CB-89E8-FC9A-27E31EC7F2B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -63,14 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Agent.cs" />
-    <Compile Include="Assets\Scripts\AgentBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Old\Flee.cs" />
-    <Compile Include="Assets\Scripts\Old\KBM_Input.cs" />
-    <Compile Include="Assets\Scripts\Old\Pursue.cs" />
-    <Compile Include="Assets\Scripts\Old\Seek.cs" />
-    <Compile Include="Assets\Scripts\Old\Test_Thing.cs" />
-    <Compile Include="Assets\Scripts\Steering.cs" />
+    <Compile Include="Assets\Scripts\HealthUp.cs" />
+    <Compile Include="Assets\Scripts\JumpUp.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
+    <Compile Include="Assets\Scripts\PowerUpModifier.cs" />
+    <Compile Include="Assets\Scripts\PowerUpTrigger.cs" />
+    <Compile Include="Assets\Scripts\SpeedUp.cs" />
+    <Compile Include="Assets\Scripts\SuperUp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
