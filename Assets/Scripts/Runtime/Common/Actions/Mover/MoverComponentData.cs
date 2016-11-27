@@ -1,0 +1,62 @@
+﻿using UnityEngine;
+using System;
+using System.Collections;
+
+using MOJ.Helpers;
+
+[Serializable]
+public class MoverComponentData
+{
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Datatypes
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	public enum MoverType
+	{
+		Undefined = -1,
+		Linear,
+	}
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Properties
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	// Add new variables for loading and saving here.
+	public MoverType moverType = MoverType.Undefined;
+	public InterpolationHelper.InterpolationType interpolationType = InterpolationHelper.InterpolationType.None;
+	public InterpolationHelper.EasingType easingType = InterpolationHelper.EasingType.None;
+	public float updateRate = -1.0f;
+	public float duration = 0.01f;
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region  Constructors
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	public MoverComponentData() { }
+
+	public MoverComponentData(MoverComponentData data)
+	{
+		if(data != null)
+		{
+			copy(data);
+		}
+    }
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Methods
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	public void copy(MoverComponentData rhs)
+    {
+		moverType = rhs.moverType;
+		interpolationType = rhs.interpolationType;
+		easingType = rhs.easingType;
+		updateRate = rhs.updateRate;
+		duration = rhs.duration;
+	}
+
+	#endregion
+}
