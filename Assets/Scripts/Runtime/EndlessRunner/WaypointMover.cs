@@ -4,7 +4,7 @@ using System.Collections;
 public class WaypointMover : MonoBehaviour {
 
     private Rigidbody rigidBody;
-    public GameObject target;
+    public Transform target;
 
 	// Use this for initialization
 	void Start () {
@@ -13,17 +13,12 @@ public class WaypointMover : MonoBehaviour {
 	
     void FixedUpdate()
     {
-        Vector3 targetDirection = Vector3.MoveTowards(transform.position, target.transform.position, 1.0f);
-        rigidBody.MovePosition(transform.position + targetDirection * Time.deltaTime);
-        transform.Rotate(new Vector3(20.0f, 20.0f, 20.0f) * Time.deltaTime);
+        Vector3 targetDirection = Vector3.MoveTowards(transform.position, target.transform.position, 2.0f);
+        transform.position = targetDirection * Time.deltaTime;
     }
 
-
-	void OnTriggerEnter(Collider other)
+    public void setTarget(Transform p_target)
     {
-        if(other.gameObject.tag.Equals("Waypoint"))
-        {
-            target = other.gameObject.GetComponent<Waypoint>().target;
-        }
+        this.target = p_target;
     }
 }

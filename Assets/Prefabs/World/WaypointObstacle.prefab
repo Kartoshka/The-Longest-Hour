@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000010899048452}
   m_Layer: 0
   m_Name: WaypointObstacle
-  m_TagString: Untagged
+  m_TagString: W_Mover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013274700046}
   m_LocalRotation: {x: -0.27931732, y: 0.14388883, z: -0.6346102, w: 0.7060792}
-  m_LocalPosition: {x: -3.0921164, y: 7.99, z: -12.3}
+  m_LocalPosition: {x: 0.65913963, y: 7.273861, z: -11.255815}
   m_LocalScale: {x: 0.86011136, y: 0.61054975, z: 0.4497059}
   m_LocalEulerAnglesHint: {x: -12.173, y: 35, z: -87.80801}
   m_Children: []

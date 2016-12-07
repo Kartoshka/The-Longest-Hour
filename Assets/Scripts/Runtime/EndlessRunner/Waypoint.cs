@@ -3,6 +3,14 @@ using System.Collections;
 
 public class Waypoint : MonoBehaviour {
 
-    public GameObject target;
+    public Transform target;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("W_Mover"))
+        {
+            other.gameObject.GetComponent<WaypointMover>().setTarget(target.transform);
+        }
+    }
 
 }

@@ -53,4 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_groundTilePrefabs:
   - {fileID: 1000014139480444, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
+  - {fileID: 1000013647317550, guid: f57209d107a88344f8f25552eae0a550, type: 2}
+  - {fileID: 1000012370061598, guid: 20e3dab6d9060e54c987d2bc1eb64511, type: 2}
   m_maxTileCount: 5

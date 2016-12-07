@@ -13,6 +13,7 @@ public class SpawnTileColliderEvent : MonoBehaviour
 
 	public ERSpawnManager m_spawnManager;
 	public GameObject m_nextTileSpawnLocation;
+    public GameObject m_objectToSpawn;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +42,12 @@ public class SpawnTileColliderEvent : MonoBehaviour
 
 	void OnTriggerEnter()
 	{
-		m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
+        if(m_objectToSpawn != null)
+        {
+            m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
+            return;
+        }
+        m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
 	}
 
 	#endregion
