@@ -35,7 +35,7 @@ public class ERSpawnManager : MonoBehaviour
 		{
             int prefabIndex = Random.Range(0, m_groundTilePrefabs.Length - 1);
 			GameObject prefab = m_groundTilePrefabs[prefabIndex];
-			GameObject spawnedObject = (GameObject)Instantiate(prefab, position, rotation);
+			GameObject spawnedObject = (GameObject)Instantiate(prefab, position, prefab.transform.localRotation);
 			m_spawnedTiles.AddLast(spawnedObject);
 			if(m_spawnedTiles.Count > m_maxTileCount)
 			{
@@ -50,7 +50,7 @@ public class ERSpawnManager : MonoBehaviour
     {
         if (m_groundTilePrefabs.Length > 0)
         {
-            GameObject spawnedObject = (GameObject)Instantiate(objectToSpawn, position, Quaternion.identity);
+            GameObject spawnedObject = (GameObject)Instantiate(objectToSpawn, position, objectToSpawn.transform.localRotation);
             m_spawnedTiles.AddLast(spawnedObject);
             if (m_spawnedTiles.Count > m_maxTileCount)
             {

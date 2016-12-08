@@ -40,14 +40,20 @@ public class SpawnTileColliderEvent : MonoBehaviour
 
     }
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
-        if(m_objectToSpawn != null)
+        if(other.gameObject.tag.Equals("Player"))
         {
-            m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
-            return;
+            if (m_objectToSpawn != null)
+            {
+                m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
+            }
+            else
+            {
+                m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
+            }
+            gameObject.SetActive(false);
         }
-        m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
 	}
 
 	#endregion

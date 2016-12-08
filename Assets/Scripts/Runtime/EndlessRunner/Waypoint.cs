@@ -9,7 +9,8 @@ public class Waypoint : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("W_Mover"))
         {
-            other.gameObject.GetComponent<WaypointMover>().setTarget(target.transform);
+            other.gameObject.GetComponent<WaypointMover>().setTarget(target);
+            Debug.Log("big money salvia here");
         }
     }
 

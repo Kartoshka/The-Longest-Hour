@@ -101,10 +101,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012370061598}
-  m_LocalRotation: {x: -0.13898379, y: 0.69529605, z: 0.12564619, w: 0.6938732}
-  m_LocalPosition: {x: 2.36, y: 1.67, z: -15.15}
+  m_LocalRotation: {x: -0.19922963, y: 0.6853825, z: 0.17920516, w: 0.6770849}
+  m_LocalPosition: {x: 11.247419, y: 5.0274873, z: -22.0318}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -21.53, y: 90.329, z: -1.131}
+  m_LocalEulerAnglesHint: {x: -31.012001, y: 91.226006, z: -1.9750001}
   m_Children:
   - {fileID: 4000013076453402}
   m_Father: {fileID: 0}
@@ -264,4 +264,5 @@ MonoBehaviour:
   m_spawnManager: {fileID: 114000012326154048, guid: 2f6290249fe3349bbb8739dd9aaaa18e,
     type: 2}
   m_nextTileSpawnLocation: {fileID: 1000014202996502}
-  m_objectToSpawn: {fileID: 0}
+  m_objectToSpawn: {fileID: 1000013647317550, guid: f57209d107a88344f8f25552eae0a550,
+    type: 2}
