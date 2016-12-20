@@ -2,10 +2,8 @@
 using System;
 using System.Collections;
 
-using MOJ.Helpers;
-
 /// <summary>
-/// A mover behavior for directional movement.
+/// 
 /// </summary>
 public class AnimInputController : MonoBehaviour
 {
@@ -53,7 +51,6 @@ public class AnimInputController : MonoBehaviour
 	private void ProcessInputs()
 	{
 		float normalizedRunSpeed = Input.GetAxis("Horizontal");
-		Debug.LogWarning(normalizedRunSpeed);
 		m_animator.SetFloat(m_parameterName, normalizedRunSpeed);
     }
 
