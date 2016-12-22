@@ -240,3 +240,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!95 &1605542483 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95000013786779342, guid: 0496cd27d6821d147ac132aaacbdee96,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+--- !u!1 &1846087510 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014044156268, guid: 0496cd27d6821d147ac132aaacbdee96,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+--- !u!114 &1846087518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1846087510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503449ad92ae80a478561240a8dd803b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 1605542483}
+  m_parameterName: speedScale
