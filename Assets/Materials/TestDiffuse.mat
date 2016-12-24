@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CustomSD
-  m_Shader: {fileID: 4800000, guid: 1608aa7b8e0c1bf43929aa004ed3fd36, type: 3}
+  m_Name: TestDiffuse
+  m_Shader: {fileID: 4800000, guid: a6da8a0c87fa4fe40ad79d9622211cff, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -87,19 +87,22 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.555
+      second: 0.533
     - first:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Intensity
+      second: 5
+    - first:
         name: _Metallic
-      second: 0.475
+      second: 1
     - first:
         name: _Mode
       second: 0
     - first:
         name: _MySliderValue
-      second: 8.81
+      second: 3.46
     - first:
         name: _OcclusionStrength
       second: 1
@@ -124,10 +127,10 @@ Material:
     m_Colors:
     - first:
         name: _AmbientColor
-      second: {r: 0.9632353, g: 0.0070826192, b: 0.0070826192, a: 1}
+      second: {r: 0.1342993, g: 0.7941176, b: 0.38457522, a: 1}
     - first:
         name: _Color
-      second: {r: 0.9264706, g: 0.07493514, b: 0.07493514, a: 1}
+      second: {r: 0.35732618, g: 0.33542383, b: 0.9705882, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

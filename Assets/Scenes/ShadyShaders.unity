@@ -189,7 +189,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cba8e16afd132294e8244c42d93497cb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 322848601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.549878, y: 4.0410514, z: 4.16091}
+  m_LocalPosition: {x: 9.549878, y: 4.0410514, z: 2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -295,7 +295,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 76.2
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -318,7 +318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359802783}
   m_LocalRotation: {x: 0.043346055, y: -0.86391044, z: 0.065104365, w: 0.49753532}
-  m_LocalPosition: {x: 7.93, y: 6.54, z: 2.37}
+  m_LocalPosition: {x: 7.98, y: 6.21, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 8.898001, y: -120.19301, z: -0.569}
   m_Children: []
@@ -482,7 +482,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 729498598}
   m_LocalRotation: {x: -0, y: -0.69890195, z: -0, w: 0.7152176}
-  m_LocalPosition: {x: 10.41, y: 5.88, z: 2.22}
+  m_LocalPosition: {x: 10.42, y: 5.88, z: 2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -88.717, z: 0}
   m_Children: []
@@ -593,7 +593,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4a024f68ffc9e0049987f656df0b795f, type: 2}
+  - {fileID: 2100000, guid: dc7ca113edfa88c4bb8463e26790e695, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -755,6 +755,88 @@ Transform:
   - {fileID: 729498599}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1230425817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1230425818}
+  - 23: {fileID: 1230425820}
+  - 102: {fileID: 1230425819}
+  m_Layer: 5
+  m_Name: New Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230425818
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1230425817}
+  m_LocalRotation: {x: 0.49387196, y: -0.5125521, z: 0.4733176, w: 0.51899064}
+  m_LocalPosition: {x: 8.42, y: 0.46, z: -9.74}
+  m_LocalScale: {x: 1.0000011, y: 1, z: 1.0000005}
+  m_LocalEulerAnglesHint: {x: 86.203, y: -101.31901, z: -12.849001}
+  m_Children: []
+  m_Father: {fileID: 1864223679}
+  m_RootOrder: 7
+--- !u!102 &1230425819
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1230425817}
+  m_Text: 'Lambertian (floor''s shader)
+
+'
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+--- !u!23 &1230425820
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1230425817}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &1369896957
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +1068,7 @@ Transform:
   - {fileID: 1770108189}
   - {fileID: 1916813770}
   - {fileID: 652323006}
+  - {fileID: 1230425818}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1001 &1903973406
