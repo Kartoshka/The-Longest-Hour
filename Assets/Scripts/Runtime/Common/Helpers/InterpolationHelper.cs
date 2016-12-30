@@ -16,6 +16,7 @@ public class InterpolationHelper
 
 	public enum InterpolationType
 	{
+		Undefined,
 		None,
 		Linear,
 		Quadratic,

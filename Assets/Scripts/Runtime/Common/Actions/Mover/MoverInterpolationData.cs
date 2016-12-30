@@ -5,17 +5,17 @@ using System.Collections;
 using MOJ.Helpers;
 
 [Serializable]
-public class MoverComponentData
+public class MoverInterpolationData
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
-	public enum MoverType
-	{
-		Undefined = -1,
-		Linear,
-	}
+	//public enum MoverBehaviorType
+	//{
+	//	Undefined = -1,
+	//	Linear,
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +23,7 @@ public class MoverComponentData
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	// Add new variables for loading and saving here.
-	public MoverType moverType = MoverType.Undefined;
+//	public MoverBehaviorType moverBehaviorType = MoverBehaviorType.Undefined;
 	public InterpolationHelper.InterpolationType interpolationType = InterpolationHelper.InterpolationType.None;
 	public InterpolationHelper.EasingType easingType = InterpolationHelper.EasingType.None;
 	public float updateRate = -1.0f;
@@ -34,9 +34,9 @@ public class MoverComponentData
 	#region  Constructors
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
-	public MoverComponentData() { }
+	public MoverInterpolationData() { }
 
-	public MoverComponentData(MoverComponentData data)
+	public MoverInterpolationData(MoverInterpolationData data)
 	{
 		if(data != null)
 		{
@@ -49,9 +49,9 @@ public class MoverComponentData
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public void copy(MoverComponentData rhs)
+	public void copy(MoverInterpolationData rhs)
     {
-		moverType = rhs.moverType;
+//		moverBehaviorType = rhs.moverBehaviorType;
 		interpolationType = rhs.interpolationType;
 		easingType = rhs.easingType;
 		updateRate = rhs.updateRate;

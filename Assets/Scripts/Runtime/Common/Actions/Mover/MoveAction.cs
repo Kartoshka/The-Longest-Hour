@@ -39,12 +39,12 @@ public class MoveAction : ActionCommand
 	{
 		m_moverListener = delegate (MoverComponent moverComponent)
 			{
-				if (moverComponent.getState() == MoverComponent.MoverState.Finished)
-				{
-					//moverComponent.removeListener(m_moverListener);
-					moverComponent.getObserver().remove(m_moverListener);
-					onFinished();
-				}
+				//if (moverComponent.getState() == MoverComponent.MoverState.Finished)
+				//{
+				//	//moverComponent.removeListener(m_moverListener);
+				//	moverComponent.getObserver().remove(m_moverListener);
+				//	onFinished();
+				//}
 			};
 		return m_moverListener;
     }
@@ -52,8 +52,8 @@ public class MoveAction : ActionCommand
 	// Returns true if the action was successfully executed.
 	public override bool execute()
 	{
-		m_moverComponent.getObserver().add(createMoverListener());
-		m_moverComponent.beginMove();
+		//m_moverComponent.getObserver().add(createMoverListener());
+		//m_moverComponent.beginMove();
 		return true;
     }
 

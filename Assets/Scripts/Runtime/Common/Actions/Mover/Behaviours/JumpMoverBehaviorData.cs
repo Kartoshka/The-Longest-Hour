@@ -5,7 +5,7 @@ using System.Collections;
 using MOJ.Helpers;
 
 [Serializable]
-public class LinearInputMoverBehaviorData
+public class JumpMoverBehaviorData
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
@@ -26,9 +26,9 @@ public class LinearInputMoverBehaviorData
 	#region  Constructors
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
-	public LinearInputMoverBehaviorData() { }
+	public JumpMoverBehaviorData() { }
 
-	public LinearInputMoverBehaviorData(LinearInputMoverBehaviorData data)
+	public JumpMoverBehaviorData(LinearInputMoverBehaviorData data)
 	{
 		if (data != null)
 		{
