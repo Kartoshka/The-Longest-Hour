@@ -7,19 +7,24 @@ using MOJ.Helpers;
 /// <summary>
 /// An component for controlling the movement of the entity.
 /// </summary>
+[Serializable]
 public class MoverComponent : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
 	//////////////////////////////////////////////////////////////////////////////////////////  
-	
-	public enum MoverState
+
+	[Flags]
+	public enum ActionTypeMask
 	{
-		Idle,
-		Paused,
-		Active,
-		Finished
-	} 
+		Run = 1 << 0,
+		Jump = 1 << 1,
+		Swim = 1 << 2,
+		Slide = 1 << 3,
+	}
+
+	[Serializable]
+	public class ActionMoverDictionary : SerializableDictionary<ActionTypeMask, Mover> { }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -27,16 +32,15 @@ public class MoverComponent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////   
 
 	[SerializeField]
-	private MoverComponentData m_data = new MoverComponentData();
-	private MoverState m_currentState = MoverState.Idle;
+	private ActionTypeMask m_actionTypeMask = 0;
 	[SerializeField]
-	private MoverBehavior m_moverBehavior = null;
+	private ActionMoverDictionary m_actionMovers = new ActionMoverDictionary();
+	private LinkedList<Mover> m_activeActionMovers = new LinkedList<Mover>();
 
-	private InterpolationHelper.Vector3Interpolator m_interpolator = null;
 	private Observer<MoverComponent> m_observer;
 
 	private Transform m_transformComponent = null;
-	private float m_elapsedTime = 0.0f;
+
 	[SerializeField]
 	private bool m_alwaysUpdate = false;
 
@@ -55,104 +59,67 @@ public class MoverComponent : MonoBehaviour
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	public MoverComponentData.MoverType getMoverType() { return m_data.moverType; }
-	public void setMoverType(MoverComponentData.MoverType moverType)
-	{
-		m_data.moverType = moverType;
+	public ActionTypeMask getActionTypekMask() { return m_actionTypeMask; }
+	public void setActionTypeMask(ActionTypeMask actionTypeMask) { m_actionTypeMask = actionTypeMask; }
 
-		switch (moverType)
-		{
-			case (MoverComponentData.MoverType.Linear):
-			{
-				//m_moverBehavior = new LinearInputMoverBehavior(m_moverBehavior);
-				m_moverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
-			}
-			break;
-			default:
-			{
-				m_moverBehavior = null;
-			}
-			break;
-		}
-
-		if(m_moverBehavior != null)
-		{
-			m_moverBehavior.initialize(m_moverBehavior);
-		}
-	}
-
-	public MoverState getState() { return m_currentState; }
-    private void setState(MoverState state)
-	{
-		m_currentState = state;
-		m_observer.notify();
-	}
-
-	public InterpolationHelper.InterpolationType getInterpolationType() { return m_data.interpolationType; }
-	public void setInterpolationType(InterpolationHelper.InterpolationType interpolationType) { m_data.interpolationType = interpolationType; }
-
-	public InterpolationHelper.EasingType getEasingType() { return m_data.easingType; }
-	public void setEasingType(InterpolationHelper.EasingType easingType) { m_data.easingType = easingType; }
-
-	public float getUpdateRate() { return m_data.updateRate; }
-	public void setUpdateRate(float updateRate) { m_data.updateRate = Mathf.Max(0, updateRate); }
-
-	public float getDuration() { return m_data.duration; }
-	public void setDuration(float duration) { m_data.duration = Mathf.Max(0.01f, duration); }
-
-	public bool getAlwaysUpdate() { return m_alwaysUpdate; }
+	public bool getAlwaysUpdate() {	return m_alwaysUpdate; }
 	public void setAlwaysUpdate(bool alwaysUpdate) { m_alwaysUpdate = alwaysUpdate; }
 
-	public MoverBehavior getMoverBehavior() { return m_moverBehavior; }
-
 	public Observer<MoverComponent> getObserver() { return m_observer; }
+
+	public Dictionary<ActionTypeMask, Mover> getActionMovers()
+	{
+		return m_actionMovers.Dictionary;
+	}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	private InterpolationHelper.Vector3Interpolator createInterpolatorFromData()
+	public void createMoverAction(ActionTypeMask moverAction)
 	{
-		Vector3 deltaPosition = m_moverBehavior.getTargetPosition(m_transformComponent) - m_transformComponent.position;
-		return new InterpolationHelper.Vector3Interpolator(
-													m_data.interpolationType,
-													m_data.easingType,
-													m_transformComponent.position,
-													deltaPosition,
-													m_data.duration);
-	}
-
-	public void beginMove()
-	{
-		this.enabled = true; // Start updating.
-		setState(MoverState.Active);
-
-		if (m_moverBehavior.getCanInterpolate())
+		Mover mover;
+		if (!m_actionMovers.Dictionary.TryGetValue(moverAction, out mover))
 		{
-			m_interpolator = createInterpolatorFromData();
-			m_moverBehavior.setInterpolator(m_interpolator);
-			m_moverBehavior.resetPosition();
-		}
-		updateMove(0.0f);
-    }
-
-	private void updateMove(float deltaTime)
-	{
-		if (!m_moverBehavior.tryMove(m_transformComponent, deltaTime))
-		{
-			endMove();
+			mover = new Mover();
+			m_actionMovers.Dictionary.Add(moverAction, mover);
 		}
 	}
 
-	private void endMove()
+	public void removeMoverAction(ActionTypeMask moverAction)
 	{
-		if (!m_alwaysUpdate)
+		m_actionMovers.Dictionary.Remove(moverAction);
+	}
+
+	public void activateMoverAction(ActionTypeMask actionTypeMask)
+	{
+		Mover mover;
+		if (!m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
 		{
-			this.enabled = false;
+			createMoverAction(actionTypeMask);
+			mover = m_actionMovers.Dictionary[actionTypeMask];
 		}
-		setState(MoverState.Finished);
-		setState(MoverState.Idle);
+		m_activeActionMovers.AddLast(mover);
+		mover.beginMove(m_transformComponent);
+	}
+
+	protected void pauseMoverAction(ActionTypeMask actionTypeMask)
+	{
+		Mover mover;
+		if (m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
+		{
+			mover.pause();
+		}
+	}
+
+	protected void resumeMoverAction(ActionTypeMask actionTypeMask)
+	{
+		Mover mover;
+		if (m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
+		{
+			mover.resume();
+		}
 	}
 
 	#endregion
@@ -160,26 +127,43 @@ public class MoverComponent : MonoBehaviour
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	// Use this for initialization
-	void Start()
+	protected virtual void initialize()
 	{
 		m_transformComponent = GetComponent<Transform>();
-		if(!m_alwaysUpdate)
+		if (!m_alwaysUpdate)
 		{
 			this.enabled = false;
 		}
 	}
 
+	protected virtual void updateMovers()
+	{
+		if (m_activeActionMovers.Count > 0)
+		{
+			LinkedListNode<Mover> moverNode = m_activeActionMovers.First;
+			do
+			{
+				moverNode.Value.updateMove(m_transformComponent, Time.deltaTime);
+				if (moverNode.Value.getState() == Mover.State.Finished)
+				{
+					m_activeActionMovers.Remove(moverNode);
+				}
+				moverNode = moverNode.Next;
+			} while (moverNode != null);
+		}
+	}
+
+	// Use this for initialization
+	void Start()
+	{
+		initialize();
+    }
+
 	// Update is called once per frame
 	void Update()
 	{
-		m_elapsedTime += Time.fixedDeltaTime;
-		if (m_elapsedTime > m_data.updateRate)
-		{
-			updateMove(m_elapsedTime);
-			m_elapsedTime = 0;
-		}
-	}
+		updateMovers();
+    }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////

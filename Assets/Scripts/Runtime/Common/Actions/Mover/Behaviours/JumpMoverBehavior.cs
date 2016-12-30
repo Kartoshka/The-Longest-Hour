@@ -7,7 +7,7 @@ using MOJ.Helpers;
 /// <summary>
 /// A mover behavior for directional movement.
 /// </summary>
-public class LinearInputMoverBehavior : MoverBehavior
+public class JumpMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Properties
@@ -21,22 +21,22 @@ public class LinearInputMoverBehavior : MoverBehavior
 	#region  Constructors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public LinearInputMoverBehavior()
+	public JumpMoverBehavior()
 	{
 		initialize();
     }
 
-	public LinearInputMoverBehavior(MoverBehavior copiedBehavior)
+	public JumpMoverBehavior(MoverBehavior copiedBehavior)
 	{
 		initialize(copiedBehavior);
     }
 
 	public override void initialize(MoverBehavior copiedBehavior)
 	{
-		LinearInputMoverBehavior copiedLinearInputBehavior = copiedBehavior as LinearInputMoverBehavior;
-		if (copiedLinearInputBehavior != null)
+		JumpMoverBehavior copiedJumpBehavior = copiedBehavior as JumpMoverBehavior;
+		if (copiedJumpBehavior != null)
 		{
-			m_data.copy(copiedLinearInputBehavior.m_data);
+			m_data.copy(copiedJumpBehavior.m_data);
 		}
 		initialize();
 	}

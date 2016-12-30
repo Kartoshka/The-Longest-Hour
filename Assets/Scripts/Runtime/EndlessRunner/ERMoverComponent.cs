@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// If this is a component:
-///     Retrieves Unity information and passes it to the abstract data type.
-/// </summary>
-public class RuntimeScriptTemplate : MonoBehaviour
+public class ERMoverComponent : MoverComponent
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
@@ -42,27 +38,38 @@ public class RuntimeScriptTemplate : MonoBehaviour
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
+	protected override void initialize()
+	{
+		base.initialize();
+		activateMoverAction(ActionTypeMask.Run);
+		activateMoverAction(ActionTypeMask.Jump);
+	}
+
 	// Use this for initialization
-	void Start ()
-    {
-
-    }
-	
-    // Update is called once per frame
-    void Update ()
-    {
-        ProcessInputs();
+	void Start()
+	{
+		initialize();
     }
 
-    private void ProcessInputs()
-    {
+	// Update is called once per frame
+	void Update()
+	{
+		ProcessInputs();
+		updateMovers();
+	}
 
-    }
+	private void ProcessInputs()
+	{
+		//if(Input.GetKeyDown(KeyCode.Space))
+		//{
+		//	pauseMoverAction(ActionTypeMask.Run);
+		//}
+	}
 
-    #endregion
-    //////////////////////////////////////////////////////////////////////////////////////////
-    #region Persistence
-    //////////////////////////////////////////////////////////////////////////////////////////
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Persistence
+	//////////////////////////////////////////////////////////////////////////////////////////
 
-    #endregion
+	#endregion
 }
