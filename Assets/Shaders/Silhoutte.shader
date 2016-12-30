@@ -16,7 +16,7 @@
 
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Lambert alpha:fade nolighting
+		#pragma surface surf Lambert alpha:fade
 
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
@@ -37,8 +37,11 @@
 		float4 c = tex2D(_MainTex, IN.uv_MainTex) * _Tint;
 		o.Albedo = c.rgb;
 
-		float border = 1 - (abs(dot(IN.viewDir, IN.worldNormal)));
-		float alpha = (border * (1 - _DotProduct) + _DotProduct);
+		//the dot product determines how close to the edge of a model we are. The closer we are the closer we are to -1 the more we want to make dissapear
+		//1-theDotProduct gives us a fade to the edges as opposed to the facing polygons being visible and the edges missing
+		//alpha gives us the ability to move between just the edges being visible to a transparent but not dissapearing model
+		float border = 1 - (abs(dot(IN.viewDir, IN.worldNormal))); //fade to edges
+		float alpha = (border * (1 - _DotProduct) + _DotProduct);//increase fade effect or decrease it
 		o.Alpha = c.a * alpha;
 
 	}
