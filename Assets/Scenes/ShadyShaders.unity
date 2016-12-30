@@ -318,7 +318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359802783}
   m_LocalRotation: {x: 0.043346055, y: -0.86391044, z: 0.065104365, w: 0.49753532}
-  m_LocalPosition: {x: 9.98, y: 6.57, z: 3.55}
+  m_LocalPosition: {x: 7.55, y: 5.87, z: 2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 8.898001, y: -120.19301, z: -0.569}
   m_Children: []
@@ -573,9 +573,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 824357935}
-  - 33: {fileID: 824357934}
-  - 65: {fileID: 824357933}
+  - 33: {fileID: 824357933}
   - 23: {fileID: 824357932}
+  - 135: {fileID: 824357934}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -596,13 +596,13 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7256e4066dc474e4fbd3b52d42fc7240, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedWireframeHidden: 0
@@ -612,8 +612,15 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &824357933
-BoxCollider:
+--- !u!33 &824357933
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824357931}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &824357934
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -622,15 +629,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &824357934
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 824357931}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &824357935
 Transform:
   m_ObjectHideFlags: 0

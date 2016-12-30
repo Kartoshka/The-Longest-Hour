@@ -32,10 +32,18 @@
 			// Albedo comes from a texture tinted by color
 
 			float edgeValue = 1 - (abs(dot(IN.worldNormal, IN.viewDir)));
-			float finalEdgeValue = (edgeValue * (1 - _EdgeGlowStrength) + _EdgeGlowStrength);
-			fixed4 edgeColor = _EdgeGlowColor * finalEdgeValue;
-			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) + edgeColor;
-			o.Albedo = c.rgb;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+
+			if (edgeValue >= 0.75)
+			{
+				o.Albedo = _EdgeGlowColor.rgb;
+				o.Emission = pow(_EdgeGlowColor, _EdgeGlowStrength);
+			}
+			else
+			{
+				o.Albedo = c.rgb;
+			}
+
 			o.Alpha = c.a;
 		}
 		ENDCG

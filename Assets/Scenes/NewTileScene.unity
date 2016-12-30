@@ -152,7 +152,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 49.994003, y: -16, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!1001 &297479800
 Prefab:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011766561422, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
@@ -334,7 +334,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011541229994, guid: 0496cd27d6821d147ac132aaacbdee96, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114000013268555110, guid: 0496cd27d6821d147ac132aaacbdee96,
         type: 2}
