@@ -5,7 +5,7 @@ using System.Collections;
 using MOJ.Helpers;
 
 [Serializable]
-public class JumpMoverBehaviorData
+public class RigidBodyForceMoverBehaviorData
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
@@ -17,18 +17,21 @@ public class JumpMoverBehaviorData
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	// Add new variables for loading and saving here.
-	public Vector3 forwardStepSize = Vector3.zero;
-	public Vector3 reverseStepSize = Vector3.zero;
-	public bool enableUserInput = true;
+	public Vector3 forceMagnitude = Vector3.zero;
+	public float duration = 1.0f;
+	public Rigidbody rigidBody = null;
+	public Transform surfaceCheckSource = null;
+	public float surfaceCheckRadius = 1.0f;
+	public LayerMask surfaceLayer;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region  Constructors
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
-	public JumpMoverBehaviorData() { }
+	public RigidBodyForceMoverBehaviorData() { }
 
-	public JumpMoverBehaviorData(LinearInputMoverBehaviorData data)
+	public RigidBodyForceMoverBehaviorData(RigidBodyForceMoverBehaviorData data)
 	{
 		if (data != null)
 		{
@@ -41,12 +44,15 @@ public class JumpMoverBehaviorData
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public void copy(LinearInputMoverBehaviorData rhs)
+	public void copy(RigidBodyForceMoverBehaviorData rhs)
 	{
-		forwardStepSize = rhs.forwardStepSize;
-		reverseStepSize = rhs.reverseStepSize;
-		enableUserInput = rhs.enableUserInput;
-    }
+		forceMagnitude = rhs.forceMagnitude;
+		duration = rhs.duration;
+        rigidBody = rhs.rigidBody;
+		surfaceCheckSource = rhs.surfaceCheckSource;
+		surfaceCheckRadius = rhs.surfaceCheckRadius;
+		surfaceLayer = rhs.surfaceLayer;
+}
 
 	#endregion
 }

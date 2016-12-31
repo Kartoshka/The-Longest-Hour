@@ -11,8 +11,10 @@ public class Mover
 
 	public enum BehaviorType
 	{
+		// Ensure createMoverBehavior(..) also has the Behavior Type.
 		Undefined = -1,
-		Linear,
+		LinearInput,
+		RigidBodyForceInput,
 	}
 
 	public enum State
@@ -54,6 +56,13 @@ public class Mover
 		m_interpData = new MoverInterpolationData();
 	}
 
+	public void deInit()
+	{
+		m_behaviorType = BehaviorType.Undefined;
+		m_behavior = null;
+		m_interpData = null;
+		m_state = State.Undefined;
+    }
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -104,12 +113,18 @@ public class Mover
 
 	private MoverBehavior createMoverBehavior(BehaviorType moverBehaviorType, MoverBehavior copiedBehavior = null)
 	{
+		// Update this whenever a new Mover Behavior is created.
 		MoverBehavior newMoverBehavior = null;
 		switch (moverBehaviorType)
 		{
-			case (BehaviorType.Linear):
+			case (BehaviorType.LinearInput):
 			{
 				newMoverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
+			}
+			break;
+			case (BehaviorType.RigidBodyForceInput):
+			{
+				newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
 			}
 			break;
 		}
