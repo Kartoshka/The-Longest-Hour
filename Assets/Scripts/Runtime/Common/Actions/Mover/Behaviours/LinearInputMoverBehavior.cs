@@ -54,13 +54,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 	public override Vector3 getTargetPosition(Transform transform)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-
-		Vector3 targetPosition = transform.position;
-		if(m_data.enableUserInput)
-		{
-			targetPosition += processInputs() + getTargetOffset();
-		}
-
+		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetOffset();
 		return targetPosition;
 	}
 
@@ -87,11 +81,12 @@ public class LinearInputMoverBehavior : MoverBehavior
 	// This ignores interpolation.
 	public override bool tryMove(Transform transform, float deltaTime)
 	{
-        transform.position = getTargetPosition(transform) + processInputs();
+        transform.position = getTargetPosition(transform);
 		return true;
 	}
 
-	private Vector3 processInputs()
+	// Calculate the direction of the movement behavior after processing user inputs.
+	private Vector3 calculateTargetPosition()
 	{
 		float horizontalMagnitude = 1;
 		float verticalMagnitude = 1;
@@ -104,18 +99,18 @@ public class LinearInputMoverBehavior : MoverBehavior
 		Vector3 horizontalStep = horizontalMagnitude > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
 		Vector3 verticalStep = verticalMagnitude > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
 
-		Vector3 inputDirection = Vector3.zero;
+		Vector3 finalDirection = Vector3.zero;
 		TransformHelper.setAxisValue(
-			ref inputDirection, 
-			TransformHelper.HorizontalAxis, 
+			ref finalDirection,
+			TransformHelper.HorizontalAxis,
 			TransformHelper.getAxisValue(horizontalStep, TransformHelper.HorizontalAxis) * horizontalMagnitude
 			);
 		TransformHelper.setAxisValue(
-			ref inputDirection, 
-			TransformHelper.VerticalAxis, 
+			ref finalDirection,
+			TransformHelper.VerticalAxis,
 			TransformHelper.getAxisValue(verticalStep, TransformHelper.VerticalAxis) * verticalMagnitude
 			);
-		return inputDirection;
+		return finalDirection;
 	}
 
 	#endregion

@@ -15,7 +15,7 @@ public class MoverComponent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
 	[Flags]
-	public enum ActionTypeMask
+	public enum ActionTypeFlag
 	{
 		Run = 1 << 0,
 		Jump = 1 << 1,
@@ -24,7 +24,7 @@ public class MoverComponent : MonoBehaviour
 	}
 
 	[Serializable]
-	public class ActionMoverDictionary : SerializableDictionary<ActionTypeMask, Mover> { }
+	public class ActionMoverDictionary : SerializableDictionary<ActionTypeFlag, Mover> { }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,7 @@ public class MoverComponent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////   
 
 	[SerializeField]
-	private ActionTypeMask m_actionTypeMask = 0;
+	private ActionTypeFlag m_actionTypeFlags = 0;
 	[SerializeField]
 	private ActionMoverDictionary m_actionMovers = new ActionMoverDictionary();
 	private LinkedList<Mover> m_activeActionMovers = new LinkedList<Mover>();
@@ -59,17 +59,28 @@ public class MoverComponent : MonoBehaviour
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	public ActionTypeMask getActionTypekMask() { return m_actionTypeMask; }
-	public void setActionTypeMask(ActionTypeMask actionTypeMask) { m_actionTypeMask = actionTypeMask; }
+	public ActionTypeFlag getActionTypeFlags() { return m_actionTypeFlags; }
+	public void setActionTypeFlags(ActionTypeFlag actionTypeFlags) { m_actionTypeFlags = actionTypeFlags; }
 
 	public bool getAlwaysUpdate() {	return m_alwaysUpdate; }
 	public void setAlwaysUpdate(bool alwaysUpdate) { m_alwaysUpdate = alwaysUpdate; }
 
 	public Observer<MoverComponent> getObserver() { return m_observer; }
 
-	public Dictionary<ActionTypeMask, Mover> getActionMovers()
+	public Dictionary<ActionTypeFlag, Mover> getActionMovers()
 	{
 		return m_actionMovers.Dictionary;
+	}
+
+	public Mover.State getActionState(ActionTypeFlag actionTypeFlag)
+	{
+		Mover.State state = Mover.State.Undefined;
+		Mover mover;
+		if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
+		{
+			state = mover.getState();
+		}
+		return state;
 	}
 
 	#endregion
@@ -77,7 +88,7 @@ public class MoverComponent : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	public void createMoverAction(ActionTypeMask moverAction)
+	public void createMoverAction(ActionTypeFlag moverAction)
 	{
 		Mover mover;
 		if (!m_actionMovers.Dictionary.TryGetValue(moverAction, out mover))
@@ -87,36 +98,41 @@ public class MoverComponent : MonoBehaviour
 		}
 	}
 
-	public void removeMoverAction(ActionTypeMask moverAction)
+	public void removeMoverAction(ActionTypeFlag moverAction)
 	{
+		Mover mover;
+		if (m_actionMovers.Dictionary.TryGetValue(moverAction, out mover))
+		{
+			mover.deInit();
+		}
 		m_actionMovers.Dictionary.Remove(moverAction);
 	}
 
-	public void activateMoverAction(ActionTypeMask actionTypeMask)
+	public void activateMoverAction(ActionTypeFlag actionTypeFlag)
 	{
 		Mover mover;
-		if (!m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
+		if (!m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
 		{
-			createMoverAction(actionTypeMask);
-			mover = m_actionMovers.Dictionary[actionTypeMask];
+			createMoverAction(actionTypeFlag);
+			mover = m_actionMovers.Dictionary[actionTypeFlag];
 		}
 		m_activeActionMovers.AddLast(mover);
 		mover.beginMove(m_transformComponent);
 	}
 
-	protected void pauseMoverAction(ActionTypeMask actionTypeMask)
+	protected void pauseMoverAction(ActionTypeFlag actionTypeFlag)
 	{
 		Mover mover;
-		if (m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
+		if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
 		{
 			mover.pause();
 		}
 	}
 
-	protected void resumeMoverAction(ActionTypeMask actionTypeMask)
+	protected void resumeMoverAction(ActionTypeFlag actionTypeFlag)
 	{
 		Mover mover;
-		if (m_actionMovers.Dictionary.TryGetValue(actionTypeMask, out mover))
+		if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
 		{
 			mover.resume();
 		}
@@ -133,6 +149,17 @@ public class MoverComponent : MonoBehaviour
 		if (!m_alwaysUpdate)
 		{
 			this.enabled = false;
+		}
+
+		int actionTypeFlagCount = System.Enum.GetValues(typeof(ActionTypeFlag)).Length;
+		for (int i = 0; i < actionTypeFlagCount; ++i)
+		{
+			ActionTypeFlag mask = (ActionTypeFlag)(1 << i);
+			ActionTypeFlag maskedActionTypeFlag = mask & m_actionTypeFlags;
+			if (maskedActionTypeFlag != 0)
+			{
+				activateMoverAction(maskedActionTypeFlag);
+			}
 		}
 	}
 

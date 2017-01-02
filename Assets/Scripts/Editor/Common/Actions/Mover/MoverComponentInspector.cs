@@ -7,7 +7,7 @@ using MOJ.Helpers;
 [CustomEditor(typeof(MoverComponent), true)]
 public class MoverComponentInspector : Editor
 {
-	Dictionary<MoverComponent.ActionTypeMask, bool> m_actionTypeFoldoutDisplay = new Dictionary<MoverComponent.ActionTypeMask, bool>();
+	Dictionary<MoverComponent.ActionTypeFlag, bool> m_actionTypeFlagFoldoutDisplay = new Dictionary<MoverComponent.ActionTypeFlag, bool>();
 	bool m_defaultFoldout = true;
 
 	public override void OnInspectorGUI()
@@ -25,29 +25,30 @@ public class MoverComponentInspector : Editor
 			moverComponent.setAlwaysUpdate(alwaysUpdate);
 		}
 
-		MoverComponent.ActionTypeMask actionTypeMask = (MoverComponent.ActionTypeMask)EditorGUILayout.EnumMaskField("Mover Actions", moverComponent.getActionTypekMask());
-		moverComponent.setActionTypeMask(actionTypeMask);
+		MoverComponent.ActionTypeFlag allActions = (MoverComponent.ActionTypeFlag)EditorGUILayout.EnumMaskField("Mover Actions", moverComponent.getActionTypeFlags());
+		moverComponent.setActionTypeFlags(allActions);
 
-		Dictionary<MoverComponent.ActionTypeMask, Mover> actionMoverBehaviors = moverComponent.getActionMovers();
+		Dictionary<MoverComponent.ActionTypeFlag, Mover> actionMoverBehaviors = moverComponent.getActionMovers();
 
-		int actionTypeMaskCount = System.Enum.GetValues(typeof(MoverComponent.ActionTypeMask)).Length;
-        for (int i = 0; i < actionTypeMaskCount; ++i)
+		int actionTypeFlagCount = System.Enum.GetValues(typeof(MoverComponent.ActionTypeFlag)).Length;
+        for (int i = 0; i < actionTypeFlagCount; ++i)
 		{
-			MoverComponent.ActionTypeMask actionType = (MoverComponent.ActionTypeMask)(1 << i) & actionTypeMask;
-            if (actionType != 0)
+			MoverComponent.ActionTypeFlag mask = (MoverComponent.ActionTypeFlag)(1 << i);
+            MoverComponent.ActionTypeFlag maskedActionTypeFlag = mask & allActions;
+            if (maskedActionTypeFlag != 0)
 			{
 				bool displayFoldout;
-				if(!m_actionTypeFoldoutDisplay.TryGetValue(actionType, out displayFoldout))
+				if(!m_actionTypeFlagFoldoutDisplay.TryGetValue(maskedActionTypeFlag, out displayFoldout))
 				{
-					m_actionTypeFoldoutDisplay.Add(actionType, true);
+					m_actionTypeFlagFoldoutDisplay.Add(maskedActionTypeFlag, true);
 					displayFoldout = m_defaultFoldout;
                 }
 
-				m_actionTypeFoldoutDisplay[actionType] = EditorGUILayout.Foldout(displayFoldout, actionType.ToString());
+				m_actionTypeFlagFoldoutDisplay[maskedActionTypeFlag] = EditorGUILayout.Foldout(displayFoldout, maskedActionTypeFlag.ToString());
 				if(displayFoldout)
 				{
-					moverComponent.createMoverAction(actionType);
-					Mover mover = actionMoverBehaviors[actionType];
+					moverComponent.createMoverAction(maskedActionTypeFlag);
+					Mover mover = actionMoverBehaviors[maskedActionTypeFlag];
 
 					EditorGUI.BeginChangeCheck();
 					Mover.BehaviorType moverBehaviorType = (Mover.BehaviorType)EditorGUILayout.EnumPopup("Mover Behavior", mover.getBehaviorType());
@@ -58,9 +59,10 @@ public class MoverComponentInspector : Editor
 						mover.setBehaviorType(moverBehaviorType);
 					}
 
+					bool canInterpolate = true;
 					switch (moverBehaviorType)
 					{
-						case (Mover.BehaviorType.Linear):
+						case (Mover.BehaviorType.LinearInput):
 						{
 							LinearInputMoverBehavior linearMover = mover.getBehavior() as LinearInputMoverBehavior;
 							if (linearMover != null)
@@ -90,13 +92,86 @@ public class MoverComponentInspector : Editor
 									Undo.RecordObject(linearMover, "Enable User Input");
 									EditorUtility.SetDirty(linearMover);
 									linearMover.setEnableUserInput(enableUserInput);
+                                }
+								canInterpolate = !enableUserInput;
+							}
+							break;
+						}
+						case (Mover.BehaviorType.RigidBodyForceInput):
+						{
+							RigidBodyForceMoverBehavior rigidBodyForceMover = mover.getBehavior() as RigidBodyForceMoverBehavior;
+							if (rigidBodyForceMover != null)
+							{
+								//public LayerMask getSurfaceLayerMask() { return m_surfaceLayer; }
+
+								//public bool isSimulatingJumping() { return m_simulateJumping; }
+
+
+								EditorGUI.BeginChangeCheck();
+								Vector3 forceMagnitude = EditorGUILayout.Vector3Field("Force Magnitude", rigidBodyForceMover.getForceMagnitude());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "Force Magnitude");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+									rigidBodyForceMover.setForceMagnitude(forceMagnitude);
 								}
+
+								EditorGUI.BeginChangeCheck();
+								float duration = EditorGUILayout.DelayedFloatField("Duration", rigidBodyForceMover.getDuration());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "Duration");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+									rigidBodyForceMover.setDuration(duration);
+								}
+
+								EditorGUILayout.LabelField("RigidBody");
+								EditorGUI.BeginChangeCheck();
+                                Rigidbody rigidBody = (Rigidbody)EditorGUILayout.ObjectField(rigidBodyForceMover.getRigidBody(), typeof(Rigidbody), true);
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "RigidBody");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+									rigidBodyForceMover.setRigidBody(rigidBody);
+								}
+
+								EditorGUILayout.LabelField("Surface Checker Transform");
+								EditorGUI.BeginChangeCheck();
+								Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(rigidBodyForceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "Surface Checker Transform");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+									rigidBodyForceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
+                                }
+
+								EditorGUI.BeginChangeCheck();
+								float surfaceCheckRadius = EditorGUILayout.DelayedFloatField("Checker Radius", rigidBodyForceMover.getSurfaceCheckRadius());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "Checker Radius");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+									rigidBodyForceMover.setSurfaceCheckRadius(surfaceCheckRadius);
+								}
+
+								LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(rigidBodyForceMover.getSurfaceLayerMask());
+								EditorGUI.BeginChangeCheck();
+								surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(rigidBodyForceMover, "Surface Layer Mask");
+									EditorUtility.SetDirty(rigidBodyForceMover);
+
+									rigidBodyForceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+								}
+
+								canInterpolate = false;
 							}
 							break;
 						}
 					}
 
-					if(moverBehaviorType != Mover.BehaviorType.Undefined)
+					if(canInterpolate && moverBehaviorType != Mover.BehaviorType.Undefined)
 					{
 						EditorGUI.BeginChangeCheck();
 						InterpolationHelper.InterpolationType interpolationType = (InterpolationHelper.InterpolationType)EditorGUILayout.EnumPopup("Interpolation Type", mover.getInterpolationType());
@@ -107,7 +182,8 @@ public class MoverComponentInspector : Editor
 							mover.setInterpolationType(interpolationType);
 						}
 
-						if (interpolationType != InterpolationHelper.InterpolationType.None)
+						if (interpolationType != InterpolationHelper.InterpolationType.None
+							&& interpolationType != InterpolationHelper.InterpolationType.Undefined)
 						{
 							if (interpolationType != InterpolationHelper.InterpolationType.Linear)
 							{
@@ -144,7 +220,7 @@ public class MoverComponentInspector : Editor
 			}
 			else
 			{
-				moverComponent.removeMoverAction(actionType);
+				moverComponent.removeMoverAction(mask);
 			}
 		}
 
