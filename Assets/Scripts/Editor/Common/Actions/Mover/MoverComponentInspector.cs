@@ -169,6 +169,82 @@ public class MoverComponentInspector : Editor
 							}
 							break;
 						}
+						case (Mover.BehaviorType.AttachToSurface):
+						{
+							SurfaceMoverBehavior surfaceMover = mover.getBehavior() as SurfaceMoverBehavior;
+							if (surfaceMover != null)
+							{
+								//EditorGUILayout.LabelField("Surface Checker Transform");
+								//EditorGUI.BeginChangeCheck();
+								//Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(surfaceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
+								//if (EditorGUI.EndChangeCheck())
+								//{
+								//	Undo.RecordObject(surfaceMover, "Surface Checker Transform");
+								//	EditorUtility.SetDirty(surfaceMover);
+								//	surfaceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
+								//}
+
+								EditorGUI.BeginChangeCheck();
+								Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", surfaceMover.getPositionOffset());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Position Offset");
+									EditorUtility.SetDirty(surfaceMover);
+									surfaceMover.setPositionOffset(positionOffset);
+								}
+
+								EditorGUILayout.LabelField("Surface Checker Transform");
+								EditorGUI.BeginChangeCheck();
+								Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(surfaceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Surface Checker Transform");
+									EditorUtility.SetDirty(surfaceMover);
+									surfaceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
+								}
+
+								EditorGUI.BeginChangeCheck();
+								Vector3 rayCastDirection = EditorGUILayout.Vector3Field("Default RayCast Direction", surfaceMover.getDefaultRaycastDirection());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Default RayCast Direction");
+									EditorUtility.SetDirty(surfaceMover);
+									surfaceMover.setDefaultRaycastDirection(rayCastDirection);
+								}
+
+								LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(surfaceMover.getSurfaceLayerMask());
+								EditorGUI.BeginChangeCheck();
+								surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Surface Layer Mask");
+									EditorUtility.SetDirty(surfaceMover);
+
+									surfaceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+								}
+
+								EditorGUI.BeginChangeCheck();
+								bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", surfaceMover.getEnableUserInput());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Enable User Input");
+									EditorUtility.SetDirty(surfaceMover);
+									surfaceMover.setEnableUserInput(enableUserInput);
+								}
+
+								EditorGUI.BeginChangeCheck();
+								float friction = EditorGUILayout.FloatField("Friction", surfaceMover.getFrictionValue());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(surfaceMover, "Friction");
+									EditorUtility.SetDirty(surfaceMover);
+									surfaceMover.setFrictionValue(Mathf.Clamp01(friction));
+								}
+
+								canInterpolate = !enableUserInput;
+							}
+							break;
+						}
 					}
 
 					if(canInterpolate && moverBehaviorType != Mover.BehaviorType.Undefined)

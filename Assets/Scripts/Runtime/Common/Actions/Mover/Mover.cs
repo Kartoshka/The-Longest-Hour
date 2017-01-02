@@ -15,6 +15,7 @@ public class Mover
 		Undefined = -1,
 		LinearInput,
 		RigidBodyForceInput,
+		AttachToSurface,
 	}
 
 	public enum State
@@ -125,6 +126,11 @@ public class Mover
 			case (BehaviorType.RigidBodyForceInput):
 			{
 				newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
+			}
+			break;
+			case (BehaviorType.AttachToSurface):
+			{
+				newMoverBehavior = ScriptableObject.CreateInstance<SurfaceMoverBehavior>();
 			}
 			break;
 		}

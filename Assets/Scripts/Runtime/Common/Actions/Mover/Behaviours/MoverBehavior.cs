@@ -55,13 +55,13 @@ public abstract class MoverBehavior : ScriptableObject
 	public abstract void initialize();
 	public abstract void initialize(MoverBehavior copiedBehavior);
 
-	// Return the position that would occur if a move was performed.
-	public abstract Vector3 getTargetPosition(Transform transform);
-
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Return the position that would occur if a move was performed.
+	public virtual Vector3 getTargetPosition(Transform transform) { return transform.position; }
 
 	//public virtual void beginMove()
 	//{
