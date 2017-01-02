@@ -14,7 +14,6 @@ public class WaypointMover : MonoBehaviour {
 	
     void FixedUpdate()
     {
-        gameObject.transform.LookAt(target);
         float step = speed * Time.deltaTime;
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target.position, step);
     }
