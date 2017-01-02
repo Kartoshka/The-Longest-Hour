@@ -90,7 +90,7 @@ Material:
       second: 1
     - first:
         name: _DotProduct
-      second: -1
+      second: -0.316
     - first:
         name: _DstBlend
       second: 0
@@ -139,4 +139,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Tint
-      second: {r: 0.09558821, g: 0.550913, b: 1, a: 1}
+      second: {r: 0, g: 0.5862069, b: 1, a: 1}

@@ -105,7 +105,7 @@ Material:
       second: 0
     - first:
         name: _NMIntensity
-      second: 2.75
+      second: 3.28
     - first:
         name: _OcclusionStrength
       second: 1
