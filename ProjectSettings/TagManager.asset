@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Waypoint
   - W_Mover
+  - BGspawn
   layers:
   - Default
   - TransparentFX
