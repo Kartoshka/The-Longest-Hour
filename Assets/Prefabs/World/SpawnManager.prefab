@@ -58,4 +58,5 @@ MonoBehaviour:
   - {fileID: 1000012370061598, guid: 20e3dab6d9060e54c987d2bc1eb64511, type: 2}
   - {fileID: 1000014254130602, guid: 27e938f1f25d04a4aaa44efaa54e2f07, type: 2}
   - {fileID: 1000010701915162, guid: 5192456c94f49c04ca5fd2c2437f9954, type: 2}
+  - {fileID: 1000012082801346, guid: 0bcfcd8dd98485b46b0673ca8fde5e07, type: 2}
   m_maxTileCount: 5

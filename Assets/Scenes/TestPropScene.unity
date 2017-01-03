@@ -227,14 +227,10 @@ Prefab:
       propertyPath: m_actionMovers.m_values.Array.data[1].m_behavior
       value: 
       objectReference: {fileID: 912315814}
-    - target: {fileID: 4000014028978166, guid: 0496cd27d6821d147ac132aaacbdee96, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -5.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000012821050214, guid: 0496cd27d6821d147ac132aaacbdee96,
+    - target: {fileID: 54000013281656948, guid: 0496cd27d6821d147ac132aaacbdee96,
         type: 2}
-      propertyPath: field of view
-      value: 68.9
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0496cd27d6821d147ac132aaacbdee96, type: 2}
@@ -291,6 +287,11 @@ Prefab:
     - target: {fileID: 4000011766561422, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012970971388, guid: 40035db72016f4205a77eaf97d300d1c,
+        type: 2}
+      propertyPath: m_objectToSpawn
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
@@ -424,9 +425,10 @@ GameObject:
   - 33: {fileID: 2060630188}
   - 64: {fileID: 2060630187}
   - 23: {fileID: 2060630186}
+  - 82: {fileID: 2060630189}
   m_Layer: 0
   m_Name: MountainBackGround
-  m_TagString: BGspawn
+  m_TagString: CurrentBG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,6 +484,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060630185}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &2060630189
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060630185}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff96e37eb64fc2140abf852fcf09b869, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &2080854117
 MonoBehaviour:
   m_ObjectHideFlags: 0
