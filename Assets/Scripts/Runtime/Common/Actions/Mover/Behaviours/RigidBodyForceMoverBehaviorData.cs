@@ -1,0 +1,58 @@
+﻿using UnityEngine;
+using System;
+using System.Collections;
+
+using MOJ.Helpers;
+
+[Serializable]
+public class RigidBodyForceMoverBehaviorData
+{
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Datatypes
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Properties
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	// Add new variables for loading and saving here.
+	public Vector3 forceMagnitude = Vector3.zero;
+	public float duration = 1.0f;
+	public Rigidbody rigidBody = null;
+	public Transform surfaceCheckSource = null;
+	public float surfaceCheckRadius = 1.0f;
+	public LayerMask surfaceLayer;
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region  Constructors
+	////////////////////////////////////////////////////////////////////////////////////////// 
+
+	public RigidBodyForceMoverBehaviorData() { }
+
+	public RigidBodyForceMoverBehaviorData(RigidBodyForceMoverBehaviorData data)
+	{
+		if (data != null)
+		{
+			copy(data);
+		}
+	}
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Methods
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	public void copy(RigidBodyForceMoverBehaviorData rhs)
+	{
+		forceMagnitude = rhs.forceMagnitude;
+		duration = rhs.duration;
+        rigidBody = rhs.rigidBody;
+		surfaceCheckSource = rhs.surfaceCheckSource;
+		surfaceCheckRadius = rhs.surfaceCheckRadius;
+		surfaceLayer = rhs.surfaceLayer;
+}
+
+	#endregion
+}

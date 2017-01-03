@@ -17,7 +17,7 @@ public class ERSpawnManager : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public int m_maxTileCount = 5;
-	private LinkedList<GameObject> m_spawnedTiles = new LinkedList<GameObject>();
+	protected LinkedList<GameObject> m_spawnedTiles = new LinkedList<GameObject>();
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -33,8 +33,9 @@ public class ERSpawnManager : MonoBehaviour
 	{
 		if(m_groundTilePrefabs.Length > 0)
 		{
-			GameObject prefab = m_groundTilePrefabs[0];
-			GameObject spawnedObject = (GameObject)Instantiate(prefab, position, rotation);
+            int prefabIndex = Random.Range(0, m_groundTilePrefabs.Length - 1);
+			GameObject prefab = m_groundTilePrefabs[prefabIndex];
+			GameObject spawnedObject = (GameObject)Instantiate(prefab, position, prefab.transform.localRotation);
 			m_spawnedTiles.AddLast(spawnedObject);
 			if(m_spawnedTiles.Count > m_maxTileCount)
 			{
@@ -45,15 +46,31 @@ public class ERSpawnManager : MonoBehaviour
         }
 	}
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Runtime
-	//////////////////////////////////////////////////////////////////////////////////////////  
+    public void spawnNextTile(GameObject objectToSpawn, Vector3 position)
+    {
+        if (m_groundTilePrefabs.Length > 0)
+        {
+            GameObject spawnedObject = (GameObject)Instantiate(objectToSpawn, position, objectToSpawn.transform.localRotation);
+            m_spawnedTiles.AddLast(spawnedObject);
+            if (m_spawnedTiles.Count > m_maxTileCount)
+            {
+                GameObject expiredObject = m_spawnedTiles.First.Value;
+                m_spawnedTiles.RemoveFirst();
+                Destroy(expiredObject);
+            }
+        }
+    }
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Persistence
-	//////////////////////////////////////////////////////////////////////////////////////////
 
-	#endregion
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Runtime
+    //////////////////////////////////////////////////////////////////////////////////////////  
+
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Persistence
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    #endregion
 }

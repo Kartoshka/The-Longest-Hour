@@ -48,8 +48,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011282061502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973a446abfbc39746979de0c65fbc133, type: 3}
+  m_Script: {fileID: 11500000, guid: a7740034f28684b2eb433ba1e9bff06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_groundTilePrefabs:
-  - {fileID: 1000014139480444, guid: 4acf278835484ac49b504445af8fe0b7, type: 2}
+  - {fileID: 1000014139480444, guid: 40035db72016f4205a77eaf97d300d1c, type: 2}
+  - {fileID: 1000013413100222, guid: 4df2b218da8f6fe4984f0f31f2b1f107, type: 2}
+  - {fileID: 1000011884951314, guid: 77190e1c1aa837c41a2b56f20632b290, type: 2}
+  - {fileID: 1000012370061598, guid: 20e3dab6d9060e54c987d2bc1eb64511, type: 2}
+  - {fileID: 1000014254130602, guid: 27e938f1f25d04a4aaa44efaa54e2f07, type: 2}
+  - {fileID: 1000010701915162, guid: 5192456c94f49c04ca5fd2c2437f9954, type: 2}
+  m_maxTileCount: 5

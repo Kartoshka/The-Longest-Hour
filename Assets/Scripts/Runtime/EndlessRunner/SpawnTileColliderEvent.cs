@@ -12,7 +12,9 @@ public class SpawnTileColliderEvent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////   
 
 	public ERSpawnManager m_spawnManager;
+    public ERBackgroundManager m_backGroundManager;
 	public GameObject m_nextTileSpawnLocation;
+    public GameObject m_objectToSpawn;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -39,9 +41,22 @@ public class SpawnTileColliderEvent : MonoBehaviour
 
     }
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
-		m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
+        if(other.gameObject.tag.Equals("Player"))
+        {
+            if (m_objectToSpawn != null)
+            {
+                m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
+            }
+            else
+            {
+                m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
+            }
+            GameObject bgSpawnLocation = GameObject.FindGameObjectWithTag("BGspawn");
+            m_backGroundManager.spawnBGTile(bgSpawnLocation);
+            gameObject.SetActive(false);
+        }
 	}
 
 	#endregion
