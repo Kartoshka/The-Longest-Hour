@@ -8,6 +8,7 @@ using MOJ.Helpers;
 /// A mover behavior for directional movement.
 /// </summary>
 [Serializable]
+[AddComponentMenu("MOJCustom/Mover/Attach To Surface Mover Behaviour")]
 public class SurfaceMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////

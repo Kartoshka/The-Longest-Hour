@@ -8,7 +8,7 @@ using MOJ.Helpers;
 /// The abstract base class for movement behavior.
 /// </summary>
 [Serializable]
-public abstract class MoverBehavior : ScriptableObject
+public abstract class MoverBehavior : MonoBehaviour //ScriptableObject
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes

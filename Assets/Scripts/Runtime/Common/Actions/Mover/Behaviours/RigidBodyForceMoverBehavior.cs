@@ -9,6 +9,7 @@ using MOJ.Helpers;
 /// Reference: https://forum.unity3d.com/threads/mario-style-jumping.381906/
 /// </summary>
 [Serializable]
+[AddComponentMenu("MOJCustom/Mover/Rigid Body Force Mover Behaviour")]
 public class RigidBodyForceMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
