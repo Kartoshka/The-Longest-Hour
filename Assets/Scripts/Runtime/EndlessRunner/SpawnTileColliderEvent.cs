@@ -12,6 +12,7 @@ public class SpawnTileColliderEvent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////   
 
 	public ERSpawnManager m_spawnManager;
+    public ERBackgroundManager m_backGroundManager;
 	public GameObject m_nextTileSpawnLocation;
     public GameObject m_objectToSpawn;
 
@@ -52,6 +53,8 @@ public class SpawnTileColliderEvent : MonoBehaviour
             {
                 m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
             }
+            GameObject bgSpawnLocation = GameObject.FindGameObjectWithTag("BGspawn");
+            m_backGroundManager.spawnBGTile(bgSpawnLocation);
             gameObject.SetActive(false);
         }
 	}

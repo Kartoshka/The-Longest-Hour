@@ -2,16 +2,10 @@
 using System.Collections;
 
 public class WaypointMover : MonoBehaviour {
-
-    private Rigidbody rigidBody;
+    
     public Transform target;
     public float speed;
 
-	// Use this for initialization
-	void Start () {
-        rigidBody = GetComponent<Rigidbody>();
-	}
-	
     void FixedUpdate()
     {
         float step = speed * Time.deltaTime;

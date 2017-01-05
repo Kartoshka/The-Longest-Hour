@@ -58,7 +58,7 @@ GameObject:
   - 23: {fileID: 23000012247480024}
   - 114: {fileID: 114000011499496778}
   - 54: {fileID: 54000011925952636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First
   m_TagString: W_Mover
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 33: {fileID: 33000011663825262}
   - 65: {fileID: 65000013734796930}
   - 23: {fileID: 23000013488876940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - 23: {fileID: 23000011861588778}
   - 114: {fileID: 114000012394804670}
   - 54: {fileID: 54000011427745620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Third
   m_TagString: W_Mover
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011884951314}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15.823322, y: 9.445077, z: -7.660366}
+  m_LocalPosition: {x: 45.765137, y: -1.361953, z: 0.091459274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
@@ -522,7 +522,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cba8e16afd132294e8244c42d93497cb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -551,7 +551,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cba8e16afd132294e8244c42d93497cb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -609,7 +609,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4a024f68ffc9e0049987f656df0b795f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -790,6 +790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnManager: {fileID: 114000012326154048, guid: 2f6290249fe3349bbb8739dd9aaaa18e,
+    type: 2}
+  m_backGroundManager: {fileID: 114000014243136188, guid: 2aaa5481ca146294b858fd0ed46be693,
     type: 2}
   m_nextTileSpawnLocation: {fileID: 1000012763522642}
   m_objectToSpawn: {fileID: 0}

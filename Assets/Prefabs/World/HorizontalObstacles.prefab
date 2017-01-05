@@ -341,8 +341,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010254037194}
   m_LocalRotation: {x: -0.2793173, y: 0.14388882, z: -0.6346102, w: 0.70607924}
-  m_LocalPosition: {x: 0.050000675, y: 1.23, z: 3.4500012}
-  m_LocalScale: {x: 0.8601117, y: 0.61055005, z: 0.44970614}
+  m_LocalPosition: {x: -0.03, y: 1.76, z: 3.37}
+  m_LocalScale: {x: 1.346104, y: 0.95553124, z: 0.70380515}
   m_LocalEulerAnglesHint: {x: -12.173, y: 35, z: -87.80801}
   m_Children: []
   m_Father: {fileID: 4000011322297940}
@@ -367,7 +367,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013413100222}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.72, y: 0, z: 0}
+  m_LocalPosition: {x: 31.165352, y: 0.69125533, z: -1.1035328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
@@ -493,7 +493,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4a024f68ffc9e0049987f656df0b795f, type: 2}
+  - {fileID: 2100000, guid: dc7ca113edfa88c4bb8463e26790e695, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -522,7 +522,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4a024f68ffc9e0049987f656df0b795f, type: 2}
+  - {fileID: 2100000, guid: e95c442e7a715094a87fc9a2ef2ba152, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -551,7 +551,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 52cca21adfc094fb4b7cb8496b5a1613, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4000010274600048}
-  speed: 5
+  speed: 7
 --- !u!114 &114000012931300648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -827,6 +827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnManager: {fileID: 114000012326154048, guid: 2f6290249fe3349bbb8739dd9aaaa18e,
+    type: 2}
+  m_backGroundManager: {fileID: 114000014243136188, guid: 2aaa5481ca146294b858fd0ed46be693,
     type: 2}
   m_nextTileSpawnLocation: {fileID: 1000010220603914}
   m_objectToSpawn: {fileID: 0}
