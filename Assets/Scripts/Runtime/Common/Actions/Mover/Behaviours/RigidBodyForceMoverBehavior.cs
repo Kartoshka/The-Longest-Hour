@@ -17,6 +17,7 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
+	[HideInInspector]
 	private RigidBodyForceMoverBehaviorData m_data = new RigidBodyForceMoverBehaviorData();
 
 	private float m_timeCounter = 0.0f;

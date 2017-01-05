@@ -16,6 +16,7 @@ public class SurfaceMoverBehavior : MoverBehavior
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
+	[HideInInspector]
 	private SurfaceMoverBehaviorData m_data = new SurfaceMoverBehaviorData();
 
 	private GeometryHelper.HitPoint m_surfacePoint;

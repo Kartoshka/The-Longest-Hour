@@ -16,6 +16,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
+	[HideInInspector]
 	private LinearInputMoverBehaviorData m_data = new LinearInputMoverBehaviorData();
 
 	#endregion

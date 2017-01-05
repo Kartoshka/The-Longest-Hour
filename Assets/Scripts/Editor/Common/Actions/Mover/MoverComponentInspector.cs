@@ -155,23 +155,23 @@ public class MoverComponentInspector : Editor
 		LinearInputMoverBehavior linearMover = moverBehavior as LinearInputMoverBehavior;
 		if (linearMover != null)
 		{
-			//EditorGUI.BeginChangeCheck();
-			//Vector3 forwardStepSize = EditorGUILayout.Vector3Field("Forward Step Size", linearMover.getForwardStepSize());
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(linearMover, "Forward Step Size");
-			//	EditorUtility.SetDirty(linearMover);
-			//	linearMover.setForwardStepSize(forwardStepSize);
-			//}
+			EditorGUI.BeginChangeCheck();
+			Vector3 forwardStepSize = EditorGUILayout.Vector3Field("Forward Step Size", linearMover.getForwardStepSize());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(linearMover, "Forward Step Size");
+				EditorUtility.SetDirty(linearMover);
+				linearMover.setForwardStepSize(forwardStepSize);
+			}
 
-			//EditorGUI.BeginChangeCheck();
-			//Vector3 reverseStepSize = EditorGUILayout.Vector3Field("Reverse Step Size", linearMover.getReverseStepSize());
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(linearMover, "Reverse Step Size");
-			//	EditorUtility.SetDirty(linearMover);
-			//	linearMover.setReverseStepSize(reverseStepSize);
-			//}
+			EditorGUI.BeginChangeCheck();
+			Vector3 reverseStepSize = EditorGUILayout.Vector3Field("Reverse Step Size", linearMover.getReverseStepSize());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(linearMover, "Reverse Step Size");
+				EditorUtility.SetDirty(linearMover);
+				linearMover.setReverseStepSize(reverseStepSize);
+			}
 
 			EditorGUI.BeginChangeCheck();
 			bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", linearMover.getEnableUserInput());
@@ -188,67 +188,67 @@ public class MoverComponentInspector : Editor
 	private void createRigidBodyForceMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
 	{
 		canInterpolate = false;
-		//RigidBodyForceMoverBehavior rigidBodyForceMover = moverBehavior as RigidBodyForceMoverBehavior;
-		//if (rigidBodyForceMover != null)
-		//{
-		//	EditorGUI.BeginChangeCheck();
-		//	Vector3 forceMagnitude = EditorGUILayout.Vector3Field("Force Magnitude", rigidBodyForceMover.getForceMagnitude());
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "Force Magnitude");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
-		//		rigidBodyForceMover.setForceMagnitude(forceMagnitude);
-		//	}
+		RigidBodyForceMoverBehavior rigidBodyForceMover = moverBehavior as RigidBodyForceMoverBehavior;
+		if (rigidBodyForceMover != null)
+		{
+			EditorGUI.BeginChangeCheck();
+			Vector3 forceMagnitude = EditorGUILayout.Vector3Field("Force Magnitude", rigidBodyForceMover.getForceMagnitude());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Force Magnitude");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setForceMagnitude(forceMagnitude);
+			}
 
-		//	EditorGUI.BeginChangeCheck();
-		//	float duration = EditorGUILayout.DelayedFloatField("Duration", rigidBodyForceMover.getDuration());
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "Duration");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
-		//		rigidBodyForceMover.setDuration(duration);
-		//	}
+			EditorGUI.BeginChangeCheck();
+			float duration = EditorGUILayout.DelayedFloatField("Duration", rigidBodyForceMover.getDuration());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Duration");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setDuration(duration);
+			}
 
-		//	EditorGUILayout.LabelField("RigidBody");
-		//	EditorGUI.BeginChangeCheck();
-		//	Rigidbody rigidBody = (Rigidbody)EditorGUILayout.ObjectField(rigidBodyForceMover.getRigidBody(), typeof(Rigidbody), true);
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "RigidBody");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
-		//		rigidBodyForceMover.setRigidBody(rigidBody);
-		//	}
+			EditorGUILayout.LabelField("RigidBody");
+			EditorGUI.BeginChangeCheck();
+			Rigidbody rigidBody = (Rigidbody)EditorGUILayout.ObjectField(rigidBodyForceMover.getRigidBody(), typeof(Rigidbody), true);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "RigidBody");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setRigidBody(rigidBody);
+			}
 
-		//	EditorGUILayout.LabelField("Surface Checker Transform");
-		//	EditorGUI.BeginChangeCheck();
-		//	Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(rigidBodyForceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "Surface Checker Transform");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
-		//		rigidBodyForceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
-		//	}
+			EditorGUILayout.LabelField("Surface Checker Transform");
+			EditorGUI.BeginChangeCheck();
+			Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(rigidBodyForceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Surface Checker Transform");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
+			}
 
-		//	EditorGUI.BeginChangeCheck();
-		//	float surfaceCheckRadius = EditorGUILayout.DelayedFloatField("Checker Radius", rigidBodyForceMover.getSurfaceCheckRadius());
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "Checker Radius");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
-		//		rigidBodyForceMover.setSurfaceCheckRadius(surfaceCheckRadius);
-		//	}
+			EditorGUI.BeginChangeCheck();
+			float surfaceCheckRadius = EditorGUILayout.DelayedFloatField("Checker Radius", rigidBodyForceMover.getSurfaceCheckRadius());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Checker Radius");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setSurfaceCheckRadius(surfaceCheckRadius);
+			}
 
-		//	LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(rigidBodyForceMover.getSurfaceLayerMask());
-		//	EditorGUI.BeginChangeCheck();
-		//	surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
-		//	if (EditorGUI.EndChangeCheck())
-		//	{
-		//		Undo.RecordObject(rigidBodyForceMover, "Surface Layer Mask");
-		//		EditorUtility.SetDirty(rigidBodyForceMover);
+			LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(rigidBodyForceMover.getSurfaceLayerMask());
+			EditorGUI.BeginChangeCheck();
+			surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Surface Layer Mask");
+				EditorUtility.SetDirty(rigidBodyForceMover);
 
-		//		rigidBodyForceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
-		//	}
-		//}
+				rigidBodyForceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+			}
+		}
 	}
 
 	private void createAttachToSurfaceMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
@@ -257,53 +257,53 @@ public class MoverComponentInspector : Editor
 		SurfaceMoverBehavior surfaceMover = moverBehavior as SurfaceMoverBehavior;
 		if (surfaceMover != null)
 		{
-			//EditorGUI.BeginChangeCheck();
-			//Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", surfaceMover.getPositionOffset());
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(surfaceMover, "Position Offset");
-			//	EditorUtility.SetDirty(surfaceMover);
-			//	surfaceMover.setPositionOffset(positionOffset);
-			//}
+			EditorGUI.BeginChangeCheck();
+			Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", surfaceMover.getPositionOffset());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(surfaceMover, "Position Offset");
+				EditorUtility.SetDirty(surfaceMover);
+				surfaceMover.setPositionOffset(positionOffset);
+			}
 
-			//EditorGUILayout.LabelField("Surface Checker Transform");
-			//EditorGUI.BeginChangeCheck();
-			//Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(surfaceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(surfaceMover, "Surface Checker Transform");
-			//	EditorUtility.SetDirty(surfaceMover);
-			//	surfaceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
-			//}
+			EditorGUILayout.LabelField("Surface Checker Transform");
+			EditorGUI.BeginChangeCheck();
+			Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(surfaceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(surfaceMover, "Surface Checker Transform");
+				EditorUtility.SetDirty(surfaceMover);
+				surfaceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
+			}
 
-			//EditorGUI.BeginChangeCheck();
-			//Vector3 rayCastDirection = EditorGUILayout.Vector3Field("Default RayCast Direction", surfaceMover.getDefaultRaycastDirection());
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(surfaceMover, "Default RayCast Direction");
-			//	EditorUtility.SetDirty(surfaceMover);
-			//	surfaceMover.setDefaultRaycastDirection(rayCastDirection);
-			//}
+			EditorGUI.BeginChangeCheck();
+			Vector3 rayCastDirection = EditorGUILayout.Vector3Field("Default RayCast Direction", surfaceMover.getDefaultRaycastDirection());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(surfaceMover, "Default RayCast Direction");
+				EditorUtility.SetDirty(surfaceMover);
+				surfaceMover.setDefaultRaycastDirection(rayCastDirection);
+			}
 
-			//LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(surfaceMover.getSurfaceLayerMask());
-			//EditorGUI.BeginChangeCheck();
-			//surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(surfaceMover, "Surface Layer Mask");
-			//	EditorUtility.SetDirty(surfaceMover);
+			LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(surfaceMover.getSurfaceLayerMask());
+			EditorGUI.BeginChangeCheck();
+			surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(surfaceMover, "Surface Layer Mask");
+				EditorUtility.SetDirty(surfaceMover);
 
-			//	surfaceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
-			//}
+				surfaceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+			}
 
-			//EditorGUI.BeginChangeCheck();
-			//float friction = EditorGUILayout.FloatField("Friction", surfaceMover.getFrictionValue());
-			//if (EditorGUI.EndChangeCheck())
-			//{
-			//	Undo.RecordObject(surfaceMover, "Friction");
-			//	EditorUtility.SetDirty(surfaceMover);
-			//	surfaceMover.setFrictionValue(Mathf.Clamp01(friction));
-			//}
+			EditorGUI.BeginChangeCheck();
+			float friction = EditorGUILayout.FloatField("Friction", surfaceMover.getFrictionValue());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(surfaceMover, "Friction");
+				EditorUtility.SetDirty(surfaceMover);
+				surfaceMover.setFrictionValue(Mathf.Clamp01(friction));
+			}
 
 			EditorGUI.BeginChangeCheck();
 			bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", surfaceMover.getEnableUserInput());
