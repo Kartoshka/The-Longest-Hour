@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThirdPersonCamera : MonoBehaviour {
+public class ThirdPersonCamera : AbCamera {
 
 
 	//TODO Ease camera tracking movements.
 	//TODO Implement camera movement tracking into methods which can also be used when wanting to manually rotate the camera.
 
-	private Camera trackingCamera;
+	//private Camera trackingCamera;
 	public GameObject target;
 
 	//
@@ -35,27 +35,17 @@ public class ThirdPersonCamera : MonoBehaviour {
 
 	private Vector3 cameraPosition = Vector3.zero;
 
-	//
-	// Rotation coroutine attributes
-	//
-
-	private Coroutine rotationCoroutine;
-	Vector3 rotationVelocity = new Vector3 ();
-
-
 	public float minXAngke = -90;
 	public float maxXAngle = 90;
 
 
 	void Start () {
-		trackingCamera = this.GetComponent<Camera>();
-
-		pitch = angleFromTarget.x;
-		yaw = angleFromTarget.y;
+		target = GameObject.FindGameObjectWithTag ("Player");
 	}
 		
-	void Update () {
 
+	public override Vector3 getPosition()
+	{
 		targetCurrentPosition = target.transform.position;
 		targetCurrentRotation = new Vector2(target.transform.rotation.eulerAngles.z,target.transform.rotation.eulerAngles.y);
 
@@ -79,65 +69,21 @@ public class ThirdPersonCamera : MonoBehaviour {
 		//Modify campera position
 		cameraPosition = new Vector3 (X, Y, Z) * distanceFromTarget; 
 		if (trackPosition) {      
-			trackingCamera.transform.position = cameraPosition + targetCurrentPosition;
+			this.transform.position = cameraPosition + targetCurrentPosition;
 		}
 
+		return this.transform.position;
+	}
+		
+	public override Vector3 getTarget()
+	{
 		if (lookAt) {
 			//Point camera at target
-			trackingCamera.transform.LookAt (targetCurrentPosition);
+			this.transform.LookAt (targetCurrentPosition);
 		}
-	}
-	
-	/*
-	 * Change zoom radius of camera in a given amount of time
-	 */
-	IEnumerator lerpRadiusTime(float finalRadius, float zoomTime)
-	{
-		
-		yield return null;
+
+		return targetCurrentPosition;
 	}
 		
-	IEnumerator lerpRadiusSpeed(float finalRadius, float speed)
-	{
-		yield return null;
-	}
-
-	/*
-	 * Change view angle of camera in a given amount of time
-	 */
-	IEnumerator lerpRotationTime(Vector2 finalRotation, float rotationTime)
-	{
-
-		while (Vector2.Distance(finalRotation,new Vector2(pitch,yaw))>1)
-		{
-			//Investigate this function, can definitely be used!
-			Vector3 result = Vector3.SmoothDamp (new Vector3 (pitch, yaw, 0), finalRotation, ref rotationVelocity, rotationTime,float.MaxValue,Time.deltaTime);
-			pitch = result.x;
-			yaw = result.y;
-			yield return new WaitForEndOfFrame ();
-		}
-		rotationVelocity = Vector2.zero;
-		yield return null;
-	}
-
-
-	/*
-	 * Change view angle of camera with a given speed per degree of rotation
-	 */
-	IEnumerator lerpRotationSpeed(Vector2 finalRotation, float speed)
-	{
-		float timeToTravel = (new Vector2 (pitch, yaw) - finalRotation).magnitude / speed ;
-		return lerpRotationTime (finalRotation, timeToTravel);
-	
-	}
-
-	private void stopRotation()
-	{
-		if (rotationCoroutine != null) {
-			StopCoroutine (rotationCoroutine);
-			rotationCoroutine = null;
-			rotationVelocity = Vector3.zero;
-		}
-	}
 }
 	
