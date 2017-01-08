@@ -20,9 +20,9 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	[HideInInspector]
 	private RigidBodyForceMoverBehaviorData m_data = new RigidBodyForceMoverBehaviorData();
 
-	private float m_timeCounter = 0.0f;
+	private float m_forceTimeCounter = 0.0f;
 	private bool m_stoppedApplyingForce = true;
-	private bool m_isGrounded = false;
+	private bool m_forceInputTriggered = false;
 
 	private bool m_simulateJumping = true;
 
@@ -53,9 +53,11 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 
 	public override void initialize()
 	{
-		setCanInterpolate(false);
-		m_timeCounter = m_data.duration;
-	}
+		//setCanInterpolate(false);
+		base.initialize();
+		m_forceTimeCounter = 0;
+		m_forceInputTriggered = false;
+    }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -89,7 +91,7 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	// Return the position that would occur if a move was performed.
-	public override Vector3 getTargetPosition(Transform transform)
+	public override Vector3 getTargetPosition(Transform transform, float deltaTime = 0.0f)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
 
@@ -97,13 +99,23 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 		return m_data.rigidBody.transform.position;
 	}
 
-	// Updates the transform based on the behavior.
-	// Returns true if the state of the transform changed.
-	// This ignores interpolation.
-	public override bool tryMove(Transform transform, float deltaTime)
+	//// Updates the transform based on the behavior.
+	//// Returns true if the state of the transform changed.
+	//// This ignores interpolation.
+	//public override bool tryMove(Transform transform, float deltaTime)
+	//{
+	//	transform.position = getTargetPosition(transform);
+	//	return true;
+	//}
+
+	private bool shouldApplyForce()
 	{
-		transform.position = getTargetPosition(transform);
-		return true;
+		return m_forceInputTriggered;
+	}
+
+	private bool canApplyForce()
+	{
+		return Physics.CheckSphere(m_data.surfaceCheckSource.position, m_data.surfaceCheckRadius, m_data.surfaceLayer);
 	}
 
 	private void applyForce()
@@ -118,42 +130,28 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 		}
 	}
 
-	private bool shouldApplyForce()
-	{
-		return Input.GetKeyDown(KeyCode.Space);
-	}
-
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public override void processInputs()
+	{
+		m_forceInputTriggered = Input.GetKeyDown(KeyCode.Space);
+	}
+
 	private void simulate()
 	{
-		m_isGrounded = Physics.CheckSphere(m_data.surfaceCheckSource.position, m_data.surfaceCheckRadius, m_data.surfaceLayer);
-		if(m_isGrounded)
+		if(shouldApplyForce() && canApplyForce())
 		{
-			m_timeCounter = m_data.duration;
-		}
+			m_forceTimeCounter = m_data.duration;
+			m_forceInputTriggered = false;
+        }
 
-		if (shouldApplyForce())
+		if (m_forceTimeCounter > 0)
 		{
-			if (m_isGrounded)
-			{
-				applyForce();
-				m_stoppedApplyingForce = false;
-			}
-			else if (!m_stoppedApplyingForce && m_timeCounter > 0)
-			{
-
-				applyForce();
-				m_timeCounter -= Time.deltaTime;
-			}
-		}
-		else
-		{
-			m_timeCounter = 0;
-			m_stoppedApplyingForce = true;
+			applyForce();
+			m_forceTimeCounter -= Time.deltaTime;
 		}
 	}
 

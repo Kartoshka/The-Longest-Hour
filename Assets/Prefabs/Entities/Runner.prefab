@@ -1737,6 +1737,8 @@ GameObject:
   - 23: {fileID: 23000010583303528}
   - 54: {fileID: 54000012814691644}
   - 75: {fileID: 75000010178733092}
+  - 114: {fileID: 114000013556646864}
+  - 114: {fileID: 114000010577736370}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Player
@@ -25187,6 +25189,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010577736370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010628323550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114000011469816802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25198,9 +25220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ebdc75314c3b54cb812d0f8a308ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enableUserInput: 0
+  m_targetPositionOffset: {x: 0, y: 0, z: 0}
+  m_moveRelative: 1
   m_data:
-    enableUserInput: 1
-    positionOffset: {x: 0, y: 0.55, z: 0}
     surfaceCheckSource: {fileID: 4000011968600746}
     defaultRayCastDirection: {x: 0, y: -1, z: 0}
     surfaceLayer:
@@ -25222,15 +25245,13 @@ MonoBehaviour:
   m_actionMovers:
     m_keys: 0100000002000000
     m_values:
-    - m_behaviorType: -1
-      m_behavior: {fileID: 114000013664065254}
+    - m_behavior: {fileID: 114000013664065254}
       m_interpData:
         interpolationType: 1
         easingType: 0
         updateRate: -1
         duration: 0.01
-    - m_behaviorType: -1
-      m_behavior: {fileID: 114000012924601482}
+    - m_behavior: {fileID: 114000012924601482}
       m_interpData:
         interpolationType: 1
         easingType: 0
@@ -25249,15 +25270,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05007bc70e4bc34e970fa447b617dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enableUserInput: 0
+  m_targetPositionOffset: {x: 0, y: 0, z: 0}
+  m_moveRelative: 1
   m_data:
-    forceMagnitude: {x: 0, y: 7, z: 0}
-    duration: 0.5
+    forceMagnitude: {x: 0, y: 6, z: 0}
+    duration: 0.001
     rigidBody: {fileID: 54000012814691644}
     surfaceCheckSource: {fileID: 4000013759930094}
     surfaceCheckRadius: 1
     surfaceLayer:
       serializedVersion: 2
       m_Bits: 256
+--- !u!114 &114000013556646864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010628323550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 4
+    i1: 150
+    i2: 205
+    i3: 39
+    i4: 214
+    i5: 130
+    i6: 29
+    i7: 20
+    i8: 122
+    i9: 193
+    i10: 50
+    i11: 170
+    i12: 172
+    i13: 189
+    i14: 238
+    i15: 150
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114000013664065254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25269,10 +25325,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8608fa18baf8cf64d94916528c151aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enableUserInput: 0
+  m_targetPositionOffset: {x: 0, y: 0, z: 0}
+  m_moveRelative: 1
   m_data:
     forwardStepSize: {x: 0.1, y: 0, z: 0}
     reverseStepSize: {x: 0, y: 0, z: 0}
-    enableUserInput: 1
 --- !u!114 &114000013771925806
 MonoBehaviour:
   m_ObjectHideFlags: 1

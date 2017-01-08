@@ -19,6 +19,8 @@ public class LinearInputMoverBehavior : MoverBehavior
 	[HideInInspector]
 	private LinearInputMoverBehaviorData m_data = new LinearInputMoverBehaviorData();
 
+	private Vector3 m_inputMagnitude = Vector3.zero;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region  Constructors
@@ -44,18 +46,15 @@ public class LinearInputMoverBehavior : MoverBehavior
 		initialize();
 	}
 
-	public override void initialize()
-	{
-		setCanInterpolate(false);
-	}
+	//public override void initialize()
+	//{
+	//	setCanInterpolate(false);
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
-
-	public bool getEnableUserInput() { return m_data.enableUserInput; }
-	public void setEnableUserInput(bool enableUserInput) { m_data.enableUserInput = enableUserInput; }
 
 	public Vector3 getForwardStepSize() { return m_data.forwardStepSize; }
 	public void setForwardStepSize(Vector3 forwardStepSize) { m_data.forwardStepSize = forwardStepSize; }
@@ -69,47 +68,45 @@ public class LinearInputMoverBehavior : MoverBehavior
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	// Return the position that would occur if a move was performed.
-	public override Vector3 getTargetPosition(Transform transform)
+	public override Vector3 getTargetPosition(Transform transform, float deltaTime = 0.0f)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetOffset();
+		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetPositionOffset();
 		return targetPosition;
 	}
 
-	// Updates the transform based on the behavior.
-	// Returns true if the state of the transform changed.
-	// This ignores interpolation.
-	public override bool tryMove(Transform transform, float deltaTime)
-	{
-        transform.position = getTargetPosition(transform);
-		return true;
-	}
+	//// Updates the transform based on the behavior.
+	//// Returns true if the state of the transform changed.
+	//// This ignores interpolation.
+	//public override bool tryMove(Transform transform, float deltaTime)
+	//{
+ //       transform.position = getTargetPosition(transform);
+	//	return true;
+	//}
 
 	// Calculate the direction of the movement behavior after processing user inputs.
 	private Vector3 calculateTargetPosition()
 	{
-		float horizontalMagnitude = 1;
-		float verticalMagnitude = 1;
-		if (m_data.enableUserInput)
-		{
-			horizontalMagnitude = Input.GetAxis("Horizontal");
-			verticalMagnitude = Input.GetAxis("Vertical");
-		}
-
-		Vector3 horizontalStep = horizontalMagnitude > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
-		Vector3 verticalStep = verticalMagnitude > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
+		Vector3 horizontalStep = m_inputMagnitude.x > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
+		Vector3 verticalStep = m_inputMagnitude.y > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
+		//Vector3 depthStep;
 
 		Vector3 finalDirection = Vector3.zero;
 		TransformHelper.setAxisValue(
 			ref finalDirection,
 			TransformHelper.HorizontalAxis,
-			TransformHelper.getAxisValue(horizontalStep, TransformHelper.HorizontalAxis) * horizontalMagnitude
+			TransformHelper.getAxisValue(horizontalStep, TransformHelper.HorizontalAxis) * m_inputMagnitude.x
 			);
 		TransformHelper.setAxisValue(
 			ref finalDirection,
 			TransformHelper.VerticalAxis,
-			TransformHelper.getAxisValue(verticalStep, TransformHelper.VerticalAxis) * verticalMagnitude
+			TransformHelper.getAxisValue(verticalStep, TransformHelper.VerticalAxis) * m_inputMagnitude.y
 			);
+		//TransformHelper.setAxisValue(
+		//	ref finalDirection,
+		//	TransformHelper.DepthAxis,
+		//	TransformHelper.getAxisValue(depthStep, TransformHelper.DepthAxis) * m_inputMagnitude.z
+		//	);
 		return finalDirection;
 	}
 
@@ -117,6 +114,19 @@ public class LinearInputMoverBehavior : MoverBehavior
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////
+
+	public override void processInputs()
+	{
+		if(getEnableUserInput())
+		{
+			m_inputMagnitude.x = Input.GetAxis("Horizontal");
+			m_inputMagnitude.y = Input.GetAxis("Vertical");
+		}
+		else
+		{
+			m_inputMagnitude = Vector3.one;
+		}
+    }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////

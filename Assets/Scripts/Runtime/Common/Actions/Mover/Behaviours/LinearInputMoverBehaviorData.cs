@@ -19,7 +19,7 @@ public class LinearInputMoverBehaviorData
 	// Add new variables for loading and saving here.
 	public Vector3 forwardStepSize = Vector3.zero;
 	public Vector3 reverseStepSize = Vector3.zero;
-	public bool enableUserInput = true;
+	//public bool enableUserInput = true;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,6 @@ public class LinearInputMoverBehaviorData
 	{
 		forwardStepSize = rhs.forwardStepSize;
 		reverseStepSize = rhs.reverseStepSize;
-		enableUserInput = rhs.enableUserInput;
     }
 
 	#endregion

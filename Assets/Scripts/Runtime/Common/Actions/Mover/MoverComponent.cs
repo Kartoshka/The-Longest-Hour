@@ -118,11 +118,15 @@ public class MoverComponent : MonoBehaviour
 		Mover mover;
 		if (!m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
 		{
+			Debug.Assert(false, "Could not find a mover for the specified Action type. Default mover is created but may not behave as expected.");
 			createMoverAction(actionTypeFlag);
 			mover = m_actionMovers.Dictionary[actionTypeFlag];
 		}
-		m_activeActionMovers.AddLast(mover);
-		mover.beginMove(m_transformComponent);
+		if(!mover.getState().Equals(Mover.State.Active))
+		{
+			m_activeActionMovers.AddLast(mover);
+			mover.beginMove(m_transformComponent);
+		}
 	}
 
 	protected void pauseMoverAction(ActionTypeFlag actionTypeFlag)

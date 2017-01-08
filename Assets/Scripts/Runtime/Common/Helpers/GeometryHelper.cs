@@ -41,7 +41,13 @@ public class GeometryHelper
 		return centroid;
 	}
 
-	// Rotate a point in space around a vector by the angle.
+	/// <summary>
+	/// Rotate a point in space around a vector by the angle.
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="pivot"></param>
+	/// <param name="angle"></param>
+	/// <returns></returns>
 	// Reference: http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
 	public static Vector3 rotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion angle)
 	{
@@ -51,7 +57,7 @@ public class GeometryHelper
 		return point;
 	}
 
-	public static HitPoint retrieveHitPoint(RaycastHit hit, bool drawDebug = false)
+	public static HitPoint retrieveHitPoint(RaycastHit hit)
 	{
 		HitPoint hitPoint = new HitPoint();
 		hitPoint.position = hit.point;
@@ -61,7 +67,7 @@ public class GeometryHelper
 
 	//Reference: http://docs.unity3d.com/ScriptReference/RaycastHit-triangleIndex.html
 	//Reference: http://answers.unity3d.com/questions/50846/how-do-i-obtain-the-surface-normal-for-a-point-on.html
-	public static HitPoint retrieveHitTriangleOnMesh(RaycastHit hit, bool drawDebug = false)
+	public static HitPoint retrieveHitTriangleOnMesh(RaycastHit hit)
 	{
 		MeshCollider meshCollider = hit.collider as MeshCollider;
 		if (meshCollider == null || meshCollider.sharedMesh == null)
@@ -89,15 +95,41 @@ public class GeometryHelper
 
 		hitPoint.normal = Vector3.Cross(p1 - p0, p2 - p0);
 
-		if(drawDebug)
-		{
-			Debug.DrawLine(p0, p1);
-			Debug.DrawLine(p1, p2);
-			Debug.DrawLine(p2, p0);
-			Debug.DrawRay(hitPoint.position, hitPoint.normal);
-		}
+		//if(drawDebug)
+		//{
+		//	Debug.DrawLine(p0, p1);
+		//	Debug.DrawLine(p1, p2);
+		//	Debug.DrawLine(p2, p0);
+		//	Debug.DrawRay(hitPoint.position, hitPoint.normal);
+		//}
 
 		return hitPoint;
+	}
+
+	/// <summary>
+	/// Get the slope direction between the closest point to a surface and the hit point in the raycast direction.
+	/// </summary>
+	/// <param name="raycastData"></param>
+	/// <param name="surfaceGradient"></param>
+	/// <returns></returns>
+	public static bool tryFindSurfaceGradient(ref RaycastData raycastData, out Vector3 surfaceGradient)
+	{
+		bool success = false;
+		surfaceGradient = Vector3.zero;
+
+		RaycastHit hit;
+		if (Physics.Raycast(raycastData.sourceTransform.position, raycastData.direction, out hit, raycastData.checkDistance, raycastData.surfaceLayerMask))
+		{
+			RaycastHit closestSurfacePointHit;
+			if (Physics.Raycast(raycastData.sourceTransform.position, hit.normal, out closestSurfacePointHit, raycastData.checkDistance, raycastData.surfaceLayerMask))
+			{
+				//Vector3 hitDirection = hit.point - raycastData.sourceTransform.position;
+				surfaceGradient = hit.point - closestSurfacePointHit.point;
+
+				success = true;
+			}
+		}
+		return success;
 	}
 
 	#endregion
