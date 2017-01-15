@@ -14,6 +14,8 @@ public class NetworkedMoverComponent : NetworkBehaviour
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public MoverComponent m_moverComponent;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Constructors
@@ -60,19 +62,34 @@ public class NetworkedMoverComponent : NetworkBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+		if (!Network.peerType.Equals(NetworkPeerType.Disconnected))
+		{
+			if (m_moverComponent)
+			{
+				m_moverComponent.enabled = false;
+			}
+		}
+		else
+		{
+			this.enabled = false;
+		}
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		ProcessInputs();
+//		ProcessInputs();
+
+		if (isLocalPlayer)
+		{
+			m_moverComponent.update();
+		}
 	}
 
-	private void ProcessInputs()
-	{
+	//private void ProcessInputs()
+	//{
 
-	}
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////

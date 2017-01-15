@@ -56,6 +56,29 @@ public class MoverComponent : MonoBehaviour
 		m_observer = new Observer<MoverComponent>(this);
 	}
 
+	protected virtual void initialize()
+	{
+		if (m_transformComponent == null)
+		{
+			m_transformComponent = GetComponent<Transform>();
+		}
+		if (!m_alwaysUpdate)
+		{
+			this.enabled = false;
+		}
+
+		int actionTypeFlagCount = System.Enum.GetValues(typeof(ActionTypeFlag)).Length;
+		for (int i = 0; i < actionTypeFlagCount; ++i)
+		{
+			ActionTypeFlag mask = (ActionTypeFlag)(1 << i);
+			ActionTypeFlag maskedActionTypeFlag = mask & m_actionTypeFlags;
+			if (maskedActionTypeFlag != 0)
+			{
+				activateMoverAction(maskedActionTypeFlag);
+			}
+		}
+	}
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -118,7 +141,7 @@ public class MoverComponent : MonoBehaviour
 		Mover mover;
 		if (!m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
 		{
-			Debug.Assert(false, "Could not find a mover for the specified Action type. Default mover is created but may not behave as expected.");
+			Debug.Assert(false, "Could not find a mover for " + actionTypeFlag.ToString() + ". Default mover is created but may not behave as expected.");
 			createMoverAction(actionTypeFlag);
 			mover = m_actionMovers.Dictionary[actionTypeFlag];
 		}
@@ -129,53 +152,30 @@ public class MoverComponent : MonoBehaviour
 		}
 	}
 
-	protected void pauseMoverAction(ActionTypeFlag actionTypeFlag)
-	{
-		Mover mover;
-		if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
-		{
-			mover.pause();
-		}
-	}
+	//public void pauseMoverAction(ActionTypeFlag actionTypeFlag)
+	//{
+	//	Mover mover;
+	//	if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
+	//	{
+	//		mover.pause();
+	//	}
+	//}
 
-	protected void resumeMoverAction(ActionTypeFlag actionTypeFlag)
-	{
-		Mover mover;
-		if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
-		{
-			mover.resume();
-		}
-	}
+	//public void resumeMoverAction(ActionTypeFlag actionTypeFlag)
+	//{
+	//	Mover mover;
+	//	if (m_actionMovers.Dictionary.TryGetValue(actionTypeFlag, out mover))
+	//	{
+	//		mover.resume();
+	//	}
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	protected virtual void initialize()
-	{
-		if(m_transformComponent == null)
-		{
-			m_transformComponent = GetComponent<Transform>();
-		}
-		if (!m_alwaysUpdate)
-		{
-			this.enabled = false;
-		}
-
-		int actionTypeFlagCount = System.Enum.GetValues(typeof(ActionTypeFlag)).Length;
-		for (int i = 0; i < actionTypeFlagCount; ++i)
-		{
-			ActionTypeFlag mask = (ActionTypeFlag)(1 << i);
-			ActionTypeFlag maskedActionTypeFlag = mask & m_actionTypeFlags;
-			if (maskedActionTypeFlag != 0)
-			{
-				activateMoverAction(maskedActionTypeFlag);
-			}
-		}
-	}
-
-	protected virtual void updateMovers()
+	public void update()
 	{
 		if (m_activeActionMovers.Count > 0)
 		{
@@ -201,7 +201,7 @@ public class MoverComponent : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		updateMovers();
+		update();
     }
 
 	#endregion

@@ -21,7 +21,7 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	private RigidBodyForceMoverBehaviorData m_data = new RigidBodyForceMoverBehaviorData();
 
 	private float m_forceTimeCounter = 0.0f;
-	private bool m_stoppedApplyingForce = true;
+	//private bool m_stoppedApplyingForce = true;
 	private bool m_forceInputTriggered = false;
 
 	private bool m_simulateJumping = true;
@@ -122,7 +122,7 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	{
 		if(m_simulateJumping)
 		{
-			m_data.rigidBody.velocity = new Vector3(m_data.rigidBody.velocity.x, m_data.forceMagnitude.y);
+            m_data.rigidBody.velocity = new Vector3(m_data.rigidBody.velocity.x, m_data.forceMagnitude.y);
 		}
 		else
 		{

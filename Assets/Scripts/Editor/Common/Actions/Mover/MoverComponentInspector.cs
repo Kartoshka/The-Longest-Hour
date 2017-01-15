@@ -35,8 +35,14 @@ public class MoverComponentInspector : Editor
 			moverComponent.setTransform(transformComponent);
 		}
 
+		EditorGUI.BeginChangeCheck();
 		MoverComponent.ActionTypeFlag allActions = (MoverComponent.ActionTypeFlag)EditorGUILayout.EnumMaskField("Mover Actions", moverComponent.getActionTypeFlags());
-		moverComponent.setActionTypeFlags(allActions);
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(moverComponent, "Mover Actions");
+			EditorUtility.SetDirty(moverComponent);
+			moverComponent.setActionTypeFlags(allActions);
+		}
 
 		Dictionary<MoverComponent.ActionTypeFlag, Mover> actionMoverBehaviors = moverComponent.getActionMovers();
 

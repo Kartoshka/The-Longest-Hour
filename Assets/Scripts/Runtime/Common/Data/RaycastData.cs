@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System;
 
-
-public struct RaycastData
+[Serializable]
+public class RaycastData : MonoBehaviour
 {
 	public Transform sourceTransform;
 	public Vector3 direction;

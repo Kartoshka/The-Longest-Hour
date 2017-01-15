@@ -89,7 +89,7 @@ public class SurfaceMoverBehavior : MoverBehavior
 		}
 		else
 		{
-			rayCastDirection = transform.up + m_data.defaultRayCastDirection;
+			rayCastDirection = m_data.defaultRayCastDirection;
 		}
 
 		Vector3 targetPosition;

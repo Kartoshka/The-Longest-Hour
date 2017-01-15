@@ -206,7 +206,8 @@ public class Mover
 
 	private void endMove()
 	{
-		m_state = State.Finished;
+		//m_state = State.Finished;
+		m_state = State.Paused;
 	}
 
 	#endregion

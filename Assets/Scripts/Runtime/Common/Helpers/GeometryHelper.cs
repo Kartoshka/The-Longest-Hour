@@ -121,7 +121,7 @@ public class GeometryHelper
 		if (Physics.Raycast(raycastData.sourceTransform.position, raycastData.direction, out hit, raycastData.checkDistance, raycastData.surfaceLayerMask))
 		{
 			RaycastHit closestSurfacePointHit;
-			if (Physics.Raycast(raycastData.sourceTransform.position, hit.normal, out closestSurfacePointHit, raycastData.checkDistance, raycastData.surfaceLayerMask))
+			if (Physics.Raycast(raycastData.sourceTransform.position, hit.normal * -1, out closestSurfacePointHit, raycastData.checkDistance, raycastData.surfaceLayerMask))
 			{
 				//Vector3 hitDirection = hit.point - raycastData.sourceTransform.position;
 				surfaceGradient = hit.point - closestSurfacePointHit.point;

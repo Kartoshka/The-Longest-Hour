@@ -22,6 +22,8 @@ public class ERMoverController : MonoBehaviour
 	public MoverComponent m_moverComponent;
 	public SlopedSurfaceBoolProvider m_slideBoolProvider;
 
+	public RaycastData m_raycastData;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Constructors
@@ -70,13 +72,13 @@ public class ERMoverController : MonoBehaviour
 		if (m_slideMover != null)
 		{
 			bool isSloped = false;
-			RaycastData raycastData;
-			raycastData.checkDistance = 10.0f;
-			raycastData.direction = this.gameObject.transform.up * -1;
-			raycastData.sourceTransform = this.gameObject.transform;
-			raycastData.surfaceLayerMask = 1 << 8 ;
+			//RaycastData raycastData;
+			//raycastData.checkDistance = 10.0f;
+			//raycastData.direction = this.gameObject.transform.up * -1;
+			//raycastData.sourceTransform = this.gameObject.transform;
+			//raycastData.surfaceLayerMask = 1 << 8 ;
 			Vector3 surfaceGradient;
-            if(GeometryHelper.tryFindSurfaceGradient(ref raycastData, out surfaceGradient))
+            if(GeometryHelper.tryFindSurfaceGradient(ref m_raycastData, out surfaceGradient))
 			{
 				float surfaceThreshold = 0.01f;
 				if(surfaceGradient.magnitude > surfaceThreshold)
