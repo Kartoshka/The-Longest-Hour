@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Silhoutte
-  m_Shader: {fileID: 4800000, guid: 6b85937e82a94ec40b67e0716db62145, type: 3}
+  m_Name: AlphaToggle
+  m_Shader: {fileID: 4800000, guid: 594c76dfb227c524b8139348864bbf89, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -15,12 +15,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
-    - first:
-        name: _AlphaTex
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - first:
         name: _BumpMap
       second:
@@ -54,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -77,8 +71,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: _AlphaSlider
-      second: 1
+        name: _AlphaValue
+      second: 0.226
     - first:
         name: _BumpScale
       second: 1
@@ -88,9 +82,6 @@ Material:
     - first:
         name: _DetailNormalMapScale
       second: 1
-    - first:
-        name: _DotProduct
-      second: 0.425
     - first:
         name: _DstBlend
       second: 0
@@ -137,6 +128,3 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _Tint
-      second: {r: 0, g: 0.5862069, b: 1, a: 1}
