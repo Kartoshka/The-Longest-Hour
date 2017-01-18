@@ -15,6 +15,7 @@ public class Mover
 		Undefined = -1,
 		LinearInput,
 		RigidBodyForceInput,
+		AttachToSurface,
 	}
 
 	public enum State
@@ -58,7 +59,7 @@ public class Mover
 
 	public void deInit()
 	{
-		m_behaviorType = BehaviorType.Undefined;
+//		m_behaviorType = BehaviorType.Undefined;
 		m_behavior = null;
 		m_interpData = null;
 		m_state = State.Undefined;
@@ -68,17 +69,18 @@ public class Mover
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public BehaviorType getBehaviorType() { return m_behaviorType;	}
+	public BehaviorType getBehaviorType() { return m_behaviorType; }
 	public void setBehaviorType(BehaviorType behaviorType)
 	{
-		if(m_behaviorType != behaviorType)
+		if (m_behaviorType != behaviorType)
 		{
 			m_behaviorType = behaviorType;
-			m_behavior = createMoverBehavior(behaviorType, m_behavior);
+			//m_behavior = createMoverBehavior(behaviorType, m_behavior);
 		}
 	}
 
-	public MoverBehavior getBehavior() { return m_behavior; }
+	public MoverBehavior getMoverBehavior() { return m_behavior; }
+	public void setMoverBehavior(MoverBehavior behavior) { m_behavior = behavior; }
 
 	public State getState() { return m_state; }
 	private void setState(State state) { m_state = state; }
@@ -111,35 +113,40 @@ public class Mover
 													m_interpData.duration);
 	}
 
-	private MoverBehavior createMoverBehavior(BehaviorType moverBehaviorType, MoverBehavior copiedBehavior = null)
+	public static MoverBehavior createMoverBehavior(BehaviorType moverBehaviorType, MoverBehavior copiedBehavior = null)
 	{
 		// Update this whenever a new Mover Behavior is created.
 		MoverBehavior newMoverBehavior = null;
-		switch (moverBehaviorType)
-		{
-			case (BehaviorType.LinearInput):
-			{
-				newMoverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
-			}
-			break;
-			case (BehaviorType.RigidBodyForceInput):
-			{
-				newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
-			}
-			break;
-		}
+		//switch (moverBehaviorType)
+		//{
+		//	case (BehaviorType.LinearInput):
+		//	{
+		//		newMoverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
+		//	}
+		//	break;
+		//	case (BehaviorType.RigidBodyForceInput):
+		//	{
+		//		newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
+		//	}
+		//	break;
+		//	case (BehaviorType.AttachToSurface):
+		//	{
+		//		newMoverBehavior = ScriptableObject.CreateInstance<SurfaceMoverBehavior>();
+		//	}
+		//	break;
+		//}
 
-		if (newMoverBehavior != null)
-		{
-			if (copiedBehavior != null)
-			{
-				newMoverBehavior.initialize(copiedBehavior);
-			}
-			else
-			{
-				newMoverBehavior.initialize();
-			}
-		}
+		//if (newMoverBehavior != null)
+		//{
+		//	if (copiedBehavior != null)
+		//	{
+		//		newMoverBehavior.initialize(copiedBehavior);
+		//	}
+		//	else
+		//	{
+		//		newMoverBehavior.initialize();
+		//	}
+		//}
 
 		return newMoverBehavior;
 	}

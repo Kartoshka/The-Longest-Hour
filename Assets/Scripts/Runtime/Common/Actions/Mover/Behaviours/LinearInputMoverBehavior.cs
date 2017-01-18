@@ -7,6 +7,8 @@ using MOJ.Helpers;
 /// <summary>
 /// A mover behavior for directional movement.
 /// </summary>
+[Serializable]
+[AddComponentMenu("MOJCustom/Mover/Linear Input Mover Behaviour")]
 public class LinearInputMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -14,6 +16,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
+	[HideInInspector]
 	private LinearInputMoverBehaviorData m_data = new LinearInputMoverBehaviorData();
 
 	#endregion
@@ -48,18 +51,6 @@ public class LinearInputMoverBehavior : MoverBehavior
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Interface Methods
-	//////////////////////////////////////////////////////////////////////////////////////////
-
-	public override Vector3 getTargetPosition(Transform transform)
-	{
-		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetOffset();
-		return targetPosition;
-	}
-
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
@@ -69,7 +60,6 @@ public class LinearInputMoverBehavior : MoverBehavior
 	public Vector3 getForwardStepSize() { return m_data.forwardStepSize; }
 	public void setForwardStepSize(Vector3 forwardStepSize) { m_data.forwardStepSize = forwardStepSize; }
 
-
 	public Vector3 getReverseStepSize() { return m_data.reverseStepSize; }
 	public void setReverseStepSize(Vector3 reverseStepSize) { m_data.reverseStepSize = reverseStepSize; }
 
@@ -78,6 +68,16 @@ public class LinearInputMoverBehavior : MoverBehavior
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	// Return the position that would occur if a move was performed.
+	public override Vector3 getTargetPosition(Transform transform)
+	{
+		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
+		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetOffset();
+		return targetPosition;
+	}
+
+	// Updates the transform based on the behavior.
+	// Returns true if the state of the transform changed.
 	// This ignores interpolation.
 	public override bool tryMove(Transform transform, float deltaTime)
 	{

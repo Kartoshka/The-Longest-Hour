@@ -90,7 +90,7 @@ Material:
       second: 1
     - first:
         name: _DotProduct
-      second: -0.316
+      second: 0.425
     - first:
         name: _DstBlend
       second: 0

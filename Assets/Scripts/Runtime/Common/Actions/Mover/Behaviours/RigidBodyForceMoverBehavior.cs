@@ -8,6 +8,8 @@ using MOJ.Helpers;
 /// A mover behavior for jumping movement.
 /// Reference: https://forum.unity3d.com/threads/mario-style-jumping.381906/
 /// </summary>
+[Serializable]
+[AddComponentMenu("MOJCustom/Mover/Rigid Body Force Mover Behaviour")]
 public class RigidBodyForceMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -15,6 +17,7 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
+	[HideInInspector]
 	private RigidBodyForceMoverBehaviorData m_data = new RigidBodyForceMoverBehaviorData();
 
 	private float m_timeCounter = 0.0f;
@@ -56,19 +59,6 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Interface Methods
-	//////////////////////////////////////////////////////////////////////////////////////////
-
-	public override Vector3 getTargetPosition(Transform transform)
-	{
-		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-
-		simulate();
-		return m_data.rigidBody.transform.position;
-	}
-
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
@@ -98,6 +88,17 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	// Return the position that would occur if a move was performed.
+	public override Vector3 getTargetPosition(Transform transform)
+	{
+		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
+
+		simulate();
+		return m_data.rigidBody.transform.position;
+	}
+
+	// Updates the transform based on the behavior.
+	// Returns true if the state of the transform changed.
 	// This ignores interpolation.
 	public override bool tryMove(Transform transform, float deltaTime)
 	{

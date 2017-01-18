@@ -8,6 +8,7 @@ using MOJ.Helpers;
 /// An component for controlling the movement of the entity.
 /// </summary>
 [Serializable]
+[AddComponentMenu("MOJCustom/Mover/Mover Component")]
 public class MoverComponent : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +40,7 @@ public class MoverComponent : MonoBehaviour
 
 	private Observer<MoverComponent> m_observer;
 
+	[SerializeField]
 	private Transform m_transformComponent = null;
 
 	[SerializeField]
@@ -61,6 +63,9 @@ public class MoverComponent : MonoBehaviour
 
 	public ActionTypeFlag getActionTypeFlags() { return m_actionTypeFlags; }
 	public void setActionTypeFlags(ActionTypeFlag actionTypeFlags) { m_actionTypeFlags = actionTypeFlags; }
+
+	public Transform getTransform() { return m_transformComponent; }
+	public void setTransform(Transform transform) { m_transformComponent = transform; }
 
 	public bool getAlwaysUpdate() {	return m_alwaysUpdate; }
 	public void setAlwaysUpdate(bool alwaysUpdate) { m_alwaysUpdate = alwaysUpdate; }
@@ -91,7 +96,7 @@ public class MoverComponent : MonoBehaviour
 	public void createMoverAction(ActionTypeFlag moverAction)
 	{
 		Mover mover;
-		if (!m_actionMovers.Dictionary.TryGetValue(moverAction, out mover))
+		if (!m_actionMovers.Dictionary.TryGetValue(moverAction, out mover) || mover == null)
 		{
 			mover = new Mover();
 			m_actionMovers.Dictionary.Add(moverAction, mover);
@@ -101,7 +106,7 @@ public class MoverComponent : MonoBehaviour
 	public void removeMoverAction(ActionTypeFlag moverAction)
 	{
 		Mover mover;
-		if (m_actionMovers.Dictionary.TryGetValue(moverAction, out mover))
+		if (m_actionMovers.Dictionary.TryGetValue(moverAction, out mover) && mover != null)
 		{
 			mover.deInit();
 		}
@@ -145,7 +150,10 @@ public class MoverComponent : MonoBehaviour
 
 	protected virtual void initialize()
 	{
-		m_transformComponent = GetComponent<Transform>();
+		if(m_transformComponent == null)
+		{
+			m_transformComponent = GetComponent<Transform>();
+		}
 		if (!m_alwaysUpdate)
 		{
 			this.enabled = false;
