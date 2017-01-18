@@ -1,6 +1,7 @@
 ﻿Shader "Custom/AlphaToggle" {
 	Properties {
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_Color("Color Tint", Color) = (1,1,1,1)
 		_AlphaValue("Alpha" , Range(-1, 1)) = 1
 	}
 	SubShader {
@@ -19,6 +20,7 @@
 
 		sampler2D _MainTex;
 		float _AlphaValue;
+		fixed4 _Color;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -26,7 +28,7 @@
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 			o.Albedo = c.rgb;
 			o.Alpha =  _AlphaValue;
 		}
