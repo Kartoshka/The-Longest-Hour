@@ -51,7 +51,7 @@ public class AnimInputController : MonoBehaviour
 
 	private void ProcessInputs()
 	{
-		float normalizedRunSpeed = Input.GetAxis("Horizontal");
+		float normalizedRunSpeed = Math.Abs(Input.GetAxis("Horizontal")) + Math.Abs(Input.GetAxis("Vertical"));
 		//float normalizedRunSpeed = velocity.normalized.x;
 		m_animator.SetFloat(m_parameterName, normalizedRunSpeed);
     }
