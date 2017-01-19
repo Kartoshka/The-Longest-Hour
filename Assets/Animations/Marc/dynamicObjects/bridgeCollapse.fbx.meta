@@ -1,0 +1,343 @@
+fileFormatVersion: 2
+guid: 5d976974d94252441a6415014a9d581d
+timeCreated: 1484507243
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bridgePiece_L1
+    100004: bridgePiece_L2
+    100006: bridgePiece_L3
+    100008: bridgePiece_L4
+    100010: bridgePiece_L5
+    100012: bridgePiece_L6
+    100014: bridgePiece_L7
+    100016: bridgePiece_L8
+    100018: bridgePiece_R1
+    100020: bridgePiece_R2
+    100022: bridgePiece_R3
+    100024: bridgePiece_R4
+    100026: bridgePiece_R5
+    100028: bridgePiece_R6
+    100030: bridgePiece_R7
+    100032: bridgePiece_R8
+    400000: //RootNode
+    400002: bridgePiece_L1
+    400004: bridgePiece_L2
+    400006: bridgePiece_L3
+    400008: bridgePiece_L4
+    400010: bridgePiece_L5
+    400012: bridgePiece_L6
+    400014: bridgePiece_L7
+    400016: bridgePiece_L8
+    400018: bridgePiece_R1
+    400020: bridgePiece_R2
+    400022: bridgePiece_R3
+    400024: bridgePiece_R4
+    400026: bridgePiece_R5
+    400028: bridgePiece_R6
+    400030: bridgePiece_R7
+    400032: bridgePiece_R8
+    2300000: bridgePiece_L1
+    2300002: bridgePiece_L2
+    2300004: bridgePiece_L3
+    2300006: bridgePiece_L4
+    2300008: bridgePiece_L5
+    2300010: bridgePiece_L6
+    2300012: bridgePiece_L7
+    2300014: bridgePiece_L8
+    2300016: bridgePiece_R1
+    2300018: bridgePiece_R2
+    2300020: bridgePiece_R3
+    2300022: bridgePiece_R4
+    2300024: bridgePiece_R5
+    2300026: bridgePiece_R6
+    2300028: bridgePiece_R7
+    2300030: bridgePiece_R8
+    3300000: bridgePiece_L1
+    3300002: bridgePiece_L2
+    3300004: bridgePiece_L3
+    3300006: bridgePiece_L4
+    3300008: bridgePiece_L5
+    3300010: bridgePiece_L6
+    3300012: bridgePiece_L7
+    3300014: bridgePiece_L8
+    3300016: bridgePiece_R1
+    3300018: bridgePiece_R2
+    3300020: bridgePiece_R3
+    3300022: bridgePiece_R4
+    3300024: bridgePiece_R5
+    3300026: bridgePiece_R6
+    3300028: bridgePiece_R7
+    3300030: bridgePiece_R8
+    4300000: bridgePiece_R1
+    4300002: bridgePiece_R2
+    4300004: bridgePiece_R3
+    4300006: bridgePiece_R4
+    4300008: bridgePiece_R5
+    4300010: bridgePiece_R6
+    4300012: bridgePiece_R7
+    4300014: bridgePiece_R8
+    4300016: bridgePiece_L8
+    4300018: bridgePiece_L7
+    4300020: bridgePiece_L6
+    4300022: bridgePiece_L5
+    4300024: bridgePiece_L4
+    4300026: bridgePiece_L3
+    4300028: bridgePiece_L2
+    4300030: bridgePiece_L1
+    7400000: Collapse
+    7400002: Intact
+    7400004: Broken
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Collapse
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bridgePiece_L1
+        weight: 1
+      - path: bridgePiece_L2
+        weight: 1
+      - path: bridgePiece_L3
+        weight: 1
+      - path: bridgePiece_L4
+        weight: 1
+      - path: bridgePiece_L5
+        weight: 1
+      - path: bridgePiece_L6
+        weight: 1
+      - path: bridgePiece_L7
+        weight: 1
+      - path: bridgePiece_L8
+        weight: 1
+      - path: bridgePiece_R1
+        weight: 1
+      - path: bridgePiece_R2
+        weight: 1
+      - path: bridgePiece_R3
+        weight: 1
+      - path: bridgePiece_R4
+        weight: 1
+      - path: bridgePiece_R5
+        weight: 1
+      - path: bridgePiece_R6
+        weight: 1
+      - path: bridgePiece_R7
+        weight: 1
+      - path: bridgePiece_R8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Intact
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bridgePiece_L1
+        weight: 1
+      - path: bridgePiece_L2
+        weight: 1
+      - path: bridgePiece_L3
+        weight: 1
+      - path: bridgePiece_L4
+        weight: 1
+      - path: bridgePiece_L5
+        weight: 1
+      - path: bridgePiece_L6
+        weight: 1
+      - path: bridgePiece_L7
+        weight: 1
+      - path: bridgePiece_L8
+        weight: 1
+      - path: bridgePiece_R1
+        weight: 1
+      - path: bridgePiece_R2
+        weight: 1
+      - path: bridgePiece_R3
+        weight: 1
+      - path: bridgePiece_R4
+        weight: 1
+      - path: bridgePiece_R5
+        weight: 1
+      - path: bridgePiece_R6
+        weight: 1
+      - path: bridgePiece_R7
+        weight: 1
+      - path: bridgePiece_R8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Broken
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bridgePiece_L1
+        weight: 1
+      - path: bridgePiece_L2
+        weight: 1
+      - path: bridgePiece_L3
+        weight: 1
+      - path: bridgePiece_L4
+        weight: 1
+      - path: bridgePiece_L5
+        weight: 1
+      - path: bridgePiece_L6
+        weight: 1
+      - path: bridgePiece_L7
+        weight: 1
+      - path: bridgePiece_L8
+        weight: 1
+      - path: bridgePiece_R1
+        weight: 1
+      - path: bridgePiece_R2
+        weight: 1
+      - path: bridgePiece_R3
+        weight: 1
+      - path: bridgePiece_R4
+        weight: 1
+      - path: bridgePiece_R5
+        weight: 1
+      - path: bridgePiece_R6
+        weight: 1
+      - path: bridgePiece_R7
+        weight: 1
+      - path: bridgePiece_R8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
