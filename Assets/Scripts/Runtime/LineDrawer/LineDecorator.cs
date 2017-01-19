@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// If this is a component:
-///     Retrieves Unity information and passes it to the abstract data type.
-/// </summary>
-public class RuntimeScriptTemplate : MonoBehaviour
+public class LineDecorator : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
 	//////////////////////////////////////////////////////////////////////////////////////////
+
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -26,6 +23,14 @@ public class RuntimeScriptTemplate : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public BezierSpline m_spline;
+
+	public int m_frequencyPerSegment;
+
+	public bool m_lookForward;
+
+	public Transform[] m_decorations;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -36,32 +41,65 @@ public class RuntimeScriptTemplate : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
+	public void decorateSegment(int index)
+	{
+		if (m_frequencyPerSegment <= 0 || m_decorations == null || m_decorations.Length == 0)
+		{
+			return;
+		}
+
+		float stepSize = m_frequencyPerSegment * m_decorations.Length;
+		if (m_spline.Loop || stepSize == 1)
+		{
+			stepSize = 1f / stepSize;
+		}
+		else
+		{
+			stepSize = 1f / (stepSize - 1);
+		}
+
+		for (int p = 0, f = 0; f < m_frequencyPerSegment; f++)
+		{
+			for (int i = 0; i < m_decorations.Length; i++, p++)
+			{
+				Transform item = Instantiate(m_decorations[i]) as Transform;
+				Vector3 position = m_spline.GetPoint(p * stepSize);
+				item.transform.localPosition = position;
+				if (m_lookForward)
+				{
+					item.transform.LookAt(position + m_spline.GetDirection(p * stepSize));
+				}
+				item.transform.parent = transform;
+			}
+		}
+	}
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
 	// Use this for initialization
-	void Start ()
-    {
+	void Start()
+	{
 
-    }
-	
-    // Update is called once per frame
-    void Update ()
-    {
-        ProcessInputs();
-    }
+	}
 
-    private void ProcessInputs()
-    {
+	// Update is called once per frame
+	void Update()
+	{
+		ProcessInputs();
+	}
 
-    }
+	private void ProcessInputs()
+	{
 
-    #endregion
-    //////////////////////////////////////////////////////////////////////////////////////////
-    #region Persistence
-    //////////////////////////////////////////////////////////////////////////////////////////
+	}
 
-    #endregion
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Persistence
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	#endregion
 }
