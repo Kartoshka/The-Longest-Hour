@@ -2,8 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// If this is a component:
-///     Retrieves Unity information and passes it to the abstract data type.
+/// 
 /// </summary>
 public class RuntimeScriptTemplate : MonoBehaviour
 {

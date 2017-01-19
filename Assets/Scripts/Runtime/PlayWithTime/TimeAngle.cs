@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using MOJ.Helpers;
+
 /// <summary>
-/// 
+///
 /// </summary>
-public class TimeShifter : MonoBehaviour
+public class TimeAngle : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
@@ -16,9 +18,13 @@ public class TimeShifter : MonoBehaviour
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public Transform m_transform;
+	public Transform m_targetTransform;
 	public AnimParameterController m_animCtrl;
 	public float m_rate = 1.0f;
+
+	private Vector3 m_previousAimDirection;
+
+	private float m_angle; // TODO: Remove this. It's just for debugging.
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -58,15 +64,36 @@ public class TimeShifter : MonoBehaviour
 	{
 		ProcessInputs();
 
-		if(m_transform)
+		if (m_targetTransform)
 		{
-			float dot = Vector3.Dot(m_transform.up, Vector3.up);
-			m_time += m_rate * dot;
+			Vector3 currentAimDirection = m_targetTransform.position - this.transform.position;
+            //float dot = Vector3.Dot(currentAimDirection, m_previousAimDirection);
+
+			float turnAngle = GeometryHelper.get2DTurnDirection(
+				this.transform.position.x, this.transform.position.z 
+				, currentAimDirection.x, currentAimDirection.z
+				, m_previousAimDirection.x, m_previousAimDirection.z);
+
+			m_angle = turnAngle; // TODO: Remove this. It's just for debugging.
+
+			m_time += m_rate * turnAngle;
+			Vector3.Angle(m_previousAimDirection, currentAimDirection);
+			if(turnAngle < 0)
+			{
+				m_time += Vector3.Angle(m_previousAimDirection, currentAimDirection) * m_rate;
+			}
+			else
+			{
+				m_time -= Vector3.Angle(m_previousAimDirection, currentAimDirection) * m_rate;
+			}
+
 			m_time = Mathf.Clamp01(m_time);
-			if(m_animCtrl)
+			if (m_animCtrl)
 			{
 				m_animCtrl.setParamValue(m_animCtrl.timeParameter, m_time);
-            }
+			}
+
+			m_previousAimDirection = currentAimDirection;
 		}
 	}
 

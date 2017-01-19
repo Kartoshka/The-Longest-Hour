@@ -23,7 +23,7 @@ public class LineDrawerComponent : MonoBehaviour
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public BezierSpline m_bezierSplineComponent;
+	public BezierSpline m_bezierSplineComponent; // TODO: Remove this to get rid of duplication.
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -61,6 +61,28 @@ public class LineDrawerComponent : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
+	private void reset()
+	{
+		if (m_bezierSpline)
+		{
+			m_bezierSpline.Reset();
+			m_splinePointCount = 0;
+        }
+
+		if (m_particles)
+		{
+			m_particles.Stop();
+			m_particles.Clear();
+        }
+
+		if(m_lineWalker)
+		{
+			m_lineWalker.stop();
+		}
+
+		m_currentState = DrawState.Uncreated;
+    }
+
 	private bool checkIsComplete()
 	{
 		bool isComplete = false;
@@ -90,10 +112,7 @@ public class LineDrawerComponent : MonoBehaviour
 	void Start()
 	{
 		m_bezierSpline = m_bezierSplineComponent;
-		if(m_particles)
-		{
-			m_particles.Stop();
-        }
+		reset();
 	}
 
 	// Update is called once per frame
@@ -185,12 +204,17 @@ public class LineDrawerComponent : MonoBehaviour
 
 	private void ProcessInputs()
 	{
-		if(m_currentState == DrawState.Uncreated)
+		if (m_currentState == DrawState.Uncreated)
 		{
-			if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 			{
 				m_currentState = DrawState.Adding;
 			}
+		}
+		if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+		{
+			reset();
+			m_currentState = DrawState.Uncreated;
 		}
 	}
 

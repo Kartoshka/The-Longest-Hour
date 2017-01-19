@@ -4,21 +4,18 @@ using System.Collections;
 /// <summary>
 /// 
 /// </summary>
-public class TimeShifter : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
 	//////////////////////////////////////////////////////////////////////////////////////////
-
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public Transform m_transform;
-	public AnimParameterController m_animCtrl;
-	public float m_rate = 1.0f;
+	public Transform m_target;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +27,8 @@ public class TimeShifter : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	private float m_time = 0.0f;
+	public float m_closeness = 1.0f;
+	public Vector3 m_offset = Vector3.zero;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -56,23 +54,7 @@ public class TimeShifter : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		ProcessInputs();
-
-		if(m_transform)
-		{
-			float dot = Vector3.Dot(m_transform.up, Vector3.up);
-			m_time += m_rate * dot;
-			m_time = Mathf.Clamp01(m_time);
-			if(m_animCtrl)
-			{
-				m_animCtrl.setParamValue(m_animCtrl.timeParameter, m_time);
-            }
-		}
-	}
-
-	private void ProcessInputs()
-	{
-
+		this.transform.position = Vector3.Lerp(this.transform.position, m_target.position, m_closeness * Time.deltaTime) + m_offset;
 	}
 
 	#endregion

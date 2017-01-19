@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -133,7 +133,9 @@ MonoBehaviour:
   m_bezierSplineComponent: {fileID: 369870342}
   m_newPointDistance: 1.5
   m_curveMode: 2
-  m_lineRenderer: {fileID: 0}
+  m_particles: {fileID: 0}
+  m_completionDistanceCheck: 0
+  m_lineWalker: {fileID: 0}
 --- !u!1 &369870341
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,10 +358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8608fa18baf8cf64d94916528c151aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enableUserInput: 1
+  m_targetPositionOffset: {x: 0, y: 0, z: 0}
+  m_moveRelative: 1
   m_data:
-    forwardStepSize: {x: 0.2, y: 0.2, z: 0}
-    reverseStepSize: {x: 0.2, y: 0.2, z: 0}
-    enableUserInput: 1
+    forwardStepSize: {x: 0.2, y: 0, z: 0.2}
+    reverseStepSize: {x: 0.2, y: 0, z: 0.2}
 --- !u!114 &1646101123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,8 +379,7 @@ MonoBehaviour:
   m_actionMovers:
     m_keys: 01000000
     m_values:
-    - m_behaviorType: -1
-      m_behavior: {fileID: 1646101122}
+    - m_behavior: {fileID: 1646101122}
       m_interpData:
         interpolationType: 1
         easingType: 0
@@ -390,10 +393,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646101121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
   - {fileID: 103224259}
   - {fileID: 1969384600}
