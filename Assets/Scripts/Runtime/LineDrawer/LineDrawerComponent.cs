@@ -43,6 +43,8 @@ public class LineDrawerComponent : MonoBehaviour
 	public float m_completionDistanceCheck;
 	public LineWalker m_lineWalker;
 
+	public TimeAngle m_timeAngle; //TODO: Remove this. We just want an easy way to reset on start.
+
 	private BezierSpline m_bezierSpline;
 	private DrawState m_currentState = DrawState.Uncreated;
 	private int m_splinePointCount = 0;
@@ -113,6 +115,12 @@ public class LineDrawerComponent : MonoBehaviour
 	{
 		m_bezierSpline = m_bezierSplineComponent;
 		reset();
+
+		// TODO: Remove this once we have a cleaner way to reset this.
+		if (m_timeAngle)
+		{
+			m_timeAngle.reset();
+		}
 	}
 
 	// Update is called once per frame
@@ -182,6 +190,12 @@ public class LineDrawerComponent : MonoBehaviour
 
 				if (checkIsComplete())
 				{
+					// TODO: Remove this once we have a cleaner way to reset this.
+					if (m_timeAngle)
+					{
+						m_timeAngle.reset();
+					}
+
 					m_currentState = DrawState.Complete;
 				}
 				break;

@@ -62,9 +62,9 @@ public class GeometryHelper
 	/// Find the bend direction between three points, where P1 is the elbow between P2 and P3.
 	/// </summary>
 	/// <returns> Returns 0 if colinear, positive if counterClockwise, negative if clockwise.</returns>
-	public static float get2DTurnDirection(float x1, float y1, float x2, float y2, float x3, float y3)
+	public static float get2DTurnDirection(float Ax, float Ay, float Bx, float By, float Cx, float Cy)
 	{
-		return (x2 - x1)*(y3-y1) - (y2 - y1)*(x3-x1);
+		return  (Bx-Ax)*(Cy-Ay) - (By-Ay)*(Cx-Ax);
 	}
 
 	public static HitPoint retrieveHitPoint(RaycastHit hit)
