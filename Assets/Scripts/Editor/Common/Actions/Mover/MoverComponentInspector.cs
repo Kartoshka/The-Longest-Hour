@@ -35,8 +35,14 @@ public class MoverComponentInspector : Editor
 			moverComponent.setTransform(transformComponent);
 		}
 
+		EditorGUI.BeginChangeCheck();
 		MoverComponent.ActionTypeFlag allActions = (MoverComponent.ActionTypeFlag)EditorGUILayout.EnumMaskField("Mover Actions", moverComponent.getActionTypeFlags());
-		moverComponent.setActionTypeFlags(allActions);
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(moverComponent, "Mover Actions");
+			EditorUtility.SetDirty(moverComponent);
+			moverComponent.setActionTypeFlags(allActions);
+		}
 
 		Dictionary<MoverComponent.ActionTypeFlag, Mover> actionMoverBehaviors = moverComponent.getActionMovers();
 
@@ -72,52 +78,48 @@ public class MoverComponentInspector : Editor
 
 					if(moverBehavior != null)
 					{
-						bool canInterpolate;
-						createMoverBehaviorUI(moverBehavior, out canInterpolate);
+						createMoverBehaviorUI(moverBehavior);
 
-						if (canInterpolate)
+						EditorGUI.BeginChangeCheck();
+						InterpolationHelper.InterpolationType interpolationType = (InterpolationHelper.InterpolationType)EditorGUILayout.EnumPopup("Interpolation Type", mover.getInterpolationType());
+						if (EditorGUI.EndChangeCheck())
 						{
-							EditorGUI.BeginChangeCheck();
-							InterpolationHelper.InterpolationType interpolationType = (InterpolationHelper.InterpolationType)EditorGUILayout.EnumPopup("Interpolation Type", mover.getInterpolationType());
-							if (EditorGUI.EndChangeCheck())
+							Undo.RecordObject(moverComponent, "Interpolation Type");
+							EditorUtility.SetDirty(moverComponent);
+							mover.setInterpolationType(interpolationType);
+						}
+
+						if (interpolationType != InterpolationHelper.InterpolationType.None
+							&& interpolationType != InterpolationHelper.InterpolationType.Undefined)
+						{
+							if (interpolationType != InterpolationHelper.InterpolationType.Linear)
 							{
-								Undo.RecordObject(moverComponent, "Interpolation Type");
-								EditorUtility.SetDirty(moverComponent);
-								mover.setInterpolationType(interpolationType);
+								EditorGUI.BeginChangeCheck();
+								InterpolationHelper.EasingType easingType = (InterpolationHelper.EasingType)EditorGUILayout.EnumPopup("Easing Type", mover.getEasingType());
+								if (EditorGUI.EndChangeCheck())
+								{
+									Undo.RecordObject(moverComponent, "Easing Type");
+									EditorUtility.SetDirty(moverComponent);
+									mover.setEasingType(easingType);
+								}
 							}
 
-							if (interpolationType != InterpolationHelper.InterpolationType.None
-								&& interpolationType != InterpolationHelper.InterpolationType.Undefined)
+							EditorGUI.BeginChangeCheck();
+							float duration = EditorGUILayout.FloatField("Duration (seconds)", mover.getDuration());
+							if (EditorGUI.EndChangeCheck())
 							{
-								if (interpolationType != InterpolationHelper.InterpolationType.Linear)
-								{
-									EditorGUI.BeginChangeCheck();
-									InterpolationHelper.EasingType easingType = (InterpolationHelper.EasingType)EditorGUILayout.EnumPopup("Easing Type", mover.getEasingType());
-									if (EditorGUI.EndChangeCheck())
-									{
-										Undo.RecordObject(moverComponent, "Easing Type");
-										EditorUtility.SetDirty(moverComponent);
-										mover.setEasingType(easingType);
-									}
-								}
+								Undo.RecordObject(moverComponent, "Duration");
+								EditorUtility.SetDirty(moverComponent);
+								mover.setDuration(duration);
+							}
 
-								EditorGUI.BeginChangeCheck();
-								float duration = EditorGUILayout.FloatField("Duration (seconds)", mover.getDuration());
-								if (EditorGUI.EndChangeCheck())
-								{
-									Undo.RecordObject(moverComponent, "Duration");
-									EditorUtility.SetDirty(moverComponent);
-									mover.setDuration(duration);
-								}
-
-								EditorGUI.BeginChangeCheck();
-								float updateRate = EditorGUILayout.FloatField("Update Rate (seconds)", mover.getUpdateRate());
-								if (EditorGUI.EndChangeCheck())
-								{
-									Undo.RecordObject(moverComponent, "Update Rate");
-									EditorUtility.SetDirty(moverComponent);
-									mover.setUpdateRate(updateRate);
-								}
+							EditorGUI.BeginChangeCheck();
+							float updateRate = EditorGUILayout.FloatField("Update Rate (seconds)", mover.getUpdateRate());
+							if (EditorGUI.EndChangeCheck())
+							{
+								Undo.RecordObject(moverComponent, "Update Rate");
+								EditorUtility.SetDirty(moverComponent);
+								mover.setUpdateRate(updateRate);
 							}
 						}
 					}
@@ -132,26 +134,51 @@ public class MoverComponentInspector : Editor
 		serializedObject.ApplyModifiedProperties();
 	}
 
-	private void createMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
+	private void createMoverBehaviorUI(MoverBehavior moverBehavior)
 	{
-		canInterpolate = false;
+		EditorGUI.BeginChangeCheck();
+		bool moveRelative = EditorGUILayout.Toggle("Relative Movement", moverBehavior.getMoveRelative());
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(moverBehavior, "Relative Movement");
+			EditorUtility.SetDirty(moverBehavior);
+			moverBehavior.setMoveRelative(moveRelative);
+		}
+
+		EditorGUI.BeginChangeCheck();
+		bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", moverBehavior.getEnableUserInput());
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(moverBehavior, "Enable User Input");
+			EditorUtility.SetDirty(moverBehavior);
+			moverBehavior.setEnableUserInput(enableUserInput);
+		}
+
 		if(moverBehavior.GetType().Equals(typeof(LinearInputMoverBehavior)))
 		{
-			createLinearInputMoverBehaviorUI(moverBehavior, out canInterpolate);
+			createLinearInputMoverBehaviorUI(moverBehavior);
         }
 		else if(moverBehavior.GetType().Equals(typeof(RigidBodyForceMoverBehavior)))
 		{
-			createRigidBodyForceMoverBehaviorUI(moverBehavior, out canInterpolate);
+			createRigidBodyForceMoverBehaviorUI(moverBehavior);
 		}
 		else if (moverBehavior.GetType().Equals(typeof(SurfaceMoverBehavior)))
 		{
-			createAttachToSurfaceMoverBehaviorUI(moverBehavior, out canInterpolate);
+			createAttachToSurfaceMoverBehaviorUI(moverBehavior);
+		}
+
+		EditorGUI.BeginChangeCheck();
+		Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", moverBehavior.getTargetPositionOffset());
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(moverBehavior, "Position Offset");
+			EditorUtility.SetDirty(moverBehavior);
+			moverBehavior.setTargetPositionOffset(positionOffset);
 		}
 	}
 
-	private void createLinearInputMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
+	private void createLinearInputMoverBehaviorUI(MoverBehavior moverBehavior)
 	{
-		canInterpolate = false;
 		LinearInputMoverBehavior linearMover = moverBehavior as LinearInputMoverBehavior;
 		if (linearMover != null)
 		{
@@ -172,22 +199,11 @@ public class MoverComponentInspector : Editor
 				EditorUtility.SetDirty(linearMover);
 				linearMover.setReverseStepSize(reverseStepSize);
 			}
-
-			EditorGUI.BeginChangeCheck();
-			bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", linearMover.getEnableUserInput());
-			if (EditorGUI.EndChangeCheck())
-			{
-				Undo.RecordObject(linearMover, "Enable User Input");
-				EditorUtility.SetDirty(linearMover);
-				linearMover.setEnableUserInput(enableUserInput);
-			}
-			canInterpolate = !enableUserInput;
 		}
 	}
 
-	private void createRigidBodyForceMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
+	private void createRigidBodyForceMoverBehaviorUI(MoverBehavior moverBehavior)
 	{
-		canInterpolate = false;
 		RigidBodyForceMoverBehavior rigidBodyForceMover = moverBehavior as RigidBodyForceMoverBehavior;
 		if (rigidBodyForceMover != null)
 		{
@@ -251,20 +267,19 @@ public class MoverComponentInspector : Editor
 		}
 	}
 
-	private void createAttachToSurfaceMoverBehaviorUI(MoverBehavior moverBehavior, out bool canInterpolate)
+	private void createAttachToSurfaceMoverBehaviorUI(MoverBehavior moverBehavior)
 	{
-		canInterpolate = false;
 		SurfaceMoverBehavior surfaceMover = moverBehavior as SurfaceMoverBehavior;
 		if (surfaceMover != null)
 		{
-			EditorGUI.BeginChangeCheck();
-			Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", surfaceMover.getPositionOffset());
-			if (EditorGUI.EndChangeCheck())
-			{
-				Undo.RecordObject(surfaceMover, "Position Offset");
-				EditorUtility.SetDirty(surfaceMover);
-				surfaceMover.setPositionOffset(positionOffset);
-			}
+			//EditorGUI.BeginChangeCheck();
+			//Vector3 positionOffset = EditorGUILayout.Vector3Field("Position Offset", surfaceMover.getPositionOffset());
+			//if (EditorGUI.EndChangeCheck())
+			//{
+			//	Undo.RecordObject(surfaceMover, "Position Offset");
+			//	EditorUtility.SetDirty(surfaceMover);
+			//	surfaceMover.setPositionOffset(positionOffset);
+			//}
 
 			EditorGUILayout.LabelField("Surface Checker Transform");
 			EditorGUI.BeginChangeCheck();
@@ -304,17 +319,6 @@ public class MoverComponentInspector : Editor
 				EditorUtility.SetDirty(surfaceMover);
 				surfaceMover.setFrictionValue(Mathf.Clamp01(friction));
 			}
-
-			EditorGUI.BeginChangeCheck();
-			bool enableUserInput = EditorGUILayout.Toggle("Enable User Input", surfaceMover.getEnableUserInput());
-			if (EditorGUI.EndChangeCheck())
-			{
-				Undo.RecordObject(surfaceMover, "Enable User Input");
-				EditorUtility.SetDirty(surfaceMover);
-				surfaceMover.setEnableUserInput(enableUserInput);
-			}
-
-			canInterpolate = !enableUserInput;
 		}
 	}
 

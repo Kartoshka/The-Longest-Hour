@@ -11,6 +11,7 @@ public class AnimInputController : MonoBehaviour
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public Rigidbody m_rigidBody;
 	public Animator m_animator;
 	public string m_parameterName;
 
@@ -51,6 +52,7 @@ public class AnimInputController : MonoBehaviour
 	private void ProcessInputs()
 	{
 		float normalizedRunSpeed = Input.GetAxis("Horizontal");
+		//float normalizedRunSpeed = velocity.normalized.x;
 		m_animator.SetFloat(m_parameterName, normalizedRunSpeed);
     }
 

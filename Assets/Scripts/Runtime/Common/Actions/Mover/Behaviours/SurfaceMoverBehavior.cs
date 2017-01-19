@@ -46,21 +46,18 @@ public class SurfaceMoverBehavior : MoverBehavior
 		initialize();
 	}
 
-	public override void initialize()
-	{
-		setCanInterpolate(false);
-	}
+	//public override void initialize()
+	//{
+	//	setCanInterpolate(false);
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	public bool getEnableUserInput() { return m_data.enableUserInput; }
-	public void setEnableUserInput(bool enableUserInput) { m_data.enableUserInput = enableUserInput; }
-
-	public Vector3 getPositionOffset() { return m_data.positionOffset; }
-	public void setPositionOffset(Vector3 positionOffset) { m_data.positionOffset = positionOffset; }
+	//public Vector3 getPositionOffset() { return m_data.positionOffset; }
+	//public void setPositionOffset(Vector3 positionOffset) { m_data.positionOffset = positionOffset; }
 
 	public Transform getSurfaceCheckSourceTransform() { return m_data.surfaceCheckSource; }
 	public void setSurfaceCheckSourceTransform(Transform transform) { m_data.surfaceCheckSource = transform; }
@@ -80,25 +77,10 @@ public class SurfaceMoverBehavior : MoverBehavior
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public override Vector3 getTargetPosition(Transform transform)
+	public override Vector3 getTargetPosition(Transform transform, float deltaTime = 0.0f)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
 
-		Vector3 position;
-		if (m_surfacePoint != null)
-		{
-			position = m_surfacePoint.position;
-		}
-		else
-		{
-			position = base.getTargetPosition(transform);
-		}
-		return position;
-	}
-
-	// This ignores interpolation.
-	public override bool tryMove(Transform transform, float deltaTime)
-	{
 		Vector3 rayCastDirection;
 		if (m_surfacePoint != null && m_surfacePoint.normal != Vector3.zero)
 		{
@@ -110,25 +92,42 @@ public class SurfaceMoverBehavior : MoverBehavior
 			rayCastDirection = m_data.defaultRayCastDirection;
 		}
 
+		Vector3 targetPosition;
 		updateHitPoint(m_data.surfaceCheckSource, rayCastDirection);
+		if (m_surfacePoint != null)
+		{
+			targetPosition = m_surfacePoint.position;
+		}
+		else
+		{
+			targetPosition = transform.position;
+		}
 
 		//Debug.DrawRay(m_data.surfaceCheckSource.position, rayCastDirection * 50, Color.green);
 		//Debug.DrawRay(m_surfacePoint.position, m_surfacePoint.normal * 2, Color.red);
-
-		transform.position = getTargetPosition(transform);
-		transform.Translate(m_data.positionOffset);
-        transform.up = m_surfacePoint.normal;
-        return true;
+		return targetPosition;
 	}
 
-	private void updateHitPoint(Transform transform, Vector3 rayCastDirection)
+	public override bool tryMove(Transform transform, float deltaTime = 0.0f)
+	{
+		bool success = base.tryMove(transform);
+		// Re-orient to surface and offset
+		if(m_surfacePoint != null)
+		{
+			transform.up = m_surfacePoint.normal;
+			transform.Translate(getTargetPositionOffset());
+		}
+        return success;
+	}
+
+	private void updateHitPoint(Transform sourceTransform, Vector3 rayCastDirection)
 	{
 		m_surfacePoint = null;
 		RaycastHit hit;
 		//Check for water surface below transform position
-		if (Physics.Raycast(transform.position, rayCastDirection, out hit, 500.0f, m_data.surfaceLayer))
+		if (Physics.Raycast(sourceTransform.position, rayCastDirection, out hit, 500.0f, m_data.surfaceLayer))
 		{
-			m_surfacePoint = GeometryHelper.retrieveHitPoint(hit, true);
+			m_surfacePoint = GeometryHelper.retrieveHitPoint(hit);
 		}
 	}
 
