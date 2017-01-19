@@ -12,12 +12,29 @@ using MOJ.Helpers;
 public class LinearInputMoverBehavior : MoverBehavior
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
+	#region Datatypes
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	//public enum InputDirections
+	//{
+	//	X,
+	//	Y,
+	//	Z
+	//}
+
+	//[Serializable]
+	//private class DirectionInputMap : SerializableDictionary<InputDirections, string> { }
+
+	#endregion
+	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Properties
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	[SerializeField]
 	[HideInInspector]
 	private LinearInputMoverBehaviorData m_data = new LinearInputMoverBehaviorData();
+	//[SerializeField]
+	//private DirectionInputMap m_inputMap = new DirectionInputMap();
 
 	private Vector3 m_inputMagnitude = Vector3.zero;
 
@@ -71,7 +88,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 	public override Vector3 getTargetPosition(Transform transform, float deltaTime = 0.0f)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-		Vector3 targetPosition = transform.position + calculateTargetPosition() + getTargetPositionOffset();
+		Vector3 targetPosition = transform.position + calculateTargetPosition(transform) + getTargetPositionOffset();
 		return targetPosition;
 	}
 
@@ -85,28 +102,38 @@ public class LinearInputMoverBehavior : MoverBehavior
 	//}
 
 	// Calculate the direction of the movement behavior after processing user inputs.
-	private Vector3 calculateTargetPosition()
+	private Vector3 calculateTargetPosition(Transform transform)
 	{
-		Vector3 horizontalStep = m_inputMagnitude.x > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
-		Vector3 verticalStep = m_inputMagnitude.y > 0 ? m_data.forwardStepSize : m_data.reverseStepSize;
-		//Vector3 depthStep;
+		float horizontalStep = m_inputMagnitude.x > 0 ? m_data.forwardStepSize.x : m_data.reverseStepSize.x;
+		float verticalStep = m_inputMagnitude.y > 0 ? m_data.forwardStepSize.y : m_data.reverseStepSize.y;
+		float depthStep = m_inputMagnitude.z > 0 ? m_data.forwardStepSize.z : m_data.reverseStepSize.z;
 
 		Vector3 finalDirection = Vector3.zero;
-		TransformHelper.setAxisValue(
-			ref finalDirection,
-			TransformHelper.HorizontalAxis,
-			TransformHelper.getAxisValue(horizontalStep, TransformHelper.HorizontalAxis) * m_inputMagnitude.x
-			);
-		TransformHelper.setAxisValue(
-			ref finalDirection,
-			TransformHelper.VerticalAxis,
-			TransformHelper.getAxisValue(verticalStep, TransformHelper.VerticalAxis) * m_inputMagnitude.y
-			);
-		//TransformHelper.setAxisValue(
-		//	ref finalDirection,
-		//	TransformHelper.DepthAxis,
-		//	TransformHelper.getAxisValue(depthStep, TransformHelper.DepthAxis) * m_inputMagnitude.z
-		//	);
+		if (getMoveRelative())
+		{
+			// Let x = right, z = forward, y = up. TODO: Perhaps get these axis from the TransformHelper.
+			finalDirection += transform.right * horizontalStep * m_inputMagnitude.x;
+			finalDirection += transform.up * verticalStep * m_inputMagnitude.y;
+			finalDirection += transform.forward * depthStep * m_inputMagnitude.z;
+		}
+		else
+		{
+			TransformHelper.setAxisValue(
+				ref finalDirection,
+				TransformHelper.HorizontalAxis,
+				horizontalStep * m_inputMagnitude.x
+				);
+			TransformHelper.setAxisValue(
+				ref finalDirection,
+				TransformHelper.VerticalAxis,
+				verticalStep * m_inputMagnitude.y
+				);
+			TransformHelper.setAxisValue(
+				ref finalDirection,
+				TransformHelper.DepthAxis,
+				depthStep * m_inputMagnitude.z
+				);
+		}
 		return finalDirection;
 	}
 
@@ -120,7 +147,8 @@ public class LinearInputMoverBehavior : MoverBehavior
 		if(getEnableUserInput())
 		{
 			m_inputMagnitude.x = Input.GetAxis("Horizontal");
-			m_inputMagnitude.y = Input.GetAxis("Vertical");
+			m_inputMagnitude.y = 0;
+			m_inputMagnitude.z = Input.GetAxis("Vertical");
 		}
 		else
 		{
