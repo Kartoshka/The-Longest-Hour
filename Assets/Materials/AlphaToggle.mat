@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 594c76dfb227c524b8139348864bbf89, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -72,7 +72,7 @@ Material:
     m_Floats:
     - first:
         name: _AlphaValue
-      second: 1
+      second: 0.5
     - first:
         name: _BumpScale
       second: 1

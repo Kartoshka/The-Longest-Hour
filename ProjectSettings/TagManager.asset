@@ -8,6 +8,7 @@ TagManager:
   - W_Mover
   - BGspawn
   - CurrentBG
+  - Global
   layers:
   - Default
   - TransparentFX

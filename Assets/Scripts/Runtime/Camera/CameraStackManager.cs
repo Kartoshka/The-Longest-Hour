@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FadingObjects;
 
-
-public class CameraManager : MonoBehaviour
+public class CameraStackManager : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Datatypes
+
 
 	private struct CameraStackData{
 		//Camera data
@@ -74,7 +75,7 @@ public class CameraManager : MonoBehaviour
 			if (c.desiredBlend <= 0) {
 				break;
 			} else if(c.desiredBlend<1.0){
-				c.desiredBlend += c.blendIncrement!=1.0f?c.blendIncrement * Time.deltaTime:1.0f;
+				c.desiredBlend += c.blendIncrement!=1.0f?c.blendIncrement * GlobalTimeManager.getDeltaTime():1.0f;
 			}
 				
 			apparentBlending = apparentBlending > c.desiredBlend ? c.desiredBlend : apparentBlending;
@@ -90,7 +91,7 @@ public class CameraManager : MonoBehaviour
 			if (apparentBlending > 0) {
 				gameCamStack.AddLast (c);
 			} else {
-				Destroy (c.cam.gameObject);
+				c.cam.Discard();
 			}
 		}
 
@@ -118,16 +119,13 @@ public class CameraManager : MonoBehaviour
 	void Start ()
 	{
 		this.gameCamStack = new LinkedList<CameraStackData> ();
-		this.baseGameplayCamera = ((GameObject)Instantiate (this.baseGameplayCamera.gameObject)).GetComponent<AbCamera> ();
 		this.addGameCam (this.baseGameplayCamera, 0f);
 	}
 
-	// Update is called once per frame
-	void Update ()
+	public void Update()
 	{
-		ProcessInputs();
+		ProcessInputs ();
 	}
-
 	private void ProcessInputs()
 	{
 		updateGameplayStack ();

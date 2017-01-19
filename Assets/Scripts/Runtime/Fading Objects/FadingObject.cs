@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FadingObjects;
 
 [RequireComponent(typeof(MeshRenderer))]
 public class FadingObject : TimeBasedObjects {
@@ -36,7 +37,7 @@ public class FadingObject : TimeBasedObjects {
 	protected override void RunningUpdate ()
 	{
 		accumulatedTime += Time.deltaTime;
-		float fade = (duration - accumulatedTime) / duration;
+		float fade = (duration - accumulatedTime)*initialFade / duration;
 		mat.SetFloat ("_AlphaValue", fade);
 			
 		if (accumulatedTime >= duration) {

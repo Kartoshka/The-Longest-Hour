@@ -37,13 +37,14 @@ public class ThirdPersonCamera : AbCamera {
 
 	public float minXAngke = -90;
 	public float maxXAngle = 90;
-
-
-	void Start () {
-		target = GameObject.FindGameObjectWithTag ("Player");
-	}
 		
 
+	void Start()
+	{
+		if (target == null) {
+			target = GameObject.FindGameObjectWithTag ("Player");
+		}
+	}
 	public override Vector3 getPosition()
 	{
 		targetCurrentPosition = target.transform.position;
@@ -85,5 +86,6 @@ public class ThirdPersonCamera : AbCamera {
 		return targetCurrentPosition;
 	}
 		
+
 }
 	
