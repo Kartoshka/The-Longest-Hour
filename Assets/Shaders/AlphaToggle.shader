@@ -2,11 +2,12 @@
 	Properties {
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_Color("Color Tint", Color) = (1,1,1,1)
-		_AlphaValue("Alpha" , Range(-1, 1)) = 1
+		_AlphaValue("Alpha" , Range(0, 1)) = 1
 	}
 	SubShader {
 		Tags{
-			"RenderType" = "Qpaque"
+			"RenderType" = "Transparent"
+			"RenderQueue" = "Transparent"
 		}
 
 		LOD 200
