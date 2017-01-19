@@ -41,6 +41,7 @@ public abstract class AbCamera : MonoBehaviour
 
 	public abstract Vector3 getTarget();
 
+	public bool destroyOnDiscard = true;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -62,6 +63,12 @@ public abstract class AbCamera : MonoBehaviour
 	private void ProcessInputs()
 	{
 
+	}
+
+	public void Discard(){
+		if (destroyOnDiscard) {
+			Destroy (this.gameObject);
+		}
 	}
 
 	#endregion

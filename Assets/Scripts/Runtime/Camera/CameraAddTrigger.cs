@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraAddTrigger : MonoBehaviour {
 
-	public CameraManager camMan;
+	public CameraStackManager camMan;
 	public AbCamera cameraToAdd;
 	public float blendInTime;
 
