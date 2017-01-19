@@ -9,9 +9,7 @@ public class GlobalTimeManager : TimeBasedObjects {
 	private static float lastUpdateTime = 0;
 	public IList<TimeBasedObjects> activeObjects;
 	private static GlobalTimeManager singleton;
-
-	public GlobalCameras globalCam;
-		
+	private static float delta;
 	public static GlobalTimeManager getInstance()
 	{
 		if (singleton == null) {
@@ -35,7 +33,6 @@ public class GlobalTimeManager : TimeBasedObjects {
 	
 	protected override void OnPause ()
 	{
-		Debug.Log (activeObjects.Count);
 		IEnumerator<TimeBasedObjects> listEnumerator = activeObjects.GetEnumerator ();
 		while(listEnumerator.MoveNext()) {
 			TimeBasedObjects current = listEnumerator.Current;
@@ -47,9 +44,6 @@ public class GlobalTimeManager : TimeBasedObjects {
 		}
 		Time.timeScale = 0f;
 
-		if (globalCam != null) {
-			globalCam.switchToFreeCamera ();
-		}
 	}
 
 	protected override void OnResume ()
@@ -64,29 +58,31 @@ public class GlobalTimeManager : TimeBasedObjects {
 			}
 		}
 
-		if (globalCam != null) {
-			globalCam.switchToPlayer ();
-		}
-
 		Time.timeScale = 1.0f;
 	}
 
 
 	public static float getDeltaTime()
 	{
-		float current = Time.time;
-		float delta = current - lastUpdateTime;
-		lastUpdateTime= current;
 		return delta;
 	}
 	protected override void PausedUpdate ()
 	{
-	
+		float current = Time.realtimeSinceStartup;
+		delta = current - lastUpdateTime;
+		lastUpdateTime = current;
 	}
 
 	protected override void RunningUpdate ()
 	{
+		float current = Time.realtimeSinceStartup;
+		delta = current - lastUpdateTime;
+		lastUpdateTime = current;
 	}
 
+	protected override void initialize ()
+	{
+		lastUpdateTime= Time.realtimeSinceStartup;;
+	}
 
 }

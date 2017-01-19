@@ -6,12 +6,14 @@ namespace FadingObjects{
 
 	public abstract class TimeBasedObjects : MonoBehaviour {
 
+		public string name;
 		private bool paused = false;
 
 		void Start()
 		{
-			Debug.Log ("start a timebased object");
+			Debug.Log (name);
 			GlobalTimeManager.registerTimedObject (this);
+			initialize ();
 		}
 		// Update is called once per frame
 		void Update () {
@@ -39,6 +41,8 @@ namespace FadingObjects{
 				OnResume ();
 			}
 		}
+
+		protected abstract void initialize();
 
 		protected abstract void OnPause ();
 

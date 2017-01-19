@@ -75,7 +75,7 @@ public class CameraStackManager : MonoBehaviour
 			if (c.desiredBlend <= 0) {
 				break;
 			} else if(c.desiredBlend<1.0){
-				c.desiredBlend += c.blendIncrement!=1.0f?c.blendIncrement * GlobalTimeManager.getDeltaTime():1.0f;
+				c.desiredBlend += c.blendIncrement!=-1.0f?c.blendIncrement * GlobalTimeManager.getDeltaTime():1.0f;
 			}
 				
 			apparentBlending = apparentBlending > c.desiredBlend ? c.desiredBlend : apparentBlending;
@@ -105,7 +105,7 @@ public class CameraStackManager : MonoBehaviour
 		CameraStackData c;
 		c.cam = cam;
 		c.desiredBlend = 0.00000001f;
-		c.blendIncrement = blendInTime == 0 ? 1.0f : 1.0f / blendInTime;
+		c.blendIncrement = (blendInTime == 0) ? -1.0f : 1.0f / blendInTime;
 		gameCamStack.AddFirst (c);
 		
 	}
@@ -129,6 +129,16 @@ public class CameraStackManager : MonoBehaviour
 	private void ProcessInputs()
 	{
 		updateGameplayStack ();
+	}
+
+	public Vector3 getForward()
+	{
+		return this.mainCam.transform.forward;
+	}
+
+	public Vector3 getRight()
+	{
+		return this.mainCam.transform.right;
 	}
 		
 	#endregion

@@ -5,6 +5,10 @@ using FadingObjects;
 
 public class TimedObjectManager : TimeBasedObjects {
 
+	protected override void initialize ()
+	{
+		throw new System.NotImplementedException ();
+	}
 	protected override void OnPause ()
 	{
 		throw new System.NotImplementedException ();

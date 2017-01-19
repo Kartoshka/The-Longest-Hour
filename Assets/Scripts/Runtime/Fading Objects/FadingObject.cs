@@ -13,7 +13,7 @@ public class FadingObject : TimeBasedObjects {
 	public float duration = 0;
 	public float accumulatedTime = 0;
 
-	void Start()
+	protected override void initialize()
 	{
 		mat = this.gameObject.GetComponent<MeshRenderer> ().material;
 		initialFade = mat.GetFloat ("_AlphaValue");

@@ -1,24 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FadingObjects;
 
 [RequireComponent(typeof(CameraStackManager))]
-public class GlobalCameras : MonoBehaviour {
+public class GlobalCameras : TimeBasedObjects {
 
 	public AbCamera playerCamera;
 	public AbCamera freeCamera;
 
 	CameraStackManager camStack;
 
-	public void switchToFreeCamera()
+	protected override void initialize ()
 	{
-		Debug.Log ("free");
-		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (freeCamera, 2);
 	}
 
-	public void switchToPlayer()
+	private void switchToFreeCamera()
 	{
-		Debug.Log ("player");
-		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (playerCamera, 2);
+		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (freeCamera, 1);
+	}
+
+	private void switchToPlayer()
+	{
+		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (playerCamera, 1);
+	}
+
+
+	protected override void OnPause ()
+	{
+		switchToFreeCamera ();
+	}
+
+	protected override void OnResume ()
+	{
+		switchToPlayer ();
+	}
+
+	protected override void PausedUpdate ()
+	{
+		
+	}
+
+	protected override void RunningUpdate ()
+	{
+		
 	}
 }
