@@ -8,6 +8,8 @@ TagManager:
   - W_Mover
   - BGspawn
   - CurrentBG
+  - deformable
+  - shoe
   layers:
   - Default
   - TransparentFX
