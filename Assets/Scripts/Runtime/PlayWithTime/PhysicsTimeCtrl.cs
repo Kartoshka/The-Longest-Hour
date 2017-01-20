@@ -47,9 +47,6 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	private float m_timeBetweenRecordings = 0.02f;
 	private float m_timeSinceLastRecord = 0.0f;
 
-	// Debug: TODO: Remove this.
-	public bool m_isReverse = false;
-
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -68,7 +65,6 @@ public class PhysicsTimeCtrl : MonoBehaviour
 		state.position = m_rigidBody.position;
 		state.rotation = m_rigidBody.rotation;
 		state.velocity = m_rigidBody.velocity;
-		//m_recordedState.Push(state);
 		m_recordedState.AddFirst(new LinkedListNode<PhysicalState>(state));
 		if(m_recordedState.Count > m_recordLength)
 		{
@@ -127,16 +123,12 @@ public class PhysicsTimeCtrl : MonoBehaviour
 
 		if (m_timeScale > 0)
 		{
-			m_isReverse = false;
-
             m_rigidBody.velocity *= m_timeScale;
 			m_rigidBody.angularVelocity *= m_timeScale;
 			updateForward(Time.fixedDeltaTime * m_timeScale);
         }
 		else
 		{
-			m_isReverse = true;
-
 			m_rigidBody.velocity = Vector3.zero;
 			m_rigidBody.angularVelocity = Vector3.zero;
 			updateReverse(Time.fixedDeltaTime * m_timeScale);
