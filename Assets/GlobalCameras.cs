@@ -17,12 +17,12 @@ public class GlobalCameras : TimeBasedObjects {
 
 	private void switchToFreeCamera()
 	{
-		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (freeCamera, 1);
+		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (freeCamera, 0.5f);
 	}
 
 	private void switchToPlayer()
 	{
-		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (playerCamera, 1);
+		this.gameObject.GetComponent<CameraStackManager> ().addGameCam (playerCamera, 0.5f);
 	}
 
 

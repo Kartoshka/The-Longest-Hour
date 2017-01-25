@@ -39,7 +39,7 @@ public class GlobalTimeManager : TimeBasedObjects {
 			if (current != null) {
 				current.Pause ();
 			} else {
-				activeObjects.Remove (current);
+				//activeObjects.Remove (current);
 			}
 		}
 		Time.timeScale = 0f;
@@ -54,7 +54,7 @@ public class GlobalTimeManager : TimeBasedObjects {
 			if (current != null) {
 				current.Resume ();
 			} else {
-				activeObjects.Remove (current);
+				//activeObjects.Remove (current);
 			}
 		}
 

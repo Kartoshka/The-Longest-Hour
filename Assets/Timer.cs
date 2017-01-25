@@ -40,7 +40,8 @@ public class Timer : MonoBehaviour {
 	{
 		int minutes = Mathf.FloorToInt(timeInSeconds / 60);
 		int seconds = (int)(timeInSeconds % 60);
-		return minutes + ":" + seconds;
+		int millis = (int)((timeInSeconds - minutes * 60 - seconds) * 100);
+		return minutes + ":" + seconds + ":" + millis;
 
 	}
 }

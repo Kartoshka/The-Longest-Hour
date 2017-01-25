@@ -40,6 +40,12 @@ public class HackyMove : TimeBasedObjects {
 
 	protected override void OnPause ()
 	{
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		if(player!=null){
+			float x = player.transform.position.x;
+			float z = player.transform.position.z;
+			this.gameObject.transform.position = new Vector3 (x, this.gameObject.transform.position.y, z);
+		}
 		this.gameObject.SetActive (true);
 	}
 
@@ -52,9 +58,10 @@ public class HackyMove : TimeBasedObjects {
 	{
 		float delta = GlobalTimeManager.getDeltaTime ();
 
-		if ((lifeTimeSpawned + delta) < time.getTimeLeft()) {
+		if (spawning && (lifeTimeSpawned + delta) < time.getTimeLeft ()) {
 			lifeTimeSpawned += delta;
 		}
+	
 
 		subtractText.text = "-"+Timer.formatTime (lifeTimeSpawned);
 	}
@@ -87,7 +94,7 @@ public class HackyMove : TimeBasedObjects {
 
 	public void endCountDown()
 	{
-		if (lifeTimeSpawned > 0) {
+		if (lifeTimeSpawned > 0 && spawning) {
 			time.removeTime (lifeTimeSpawned);
 			GameObject _spawned = (GameObject)Instantiate (spawnedItem.gameObject, this.gameObject.transform.position, this.gameObject.transform.rotation);
 			_spawned.GetComponent<FadingObject> ().duration = lifeTimeSpawned;

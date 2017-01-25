@@ -11,7 +11,6 @@ namespace FadingObjects{
 
 		void Start()
 		{
-			Debug.Log (name);
 			GlobalTimeManager.registerTimedObject (this);
 			initialize ();
 		}
