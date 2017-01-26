@@ -9,14 +9,14 @@ public class Mover
 	#region Datatypes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public enum BehaviorType
-	{
-		// Ensure createMoverBehavior(..) also has the Behavior Type.
-		Undefined = -1,
-		LinearInput,
-		RigidBodyForceInput,
-		AttachToSurface,
-	}
+	//public enum BehaviorType
+	//{
+	//	// Ensure createMoverBehavior(..) also has the Behavior Type.
+	//	Undefined = -1,
+	//	LinearInput,
+	//	RigidBodyForceInput,
+	//	AttachToSurface,
+	//}
 
 	public enum State
 	{
@@ -37,8 +37,8 @@ public class Mover
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	[SerializeField]
-	private BehaviorType m_behaviorType = BehaviorType.Undefined;
+	//[SerializeField]
+	//private BehaviorType m_behaviorType = BehaviorType.Undefined;
 	[SerializeField]
 	private MoverBehavior m_behavior = null;
 	[SerializeField]
@@ -69,15 +69,15 @@ public class Mover
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public BehaviorType getBehaviorType() { return m_behaviorType; }
-	public void setBehaviorType(BehaviorType behaviorType)
-	{
-		if (m_behaviorType != behaviorType)
-		{
-			m_behaviorType = behaviorType;
-			//m_behavior = createMoverBehavior(behaviorType, m_behavior);
-		}
-	}
+	//public BehaviorType getBehaviorType() { return m_behaviorType; }
+	//public void setBehaviorType(BehaviorType behaviorType)
+	//{
+	//	if (m_behaviorType != behaviorType)
+	//	{
+	//		m_behaviorType = behaviorType;
+	//		//m_behavior = createMoverBehavior(behaviorType, m_behavior);
+	//	}
+	//}
 
 	public MoverBehavior getMoverBehavior() { return m_behavior; }
 	public void setMoverBehavior(MoverBehavior behavior) { m_behavior = behavior; }
@@ -104,7 +104,7 @@ public class Mover
 
 	private InterpolationHelper.Vector3Interpolator createInterpolatorFromData(Transform transform)
 	{
-		Vector3 deltaPosition = m_behavior.getTargetPosition(transform) - transform.position;
+		Vector3 deltaPosition = m_behavior.getTargetPosition(transform, 0.0f) - transform.position;
 		return new InterpolationHelper.Vector3Interpolator(
 													m_interpData.interpolationType,
 													m_interpData.easingType,
@@ -113,43 +113,43 @@ public class Mover
 													m_interpData.duration);
 	}
 
-	public static MoverBehavior createMoverBehavior(BehaviorType moverBehaviorType, MoverBehavior copiedBehavior = null)
-	{
-		// Update this whenever a new Mover Behavior is created.
-		MoverBehavior newMoverBehavior = null;
-		//switch (moverBehaviorType)
-		//{
-		//	case (BehaviorType.LinearInput):
-		//	{
-		//		newMoverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
-		//	}
-		//	break;
-		//	case (BehaviorType.RigidBodyForceInput):
-		//	{
-		//		newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
-		//	}
-		//	break;
-		//	case (BehaviorType.AttachToSurface):
-		//	{
-		//		newMoverBehavior = ScriptableObject.CreateInstance<SurfaceMoverBehavior>();
-		//	}
-		//	break;
-		//}
+	//public static MoverBehavior createMoverBehavior(BehaviorType moverBehaviorType, MoverBehavior copiedBehavior = null)
+	//{
+	//	// Update this whenever a new Mover Behavior is created.
+	//	MoverBehavior newMoverBehavior = null;
+	//	//switch (moverBehaviorType)
+	//	//{
+	//	//	case (BehaviorType.LinearInput):
+	//	//	{
+	//	//		newMoverBehavior = ScriptableObject.CreateInstance<LinearInputMoverBehavior>();
+	//	//	}
+	//	//	break;
+	//	//	case (BehaviorType.RigidBodyForceInput):
+	//	//	{
+	//	//		newMoverBehavior = ScriptableObject.CreateInstance<RigidBodyForceMoverBehavior>();
+	//	//	}
+	//	//	break;
+	//	//	case (BehaviorType.AttachToSurface):
+	//	//	{
+	//	//		newMoverBehavior = ScriptableObject.CreateInstance<SurfaceMoverBehavior>();
+	//	//	}
+	//	//	break;
+	//	//}
 
-		//if (newMoverBehavior != null)
-		//{
-		//	if (copiedBehavior != null)
-		//	{
-		//		newMoverBehavior.initialize(copiedBehavior);
-		//	}
-		//	else
-		//	{
-		//		newMoverBehavior.initialize();
-		//	}
-		//}
+	//	//if (newMoverBehavior != null)
+	//	//{
+	//	//	if (copiedBehavior != null)
+	//	//	{
+	//	//		newMoverBehavior.initialize(copiedBehavior);
+	//	//	}
+	//	//	else
+	//	//	{
+	//	//		newMoverBehavior.initialize();
+	//	//	}
+	//	//}
 
-		return newMoverBehavior;
-	}
+	//	return newMoverBehavior;
+	//}
 
 	public void pause()
 	{
@@ -173,14 +173,17 @@ public class Mover
 
 	public void beginMove(Transform transform)
 	{
-		m_state = State.Active;
-
-		if (m_behavior.getCanInterpolate())
+		if(m_behavior)
 		{
-			m_behavior.setInterpolator(createInterpolatorFromData(transform));
-			m_behavior.resetPosition();
+			m_state = State.Active;
+
+			if (m_behavior.getCanInterpolate())
+			{
+				m_behavior.setInterpolator(createInterpolatorFromData(transform));
+				m_behavior.setInterpolationTime(0.0f);
+			}
+			updateMove(transform, 0.0f);
 		}
-		updateMove(transform, 0.0f);
 	}
 
 	public void updateMove(Transform transform, float deltaTime)
@@ -190,6 +193,8 @@ public class Mover
 			m_elapsedTime += Time.fixedDeltaTime;
 			if (m_elapsedTime > m_interpData.updateRate)
 			{
+				m_behavior.processInputs();
+
 				if (!m_behavior.tryMove(transform, deltaTime))
 				{
 					endMove();
@@ -201,7 +206,8 @@ public class Mover
 
 	private void endMove()
 	{
-		m_state = State.Finished;
+		//m_state = State.Finished;
+		m_state = State.Paused;
 	}
 
 	#endregion

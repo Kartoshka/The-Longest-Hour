@@ -21,6 +21,11 @@ public class SpawnTileColliderEvent : MonoBehaviour
 	#region Attributes - These will either be created by this class or set by a another.
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public bool m_triggerOnce = true;
+
+	private bool m_triggerEntered = false;
+	private bool m_isTriggered = false;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -43,20 +48,26 @@ public class SpawnTileColliderEvent : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-        if(other.gameObject.tag.Equals("Player"))
-        {
-            if (m_objectToSpawn != null)
-            {
-                m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
-            }
-            else
-            {
-                m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
-            }
-            GameObject bgSpawnLocation = GameObject.FindGameObjectWithTag("BGspawn");
-            m_backGroundManager.spawnBGTile(bgSpawnLocation);
-            gameObject.SetActive(false);
-        }
+		if (m_triggerOnce && !m_isTriggered && !m_triggerEntered)
+		{
+			m_triggerEntered = true;
+            if (other.gameObject.tag.Equals("Player"))
+			{
+				if (m_objectToSpawn != null)
+				{
+					m_spawnManager.spawnNextTile(m_objectToSpawn, m_nextTileSpawnLocation.transform.position);
+				}
+				else
+				{
+					m_spawnManager.spawnNextTile(m_nextTileSpawnLocation.transform.position, m_nextTileSpawnLocation.transform.rotation);
+				}
+				GameObject bgSpawnLocation = GameObject.FindGameObjectWithTag("BGspawn");
+				m_backGroundManager.spawnBGTile(bgSpawnLocation);
+				gameObject.SetActive(false);
+				m_isTriggered = true;
+			}
+			m_triggerEntered = false;
+		}
 	}
 
 	#endregion

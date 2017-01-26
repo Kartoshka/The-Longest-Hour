@@ -17,8 +17,7 @@ public class SurfaceMoverBehaviorData
 	////////////////////////////////////////////////////////////////////////////////////////// 
 
 	// Add new variables for loading and saving here.
-	public bool enableUserInput = true;
-	public Vector3 positionOffset = Vector3.zero;
+	//public Vector3 positionOffset = Vector3.zero;
 	public Transform surfaceCheckSource = null;
 	public Vector3 defaultRayCastDirection = Vector3.zero;
 	public LayerMask surfaceLayer;
@@ -46,8 +45,7 @@ public class SurfaceMoverBehaviorData
 
 	public void copy(SurfaceMoverBehaviorData rhs)
 	{
-		enableUserInput = rhs.enableUserInput;
-		positionOffset = rhs.positionOffset;
+		//positionOffset = rhs.positionOffset;
 		surfaceCheckSource = rhs.surfaceCheckSource;
         defaultRayCastDirection = rhs.defaultRayCastDirection;
 		surfaceLayer = rhs.surfaceLayer;
