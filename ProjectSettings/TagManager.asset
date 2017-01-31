@@ -10,6 +10,11 @@ TagManager:
   - CurrentBG
   - deformable
   - shoe
+  - Fire
+  - AirCamera
+  - Enemy
+  - Objective
+  - CircleBottom
   layers:
   - Default
   - TransparentFX
