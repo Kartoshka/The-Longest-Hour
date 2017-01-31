@@ -20,6 +20,7 @@ public class RigidBodyForceMoverBehaviorData
 	public Vector3 forceMagnitude = Vector3.zero;
 	public float duration = 1.0f;
 	public Rigidbody rigidBody = null;
+	public bool isAdditiveForce = true;
 	public Transform surfaceCheckSource = null;
 	public float surfaceCheckRadius = 1.0f;
 	public LayerMask surfaceLayer;
