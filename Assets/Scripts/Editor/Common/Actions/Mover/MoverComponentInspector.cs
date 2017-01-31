@@ -235,34 +235,46 @@ public class MoverComponentInspector : Editor
 				rigidBodyForceMover.setRigidBody(rigidBody);
 			}
 
-			EditorGUILayout.LabelField("Surface Checker Transform");
+			EditorGUI.BeginChangeCheck();
+			bool isAdditiveForce = EditorGUILayout.Toggle("Is Additive Force", rigidBodyForceMover.getIsAdditiveForce());
+			if (EditorGUI.EndChangeCheck())
+			{
+				Undo.RecordObject(rigidBodyForceMover, "Is Additive Force");
+				EditorUtility.SetDirty(rigidBodyForceMover);
+				rigidBodyForceMover.setIsAdditiveForce(isAdditiveForce);
+			}
+
+			EditorGUILayout.LabelField("Surface Collision Checker Transform");
 			EditorGUI.BeginChangeCheck();
 			Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(rigidBodyForceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
 			if (EditorGUI.EndChangeCheck())
 			{
-				Undo.RecordObject(rigidBodyForceMover, "Surface Checker Transform");
+				Undo.RecordObject(rigidBodyForceMover, "Surface Collision Checker Transform");
 				EditorUtility.SetDirty(rigidBodyForceMover);
 				rigidBodyForceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
 			}
 
-			EditorGUI.BeginChangeCheck();
-			float surfaceCheckRadius = EditorGUILayout.DelayedFloatField("Checker Radius", rigidBodyForceMover.getSurfaceCheckRadius());
-			if (EditorGUI.EndChangeCheck())
+			if(surfaceCheckTransform)
 			{
-				Undo.RecordObject(rigidBodyForceMover, "Checker Radius");
-				EditorUtility.SetDirty(rigidBodyForceMover);
-				rigidBodyForceMover.setSurfaceCheckRadius(surfaceCheckRadius);
-			}
+				EditorGUI.BeginChangeCheck();
+				float surfaceCheckRadius = EditorGUILayout.DelayedFloatField("Checker Radius", rigidBodyForceMover.getSurfaceCheckRadius());
+				if (EditorGUI.EndChangeCheck())
+				{
+					Undo.RecordObject(rigidBodyForceMover, "Checker Radius");
+					EditorUtility.SetDirty(rigidBodyForceMover);
+					rigidBodyForceMover.setSurfaceCheckRadius(surfaceCheckRadius);
+				}
 
-			LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(rigidBodyForceMover.getSurfaceLayerMask());
-			EditorGUI.BeginChangeCheck();
-			surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
-			if (EditorGUI.EndChangeCheck())
-			{
-				Undo.RecordObject(rigidBodyForceMover, "Surface Layer Mask");
-				EditorUtility.SetDirty(rigidBodyForceMover);
+				LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(rigidBodyForceMover.getSurfaceLayerMask());
+				EditorGUI.BeginChangeCheck();
+				surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+				if (EditorGUI.EndChangeCheck())
+				{
+					Undo.RecordObject(rigidBodyForceMover, "Surface Layer Mask");
+					EditorUtility.SetDirty(rigidBodyForceMover);
 
-				rigidBodyForceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+					rigidBodyForceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+				}
 			}
 		}
 	}
@@ -281,34 +293,37 @@ public class MoverComponentInspector : Editor
 			//	surfaceMover.setPositionOffset(positionOffset);
 			//}
 
-			EditorGUILayout.LabelField("Surface Checker Transform");
+			EditorGUILayout.LabelField("Surface Collision Checker Transform");
 			EditorGUI.BeginChangeCheck();
 			Transform surfaceCheckTransform = (Transform)EditorGUILayout.ObjectField(surfaceMover.getSurfaceCheckSourceTransform(), typeof(Transform), true);
 			if (EditorGUI.EndChangeCheck())
 			{
-				Undo.RecordObject(surfaceMover, "Surface Checker Transform");
+				Undo.RecordObject(surfaceMover, "Surface Collision Checker Transform");
 				EditorUtility.SetDirty(surfaceMover);
 				surfaceMover.setSurfaceCheckSourceTransform(surfaceCheckTransform);
 			}
 
-			EditorGUI.BeginChangeCheck();
-			Vector3 rayCastDirection = EditorGUILayout.Vector3Field("Default RayCast Direction", surfaceMover.getDefaultRaycastDirection());
-			if (EditorGUI.EndChangeCheck())
+			if(surfaceCheckTransform)
 			{
-				Undo.RecordObject(surfaceMover, "Default RayCast Direction");
-				EditorUtility.SetDirty(surfaceMover);
-				surfaceMover.setDefaultRaycastDirection(rayCastDirection);
-			}
+				EditorGUI.BeginChangeCheck();
+				Vector3 rayCastDirection = EditorGUILayout.Vector3Field("Default RayCast Direction", surfaceMover.getDefaultRaycastDirection());
+				if (EditorGUI.EndChangeCheck())
+				{
+					Undo.RecordObject(surfaceMover, "Default RayCast Direction");
+					EditorUtility.SetDirty(surfaceMover);
+					surfaceMover.setDefaultRaycastDirection(rayCastDirection);
+				}
 
-			LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(surfaceMover.getSurfaceLayerMask());
-			EditorGUI.BeginChangeCheck();
-			surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
-			if (EditorGUI.EndChangeCheck())
-			{
-				Undo.RecordObject(surfaceMover, "Surface Layer Mask");
-				EditorUtility.SetDirty(surfaceMover);
+				LayerMask surfaceLayerMask = InspectorHelper.convert32BitLayerMaskToTrimmedMask(surfaceMover.getSurfaceLayerMask());
+				EditorGUI.BeginChangeCheck();
+				surfaceLayerMask = EditorGUILayout.MaskField("Surface Layer Mask", surfaceLayerMask, UnityEditorInternal.InternalEditorUtility.layers);
+				if (EditorGUI.EndChangeCheck())
+				{
+					Undo.RecordObject(surfaceMover, "Surface Layer Mask");
+					EditorUtility.SetDirty(surfaceMover);
 
-				surfaceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+					surfaceMover.setSurfaceLayerMask(InspectorHelper.convertTrimmedLayerMaskTo32BitMask(surfaceLayerMask));
+				}
 			}
 
 			EditorGUI.BeginChangeCheck();

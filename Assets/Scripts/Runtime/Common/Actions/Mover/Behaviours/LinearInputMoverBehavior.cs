@@ -88,7 +88,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 	public override Vector3 getTargetPosition(Transform transform, float deltaTime = 0.0f)
 	{
 		Debug.Assert(transform != null, "Error: Missing transform when attempting to find the next position.");
-		Vector3 targetPosition = transform.position + calculateTargetPosition(transform) + getTargetPositionOffset();
+		Vector3 targetPosition = transform.position + (Time.deltaTime*calculateTargetPosition(transform)) + getTargetPositionOffset();
 		return targetPosition;
 	}
 

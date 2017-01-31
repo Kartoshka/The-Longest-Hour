@@ -29,3 +29,10 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# ================ #
+# Jarvis generated #
+# ================ #
+Art/Characters/dex_char_anims.ma
+Art/LevelDesign/
+Assets/Models/Downloaded/

@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Objective
   - CircleBottom
+  - DrawObject
   layers:
   - Default
   - TransparentFX

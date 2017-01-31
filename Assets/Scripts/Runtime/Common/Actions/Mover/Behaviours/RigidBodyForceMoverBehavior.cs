@@ -24,8 +24,6 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	//private bool m_stoppedApplyingForce = true;
 	private bool m_forceInputTriggered = false;
 
-	private bool m_simulateJumping = true;
-
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region  Constructors
@@ -82,8 +80,8 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 	public LayerMask getSurfaceLayerMask() { return m_data.surfaceLayer; }
 	public void setSurfaceLayerMask(LayerMask layerMask) { m_data.surfaceLayer = layerMask; }
 
-	public bool isSimulatingJumping() { return m_simulateJumping; }
-	public void setSimulateJumping(bool isSimulatingJumping) { m_simulateJumping = isSimulatingJumping; }
+	public bool getIsAdditiveForce() { return m_data.isAdditiveForce; }
+	public void setIsAdditiveForce(bool isAdditiveForce) { m_data.isAdditiveForce = isAdditiveForce; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -115,18 +113,35 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 
 	private bool canApplyForce()
 	{
-		return Physics.CheckSphere(m_data.surfaceCheckSource.position, m_data.surfaceCheckRadius, m_data.surfaceLayer);
+		bool canApplyForce = true;
+
+		if(m_data.surfaceCheckSource)
+		{
+			canApplyForce = Physics.CheckSphere(m_data.surfaceCheckSource.position, m_data.surfaceCheckRadius, m_data.surfaceLayer);
+		}
+
+		return canApplyForce;
 	}
 
 	private void applyForce()
 	{
-		if(m_simulateJumping)
+		Vector3 forceMagnitude;
+		if(getMoveRelative())
 		{
-            m_data.rigidBody.velocity = new Vector3(m_data.rigidBody.velocity.x, m_data.forceMagnitude.y);
+			forceMagnitude = m_data.rigidBody.transform.forward * m_data.forceMagnitude.z;
 		}
 		else
 		{
-			m_data.rigidBody.velocity = m_data.forceMagnitude;
+			forceMagnitude = m_data.forceMagnitude;
+		}
+
+		if(m_data.isAdditiveForce)
+		{
+            m_data.rigidBody.velocity += forceMagnitude;
+		}
+		else
+		{
+			m_data.rigidBody.velocity = forceMagnitude;
 		}
 	}
 
@@ -137,7 +152,14 @@ public class RigidBodyForceMoverBehavior : MoverBehavior
 
 	public override void processInputs()
 	{
-		m_forceInputTriggered = Input.GetKeyDown(KeyCode.Space);
+		if (getEnableUserInput())
+		{
+			m_forceInputTriggered = Input.GetKeyDown(KeyCode.Space);
+		}
+		else
+		{
+			m_forceInputTriggered = true;
+        }
 	}
 
 	private void simulate()
