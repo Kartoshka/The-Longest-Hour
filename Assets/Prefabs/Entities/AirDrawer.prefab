@@ -7529,6 +7529,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4414562467693204}
+  - component: {fileID: 114070548272137154}
+  - component: {fileID: 114230887815904408}
+  - component: {fileID: 114841729182676536}
+  - component: {fileID: 114121466355434168}
+  - component: {fileID: 114896064793293402}
   m_Layer: 0
   m_Name: AirDrawer
   m_TagString: Player
@@ -17781,7 +17786,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560549525078014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25077,6 +25082,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moverComponent: {fileID: 114565239990862332}
+--- !u!114 &114070548272137154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 169
+    i1: 238
+    i2: 81
+    i3: 199
+    i4: 172
+    i5: 1
+    i6: 131
+    i7: 164
+    i8: 136
+    i9: 54
+    i10: 114
+    i11: 135
+    i12: 63
+    i13: 28
+    i14: 77
+    i15: 99
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114121466355434168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4148581221030964}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114152158570628170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25092,6 +25148,19 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
+--- !u!114 &114230887815904408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_localOnlyObjects:
+  - {fileID: 1212876674929932}
 --- !u!114 &114290819009498930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25122,7 +25191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 4452885226570436}
-  m_lerpScale: 1
+  m_lerpScale: 5
   m_faceTarget: 1
   m_offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114565239990862332
@@ -25171,6 +25240,38 @@ MonoBehaviour:
   m_data:
     forwardStepSize: {x: 7.5, y: 0, z: 7.5}
     reverseStepSize: {x: 7.5, y: 0, z: 7.5}
+--- !u!114 &114841729182676536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114896064793293402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673537d80ba27734fb8bb0ada73fbeb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moverComponent: {fileID: 114565239990862332}
 --- !u!114 &114955164524268154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -28924,7 +29025,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 382307766
+  randomSeed: -438844348
   InitialModule:
     serializedVersion: 3
     enabled: 1

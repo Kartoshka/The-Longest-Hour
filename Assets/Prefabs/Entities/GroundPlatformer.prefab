@@ -247,6 +247,10 @@ GameObject:
   - component: {fileID: 4676916042656872}
   - component: {fileID: 65311414811300114}
   - component: {fileID: 54507998275134688}
+  - component: {fileID: 114871725821389710}
+  - component: {fileID: 114557307756490190}
+  - component: {fileID: 114405629737529466}
+  - component: {fileID: 114755415586859490}
   m_Layer: 0
   m_Name: GroundPlatformer
   m_TagString: Player
@@ -21073,7 +21077,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015017301963698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25240,6 +25244,70 @@ MonoBehaviour:
     surfaceLayer:
       serializedVersion: 2
       m_Bits: 256
+--- !u!114 &114405629737529466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114557307756490190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 136
+    i1: 138
+    i2: 163
+    i3: 91
+    i4: 158
+    i5: 93
+    i6: 151
+    i7: 148
+    i8: 123
+    i9: 181
+    i10: 87
+    i11: 71
+    i12: 125
+    i13: 185
+    i14: 183
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114755415586859490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673537d80ba27734fb8bb0ada73fbeb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moverComponent: {fileID: 114816824821889824}
 --- !u!114 &114790404659501408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25287,6 +25355,18 @@ MonoBehaviour:
         duration: 0
   m_transformComponent: {fileID: 4676916042656872}
   m_alwaysUpdate: 1
+--- !u!114 &114871725821389710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_localOnlyObjects: []
 --- !u!124 &124427478985027344
 Behaviour:
   m_ObjectHideFlags: 1
