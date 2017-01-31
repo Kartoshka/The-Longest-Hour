@@ -280,7 +280,8 @@ public class SteeringBehaviours : MonoBehaviour
 	public Vector3 Group_Separation()
 	{
 		Vector3 steeringForce = Vector3.zero;
-		List<GameObject> neighbours = GetEnemyNeighbours();
+		List<GameObject> neighbours = GetSimilarNeighbours();
+		neighbours.AddRange(GetEnemyNeighbours());
 		if (neighbours != null)
 		{
 			for (int i = 0; i < neighbours.Count; ++i)

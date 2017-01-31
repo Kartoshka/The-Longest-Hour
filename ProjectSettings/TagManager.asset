@@ -16,6 +16,7 @@ TagManager:
   - Objective
   - CircleBottom
   - DrawObject
+  - Lemming
   layers:
   - Default
   - TransparentFX
