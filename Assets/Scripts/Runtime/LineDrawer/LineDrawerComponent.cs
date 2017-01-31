@@ -24,7 +24,7 @@ public class LineDrawerComponent : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public BezierSpline m_bezierSplineComponent; // TODO: Remove this to get rid of duplication.
-	public string m_splineComponentTag;
+//	public string m_splineComponentTag;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -115,14 +115,14 @@ public class LineDrawerComponent : MonoBehaviour
 	void Start()
 	{
 		m_bezierSpline = m_bezierSplineComponent;
-		if(!m_bezierSpline)
-		{
-			GameObject splineObject = GameObject.FindGameObjectWithTag(m_splineComponentTag);
-			if(splineObject)
-			{
-				m_bezierSpline = splineObject.GetComponent<BezierSpline>();
-			}
-		}
+		//if(!m_bezierSpline)
+		//{
+		//	GameObject splineObject = GameObject.FindGameObjectWithTag(m_splineComponentTag);
+		//	if(splineObject)
+		//	{
+		//		m_bezierSpline = splineObject.GetComponent<BezierSpline>();
+		//	}
+		//}
 		reset();
 
 		// TODO: Remove this once we have a cleaner way to reset this.
