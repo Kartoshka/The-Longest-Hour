@@ -4,15 +4,13 @@ using System.Collections;
 /// <summary>
 /// 
 /// </summary>
-public class AttachToTarget : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public Transform m_target;
-	public float m_lerpScale = 1.0f;
-	public bool m_faceTarget = true;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -23,6 +21,10 @@ public class AttachToTarget : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
+
+	public float m_lerpScale = 1.0f;
+	public bool m_faceTarget = true;
+	public Vector3 m_offset = Vector3.zero;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -48,12 +50,12 @@ public class AttachToTarget : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(m_target)
+		if (m_target)
 		{
-			this.transform.position = Vector3.Lerp(this.transform.position, m_target.position, m_lerpScale * Time.deltaTime);
+			this.transform.position = Vector3.Lerp(this.transform.position, m_target.position, m_lerpScale * Time.deltaTime) + m_offset;
 		}
 
-		if(m_faceTarget)
+		if (m_faceTarget)
 		{
 			this.transform.forward = Vector3.Lerp(this.transform.forward, m_target.position - this.transform.position, m_lerpScale * Time.deltaTime);
 		}

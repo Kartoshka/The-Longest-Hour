@@ -44,7 +44,7 @@ public class LineDrawerComponent : MonoBehaviour
 	public float m_completionDistanceCheck;
 	public LineWalker m_lineWalker;
 
-	public TimeAngle m_timeAngle; //TODO: Remove this. We just want an easy way to reset on start.
+	public TimeShifterAimDirection m_timeAngle; //TODO: Remove this. We just want an easy way to reset on start.
 
 	private BezierSpline m_bezierSpline;
 	private DrawState m_currentState = DrawState.Uncreated;
