@@ -25224,7 +25224,7 @@ MonoBehaviour:
         easingType: 0
         updateRate: 0
         duration: 0
-  m_transformComponent: {fileID: 4414562467693204}
+  m_transformComponent: {fileID: 4452885226570436}
   m_alwaysUpdate: 1
 --- !u!114 &114651559371751858
 MonoBehaviour:
