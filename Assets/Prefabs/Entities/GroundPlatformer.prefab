@@ -25263,7 +25263,7 @@ MonoBehaviour:
   m_MovementTheshold: 0.001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_InterpolateMovement: 5
 --- !u!114 &114557307756490190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25367,6 +25367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_localOnlyObjects: []
+  m_localOnlyBehaviours:
+  - {fileID: 114405629737529466}
 --- !u!124 &124427478985027344
 Behaviour:
   m_ObjectHideFlags: 1

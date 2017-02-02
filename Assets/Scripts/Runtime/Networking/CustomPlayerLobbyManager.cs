@@ -1,4 +1,6 @@
 ﻿// Reference: https://forum.unity3d.com/threads/how-to-set-individual-playerprefab-form-client-in-the-networkmanger.348337/#post-2256378
+// Reference: http://abrgame.blogspot.ca/2016/01/using-unet-to-spawn-different-player.html
+// Reference: https://forum.unity3d.com/threads/cant-get-character-selection-working-with-multiplayer.438921/
 
 using UnityEngine;
 using System.Collections.Generic;

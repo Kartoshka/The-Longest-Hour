@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class NetworkActivation : NetworkBehaviour {
 
 	public List<GameObject> m_localOnlyObjects = new List<GameObject>();
+	public List<MonoBehaviour> m_localOnlyBehaviours = new List<MonoBehaviour>();
 
 	// Use this for initialization
 	void Start ()
@@ -13,23 +14,29 @@ public class NetworkActivation : NetworkBehaviour {
 		{
 			if (this.isLocalPlayer)
 			{
-				foreach (GameObject gameObject in m_localOnlyObjects)
-				{
-					gameObject.SetActive(true);
-				}
+				setActive(true);
 			}
 			else
 			{
-				foreach (GameObject gameObject in m_localOnlyObjects)
-				{
-					gameObject.SetActive(false);
-				}
-			}
+				setActive(false);
+            }
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	private void setActive(bool isActive)
+	{
+		foreach (GameObject gameObject in m_localOnlyObjects)
+		{
+			gameObject.SetActive(isActive);
+		}
+		foreach (MonoBehaviour behaviour in m_localOnlyBehaviours)
+		{
+			behaviour.enabled = isActive;
+		}
 	}
 }

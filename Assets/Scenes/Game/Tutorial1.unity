@@ -1523,6 +1523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_localOnlyObjects:
   - {fileID: 1707652926}
+  m_localOnlyBehaviours: []
 --- !u!114 &1707652930
 MonoBehaviour:
   m_ObjectHideFlags: 0

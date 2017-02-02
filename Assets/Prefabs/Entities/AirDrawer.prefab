@@ -7532,7 +7532,7 @@ GameObject:
   - component: {fileID: 114070548272137154}
   - component: {fileID: 114230887815904408}
   - component: {fileID: 114841729182676536}
-  - component: {fileID: 114121466355434168}
+  - component: {fileID: 114313186452093566}
   - component: {fileID: 114896064793293402}
   m_Layer: 0
   m_Name: AirDrawer
@@ -25114,25 +25114,6 @@ MonoBehaviour:
     i15: 99
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114121466355434168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1560549525078014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 4148581221030964}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114152158570628170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25161,6 +25142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_localOnlyObjects:
   - {fileID: 1212876674929932}
+  m_localOnlyBehaviours:
+  - {fileID: 114313186452093566}
+  - {fileID: 114841729182676536}
 --- !u!114 &114290819009498930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25179,6 +25163,25 @@ MonoBehaviour:
   m_completionDistanceCheck: 0.25
   m_lineWalker: {fileID: 0}
   m_timeAngle: {fileID: 0}
+--- !u!114 &114313186452093566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4148581221030964}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 1
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114486233376928518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25221,7 +25224,7 @@ MonoBehaviour:
         easingType: 0
         updateRate: 0
         duration: 0
-  m_transformComponent: {fileID: 4452885226570436}
+  m_transformComponent: {fileID: 4414562467693204}
   m_alwaysUpdate: 1
 --- !u!114 &114651559371751858
 MonoBehaviour:
@@ -25258,8 +25261,8 @@ MonoBehaviour:
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
   m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_InterpolateRotation: 5
+  m_InterpolateMovement: 5
 --- !u!114 &114896064793293402
 MonoBehaviour:
   m_ObjectHideFlags: 1
