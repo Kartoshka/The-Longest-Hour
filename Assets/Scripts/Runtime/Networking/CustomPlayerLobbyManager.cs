@@ -8,6 +8,77 @@ using Prototype.NetworkLobby;
 
 public class CustomPlayerLobbyManager : LobbyManager
 {
+	private int playerPrefabIndex = 0;
+	//Dictionary<int, int> currentPlayers;
+
+	Dictionary<int, int> currentPlayers = new Dictionary<int, int>();
+	public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
+	{
+		if (!currentPlayers.ContainsKey(conn.connectionId))
+			currentPlayers.Add(conn.connectionId, playerPrefabIndex++); // TODO: Set this to 0, and use a function to attach the playerPrefabIndex with the connectionID.
+
+		return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
+	}
+
+	//public void SetPlayerTypeLobby(NetworkConnection conn, int playerPrefabIndex)
+	//{
+	//	if (currentPlayers.ContainsKey(conn.connectionId))
+	//		currentPlayers[conn.connectionId] = playerPrefabIndex;
+	//}
+
+	public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+	{
+		int index = currentPlayers[conn.connectionId];
+
+		GameObject _temp = (GameObject)GameObject.Instantiate(spawnPrefabs[index],
+			startPositions[conn.connectionId].position,//GetStartPosition().position
+			Quaternion.identity);
+
+		//NetworkServer.AddPlayerForConnection(conn, _temp, playerControllerId);
+
+		return _temp;
+	}
+
+	//// I have put a toggle UI on gameObjects called PC1 and PC2 to select two different character types.
+	//// on toggle, this function is called, which updates the playerPrefabIndex
+	//// The index will be the number from the registered spawnable prefabs that 
+	//// you want for your player
+	//public void To()
+	//{
+	//	if (GameObject.Find("PC1").GetComponent<Toggle>().isOn)
+	//	{
+	//		playerPrefabIndex = 0;
+	//	}
+	//	//else if (GameObject.Find("PC2").GetComponent<Toggle>().isOn)
+	//	//{
+	//	//	playerPrefabIndex = 1;
+	//	//}
+	//	else
+	//	{
+	//		playerPrefabIndex = 1;
+	//	}
+	//}
+
+
+	//public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
+	//{
+	//	this.playerPrefab = this.spawnPrefabs[playerControllerId];
+	//	base.OnServerAddPlayer(conn, playerControllerId);
+	//}
+
+	//public override void OnStartClient(NetworkClient lobbyClient)
+	//{
+	//	this.playerPrefab = this.spawnPrefabs[lobbyClient.]
+	//	base.OnStartClient(lobbyClient);
+
+	//}
+
+	//public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+	//{
+	//	this.playerPrefab = this.spawnPrefabs[playerControllerId];
+	//	return null;
+	//}
+
 	//[SerializeField]
 	//Vector3 playerSpawnPos;
 	//[SerializeField]
@@ -72,6 +143,7 @@ public class CustomPlayerLobbyManager : LobbyManager
 	//	MsgTypes.PlayerPrefabMsg msg = new MsgTypes.PlayerPrefabMsg();
 	//	msg.controllerID = playerControllerId;
 	//	NetworkServer.SendToClient(conn.connectionId, MsgTypes.PlayerPrefab, msg);
+	//	base.OnServerAddPlayer(conn, playerControllerId);
 	//}
 
 	//// I have put a toggle UI on gameObjects called PC1 and PC2 to select two different character types.
@@ -84,7 +156,11 @@ public class CustomPlayerLobbyManager : LobbyManager
 	//	{
 	//		playerPrefabIndex = 0;
 	//	}
-	//	else if (GameObject.Find("PC2").GetComponent<Toggle>().isOn)
+	//	//else if (GameObject.Find("PC2").GetComponent<Toggle>().isOn)
+	//	//{
+	//	//	playerPrefabIndex = 1;
+	//	//}
+	//	else
 	//	{
 	//		playerPrefabIndex = 1;
 	//	}
@@ -102,5 +178,6 @@ public class CustomPlayerLobbyManager : LobbyManager
 		DontDestroyOnLoad(gameObject);
 
 		SetServerInfo("Offline", "None");
+
 	}
 }

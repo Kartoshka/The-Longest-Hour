@@ -10,7 +10,15 @@ public class CustomPlayerSpawn : NetworkBehaviour
 	{
 		base.OnStartLocalPlayer();
 
-		GameObject playerObj = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[playerControllerId]); // instantiate on server side
-        NetworkServer.AddPlayerForConnection(NetworkServer.connections[0], playerObj, playerControllerId); // spawn on the clients and set owner
+		//GameObject playerObj = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[playerControllerId]); // instantiate on server side
+  //      NetworkServer.AddPlayerForConnection(NetworkServer.connections[playerControllerId], playerObj, playerControllerId); // spawn on the clients and set owner
+
+		//this.
+	}
+
+	public override void OnStartClient()
+	{
+		base.OnStartClient();
+		//NetworkManager.Instantiate(NetworkManager.singleton.spawnPrefabs[0]);
 	}
 }
