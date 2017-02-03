@@ -8,6 +8,8 @@ public class BirdController : MonoBehaviour {
 	public Cinemachine3rdPerson regularView;	
 	public Cinemachine3rdPerson topDownView;
 
+	public LinearInputMoverBehavior moverBehaviour;
+
 	Cinemachine3rdPerson active;
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,8 @@ public class BirdController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float verticalInput = Input.GetAxis ("Vertical");
-		float horizontalInput = Input.GetAxis ("Horizontal");
+		float verticalInput = Input.GetAxis ("VerticalRightStick");
+		float horizontalInput = Input.GetAxis ("HorizontalRightStick");
 
 		active.increasePitch (-verticalInput);
 		active.increaseYaw (horizontalInput);
@@ -27,6 +29,10 @@ public class BirdController : MonoBehaviour {
 		if (Input.GetButtonDown ("Jump")) {
 			switchCameras ();
 		}
+
+		float verticalLeftStick = Input.GetAxis ("Vertical");
+		float horizontalLeftStick = Input.GetAxis ("Horizontal");
+
 	}
 
 
