@@ -602,6 +602,11 @@ Prefab:
     - {fileID: 65934471050152868, guid: f92f247a44097e04598f2e0a611d1890, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f92f247a44097e04598f2e0a611d1890, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &738705597 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4406020657541052, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 2998836}
 --- !u!1 &777080436
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,10 +788,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modifiable: 1
+  setOnStart: 1
   controlledView: {fileID: 902119537}
   distanceFromTarget: 25
-  angleFromTarget: {x: 0, y: 0}
-  minXAngle: 0
+  angleFromTarget: {x: 1, y: -90}
+  minXAngle: 15
   maxXAngle: 90
 --- !u!114 &902119537
 MonoBehaviour:
@@ -809,8 +815,8 @@ MonoBehaviour:
   m_ComposerSettings: {fileID: 11400000, guid: ed796dc878bff454080792e56d2b9fb8, type: 2}
   m_TransposerSettings: {fileID: 11400000, guid: 4b61a7c95e14c4d909bfedc47850d579,
     type: 2}
-  m_ComposerCameraTarget: {fileID: 567349141}
-  m_TransposerCameraTarget: {fileID: 567349141}
+  m_ComposerCameraTarget: {fileID: 738705597}
+  m_TransposerCameraTarget: {fileID: 738705597}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -992,8 +998,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978603986}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023133278, y: 7.502, z: -0.018013177}
+  m_LocalRotation: {x: -0.12803096, y: -0.8256577, z: -0.20783292, w: 0.5086285}
+  m_LocalPosition: {x: -0.023133278, y: 1.3419999, z: -0.018013177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1475,9 +1481,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modifiable: 0
+  setOnStart: 1
   controlledView: {fileID: 1422589955}
-  distanceFromTarget: 0
-  angleFromTarget: {x: 0, y: 0}
+  distanceFromTarget: 35
+  angleFromTarget: {x: 1, y: 1}
   minXAngle: -90
   maxXAngle: 90
 --- !u!114 &1422589955
@@ -1501,8 +1508,8 @@ MonoBehaviour:
   m_ComposerSettings: {fileID: 11400000, guid: abeb2fff2123541e982d416d628af9a9, type: 2}
   m_TransposerSettings: {fileID: 11400000, guid: 5a49b708b69bc4cab954a8dea56e1f01,
     type: 2}
-  m_ComposerCameraTarget: {fileID: 567349141}
-  m_TransposerCameraTarget: {fileID: 567349141}
+  m_ComposerCameraTarget: {fileID: 738705597}
+  m_TransposerCameraTarget: {fileID: 738705597}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -1563,8 +1570,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1502174376 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4676916042656872, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 2998836}
 --- !u!1001 &1707652925
 Prefab:
   m_ObjectHideFlags: 0
@@ -1776,6 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularView: {fileID: 902119536}
   topDownView: {fileID: 1422589954}
+  moverBehaviour: {fileID: 0}
 --- !u!4 &1714178106
 Transform:
   m_ObjectHideFlags: 0
@@ -1783,13 +1796,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714178104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.74386, y: 3.5429688, z: 8.669253}
+  m_LocalPosition: {x: -11.74386, y: 1.7029687, z: 8.669253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 902119538}
   - {fileID: 1422589956}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1502174376}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815240553
 GameObject:

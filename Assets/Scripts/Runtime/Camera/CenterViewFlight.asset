@@ -14,6 +14,6 @@ MonoBehaviour:
   TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_HorizontalSoftDampening: 1
   m_VerticalSoftDampening: 1
-  m_SoftGuideScreenPercents: {x: 0.45, y: 0.55, z: 0.55, w: 0.45}
+  m_SoftGuideScreenPercents: {x: 0.49, y: 0.51, z: 0.51, w: 0.49}
   m_HardGuideScreenPercents: {x: 0.1, y: 0.9, z: 0.9, w: 0.1}
   m_Dutch: 0
