@@ -8,7 +8,7 @@ public class BirdController : MonoBehaviour {
 	public Cinemachine3rdPerson regularView;	
 	public Cinemachine3rdPerson topDownView;
 
-	public LinearInputMoverBehavior moverBehaviour;
+	public InputVelocityMoverBehaviour moverBehaviour;
 
 	Cinemachine3rdPerson active;
 	// Use this for initialization
@@ -32,6 +32,8 @@ public class BirdController : MonoBehaviour {
 
 		float verticalLeftStick = Input.GetAxis ("Vertical");
 		float horizontalLeftStick = Input.GetAxis ("Horizontal");
+
+		moverBehaviour.updateInput (new Vector2 (verticalLeftStick, horizontalLeftStick));
 
 	}
 
