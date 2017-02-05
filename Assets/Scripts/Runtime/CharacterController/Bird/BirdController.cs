@@ -8,7 +8,10 @@ public class BirdController : MonoBehaviour {
 	public Cinemachine3rdPerson regularView;	
 	public Cinemachine3rdPerson topDownView;
 
+	public MoverComponent characterMover;
 	public InputVelocityMoverBehaviour moverBehaviour;
+
+	public AirTargeting diver;
 
 	Cinemachine3rdPerson active;
 	// Use this for initialization
@@ -29,14 +32,24 @@ public class BirdController : MonoBehaviour {
 		if (Input.GetButtonDown ("Jump")) {
 			switchCameras ();
 		}
+		if (Input.GetButton ("Fire1")) {
+			diver.trigger ();
+		}
 
 		float verticalLeftStick = Input.GetAxis ("Vertical");
 		float horizontalLeftStick = Input.GetAxis ("Horizontal");
 
-		moverBehaviour.updateInput (new Vector2 (verticalLeftStick, horizontalLeftStick));
+		moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
+
+
+	
 
 	}
 
+	private void Dive()
+	{
+		
+	}
 
 	private void switchCameras()
 	{
