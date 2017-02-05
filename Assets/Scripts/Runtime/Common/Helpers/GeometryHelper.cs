@@ -142,6 +142,25 @@ public class GeometryHelper
 		return success;
 	}
 
+    /// <summary>
+    /// See if point is contained inside a polygon.
+    /// </summary>
+    /// <param name="polyPoints"></param>
+    /// <param name="p"></param>
+    /// <returns>True if p is in polygon, false if not.</returns>
+    public static bool PolyContainsPoint(Vector3[] polyPoints, Vector3 p) { 
+       var j = polyPoints.Length - 1;
+       var inside = false;
+             
+       for (int i = 0; i<polyPoints.Length; j = i++) { 
+          if ( ((polyPoints[i].z <= p.z && p.z<polyPoints[j].z) || (polyPoints[j].z <= p.z && p.z<polyPoints[i].z)) && 
+             (p.x< (polyPoints[j].x - polyPoints[i].x) * (p.z - polyPoints[i].z) / (polyPoints[j].z - polyPoints[i].z) + polyPoints[i].x)) 
+             inside = !inside;
+       } 
+
+       return inside; 
+    }
+
 	#endregion
 	}
 
