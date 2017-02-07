@@ -13,6 +13,9 @@ public class DiveTargetting : AbAirTargeting {
 
 	private bool initialized = false;
 
+
+	public Capturer captureModule;
+
 	protected override void OnEnableTargeting()
 	{
 		if (!initialized) {
@@ -25,22 +28,33 @@ public class DiveTargetting : AbAirTargeting {
 	{
 		RaycastHit target;
 		if (findTarget (out target)) {
-			if (diveAnim!=null && !diving) {
-				diveAnim.initialize (this.transform, target.transform.position.y);
-				diving = true;
-				diveCam.gameObject.SetActive (true);
+			if (!captureModule.containing) {
+				if (diveAnim != null && !diving) {
+					diveAnim.initialize (this.transform, target.transform.position.y);
+					diving = true;
+					diveCam.gameObject.SetActive (true);
+				}
+			} else {
+				captureModule.Release ();
 			}
+
 		}
 	}
 
 	protected override void OnDisableTargeting()
 	{
-
+		//captureModule.Release ();
 	}
 
 	public void disableAnimCamera(){
 		diveCam.gameObject.SetActive (false);
 		diving = false;
+	}
+
+	void OnTriggerEnter(Collider c){
+		if (c.gameObject.GetComponent<Capturable> () != null) {
+			captureModule.Capture (c.gameObject.GetComponent<Capturable> ());
+		}
 	}
 
 }

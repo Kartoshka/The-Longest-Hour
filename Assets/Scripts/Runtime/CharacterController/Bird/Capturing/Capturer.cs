@@ -5,7 +5,7 @@ using UnityEngine;
 public class Capturer : MonoBehaviour {
 
 	public bool containing{
-		get{ return captured == null; }
+		get{ return captured != null; }
 	}
 	private Capturable captured;
 
@@ -28,10 +28,10 @@ public class Capturer : MonoBehaviour {
 			captured.transform.position = this.transform.position;
 		}
 	}
-
-	void OnTriggerEnter(Collider c){
-		if (c.gameObject.GetComponent<Capturable> () != null) {
-			
-		}
-	}
+//
+//	void OnTriggerEnter(Collider c){
+//		if (c.gameObject.GetComponent<Capturable> () != null) {
+//			
+//		}
+//	}
 }
