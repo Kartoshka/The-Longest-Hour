@@ -4,60 +4,74 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour {
 
-
+	[Header("Cameras")]
 	public Cinemachine3rdPerson regularView;	
 	public Cinemachine3rdPerson topDownView;
 
-	public MoverComponent characterMover;
+	//Active camera being modified
+	Cinemachine3rdPerson active;
+
+	[Space(5)]
+	[Tooltip("Character movement")]
 	public InputVelocityMoverBehaviour moverBehaviour;
 
-	public AirTargeting diver;
+	[Space(5)]
+	[Header("Targeting controls")]
+	public TargetingController targetControl;
 
-	Cinemachine3rdPerson active;
-	// Use this for initialization
+
+	//Flag for knowing we're in top down view
+	bool topDown = false;
+
 	void Start () {
 		activateCamera (regularView);
+		topDown = false;
+		targetControl.gameObject.SetActive (topDown);
 	}
 	
-	// Update is called once per frame
 	void Update () {
+		//Camera movement input
 		float verticalInput = Input.GetAxis ("VerticalRightStick");
 		float horizontalInput = Input.GetAxis ("HorizontalRightStick");
 
+		//Move active camera
 		active.increasePitch (-verticalInput);
 		active.increaseYaw (horizontalInput);
-
 		active.UpdatePosition ();
+
+		//Movement controls
+		float verticalLeftStick = Input.GetAxis ("Vertical");
+		float horizontalLeftStick = Input.GetAxis ("Horizontal");
+		moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
 
 		if (Input.GetButtonDown ("Jump")) {
 			switchCameras ();
 		}
-		if (Input.GetButton ("Fire1")) {
-			diver.trigger ();
+
+		if (topDown) {
+			if (Input.GetButtonDown ("Fire1")) {
+				targetControl.TriggerCurrent ();
+			}
+			if (Input.GetButtonDown ("Fire2")) {
+				targetControl.toggle ();
+			}
 		}
 
-		float verticalLeftStick = Input.GetAxis ("Vertical");
-		float horizontalLeftStick = Input.GetAxis ("Horizontal");
-
-		moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
-
-
-	
-
-	}
-
-	private void Dive()
-	{
-		
 	}
 
 	private void switchCameras()
 	{
 		if (active == regularView) {
+			topDown = !topDown;
 			activateCamera (topDownView);
+
 		} else  {
+			topDown = !topDown;
 			activateCamera (regularView);
 		}
+
+		targetControl.gameObject.SetActive (topDown);
+
 	}
 
 	private void activateCamera(Cinemachine3rdPerson cam)

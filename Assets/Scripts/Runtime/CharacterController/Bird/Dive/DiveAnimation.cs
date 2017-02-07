@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DiveAnimation : MoverBehavior {
 
+	public delegate void CallBack ();
+
+	public CallBack onDiveComplete;
 
 	public AnimationCurve heightAnimation;
 
@@ -47,6 +50,7 @@ public class DiveAnimation : MoverBehavior {
 		if (elapsedTime+Time.deltaTime > duration) {
 			m_active = false;
 			elapsedTime = 0;
+			onDiveComplete ();
 		}
 
 		if (m_active) {
