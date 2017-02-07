@@ -22,8 +22,11 @@ public class FollowTarget : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public float m_lerpScale = 1.0f;
+	public float m_positionLerpScale = 1.0f;
+	public float m_rotationLerpScale = 1.0f;
+
 	public bool m_faceTarget = true;
+	public bool m_matchTargetForward = false;
 	public Vector3 m_offset = Vector3.zero;
 
 	#endregion
@@ -44,7 +47,10 @@ public class FollowTarget : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+		if (m_matchTargetForward)
+		{
+			m_faceTarget = false;
+		}
 	}
 
 	// Update is called once per frame
@@ -52,12 +58,22 @@ public class FollowTarget : MonoBehaviour
 	{
 		if (m_target)
 		{
-			this.transform.position = Vector3.Lerp(this.transform.position, m_target.position, m_lerpScale * Time.deltaTime) + m_offset;
+			this.transform.position = Vector3.Lerp(this.transform.position, m_target.position, m_positionLerpScale * Time.deltaTime) + m_offset;
 		}
 
-		if (m_faceTarget)
+		Vector3 viewDirection = Vector3.zero;
+        if (m_matchTargetForward)
 		{
-			this.transform.forward = Vector3.Lerp(this.transform.forward, m_target.position - this.transform.position, m_lerpScale * Time.deltaTime);
+			viewDirection = Vector3.Lerp(this.transform.forward, m_target.forward, m_rotationLerpScale * Time.deltaTime);
+        }
+		else if (m_faceTarget)
+		{
+			viewDirection = Vector3.Lerp(this.transform.forward, m_target.position - this.transform.position, m_rotationLerpScale * Time.deltaTime);
+		}
+
+		if (viewDirection.sqrMagnitude > 0)
+		{
+			this.transform.forward = viewDirection;
 		}
 	}
 
