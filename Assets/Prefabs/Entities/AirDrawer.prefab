@@ -12195,7 +12195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4452885226570436}
   m_ChildIndex: 0
-  m_SendInterval: 0.1
+  m_SendInterval: 0.0625
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 1
@@ -12213,8 +12213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 4452885226570436}
-  m_lerpScale: 5
+  m_positionLerpScale: 20
+  m_rotationLerpScale: 10
   m_faceTarget: 1
+  m_matchTargetForward: 0
   m_offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114565239990862332
 MonoBehaviour:
@@ -12260,8 +12262,8 @@ MonoBehaviour:
   m_targetPositionOffset: {x: 0, y: 0, z: 0}
   m_moveRelative: 0
   m_data:
-    forwardStepSize: {x: 7.5, y: 0, z: 7.5}
-    reverseStepSize: {x: 7.5, y: 0, z: 7.5}
+    forwardStepSize: {x: 10, y: 0, z: 10}
+    reverseStepSize: {x: 10, y: 0, z: 10}
 --- !u!114 &114841729182676536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12274,7 +12276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.0625
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
