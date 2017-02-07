@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 98013901}
   - component: {fileID: 98013902}
   m_Layer: 2
-  m_Name: DiveView
+  m_Name: DiveView -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,8 +387,10 @@ GameObject:
   - component: {fileID: 318175554}
   - component: {fileID: 318175556}
   - component: {fileID: 318175555}
+  - component: {fileID: 318175558}
+  - component: {fileID: 318175557}
   m_Layer: 2
-  m_Name: Dive
+  m_Name: Dive -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,6 +428,7 @@ MonoBehaviour:
     m_Bits: 4294967291
   diveAnim: {fileID: 318175556}
   diveCam: {fileID: 98013902}
+  captureModule: {fileID: 318175558}
 --- !u!114 &318175556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +468,29 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   duration: 4
+--- !u!135 &318175557
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318175553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.67
+  m_Center: {x: 0, y: 0.36, z: 0.31}
+--- !u!114 &318175558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318175553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33544b069a3af4d56a2f4f382e889e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &377367147 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4485272130177614, guid: a9ee51c7ac0183a4883672873f1c4d63,
@@ -626,6 +652,116 @@ Transform:
   m_Children: []
   m_Father: {fileID: 947554081}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &670750630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 670750636}
+  - component: {fileID: 670750635}
+  - component: {fileID: 670750634}
+  - component: {fileID: 670750633}
+  - component: {fileID: 670750632}
+  - component: {fileID: 670750631}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &670750631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b364f4dd45a9445caf7bc40c5958f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &670750632
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!23 &670750633
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &670750634
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &670750635
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &670750636
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670750630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.13, y: 0.66, z: 0}
+  m_LocalScale: {x: 1, y: 0.3682356, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &691675521
 Prefab:
@@ -955,7 +1091,7 @@ GameObject:
   - component: {fileID: 902119537}
   - component: {fileID: 902119536}
   m_Layer: 2
-  m_Name: Regular View Cam
+  m_Name: Regular View Cam -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1166,7 +1302,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 8.5
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1188,8 +1324,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978603986}
-  m_LocalRotation: {x: 0.12397781, y: 0, z: 0, w: 0.992285}
-  m_LocalPosition: {x: -0.023133278, y: 12.502, z: -13.018013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.023133278, y: 7.502, z: -0.018013177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1669,7 +1805,7 @@ GameObject:
   - component: {fileID: 1343327689}
   - component: {fileID: 1343327688}
   m_Layer: 2
-  m_Name: Sphere
+  m_Name: Visual -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1682,7 +1818,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343327686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1454761587}
@@ -1727,7 +1863,7 @@ SphereCollider:
   m_GameObject: {fileID: 1343327686}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1802,7 +1938,7 @@ GameObject:
   - component: {fileID: 1422589955}
   - component: {fileID: 1422589954}
   m_Layer: 2
-  m_Name: Orthogonal View
+  m_Name: Orthogonal View -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1923,7 +2059,7 @@ GameObject:
   - component: {fileID: 1454761589}
   - component: {fileID: 1454761588}
   m_Layer: 2
-  m_Name: Indicator
+  m_Name: Indicator -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2190,7 +2326,7 @@ GameObject:
   - component: {fileID: 1714178106}
   - component: {fileID: 1714178105}
   m_Layer: 2
-  m_Name: BirdController
+  m_Name: BirdController -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2461,7 +2597,7 @@ GameObject:
   - component: {fileID: 1869443708}
   - component: {fileID: 1869443709}
   m_Layer: 2
-  m_Name: Targeting
+  m_Name: Targeting -Mod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6081,7 +6217,12 @@ Prefab:
       propertyPath: m_actionMovers.m_values.Array.data[2].m_behavior
       value: 
       objectReference: {fileID: 318175556}
-    m_RemovedComponents: []
+    - target: {fileID: 1212876674929932, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
+      propertyPath: m_Name
+      value: MovementController-Mod
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114651559371751858, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2104580218 stripped
