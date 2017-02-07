@@ -236,4 +236,9 @@ public class BezierSpline : MonoBehaviour
         }
         points[enforcedIndex] = middle + enforcedTangent;
     }
+
+    public Vector3[] GetPoints()
+    {
+        return points;
+    }
 }

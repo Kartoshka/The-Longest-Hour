@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MOJ.Helpers;
+using System.Collections.Generic;
 
 /// <summary>
 /// 
@@ -50,6 +52,8 @@ public class LineDrawerComponent : MonoBehaviour
 	private DrawState m_currentState = DrawState.Uncreated;
 	private int m_splinePointCount = 0;
 	private float m_closedLoopStartPoint = 0;
+
+    private List<GameObject> m_encompassed = new List<GameObject>();
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -205,7 +209,18 @@ public class LineDrawerComponent : MonoBehaviour
 						m_timeAngle.reset();
 					}
 
-					m_currentState = DrawState.Complete;
+                    GameObject[] controllables = GameObject.FindGameObjectsWithTag("TimeControllable");
+
+                    for (int i = 0; i < controllables.Length; i++)
+                    {
+                        if (GeometryHelper.PolyContainsPoint(m_bezierSpline.GetPoints(), controllables[i].transform.position))
+                        {
+                            m_encompassed.Add(controllables[i]);
+                            controllables[i].gameObject.GetComponent<TimeControllable>().Activate();
+                        }
+                    }
+
+                    m_currentState = DrawState.Complete;
 				}
 				break;
 			}
@@ -237,6 +252,13 @@ public class LineDrawerComponent : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
 		{
 			reset();
+            
+            for(int i = 0; i < m_encompassed.Count; i++)
+            {
+                m_encompassed[i].GetComponent<TimeControllable>().Deactivate();
+            }
+            m_encompassed = new List<GameObject>();
+
 			m_currentState = DrawState.Uncreated;
 		}
 	}
