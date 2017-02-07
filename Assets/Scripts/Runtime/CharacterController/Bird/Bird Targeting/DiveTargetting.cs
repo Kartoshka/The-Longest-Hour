@@ -12,7 +12,6 @@ public class DiveTargetting : AbAirTargeting {
 	private bool diving = false;
 
 	private bool initialized = false;
-	
 
 	protected override void OnEnableTargeting()
 	{
