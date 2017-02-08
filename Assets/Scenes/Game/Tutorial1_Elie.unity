@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 98013901}
   - component: {fileID: 98013902}
   m_Layer: 2
-  m_Name: DiveView -Mod
+  m_Name: DiveView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,8 +197,8 @@ MonoBehaviour:
   m_ComposerSettings: {fileID: 11400000, guid: 0179aae7f4511471abc90617d4765e89, type: 2}
   m_TransposerSettings: {fileID: 11400000, guid: 8292d3fc34907408aaa85163132f4e94,
     type: 2}
-  m_ComposerCameraTarget: {fileID: 377367147}
-  m_TransposerCameraTarget: {fileID: 377367147}
+  m_ComposerCameraTarget: {fileID: 1185385889}
+  m_TransposerCameraTarget: {fileID: 1185385889}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -491,11 +491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33544b069a3af4d56a2f4f382e889e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &377367147 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4485272130177614, guid: a9ee51c7ac0183a4883672873f1c4d63,
-    type: 2}
-  m_PrefabInternal: {fileID: 2104580217}
 --- !u!1 &397454132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1086,7 @@ GameObject:
   - component: {fileID: 902119537}
   - component: {fileID: 902119536}
   m_Layer: 2
-  m_Name: Regular View Cam -Mod
+  m_Name: Regular View Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,8 +1131,8 @@ MonoBehaviour:
   m_ComposerSettings: {fileID: 11400000, guid: ed796dc878bff454080792e56d2b9fb8, type: 2}
   m_TransposerSettings: {fileID: 11400000, guid: 4b61a7c95e14c4d909bfedc47850d579,
     type: 2}
-  m_ComposerCameraTarget: {fileID: 377367147}
-  m_TransposerCameraTarget: {fileID: 377367147}
+  m_ComposerCameraTarget: {fileID: 1185385889}
+  m_TransposerCameraTarget: {fileID: 1185385889}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -1599,6 +1594,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1185385889 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4560192291183896, guid: a9ee51c7ac0183a4883672873f1c4d63,
+    type: 2}
+  m_PrefabInternal: {fileID: 2104580217}
 --- !u!1001 &1216805009
 Prefab:
   m_ObjectHideFlags: 0
@@ -1936,7 +1936,7 @@ GameObject:
   - component: {fileID: 1422589955}
   - component: {fileID: 1422589954}
   m_Layer: 2
-  m_Name: Orthogonal View -Mod
+  m_Name: Orthogonal View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1981,8 +1981,8 @@ MonoBehaviour:
   m_ComposerSettings: {fileID: 11400000, guid: abeb2fff2123541e982d416d628af9a9, type: 2}
   m_TransposerSettings: {fileID: 11400000, guid: 5a49b708b69bc4cab954a8dea56e1f01,
     type: 2}
-  m_ComposerCameraTarget: {fileID: 377367147}
-  m_TransposerCameraTarget: {fileID: 377367147}
+  m_ComposerCameraTarget: {fileID: 1185385889}
+  m_TransposerCameraTarget: {fileID: 1185385889}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -2590,7 +2590,7 @@ GameObject:
   - component: {fileID: 1869443708}
   - component: {fileID: 1869443709}
   m_Layer: 2
-  m_Name: Targeting -Mod
+  m_Name: Targeting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2705,7 +2705,7 @@ Prefab:
       objectReference: {fileID: 2104580218}
     - target: {fileID: 1560549525078014, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114565239990862332, guid: a9ee51c7ac0183a4883672873f1c4d63,
         type: 2}
@@ -6212,7 +6212,7 @@ Prefab:
       objectReference: {fileID: 318175556}
     - target: {fileID: 1212876674929932, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
       propertyPath: m_Name
-      value: MovementController-Mod
+      value: MovementController
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114651559371751858, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
