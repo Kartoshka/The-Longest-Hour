@@ -50,7 +50,8 @@ public abstract class AbAirTargeting : MonoBehaviour {
 		if (active){
 			active = false;
 			OnDisableTargeting ();
-		}
+            indicator.SetActive(false);
+        }
 	}
 
 	//Do actual action

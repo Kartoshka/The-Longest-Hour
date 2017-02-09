@@ -114,14 +114,35 @@ public class LineDrawerComponent : MonoBehaviour
 
 		return isComplete;
 	}
+    
+    public void StartDrawing()
+    {
+        if (m_currentState == DrawState.Uncreated)
+        {
+            m_currentState = DrawState.Adding;
+        }
+    }
+    
+    public void ClearDrawing()
+    {
+        reset();
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Runtime
-	//////////////////////////////////////////////////////////////////////////////////////////  
+        for (int i = 0; i < m_encompassed.Count; i++)
+        {
+            m_encompassed[i].GetComponent<TimeControllable>().Deactivate();
+        }
+        m_encompassed = new List<GameObject>();
 
-	// Use this for initialization
-	void Start()
+        m_currentState = DrawState.Uncreated;
+    }
+
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Runtime
+    //////////////////////////////////////////////////////////////////////////////////////////  
+
+    // Use this for initialization
+    void Start()
 	{
 		m_bezierSpline = m_bezierSplineComponent;
 		//if(!m_bezierSpline)
