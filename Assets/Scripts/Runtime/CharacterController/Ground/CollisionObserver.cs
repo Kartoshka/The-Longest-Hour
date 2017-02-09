@@ -17,6 +17,7 @@ public class CollisionObserver : MonoBehaviour
 
 	private Collision m_previousCollision;
 	private Collider m_previousCollider;
+	private bool m_isEntering = false;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -27,6 +28,7 @@ public class CollisionObserver : MonoBehaviour
 
 	public Collision getPreviousCollision() { return m_previousCollision; }
 	public Collider getPreviousCollider() { return m_previousCollider; }
+	public bool getIsEntering() { return m_isEntering; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -46,12 +48,21 @@ public class CollisionObserver : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		m_previousCollision = collision;
-		m_observer.notify();
+		m_isEntering = true;
+        m_observer.notify();
 	}
 
 	void OnTriggerEnter(Collider collider)
 	{
 		m_previousCollider = collider;
+		m_isEntering = true;
+        m_observer.notify();
+	}
+
+	void OnTriggerExit(Collider collider)
+	{
+		m_previousCollider = collider;
+		m_isEntering = false;
 		m_observer.notify();
 	}
 

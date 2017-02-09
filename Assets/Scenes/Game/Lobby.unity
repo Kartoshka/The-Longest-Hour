@@ -161,6 +161,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114249167966332924, guid: 0e52805a22261234dbbe574392114662,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224657240431854292, guid: 0e52805a22261234dbbe574392114662,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -251,6 +256,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114249167966332924, guid: 0e52805a22261234dbbe574392114662,
+        type: 2}
+      propertyPath: m_PlayScene
+      value: Tutorial1_Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249167966332924, guid: 0e52805a22261234dbbe574392114662,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000011267774992, guid: 4dd87dedbe30f0544bc011620443530e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e52805a22261234dbbe574392114662, type: 2}
   m_IsPrefabParent: 0
