@@ -20,6 +20,7 @@ public class PlatformerMoverController : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public MoverComponent m_moverComponent;
+	public float m_turnRate = 2.0f;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -81,6 +82,14 @@ public class PlatformerMoverController : MonoBehaviour
 					m_moverComponent.getTransform().forward = new Vector3(horizontalInput, 0, depthInput);
 				}
 			}
+		}
+
+		float yawInput = Input.GetAxis("HorizontalRightStick");
+		//float pitchInput = Input.GetAxis("VerticalRightStick");
+
+		if (yawInput != 0 )//|| pitchInput != 0)
+		{
+			m_moverComponent.getTransform().Rotate(new Vector3(0, m_turnRate * yawInput, 0));
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space))
