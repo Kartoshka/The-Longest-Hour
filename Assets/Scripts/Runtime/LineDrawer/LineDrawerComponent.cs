@@ -73,7 +73,7 @@ public class LineDrawerComponent : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	private void reset()
+	public void reset()
 	{
 		if (m_bezierSpline)
 		{
