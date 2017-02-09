@@ -16,7 +16,6 @@ public class DrawTargetting : AbAirTargeting {
 	protected override void OnEnableTargeting()
 	{
         m_lineDrawer = gameObject.GetComponent<LineDrawerComponent>();
-        m_lineDrawer.reset();
 	}
 
 	protected override void OnTriggerTargeting ()

@@ -18,6 +18,8 @@ TagManager:
   - DrawObject
   - Lemming
   - TimeControllable
+  - Grenade
+  - FallRespawner
   layers:
   - Default
   - TransparentFX
