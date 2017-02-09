@@ -27,8 +27,8 @@ public abstract class AbAirTargeting : MonoBehaviour {
 
 	//Shoot a ray down, return whether something was hit, out the information of the hit 
 	public bool findTarget(out RaycastHit hit){
-		if (Physics.Raycast (transform.position, Vector3.down, out hit)) {
-			return affectedLayers.value == (affectedLayers.value | (1 << hit.collider.gameObject.layer));
+		if (Physics.Raycast (transform.position, Vector3.down, out hit, Mathf.Infinity, affectedLayers)) {
+            return true;
 		} else {
 			return false;
 		}

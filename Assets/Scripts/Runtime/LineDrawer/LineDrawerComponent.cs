@@ -41,12 +41,15 @@ public class LineDrawerComponent : MonoBehaviour
 	public float m_newPointDistance;
 	public BezierSpline.BezierControlPointMode m_curveMode;
 
-	public ParticleSystem m_particles;
+    public GameObject m_particleEmitter;
+	private ParticleSystem m_particles;
 
 	public float m_completionDistanceCheck;
 	public LineWalker m_lineWalker;
 
 	public TimeShifterAimDirection m_timeAngle; //TODO: Remove this. We just want an easy way to reset on start.
+
+    public LayerMask drawableLayers;
 
 	private BezierSpline m_bezierSpline;
 	private DrawState m_currentState = DrawState.Uncreated;
@@ -54,6 +57,8 @@ public class LineDrawerComponent : MonoBehaviour
 	private float m_closedLoopStartPoint = 0;
 
     private List<GameObject> m_encompassed = new List<GameObject>();
+
+    private Vector3 m_raycastedPosition = new Vector3(0, 0, 0);
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -99,7 +104,7 @@ public class LineDrawerComponent : MonoBehaviour
 		{
 			for (int i = 0; i < checkUntilIndex; ++i)
 			{
-				if (Vector3.Distance(this.transform.position, m_bezierSpline.GetControlPoint(i)) < m_completionDistanceCheck)
+				if (Vector3.Distance(m_raycastedPosition, m_bezierSpline.GetControlPoint(i)) < m_completionDistanceCheck)
 				{
 					isComplete = true;
 					m_closedLoopStartPoint = (float)i / (float)m_splinePointCount;
@@ -134,17 +139,35 @@ public class LineDrawerComponent : MonoBehaviour
 		{
 			m_timeAngle.reset();
 		}
-	}
+        m_particles = m_particleEmitter.GetComponent<ParticleSystem>();
+        m_raycastedPosition = transform.position;
+
+        m_particles.Stop();
+        m_particles.Clear();
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
 		ProcessInputs();
+
+        // calculate raycasted position
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, drawableLayers)){
+            m_raycastedPosition = hit.point;
+        }
+        else
+        {
+            m_raycastedPosition = new Vector3(transform.position.x, m_raycastedPosition.y, transform.position.z);
+        }
+
+        m_particleEmitter.transform.position = new Vector3(m_raycastedPosition.x, m_raycastedPosition.y + 0.1f, m_raycastedPosition.z);
+
 		switch(m_currentState)
 		{
 			case (DrawState.Uncreated):
 			{
-				m_bezierSpline.SetControlPoint(m_splinePointCount, transform.position);
+				m_bezierSpline.SetControlPoint(m_splinePointCount, m_raycastedPosition);
 				break;
 			}
 			case (DrawState.Adding):
@@ -166,15 +189,15 @@ public class LineDrawerComponent : MonoBehaviour
 				{
 					m_bezierSpline.SetControlPointMode(m_splinePointCount - m_bezierSpline.getDimension(), BezierSpline.BezierControlPointMode.Free);
 				}
-				m_bezierSpline.SetControlPoint(m_splinePointCount - m_bezierSpline.getDimension(), transform.position);
+				m_bezierSpline.SetControlPoint(m_splinePointCount - m_bezierSpline.getDimension(), m_raycastedPosition);
 				// End control point.
-				m_bezierSpline.SetControlPoint(m_splinePointCount, transform.position);
+				m_bezierSpline.SetControlPoint(m_splinePointCount, m_raycastedPosition);
 				m_bezierSpline.SetControlPointMode(m_splinePointCount, BezierSpline.BezierControlPointMode.Free);
 				// Tween control points.
 				for (int i = 1; i < m_bezierSpline.getDimension(); ++i)
 				{
 					//m_bezierSpline.SetControlPointMode(m_splinePointCount - i, BezierSpline.BezierControlPointMode.Free);
-					m_bezierSpline.SetControlPoint(m_splinePointCount - i, transform.position);
+					m_bezierSpline.SetControlPoint(m_splinePointCount - i, m_raycastedPosition);
 				}
 
 				m_currentState = DrawState.Following;
@@ -186,7 +209,7 @@ public class LineDrawerComponent : MonoBehaviour
 				if (segmentStartPointIndex >= 0)
 				{
 					Vector3 segmentStartPointPosition = m_bezierSpline.GetControlPoint(segmentStartPointIndex);
-					if (Vector3.Distance(this.transform.position, segmentStartPointPosition) > m_newPointDistance)
+					if (Vector3.Distance(m_raycastedPosition, segmentStartPointPosition) > m_newPointDistance)
 					{
 						m_currentState = DrawState.Adding;
 					}
@@ -195,7 +218,7 @@ public class LineDrawerComponent : MonoBehaviour
 						for (int i = m_bezierSpline.getDimension(); i >= 1; --i)
 						{
 							//m_bezierSpline.SetControlPointMode(m_splinePointCount - i + 1, m_curveMode);
-							Vector3 controlPointPosition = Vector3.Lerp(segmentStartPointPosition, this.transform.position, (float)i / (float)m_bezierSpline.getDimension());
+							Vector3 controlPointPosition = Vector3.Lerp(segmentStartPointPosition, m_raycastedPosition, (float)i / (float)m_bezierSpline.getDimension());
 							m_bezierSpline.SetControlPoint(m_splinePointCount - m_bezierSpline.getDimension() + i, controlPointPosition);
 						}
 					}
