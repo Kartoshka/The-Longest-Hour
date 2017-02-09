@@ -22,7 +22,7 @@ public class GrenadeControllerComponent : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public bool m_canFireProjectile = false; // TODO: This ideally shouldn't be public, but good for debugging.
+	private bool m_canFireProjectile = false;
 
 	private Observer<GrenadeControllerComponent> m_observer;    // For the networked component to be notified when projectile is fired.
 	private Observer<CollisionObserver>.Listener m_collisionListener;   // For listening to when the character has picked up a projectile.
@@ -104,14 +104,19 @@ public class GrenadeControllerComponent : MonoBehaviour
 		m_observer = new Observer<GrenadeControllerComponent>(this);
 	}
 
-	// Use this for initialization
-	void Start()
+	public void initialize()
 	{
 		if (m_collisionObserver)
 		{
 			m_collisionListener = createCollisionListener();
 			m_collisionObserver.getObserver().add(m_collisionListener);
 		}
+	}
+
+	// Use this for initialization
+	void Start()
+	{
+		initialize();
 	}
 
 	public void update()

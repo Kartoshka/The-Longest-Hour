@@ -67,19 +67,20 @@ public class NetworkedGrenadeControllerComponent : NetworkBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		//if (!Network.peerType.Equals(NetworkPeerType.Disconnected))
-		//{
+		if (!Network.peerType.Equals(NetworkPeerType.Disconnected))
+		{
 			if (m_grenadeControllerComponent)
 			{
 				m_grenadeControllerComponent.enabled = false;
+				m_grenadeControllerComponent.initialize();
 				m_grenadeControllerListener = createGrenadeListener();
 				m_grenadeControllerComponent.getObserver().add(m_grenadeControllerListener);
 			}
-		//}
-		//else
-		//{
-		//	this.enabled = false;
-		//}
+		}
+		else
+		{
+			this.enabled = false;
+		}
 	}
 
 	// Update is called once per frame
