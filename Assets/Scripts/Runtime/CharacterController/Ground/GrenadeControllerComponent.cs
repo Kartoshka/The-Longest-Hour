@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 using MOJ.Helpers;
 
@@ -13,6 +14,7 @@ public class GrenadeControllerComponent : MonoBehaviour
 	public Transform m_projectileSource;
 	public GameObject m_projectilePrefab;
 	public float m_impulseMagnitude;
+
 	public CollisionObserver m_collisionObserver;
 
 	#endregion
@@ -20,14 +22,24 @@ public class GrenadeControllerComponent : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	bool m_canFireProjectile = false;
+	public bool m_canFireProjectile = false; // TODO: This ideally shouldn't be public, but good for debugging.
 
-	private Observer<CollisionObserver>.Listener m_collisionListener;
+	private Observer<GrenadeControllerComponent> m_observer;    // For the networked component to be notified when projectile is fired.
+	private Observer<CollisionObserver>.Listener m_collisionListener;   // For listening to when the character has picked up a projectile.
+
+	private GameObject m_previouslySpawnedProjectile;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
+
+	public Observer<GrenadeControllerComponent> getObserver() { return m_observer; }
+
+	//public Transform getProjectileSource() { return m_projectileSource; }
+	//public GameObject getProjectilePrefab() { return m_projectilePrefab; }
+	//public float getImpulseMagnitude() { return m_impulseMagnitude; }
+	public GameObject getSpawnedProjectile() { return m_previouslySpawnedProjectile; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -41,18 +53,27 @@ public class GrenadeControllerComponent : MonoBehaviour
 
 	void FireProjectile()
 	{
-		if (m_projectilePrefab)
-		{
-			GameObject spawnedObject = (GameObject)Instantiate(m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
-			if (spawnedObject)
+		//if(Network.peerType.Equals(NetworkPeerType.Disconnected))
+		//{
+			if (m_projectilePrefab)
 			{
-				Rigidbody rigidBody = spawnedObject.GetComponent<Rigidbody>();
-				if (rigidBody)
+				//GameObject spawnedObject = (GameObject)Instantiate(m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
+				m_previouslySpawnedProjectile = NetworkLobbyManager.Instantiate<GameObject>(m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
+				if (m_previouslySpawnedProjectile)
 				{
-					rigidBody.velocity = m_projectileSource.forward * m_impulseMagnitude;
-                }
+					Rigidbody rigidBody = m_previouslySpawnedProjectile.GetComponent<Rigidbody>();
+					if (rigidBody)
+					{
+						rigidBody.velocity = m_projectileSource.forward * m_impulseMagnitude;
+					}
+				}
 			}
-		}
+		//}
+		//else
+		//{
+		//	// If networked, move functionality to networked component.
+			m_observer.notify();
+		//}
 	}
 
 	// Listen to the CollisionObserver to detect pickups.
@@ -78,24 +99,34 @@ public class GrenadeControllerComponent : MonoBehaviour
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
+	void Awake()
+	{
+		m_observer = new Observer<GrenadeControllerComponent>(this);
+	}
+
 	// Use this for initialization
 	void Start()
 	{
-		if(m_collisionObserver)
+		if (m_collisionObserver)
 		{
 			m_collisionListener = createCollisionListener();
 			m_collisionObserver.getObserver().add(m_collisionListener);
 		}
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void update()
 	{
 		if (m_canFireProjectile && Input.GetButtonDown("Fire1"))
 		{
 			FireProjectile();
 		}
 	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		update();
+    }
 
 	#endregion
 }
