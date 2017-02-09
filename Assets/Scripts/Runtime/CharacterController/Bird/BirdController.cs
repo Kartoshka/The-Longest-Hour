@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class BirdController : MonoBehaviour {
 
@@ -30,29 +31,52 @@ public class BirdController : MonoBehaviour {
 	}
 	
 	void Update () {
-		//Camera movement input
-		float verticalInput = Input.GetAxis ("VerticalRightStick");
-		float horizontalInput = Input.GetAxis ("HorizontalRightStick");
+        //Camera movement input
+        float verticalInput;
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            verticalInput = Input.GetAxis("VerticalRightStick");
+        else
+            verticalInput = 0;
 
-		//Move active camera
-		active.increasePitch (-verticalInput);
+
+        float horizontalInput;
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            horizontalInput = Input.GetAxis("HorizontalRightStick");
+        else
+            horizontalInput = 0;
+
+        //Move active camera
+        active.increasePitch (-verticalInput);
 		active.increaseYaw (horizontalInput);
 		active.UpdatePosition ();
 
-		//Movement controls
-		float verticalLeftStick = Input.GetAxis ("Vertical");
-		float horizontalLeftStick = Input.GetAxis ("Horizontal");
-		moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
+        //Movement controls
+        float verticalLeftStick;
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            verticalLeftStick = Input.GetAxis("VerticalBird");
+        else
+            verticalLeftStick = Input.GetAxis("Vertical");
 
-		if (Input.GetButtonDown ("Jump")) {
+        float horizontalLeftStick;
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            horizontalLeftStick = Input.GetAxis("HorizontalBird");
+        else
+            horizontalLeftStick = Input.GetAxis("Horizontal");
+
+        moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
+
+		if ((Network.peerType == NetworkPeerType.Disconnected && Input.GetButtonDown ("JumpBird")) ||
+            Network.peerType != NetworkPeerType.Disconnected && Input.GetButtonDown("Jump")) {
 			switchCameras ();
 		}
 
 		if (topDown) {
-			if (Input.GetButtonDown ("Fire1")) {
+			if ((Network.peerType == NetworkPeerType.Disconnected && Input.GetButtonDown("Fire1Bird")) ||
+            Network.peerType != NetworkPeerType.Disconnected && Input.GetButtonDown("Fire1")) {
 				targetControl.TriggerCurrent ();
 			}
-			if (Input.GetButtonDown ("Fire2")) {
+			if ((Network.peerType == NetworkPeerType.Disconnected && Input.GetButtonDown("Fire2Bird")) ||
+            Network.peerType != NetworkPeerType.Disconnected && Input.GetButtonDown("Fire2")) {
 				targetControl.toggle ();
 			}
 		}

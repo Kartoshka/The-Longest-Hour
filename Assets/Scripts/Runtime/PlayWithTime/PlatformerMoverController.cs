@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 using MOJ.Helpers;
@@ -68,10 +69,20 @@ public class PlatformerMoverController : MonoBehaviour
 
 	private void ProcessInputs()
 	{
-		float horizontalInput = Input.GetAxis("Horizontal");
-		float depthInput = Input.GetAxis("Vertical");
+        
+        float horizontalInput;
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            horizontalInput = Input.GetAxis("HorizontalGround");
+        else
+            horizontalInput = Input.GetAxis("Horizontal");
 
-		if (horizontalInput != 0 || depthInput != 0)
+        float depthInput = Input.GetAxis("Vertical");
+        if (Network.peerType == NetworkPeerType.Disconnected)
+            depthInput = Input.GetAxis("VerticalGround");
+        else
+            depthInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput != 0 || depthInput != 0)
 		{
 			m_moverComponent.activateMoverAction(MoverComponent.ActionTypeFlag.Run);
 
@@ -92,7 +103,8 @@ public class PlatformerMoverController : MonoBehaviour
 			m_moverComponent.getTransform().Rotate(new Vector3(0, m_turnRate * yawInput, 0));
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if ((Network.peerType == NetworkPeerType.Disconnected && Input.GetButtonDown("JumpGround")) ||
+           Network.peerType != NetworkPeerType.Disconnected && Input.GetButtonDown("Jump"))
 		{
 			m_moverComponent.activateMoverAction(MoverComponent.ActionTypeFlag.Jump);
 		}
