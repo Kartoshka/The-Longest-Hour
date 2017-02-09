@@ -4,6 +4,7 @@
 		_RimEffectStrength("Rim Effect Strength", Range(-1,1)) = 0
 		_EdgeGlowColor("Edge Glow Color", Color) = (1,1,1,1)
 		_EdgeGlowStrength("Edge Glow Strength", Range(1,10)) = 1
+		_Edging("Edging", Range(0, 1)) = 0.75
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -27,6 +28,7 @@
 		fixed4 _EdgeGlowColor;
 		float _RimEffectStrength;
 		float _EdgeGlowStrength;
+		float _Edging;
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
@@ -34,7 +36,7 @@
 			float edgeValue = 1 - (abs(dot(IN.worldNormal, IN.viewDir)));
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
 
-			if (edgeValue >= 0.75)
+			if (edgeValue >= _Edging)
 			{
 				o.Albedo = _EdgeGlowColor.rgb;
 				o.Emission = pow(_EdgeGlowColor, _EdgeGlowStrength);
