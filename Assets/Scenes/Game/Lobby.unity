@@ -259,7 +259,7 @@ Prefab:
     - target: {fileID: 114249167966332924, guid: 0e52805a22261234dbbe574392114662,
         type: 2}
       propertyPath: m_PlayScene
-      value: Tutorial1_Ground
+      value: Tutorial1
       objectReference: {fileID: 0}
     - target: {fileID: 114249167966332924, guid: 0e52805a22261234dbbe574392114662,
         type: 2}
