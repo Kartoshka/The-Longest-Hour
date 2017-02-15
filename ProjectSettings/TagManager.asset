@@ -20,6 +20,7 @@ TagManager:
   - TimeControllable
   - Grenade
   - FallRespawner
+  - Debug
   layers:
   - Default
   - TransparentFX

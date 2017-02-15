@@ -10,11 +10,11 @@ public class DiveTargetting : AbAirTargeting {
 	public Cinemachine.CinemachineVirtualCamera diveCam;
 
 	private bool diving = false;
-
 	private bool initialized = false;
-
-
+    
 	public Capturer captureModule;
+
+    private DebugEntities debug;
 
 	protected override void OnEnableTargeting()
 	{
@@ -22,6 +22,8 @@ public class DiveTargetting : AbAirTargeting {
 			diveAnim.onDiveComplete += disableAnimCamera;
 			initialized = true;
 		}
+
+        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
 	}
 
 	protected override void OnTriggerTargeting ()
@@ -32,7 +34,8 @@ public class DiveTargetting : AbAirTargeting {
 				if (diveAnim != null && !diving) {
 					diveAnim.initialize (this.transform, target.transform.position.y);
 					diving = true;
-					diveCam.gameObject.SetActive (true);
+                    if(!debug.m_useWorldCam)
+					    diveCam.gameObject.SetActive (true);
 				}
 			} else {
 				captureModule.Release ();
