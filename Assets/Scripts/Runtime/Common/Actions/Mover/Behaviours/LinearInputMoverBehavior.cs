@@ -38,19 +38,24 @@ public class LinearInputMoverBehavior : MoverBehavior
 
 	private Vector3 m_inputMagnitude = Vector3.zero;
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region  Constructors
-	//////////////////////////////////////////////////////////////////////////////////////////
+    private DebugEntities debug;
 
-	public LinearInputMoverBehavior()
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region  Constructors
+    //////////////////////////////////////////////////////////////////////////////////////////
+    void Start() {
+        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
+    }
+       
+    public LinearInputMoverBehavior()
 	{
-		initialize();
+        initialize();
     }
 
 	public LinearInputMoverBehavior(MoverBehavior copiedBehavior)
 	{
-		initialize(copiedBehavior);
+        initialize(copiedBehavior);
     }
 
 	public override void initialize(MoverBehavior copiedBehavior)
@@ -60,8 +65,9 @@ public class LinearInputMoverBehavior : MoverBehavior
 		{
 			m_data.copy(copiedLinearInputBehavior.m_data);
 		}
-		initialize();
-	}
+        initialize();
+    }
+    
 
 	//public override void initialize()
 	//{
@@ -146,10 +152,18 @@ public class LinearInputMoverBehavior : MoverBehavior
 	{
 		if(getEnableUserInput())
 		{
-			m_inputMagnitude.x = Input.GetAxis("Horizontal");
-			m_inputMagnitude.y = 0;
-			m_inputMagnitude.z = Input.GetAxis("Vertical");
-		}
+            if (!debug.m_useWorldCam)
+                m_inputMagnitude.x = Input.GetAxis("Horizontal");
+            else
+                m_inputMagnitude.x = Input.GetAxis("HorizontalGround");
+
+            m_inputMagnitude.y = 0;
+
+            if(!debug.m_useWorldCam)
+			    m_inputMagnitude.z = Input.GetAxis("Vertical");
+            else
+                m_inputMagnitude.z = Input.GetAxis("VerticalGround");
+        }
 		else
 		{
 			m_inputMagnitude = Vector3.one;

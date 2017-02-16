@@ -1,0 +1,1577 @@
+fileFormatVersion: 2
+guid: edc7559c123e5f44985e92bbf2e79a93
+timeCreated: 1486481149
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: body
+    100004: Controls
+    100006: FeatherGroups
+    100008: joint1
+    100010: joint10
+    100012: joint2
+    100014: joint3
+    100016: joint4
+    100018: joint5
+    100020: joint6
+    100022: joint7
+    100024: joint8
+    100026: joint9
+    100028: Joints
+    100030: L_Alula_1
+    100032: L_Alula_1_GRP
+    100034: L_Alula_2
+    100036: L_Alula_2_GRP
+    100038: L_Alula_3
+    100040: L_Alula_3_GRP
+    100042: L_Alula_4
+    100044: L_Alula_4_GRP
+    100046: L_Alula_Con_1
+    100048: L_Alula_Con_1_GRP
+    100050: L_Alula_Con_1_GRP2
+    100052: L_Alula_Con_1_GRP_FLD
+    100054: L_Alula_Con_2
+    100056: L_Alula_Con_2_GRP
+    100058: L_Alula_Con_2_GRP2
+    100060: L_Alula_Con_2_GRP_FLD
+    100062: L_Alula_GRP
+    100064: L_EndFeathers_CON
+    100066: L_EndFeathers_GRP
+    100068: L_EndFeathers_GRP2
+    100070: L_EndFeathers_GRP_FLD
+    100072: L_MedianCoverts_1
+    100074: L_MedianCoverts_1_GRP
+    100076: L_MedianCoverts_2
+    100078: L_MedianCoverts_2_GRP
+    100080: L_MedianCoverts_3
+    100082: L_MedianCoverts_3_GRP
+    100084: L_MedianCoverts_4
+    100086: L_MedianCoverts_4_GRP
+    100088: L_MedianCoverts_5
+    100090: L_MedianCoverts_5_GRP
+    100092: L_MedianCoverts_Con_1
+    100094: L_MedianCoverts_Con_1_GRP
+    100096: L_MedianCoverts_Con_1_GRP2
+    100098: L_MedianCoverts_Con_1_GRP_FLD
+    100100: L_MedianCoverts_Con_2
+    100102: L_MedianCoverts_Con_2_GRP
+    100104: L_MedianCoverts_Con_2_GRP2
+    100106: L_MedianCoverts_Con_2_GRP_FLD
+    100108: L_MedianCoverts_GRP
+    100110: L_MiddleFeathers_CON
+    100112: L_MiddleFeathers_GRP
+    100114: L_MiddleFeathers_GRP2
+    100116: L_MiddleFeathers_GRP_FLD
+    100118: L_Primaries_1
+    100120: L_Primaries_1_GRP
+    100122: L_Primaries_2
+    100124: L_Primaries_2_GRP
+    100126: L_Primaries_3
+    100128: L_Primaries_3_GRP
+    100130: L_Primaries_4
+    100132: L_Primaries_4_GRP
+    100134: L_Primaries_5
+    100136: L_Primaries_5_GRP
+    100138: L_Primaries_Con_1
+    100140: L_Primaries_Con_1_GRP
+    100142: L_Primaries_Con_1_GRP2
+    100144: L_Primaries_Con_1_GRP_FLD
+    100146: L_Primaries_Con_2
+    100148: L_Primaries_Con_2_GRP
+    100150: L_Primaries_Con_2_GRP2
+    100152: L_Primaries_Con_2_GRP_FLD
+    100154: L_Primaries_GRP
+    100156: L_PrimaryCoverts_1
+    100158: L_PrimaryCoverts_1_GRP
+    100160: L_PrimaryCoverts_2
+    100162: L_PrimaryCoverts_2_GRP
+    100164: L_PrimaryCoverts_3
+    100166: L_PrimaryCoverts_3_GRP
+    100168: L_PrimaryCoverts_4
+    100170: L_PrimaryCoverts_4_GRP
+    100172: L_PrimaryCoverts_5
+    100174: L_PrimaryCoverts_5_GRP
+    100176: L_PrimaryCoverts_Con_1
+    100178: L_PrimaryCoverts_Con_1_GRP
+    100180: L_PrimaryCoverts_Con_1_GRP2
+    100182: L_PrimaryCoverts_Con_1_GRP_FLD
+    100184: L_PrimaryCoverts_Con_2
+    100186: L_PrimaryCoverts_Con_2_GRP
+    100188: L_PrimaryCoverts_Con_2_GRP2
+    100190: L_PrimaryCoverts_Con_2_GRP_FLD
+    100192: L_PrimaryCoverts_GRP
+    100194: L_Secondaries_1
+    100196: L_Secondaries_1_GRP
+    100198: L_Secondaries_2
+    100200: L_Secondaries_2_GRP
+    100202: L_Secondaries_3
+    100204: L_Secondaries_3_GRP
+    100206: L_Secondaries_4
+    100208: L_Secondaries_4_GRP
+    100210: L_Secondaries_5
+    100212: L_Secondaries_5_GRP
+    100214: L_Secondaries_6
+    100216: L_Secondaries_6_GRP
+    100218: L_Secondaries_Con_1
+    100220: L_Secondaries_Con_1_GRP
+    100222: L_Secondaries_Con_1_GRP2
+    100224: L_Secondaries_Con_1_GRP_FLD
+    100226: L_Secondaries_Con_2
+    100228: L_Secondaries_Con_2_GRP
+    100230: L_Secondaries_Con_2_GRP2
+    100232: L_Secondaries_Con_2_GRP_FLD
+    100234: L_Secondaries_GRP
+    100236: L_SecondaryCoverts_1
+    100238: L_SecondaryCoverts_1_GRP
+    100240: L_SecondaryCoverts_2
+    100242: L_SecondaryCoverts_2_GRP
+    100244: L_SecondaryCoverts_3
+    100246: L_SecondaryCoverts_3_GRP
+    100248: L_SecondaryCoverts_4
+    100250: L_SecondaryCoverts_4_GRP
+    100252: L_SecondaryCoverts_5
+    100254: L_SecondaryCoverts_5_GRP
+    100256: L_SecondaryCoverts_Con_1
+    100258: L_SecondaryCoverts_Con_1_GRP
+    100260: L_SecondaryCoverts_Con_1_GRP2
+    100262: L_SecondaryCoverts_Con_1_GRP_FLD
+    100264: L_SecondaryCoverts_Con_2
+    100266: L_SecondaryCoverts_Con_2_GRP
+    100268: L_SecondaryCoverts_Con_2_GRP2
+    100270: L_SecondaryCoverts_Con_2_GRP_FLD
+    100272: L_SecondaryCoverts_GRP
+    100274: L_Shoulder_CON
+    100276: L_Shoulder_Con_GRP
+    100278: L_Shoulder_Con_GRP2
+    100280: L_TipFeathers_CON
+    100282: L_TipFeathers_GRP
+    100284: L_TipFeathers_GRP2
+    100286: L_TipFeathers_GRP_FLD
+    100288: L_Wing2_FK_CON
+    100290: L_Wing2_FK_Con_GRP
+    100292: L_Wing2_FK_Con_GRP2
+    100294: L_Wing3_FK_CON
+    100296: L_Wing3_FK_Con_GRP
+    100298: L_Wing3_FK_Con_GRP2
+    100300: L_Wing_1_JNT
+    100302: L_Wing_1_JNT_FK
+    100304: L_Wing_1_JNT_IK
+    100306: L_Wing_2_JNT
+    100308: L_Wing_2_JNT_FK
+    100310: L_Wing_2_JNT_IK
+    100312: L_Wing_3_JNT
+    100314: L_Wing_3_JNT_FK
+    100316: L_Wing_3_JNT_IK
+    100318: L_Wing_4_JNT
+    100320: L_Wing_4_JNT_FK
+    100322: L_Wing_4_JNT_IK
+    100324: L_Wing_IK
+    100326: L_Wing_Pole_CON
+    100328: L_Wrist_CON
+    100330: L_Wrist_Con_GRP
+    100332: MainWing_CON
+    100334: NoXForm
+    100336: R_Alula_1
+    100338: R_Alula_1_GRP
+    100340: R_Alula_2
+    100342: R_Alula_2_GRP
+    100344: R_Alula_3
+    100346: R_Alula_3_GRP
+    100348: R_Alula_4
+    100350: R_Alula_4_GRP
+    100352: R_Alula_Con_1
+    100354: R_Alula_Con_1_GRP
+    100356: R_Alula_Con_1_GRP2
+    100358: R_Alula_Con_1_GRP_FLD
+    100360: R_Alula_Con_2
+    100362: R_Alula_Con_2_GRP
+    100364: R_Alula_Con_2_GRP2
+    100366: R_Alula_Con_2_GRP_FLD
+    100368: R_Alula_GRP
+    100370: R_EndFeathers_CON
+    100372: R_EndFeathers_GRP
+    100374: R_EndFeathers_GRP2
+    100376: R_EndFeathers_GRP_FLD
+    100378: R_MedianCoverts_1
+    100380: R_MedianCoverts_1_GRP
+    100382: R_MedianCoverts_2
+    100384: R_MedianCoverts_2_GRP
+    100386: R_MedianCoverts_3
+    100388: R_MedianCoverts_3_GRP
+    100390: R_MedianCoverts_4
+    100392: R_MedianCoverts_4_GRP
+    100394: R_MedianCoverts_5
+    100396: R_MedianCoverts_5_GRP
+    100398: R_MedianCoverts_Con_1
+    100400: R_MedianCoverts_Con_1_GRP
+    100402: R_MedianCoverts_Con_1_GRP2
+    100404: R_MedianCoverts_Con_1_GRP_FLD
+    100406: R_MedianCoverts_Con_2
+    100408: R_MedianCoverts_Con_2_GRP
+    100410: R_MedianCoverts_Con_2_GRP2
+    100412: R_MedianCoverts_Con_2_GRP_FLD
+    100414: R_MedianCoverts_GRP
+    100416: R_MiddleFeathers_CON
+    100418: R_MiddleFeathers_GRP
+    100420: R_MiddleFeathers_GRP2
+    100422: R_MiddleFeathers_GRP_FLD
+    100424: R_Primaries_1
+    100426: R_Primaries_1_GRP
+    100428: R_Primaries_2
+    100430: R_Primaries_2_GRP
+    100432: R_Primaries_3
+    100434: R_Primaries_3_GRP
+    100436: R_Primaries_4
+    100438: R_Primaries_4_GRP
+    100440: R_Primaries_5
+    100442: R_Primaries_5_GRP
+    100444: R_Primaries_Con_1
+    100446: R_Primaries_Con_1_GRP
+    100448: R_Primaries_Con_1_GRP2
+    100450: R_Primaries_Con_1_GRP_FLD
+    100452: R_Primaries_Con_2
+    100454: R_Primaries_Con_2_GRP
+    100456: R_Primaries_Con_2_GRP2
+    100458: R_Primaries_Con_2_GRP_FLD
+    100460: R_Primaries_GRP
+    100462: R_PrimaryCoverts_1
+    100464: R_PrimaryCoverts_1_GRP
+    100466: R_PrimaryCoverts_2
+    100468: R_PrimaryCoverts_2_GRP
+    100470: R_PrimaryCoverts_3
+    100472: R_PrimaryCoverts_3_GRP
+    100474: R_PrimaryCoverts_4
+    100476: R_PrimaryCoverts_4_GRP
+    100478: R_PrimaryCoverts_5
+    100480: R_PrimaryCoverts_5_GRP
+    100482: R_PrimaryCoverts_Con_1
+    100484: R_PrimaryCoverts_Con_1_GRP
+    100486: R_PrimaryCoverts_Con_1_GRP2
+    100488: R_PrimaryCoverts_Con_1_GRP_FLD
+    100490: R_PrimaryCoverts_Con_2
+    100492: R_PrimaryCoverts_Con_2_GRP
+    100494: R_PrimaryCoverts_Con_2_GRP2
+    100496: R_PrimaryCoverts_Con_2_GRP_FLD
+    100498: R_PrimaryCoverts_GRP
+    100500: R_Secondaries_1
+    100502: R_Secondaries_1_GRP
+    100504: R_Secondaries_2
+    100506: R_Secondaries_2_GRP
+    100508: R_Secondaries_3
+    100510: R_Secondaries_3_GRP
+    100512: R_Secondaries_4
+    100514: R_Secondaries_4_GRP
+    100516: R_Secondaries_5
+    100518: R_Secondaries_5_GRP
+    100520: R_Secondaries_6
+    100522: R_Secondaries_6_GRP
+    100524: R_Secondaries_Con_1
+    100526: R_Secondaries_Con_1_GRP
+    100528: R_Secondaries_Con_1_GRP2
+    100530: R_Secondaries_Con_1_GRP_FLD
+    100532: R_Secondaries_Con_2
+    100534: R_Secondaries_Con_2_GRP
+    100536: R_Secondaries_Con_2_GRP2
+    100538: R_Secondaries_Con_2_GRP_FLD
+    100540: R_Secondaries_GRP
+    100542: R_SecondaryCoverts_1
+    100544: R_SecondaryCoverts_1_GRP
+    100546: R_SecondaryCoverts_2
+    100548: R_SecondaryCoverts_2_GRP
+    100550: R_SecondaryCoverts_3
+    100552: R_SecondaryCoverts_3_GRP
+    100554: R_SecondaryCoverts_4
+    100556: R_SecondaryCoverts_4_GRP
+    100558: R_SecondaryCoverts_5
+    100560: R_SecondaryCoverts_5_GRP
+    100562: R_SecondaryCoverts_Con_1
+    100564: R_SecondaryCoverts_Con_1_GRP
+    100566: R_SecondaryCoverts_Con_1_GRP2
+    100568: R_SecondaryCoverts_Con_1_GRP_FLD
+    100570: R_SecondaryCoverts_Con_2
+    100572: R_SecondaryCoverts_Con_2_GRP
+    100574: R_SecondaryCoverts_Con_2_GRP2
+    100576: R_SecondaryCoverts_Con_2_GRP_FLD
+    100578: R_SecondaryCoverts_GRP
+    100580: R_Shoulder_CON
+    100582: R_Shoulder_Con_GRP
+    100584: R_Shoulder_Con_GRP2
+    100586: R_TipFeathers_CON
+    100588: R_TipFeathers_GRP
+    100590: R_TipFeathers_GRP2
+    100592: R_TipFeathers_GRP_FLD
+    100594: R_Wing2_FK_CON
+    100596: R_Wing2_FK_Con_GRP
+    100598: R_Wing2_FK_Con_GRP2
+    100600: R_Wing3_FK_CON
+    100602: R_Wing3_FK_Con_GRP
+    100604: R_Wing3_FK_Con_GRP2
+    100606: R_Wing_1_JNT
+    100608: R_Wing_1_JNT_FK
+    100610: R_Wing_1_JNT_IK
+    100612: R_Wing_2_JNT
+    100614: R_Wing_2_JNT_FK
+    100616: R_Wing_2_JNT_IK
+    100618: R_Wing_3_JNT
+    100620: R_Wing_3_JNT_FK
+    100622: R_Wing_3_JNT_IK
+    100624: R_Wing_4_JNT
+    100626: R_Wing_4_JNT_FK
+    100628: R_Wing_4_JNT_IK
+    100630: R_Wing_IK
+    100632: R_Wing_Pole_CON
+    100634: R_Wrist_CON
+    100636: R_Wrist_Con_GRP
+    100638: Wings
+    100640: XForm
+    400000: //RootNode
+    400002: body
+    400004: Controls
+    400006: FeatherGroups
+    400008: joint1
+    400010: joint10
+    400012: joint2
+    400014: joint3
+    400016: joint4
+    400018: joint5
+    400020: joint6
+    400022: joint7
+    400024: joint8
+    400026: joint9
+    400028: Joints
+    400030: L_Alula_1
+    400032: L_Alula_1_GRP
+    400034: L_Alula_2
+    400036: L_Alula_2_GRP
+    400038: L_Alula_3
+    400040: L_Alula_3_GRP
+    400042: L_Alula_4
+    400044: L_Alula_4_GRP
+    400046: L_Alula_Con_1
+    400048: L_Alula_Con_1_GRP
+    400050: L_Alula_Con_1_GRP2
+    400052: L_Alula_Con_1_GRP_FLD
+    400054: L_Alula_Con_2
+    400056: L_Alula_Con_2_GRP
+    400058: L_Alula_Con_2_GRP2
+    400060: L_Alula_Con_2_GRP_FLD
+    400062: L_Alula_GRP
+    400064: L_EndFeathers_CON
+    400066: L_EndFeathers_GRP
+    400068: L_EndFeathers_GRP2
+    400070: L_EndFeathers_GRP_FLD
+    400072: L_MedianCoverts_1
+    400074: L_MedianCoverts_1_GRP
+    400076: L_MedianCoverts_2
+    400078: L_MedianCoverts_2_GRP
+    400080: L_MedianCoverts_3
+    400082: L_MedianCoverts_3_GRP
+    400084: L_MedianCoverts_4
+    400086: L_MedianCoverts_4_GRP
+    400088: L_MedianCoverts_5
+    400090: L_MedianCoverts_5_GRP
+    400092: L_MedianCoverts_Con_1
+    400094: L_MedianCoverts_Con_1_GRP
+    400096: L_MedianCoverts_Con_1_GRP2
+    400098: L_MedianCoverts_Con_1_GRP_FLD
+    400100: L_MedianCoverts_Con_2
+    400102: L_MedianCoverts_Con_2_GRP
+    400104: L_MedianCoverts_Con_2_GRP2
+    400106: L_MedianCoverts_Con_2_GRP_FLD
+    400108: L_MedianCoverts_GRP
+    400110: L_MiddleFeathers_CON
+    400112: L_MiddleFeathers_GRP
+    400114: L_MiddleFeathers_GRP2
+    400116: L_MiddleFeathers_GRP_FLD
+    400118: L_Primaries_1
+    400120: L_Primaries_1_GRP
+    400122: L_Primaries_2
+    400124: L_Primaries_2_GRP
+    400126: L_Primaries_3
+    400128: L_Primaries_3_GRP
+    400130: L_Primaries_4
+    400132: L_Primaries_4_GRP
+    400134: L_Primaries_5
+    400136: L_Primaries_5_GRP
+    400138: L_Primaries_Con_1
+    400140: L_Primaries_Con_1_GRP
+    400142: L_Primaries_Con_1_GRP2
+    400144: L_Primaries_Con_1_GRP_FLD
+    400146: L_Primaries_Con_2
+    400148: L_Primaries_Con_2_GRP
+    400150: L_Primaries_Con_2_GRP2
+    400152: L_Primaries_Con_2_GRP_FLD
+    400154: L_Primaries_GRP
+    400156: L_PrimaryCoverts_1
+    400158: L_PrimaryCoverts_1_GRP
+    400160: L_PrimaryCoverts_2
+    400162: L_PrimaryCoverts_2_GRP
+    400164: L_PrimaryCoverts_3
+    400166: L_PrimaryCoverts_3_GRP
+    400168: L_PrimaryCoverts_4
+    400170: L_PrimaryCoverts_4_GRP
+    400172: L_PrimaryCoverts_5
+    400174: L_PrimaryCoverts_5_GRP
+    400176: L_PrimaryCoverts_Con_1
+    400178: L_PrimaryCoverts_Con_1_GRP
+    400180: L_PrimaryCoverts_Con_1_GRP2
+    400182: L_PrimaryCoverts_Con_1_GRP_FLD
+    400184: L_PrimaryCoverts_Con_2
+    400186: L_PrimaryCoverts_Con_2_GRP
+    400188: L_PrimaryCoverts_Con_2_GRP2
+    400190: L_PrimaryCoverts_Con_2_GRP_FLD
+    400192: L_PrimaryCoverts_GRP
+    400194: L_Secondaries_1
+    400196: L_Secondaries_1_GRP
+    400198: L_Secondaries_2
+    400200: L_Secondaries_2_GRP
+    400202: L_Secondaries_3
+    400204: L_Secondaries_3_GRP
+    400206: L_Secondaries_4
+    400208: L_Secondaries_4_GRP
+    400210: L_Secondaries_5
+    400212: L_Secondaries_5_GRP
+    400214: L_Secondaries_6
+    400216: L_Secondaries_6_GRP
+    400218: L_Secondaries_Con_1
+    400220: L_Secondaries_Con_1_GRP
+    400222: L_Secondaries_Con_1_GRP2
+    400224: L_Secondaries_Con_1_GRP_FLD
+    400226: L_Secondaries_Con_2
+    400228: L_Secondaries_Con_2_GRP
+    400230: L_Secondaries_Con_2_GRP2
+    400232: L_Secondaries_Con_2_GRP_FLD
+    400234: L_Secondaries_GRP
+    400236: L_SecondaryCoverts_1
+    400238: L_SecondaryCoverts_1_GRP
+    400240: L_SecondaryCoverts_2
+    400242: L_SecondaryCoverts_2_GRP
+    400244: L_SecondaryCoverts_3
+    400246: L_SecondaryCoverts_3_GRP
+    400248: L_SecondaryCoverts_4
+    400250: L_SecondaryCoverts_4_GRP
+    400252: L_SecondaryCoverts_5
+    400254: L_SecondaryCoverts_5_GRP
+    400256: L_SecondaryCoverts_Con_1
+    400258: L_SecondaryCoverts_Con_1_GRP
+    400260: L_SecondaryCoverts_Con_1_GRP2
+    400262: L_SecondaryCoverts_Con_1_GRP_FLD
+    400264: L_SecondaryCoverts_Con_2
+    400266: L_SecondaryCoverts_Con_2_GRP
+    400268: L_SecondaryCoverts_Con_2_GRP2
+    400270: L_SecondaryCoverts_Con_2_GRP_FLD
+    400272: L_SecondaryCoverts_GRP
+    400274: L_Shoulder_CON
+    400276: L_Shoulder_Con_GRP
+    400278: L_Shoulder_Con_GRP2
+    400280: L_TipFeathers_CON
+    400282: L_TipFeathers_GRP
+    400284: L_TipFeathers_GRP2
+    400286: L_TipFeathers_GRP_FLD
+    400288: L_Wing2_FK_CON
+    400290: L_Wing2_FK_Con_GRP
+    400292: L_Wing2_FK_Con_GRP2
+    400294: L_Wing3_FK_CON
+    400296: L_Wing3_FK_Con_GRP
+    400298: L_Wing3_FK_Con_GRP2
+    400300: L_Wing_1_JNT
+    400302: L_Wing_1_JNT_FK
+    400304: L_Wing_1_JNT_IK
+    400306: L_Wing_2_JNT
+    400308: L_Wing_2_JNT_FK
+    400310: L_Wing_2_JNT_IK
+    400312: L_Wing_3_JNT
+    400314: L_Wing_3_JNT_FK
+    400316: L_Wing_3_JNT_IK
+    400318: L_Wing_4_JNT
+    400320: L_Wing_4_JNT_FK
+    400322: L_Wing_4_JNT_IK
+    400324: L_Wing_IK
+    400326: L_Wing_Pole_CON
+    400328: L_Wrist_CON
+    400330: L_Wrist_Con_GRP
+    400332: MainWing_CON
+    400334: NoXForm
+    400336: R_Alula_1
+    400338: R_Alula_1_GRP
+    400340: R_Alula_2
+    400342: R_Alula_2_GRP
+    400344: R_Alula_3
+    400346: R_Alula_3_GRP
+    400348: R_Alula_4
+    400350: R_Alula_4_GRP
+    400352: R_Alula_Con_1
+    400354: R_Alula_Con_1_GRP
+    400356: R_Alula_Con_1_GRP2
+    400358: R_Alula_Con_1_GRP_FLD
+    400360: R_Alula_Con_2
+    400362: R_Alula_Con_2_GRP
+    400364: R_Alula_Con_2_GRP2
+    400366: R_Alula_Con_2_GRP_FLD
+    400368: R_Alula_GRP
+    400370: R_EndFeathers_CON
+    400372: R_EndFeathers_GRP
+    400374: R_EndFeathers_GRP2
+    400376: R_EndFeathers_GRP_FLD
+    400378: R_MedianCoverts_1
+    400380: R_MedianCoverts_1_GRP
+    400382: R_MedianCoverts_2
+    400384: R_MedianCoverts_2_GRP
+    400386: R_MedianCoverts_3
+    400388: R_MedianCoverts_3_GRP
+    400390: R_MedianCoverts_4
+    400392: R_MedianCoverts_4_GRP
+    400394: R_MedianCoverts_5
+    400396: R_MedianCoverts_5_GRP
+    400398: R_MedianCoverts_Con_1
+    400400: R_MedianCoverts_Con_1_GRP
+    400402: R_MedianCoverts_Con_1_GRP2
+    400404: R_MedianCoverts_Con_1_GRP_FLD
+    400406: R_MedianCoverts_Con_2
+    400408: R_MedianCoverts_Con_2_GRP
+    400410: R_MedianCoverts_Con_2_GRP2
+    400412: R_MedianCoverts_Con_2_GRP_FLD
+    400414: R_MedianCoverts_GRP
+    400416: R_MiddleFeathers_CON
+    400418: R_MiddleFeathers_GRP
+    400420: R_MiddleFeathers_GRP2
+    400422: R_MiddleFeathers_GRP_FLD
+    400424: R_Primaries_1
+    400426: R_Primaries_1_GRP
+    400428: R_Primaries_2
+    400430: R_Primaries_2_GRP
+    400432: R_Primaries_3
+    400434: R_Primaries_3_GRP
+    400436: R_Primaries_4
+    400438: R_Primaries_4_GRP
+    400440: R_Primaries_5
+    400442: R_Primaries_5_GRP
+    400444: R_Primaries_Con_1
+    400446: R_Primaries_Con_1_GRP
+    400448: R_Primaries_Con_1_GRP2
+    400450: R_Primaries_Con_1_GRP_FLD
+    400452: R_Primaries_Con_2
+    400454: R_Primaries_Con_2_GRP
+    400456: R_Primaries_Con_2_GRP2
+    400458: R_Primaries_Con_2_GRP_FLD
+    400460: R_Primaries_GRP
+    400462: R_PrimaryCoverts_1
+    400464: R_PrimaryCoverts_1_GRP
+    400466: R_PrimaryCoverts_2
+    400468: R_PrimaryCoverts_2_GRP
+    400470: R_PrimaryCoverts_3
+    400472: R_PrimaryCoverts_3_GRP
+    400474: R_PrimaryCoverts_4
+    400476: R_PrimaryCoverts_4_GRP
+    400478: R_PrimaryCoverts_5
+    400480: R_PrimaryCoverts_5_GRP
+    400482: R_PrimaryCoverts_Con_1
+    400484: R_PrimaryCoverts_Con_1_GRP
+    400486: R_PrimaryCoverts_Con_1_GRP2
+    400488: R_PrimaryCoverts_Con_1_GRP_FLD
+    400490: R_PrimaryCoverts_Con_2
+    400492: R_PrimaryCoverts_Con_2_GRP
+    400494: R_PrimaryCoverts_Con_2_GRP2
+    400496: R_PrimaryCoverts_Con_2_GRP_FLD
+    400498: R_PrimaryCoverts_GRP
+    400500: R_Secondaries_1
+    400502: R_Secondaries_1_GRP
+    400504: R_Secondaries_2
+    400506: R_Secondaries_2_GRP
+    400508: R_Secondaries_3
+    400510: R_Secondaries_3_GRP
+    400512: R_Secondaries_4
+    400514: R_Secondaries_4_GRP
+    400516: R_Secondaries_5
+    400518: R_Secondaries_5_GRP
+    400520: R_Secondaries_6
+    400522: R_Secondaries_6_GRP
+    400524: R_Secondaries_Con_1
+    400526: R_Secondaries_Con_1_GRP
+    400528: R_Secondaries_Con_1_GRP2
+    400530: R_Secondaries_Con_1_GRP_FLD
+    400532: R_Secondaries_Con_2
+    400534: R_Secondaries_Con_2_GRP
+    400536: R_Secondaries_Con_2_GRP2
+    400538: R_Secondaries_Con_2_GRP_FLD
+    400540: R_Secondaries_GRP
+    400542: R_SecondaryCoverts_1
+    400544: R_SecondaryCoverts_1_GRP
+    400546: R_SecondaryCoverts_2
+    400548: R_SecondaryCoverts_2_GRP
+    400550: R_SecondaryCoverts_3
+    400552: R_SecondaryCoverts_3_GRP
+    400554: R_SecondaryCoverts_4
+    400556: R_SecondaryCoverts_4_GRP
+    400558: R_SecondaryCoverts_5
+    400560: R_SecondaryCoverts_5_GRP
+    400562: R_SecondaryCoverts_Con_1
+    400564: R_SecondaryCoverts_Con_1_GRP
+    400566: R_SecondaryCoverts_Con_1_GRP2
+    400568: R_SecondaryCoverts_Con_1_GRP_FLD
+    400570: R_SecondaryCoverts_Con_2
+    400572: R_SecondaryCoverts_Con_2_GRP
+    400574: R_SecondaryCoverts_Con_2_GRP2
+    400576: R_SecondaryCoverts_Con_2_GRP_FLD
+    400578: R_SecondaryCoverts_GRP
+    400580: R_Shoulder_CON
+    400582: R_Shoulder_Con_GRP
+    400584: R_Shoulder_Con_GRP2
+    400586: R_TipFeathers_CON
+    400588: R_TipFeathers_GRP
+    400590: R_TipFeathers_GRP2
+    400592: R_TipFeathers_GRP_FLD
+    400594: R_Wing2_FK_CON
+    400596: R_Wing2_FK_Con_GRP
+    400598: R_Wing2_FK_Con_GRP2
+    400600: R_Wing3_FK_CON
+    400602: R_Wing3_FK_Con_GRP
+    400604: R_Wing3_FK_Con_GRP2
+    400606: R_Wing_1_JNT
+    400608: R_Wing_1_JNT_FK
+    400610: R_Wing_1_JNT_IK
+    400612: R_Wing_2_JNT
+    400614: R_Wing_2_JNT_FK
+    400616: R_Wing_2_JNT_IK
+    400618: R_Wing_3_JNT
+    400620: R_Wing_3_JNT_FK
+    400622: R_Wing_3_JNT_IK
+    400624: R_Wing_4_JNT
+    400626: R_Wing_4_JNT_FK
+    400628: R_Wing_4_JNT_IK
+    400630: R_Wing_IK
+    400632: R_Wing_Pole_CON
+    400634: R_Wrist_CON
+    400636: R_Wrist_Con_GRP
+    400638: Wings
+    400640: XForm
+    2300000: L_Alula_1
+    2300002: L_Alula_2
+    2300004: L_Alula_3
+    2300006: L_Alula_4
+    2300008: L_MedianCoverts_1
+    2300010: L_MedianCoverts_2
+    2300012: L_MedianCoverts_3
+    2300014: L_MedianCoverts_4
+    2300016: L_MedianCoverts_5
+    2300018: L_Primaries_1
+    2300020: L_Primaries_2
+    2300022: L_Primaries_3
+    2300024: L_Primaries_4
+    2300026: L_Primaries_5
+    2300028: L_PrimaryCoverts_1
+    2300030: L_PrimaryCoverts_2
+    2300032: L_PrimaryCoverts_3
+    2300034: L_PrimaryCoverts_4
+    2300036: L_PrimaryCoverts_5
+    2300038: L_Secondaries_1
+    2300040: L_Secondaries_2
+    2300042: L_Secondaries_3
+    2300044: L_Secondaries_4
+    2300046: L_Secondaries_5
+    2300048: L_Secondaries_6
+    2300050: L_SecondaryCoverts_1
+    2300052: L_SecondaryCoverts_2
+    2300054: L_SecondaryCoverts_3
+    2300056: L_SecondaryCoverts_4
+    2300058: L_SecondaryCoverts_5
+    2300060: L_Wing_Pole_CON
+    2300062: R_Alula_1
+    2300064: R_Alula_2
+    2300066: R_Alula_3
+    2300068: R_Alula_4
+    2300070: R_MedianCoverts_1
+    2300072: R_MedianCoverts_2
+    2300074: R_MedianCoverts_3
+    2300076: R_MedianCoverts_4
+    2300078: R_MedianCoverts_5
+    2300080: R_Primaries_1
+    2300082: R_Primaries_2
+    2300084: R_Primaries_3
+    2300086: R_Primaries_4
+    2300088: R_Primaries_5
+    2300090: R_PrimaryCoverts_1
+    2300092: R_PrimaryCoverts_2
+    2300094: R_PrimaryCoverts_3
+    2300096: R_PrimaryCoverts_4
+    2300098: R_PrimaryCoverts_5
+    2300100: R_Secondaries_1
+    2300102: R_Secondaries_2
+    2300104: R_Secondaries_3
+    2300106: R_Secondaries_4
+    2300108: R_Secondaries_5
+    2300110: R_Secondaries_6
+    2300112: R_SecondaryCoverts_1
+    2300114: R_SecondaryCoverts_2
+    2300116: R_SecondaryCoverts_3
+    2300118: R_SecondaryCoverts_4
+    2300120: R_SecondaryCoverts_5
+    2300122: R_Wing_Pole_CON
+    3300000: L_Alula_1
+    3300002: L_Alula_2
+    3300004: L_Alula_3
+    3300006: L_Alula_4
+    3300008: L_MedianCoverts_1
+    3300010: L_MedianCoverts_2
+    3300012: L_MedianCoverts_3
+    3300014: L_MedianCoverts_4
+    3300016: L_MedianCoverts_5
+    3300018: L_Primaries_1
+    3300020: L_Primaries_2
+    3300022: L_Primaries_3
+    3300024: L_Primaries_4
+    3300026: L_Primaries_5
+    3300028: L_PrimaryCoverts_1
+    3300030: L_PrimaryCoverts_2
+    3300032: L_PrimaryCoverts_3
+    3300034: L_PrimaryCoverts_4
+    3300036: L_PrimaryCoverts_5
+    3300038: L_Secondaries_1
+    3300040: L_Secondaries_2
+    3300042: L_Secondaries_3
+    3300044: L_Secondaries_4
+    3300046: L_Secondaries_5
+    3300048: L_Secondaries_6
+    3300050: L_SecondaryCoverts_1
+    3300052: L_SecondaryCoverts_2
+    3300054: L_SecondaryCoverts_3
+    3300056: L_SecondaryCoverts_4
+    3300058: L_SecondaryCoverts_5
+    3300060: L_Wing_Pole_CON
+    3300062: R_Alula_1
+    3300064: R_Alula_2
+    3300066: R_Alula_3
+    3300068: R_Alula_4
+    3300070: R_MedianCoverts_1
+    3300072: R_MedianCoverts_2
+    3300074: R_MedianCoverts_3
+    3300076: R_MedianCoverts_4
+    3300078: R_MedianCoverts_5
+    3300080: R_Primaries_1
+    3300082: R_Primaries_2
+    3300084: R_Primaries_3
+    3300086: R_Primaries_4
+    3300088: R_Primaries_5
+    3300090: R_PrimaryCoverts_1
+    3300092: R_PrimaryCoverts_2
+    3300094: R_PrimaryCoverts_3
+    3300096: R_PrimaryCoverts_4
+    3300098: R_PrimaryCoverts_5
+    3300100: R_Secondaries_1
+    3300102: R_Secondaries_2
+    3300104: R_Secondaries_3
+    3300106: R_Secondaries_4
+    3300108: R_Secondaries_5
+    3300110: R_Secondaries_6
+    3300112: R_SecondaryCoverts_1
+    3300114: R_SecondaryCoverts_2
+    3300116: R_SecondaryCoverts_3
+    3300118: R_SecondaryCoverts_4
+    3300120: R_SecondaryCoverts_5
+    3300122: R_Wing_Pole_CON
+    4300000: L_Primaries_1
+    4300002: L_Primaries_2
+    4300004: L_Primaries_3
+    4300006: L_Primaries_4
+    4300008: L_Primaries_5
+    4300010: L_PrimaryCoverts_1
+    4300012: L_PrimaryCoverts_2
+    4300014: L_PrimaryCoverts_3
+    4300016: L_PrimaryCoverts_4
+    4300018: L_PrimaryCoverts_5
+    4300020: L_Secondaries_1
+    4300022: L_Secondaries_2
+    4300024: L_Secondaries_3
+    4300026: L_Secondaries_4
+    4300028: L_Secondaries_5
+    4300030: L_Secondaries_6
+    4300032: L_SecondaryCoverts_1
+    4300034: L_SecondaryCoverts_2
+    4300036: L_SecondaryCoverts_3
+    4300038: L_SecondaryCoverts_4
+    4300040: L_SecondaryCoverts_5
+    4300042: L_Alula_1
+    4300044: L_Alula_2
+    4300046: L_Alula_3
+    4300048: L_Alula_4
+    4300050: L_MedianCoverts_1
+    4300052: L_MedianCoverts_2
+    4300054: L_MedianCoverts_3
+    4300056: L_MedianCoverts_4
+    4300058: L_MedianCoverts_5
+    4300060: R_Primaries_1
+    4300062: R_Primaries_2
+    4300064: R_Primaries_3
+    4300066: R_Primaries_4
+    4300068: R_Primaries_5
+    4300070: R_PrimaryCoverts_1
+    4300072: R_PrimaryCoverts_2
+    4300074: R_PrimaryCoverts_3
+    4300076: R_PrimaryCoverts_4
+    4300078: R_PrimaryCoverts_5
+    4300080: R_Secondaries_1
+    4300082: R_Secondaries_2
+    4300084: R_Secondaries_3
+    4300086: R_Secondaries_4
+    4300088: R_Secondaries_5
+    4300090: R_Secondaries_6
+    4300092: R_SecondaryCoverts_1
+    4300094: R_SecondaryCoverts_2
+    4300096: R_SecondaryCoverts_3
+    4300098: R_SecondaryCoverts_4
+    4300100: R_SecondaryCoverts_5
+    4300102: R_Alula_1
+    4300104: R_Alula_2
+    4300106: R_Alula_3
+    4300108: R_Alula_4
+    4300110: R_MedianCoverts_1
+    4300112: R_MedianCoverts_2
+    4300114: R_MedianCoverts_3
+    4300116: R_MedianCoverts_4
+    4300118: R_MedianCoverts_5
+    4300120: L_Wing_Pole_CON
+    4300122: R_Wing_Pole_CON
+    4300124: body
+    7400000: flap_loop
+    9500000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: flap_loop
+      takeName: Take 001
+      firstFrame: 3
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint3/joint4
+        weight: 1
+      - path: joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: joint1/joint2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: joint1/joint2/joint3/joint4/joint5/joint6/joint7
+        weight: 1
+      - path: joint1/joint2/joint3/joint4/joint5/joint6/joint7/joint8
+        weight: 1
+      - path: joint1/joint9
+        weight: 1
+      - path: joint1/joint9/joint10
+        weight: 1
+      - path: Wings
+        weight: 1
+      - path: Wings/MainWing_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_MedianCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_MedianCoverts_Con_1_GRP/L_MedianCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_MedianCoverts_Con_1_GRP/L_MedianCoverts_Con_1_GRP2/L_MedianCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_MedianCoverts_Con_1_GRP/L_MedianCoverts_Con_1_GRP2/L_MedianCoverts_Con_1_GRP_FLD/L_MedianCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_Secondaries_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_Secondaries_Con_1_GRP/L_Secondaries_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_Secondaries_Con_1_GRP/L_Secondaries_Con_1_GRP2/L_Secondaries_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_Secondaries_Con_1_GRP/L_Secondaries_Con_1_GRP2/L_Secondaries_Con_1_GRP_FLD/L_Secondaries_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_SecondaryCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_SecondaryCoverts_Con_1_GRP/L_SecondaryCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_SecondaryCoverts_Con_1_GRP/L_SecondaryCoverts_Con_1_GRP2/L_SecondaryCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_EndFeathers_GRP/L_EndFeathers_GRP2/L_EndFeathers_GRP_FLD/L_EndFeathers_CON/L_SecondaryCoverts_Con_1_GRP/L_SecondaryCoverts_Con_1_GRP2/L_SecondaryCoverts_Con_1_GRP_FLD/L_SecondaryCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Alula_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Alula_Con_2_GRP/L_Alula_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Alula_Con_2_GRP/L_Alula_Con_2_GRP2/L_Alula_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Alula_Con_2_GRP/L_Alula_Con_2_GRP2/L_Alula_Con_2_GRP_FLD/L_Alula_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_MedianCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_MedianCoverts_Con_2_GRP/L_MedianCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_MedianCoverts_Con_2_GRP/L_MedianCoverts_Con_2_GRP2/L_MedianCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_MedianCoverts_Con_2_GRP/L_MedianCoverts_Con_2_GRP2/L_MedianCoverts_Con_2_GRP_FLD/L_MedianCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Primaries_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Primaries_Con_2_GRP/L_Primaries_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Primaries_Con_2_GRP/L_Primaries_Con_2_GRP2/L_Primaries_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Primaries_Con_2_GRP/L_Primaries_Con_2_GRP2/L_Primaries_Con_2_GRP_FLD/L_Primaries_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_PrimaryCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_PrimaryCoverts_Con_2_GRP/L_PrimaryCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_PrimaryCoverts_Con_2_GRP/L_PrimaryCoverts_Con_2_GRP2/L_PrimaryCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_PrimaryCoverts_Con_2_GRP/L_PrimaryCoverts_Con_2_GRP2/L_PrimaryCoverts_Con_2_GRP_FLD/L_PrimaryCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Secondaries_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Secondaries_Con_2_GRP/L_Secondaries_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Secondaries_Con_2_GRP/L_Secondaries_Con_2_GRP2/L_Secondaries_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_Secondaries_Con_2_GRP/L_Secondaries_Con_2_GRP2/L_Secondaries_Con_2_GRP_FLD/L_Secondaries_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_SecondaryCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_SecondaryCoverts_Con_2_GRP/L_SecondaryCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_SecondaryCoverts_Con_2_GRP/L_SecondaryCoverts_Con_2_GRP2/L_SecondaryCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_MiddleFeathers_GRP/L_MiddleFeathers_GRP2/L_MiddleFeathers_GRP_FLD/L_MiddleFeathers_CON/L_SecondaryCoverts_Con_2_GRP/L_SecondaryCoverts_Con_2_GRP2/L_SecondaryCoverts_Con_2_GRP_FLD/L_SecondaryCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP/L_Wing2_FK_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP/L_Wing2_FK_Con_GRP2/L_Wing2_FK_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP/L_Wing2_FK_Con_GRP2/L_Wing2_FK_CON/L_Wing3_FK_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP/L_Wing2_FK_Con_GRP2/L_Wing2_FK_CON/L_Wing3_FK_Con_GRP/L_Wing3_FK_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing2_FK_Con_GRP/L_Wing2_FK_Con_GRP2/L_Wing2_FK_CON/L_Wing3_FK_Con_GRP/L_Wing3_FK_Con_GRP2/L_Wing3_FK_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wing_Pole_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wrist_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_Shoulder_Con_GRP/L_Shoulder_Con_GRP2/L_Shoulder_CON/L_Wrist_Con_GRP/L_Wrist_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Alula_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Alula_Con_1_GRP/L_Alula_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Alula_Con_1_GRP/L_Alula_Con_1_GRP2/L_Alula_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Alula_Con_1_GRP/L_Alula_Con_1_GRP2/L_Alula_Con_1_GRP_FLD/L_Alula_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Primaries_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Primaries_Con_1_GRP/L_Primaries_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Primaries_Con_1_GRP/L_Primaries_Con_1_GRP2/L_Primaries_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_Primaries_Con_1_GRP/L_Primaries_Con_1_GRP2/L_Primaries_Con_1_GRP_FLD/L_Primaries_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_PrimaryCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_PrimaryCoverts_Con_1_GRP/L_PrimaryCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_PrimaryCoverts_Con_1_GRP/L_PrimaryCoverts_Con_1_GRP2/L_PrimaryCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/L_TipFeathers_GRP/L_TipFeathers_GRP2/L_TipFeathers_GRP_FLD/L_TipFeathers_CON/L_PrimaryCoverts_Con_1_GRP/L_PrimaryCoverts_Con_1_GRP2/L_PrimaryCoverts_Con_1_GRP_FLD/L_PrimaryCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_MedianCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_MedianCoverts_Con_1_GRP/R_MedianCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_MedianCoverts_Con_1_GRP/R_MedianCoverts_Con_1_GRP2/R_MedianCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_MedianCoverts_Con_1_GRP/R_MedianCoverts_Con_1_GRP2/R_MedianCoverts_Con_1_GRP_FLD/R_MedianCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_Secondaries_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_Secondaries_Con_1_GRP/R_Secondaries_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_Secondaries_Con_1_GRP/R_Secondaries_Con_1_GRP2/R_Secondaries_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_Secondaries_Con_1_GRP/R_Secondaries_Con_1_GRP2/R_Secondaries_Con_1_GRP_FLD/R_Secondaries_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_SecondaryCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_SecondaryCoverts_Con_1_GRP/R_SecondaryCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_SecondaryCoverts_Con_1_GRP/R_SecondaryCoverts_Con_1_GRP2/R_SecondaryCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_EndFeathers_GRP/R_EndFeathers_GRP2/R_EndFeathers_GRP_FLD/R_EndFeathers_CON/R_SecondaryCoverts_Con_1_GRP/R_SecondaryCoverts_Con_1_GRP2/R_SecondaryCoverts_Con_1_GRP_FLD/R_SecondaryCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Alula_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Alula_Con_2_GRP/R_Alula_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Alula_Con_2_GRP/R_Alula_Con_2_GRP2/R_Alula_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Alula_Con_2_GRP/R_Alula_Con_2_GRP2/R_Alula_Con_2_GRP_FLD/R_Alula_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_MedianCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_MedianCoverts_Con_2_GRP/R_MedianCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_MedianCoverts_Con_2_GRP/R_MedianCoverts_Con_2_GRP2/R_MedianCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_MedianCoverts_Con_2_GRP/R_MedianCoverts_Con_2_GRP2/R_MedianCoverts_Con_2_GRP_FLD/R_MedianCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Primaries_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Primaries_Con_2_GRP/R_Primaries_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Primaries_Con_2_GRP/R_Primaries_Con_2_GRP2/R_Primaries_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Primaries_Con_2_GRP/R_Primaries_Con_2_GRP2/R_Primaries_Con_2_GRP_FLD/R_Primaries_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_PrimaryCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_PrimaryCoverts_Con_2_GRP/R_PrimaryCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_PrimaryCoverts_Con_2_GRP/R_PrimaryCoverts_Con_2_GRP2/R_PrimaryCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_PrimaryCoverts_Con_2_GRP/R_PrimaryCoverts_Con_2_GRP2/R_PrimaryCoverts_Con_2_GRP_FLD/R_PrimaryCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Secondaries_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Secondaries_Con_2_GRP/R_Secondaries_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Secondaries_Con_2_GRP/R_Secondaries_Con_2_GRP2/R_Secondaries_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_Secondaries_Con_2_GRP/R_Secondaries_Con_2_GRP2/R_Secondaries_Con_2_GRP_FLD/R_Secondaries_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_SecondaryCoverts_Con_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_SecondaryCoverts_Con_2_GRP/R_SecondaryCoverts_Con_2_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_SecondaryCoverts_Con_2_GRP/R_SecondaryCoverts_Con_2_GRP2/R_SecondaryCoverts_Con_2_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_MiddleFeathers_GRP/R_MiddleFeathers_GRP2/R_MiddleFeathers_GRP_FLD/R_MiddleFeathers_CON/R_SecondaryCoverts_Con_2_GRP/R_SecondaryCoverts_Con_2_GRP2/R_SecondaryCoverts_Con_2_GRP_FLD/R_SecondaryCoverts_Con_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP/R_Wing2_FK_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP/R_Wing2_FK_Con_GRP2/R_Wing2_FK_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP/R_Wing2_FK_Con_GRP2/R_Wing2_FK_CON/R_Wing3_FK_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP/R_Wing2_FK_Con_GRP2/R_Wing2_FK_CON/R_Wing3_FK_Con_GRP/R_Wing3_FK_Con_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing2_FK_Con_GRP/R_Wing2_FK_Con_GRP2/R_Wing2_FK_CON/R_Wing3_FK_Con_GRP/R_Wing3_FK_Con_GRP2/R_Wing3_FK_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wing_Pole_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wrist_Con_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_Shoulder_Con_GRP/R_Shoulder_Con_GRP2/R_Shoulder_CON/R_Wrist_Con_GRP/R_Wrist_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Alula_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Alula_Con_1_GRP/R_Alula_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Alula_Con_1_GRP/R_Alula_Con_1_GRP2/R_Alula_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Alula_Con_1_GRP/R_Alula_Con_1_GRP2/R_Alula_Con_1_GRP_FLD/R_Alula_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Primaries_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Primaries_Con_1_GRP/R_Primaries_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Primaries_Con_1_GRP/R_Primaries_Con_1_GRP2/R_Primaries_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_Primaries_Con_1_GRP/R_Primaries_Con_1_GRP2/R_Primaries_Con_1_GRP_FLD/R_Primaries_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_PrimaryCoverts_Con_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_PrimaryCoverts_Con_1_GRP/R_PrimaryCoverts_Con_1_GRP2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_PrimaryCoverts_Con_1_GRP/R_PrimaryCoverts_Con_1_GRP2/R_PrimaryCoverts_Con_1_GRP_FLD
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Controls/R_TipFeathers_GRP/R_TipFeathers_GRP2/R_TipFeathers_GRP_FLD/R_TipFeathers_CON/R_PrimaryCoverts_Con_1_GRP/R_PrimaryCoverts_Con_1_GRP2/R_PrimaryCoverts_Con_1_GRP_FLD/R_PrimaryCoverts_Con_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_1_GRP/L_Alula_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_2_GRP/L_Alula_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_3_GRP/L_Alula_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Alula_GRP/L_Alula_4_GRP/L_Alula_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_1_GRP/L_MedianCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_2_GRP/L_MedianCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_3_GRP/L_MedianCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_4_GRP/L_MedianCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_MedianCoverts_GRP/L_MedianCoverts_5_GRP/L_MedianCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_1_GRP/L_Primaries_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_2_GRP/L_Primaries_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_3_GRP/L_Primaries_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_4_GRP/L_Primaries_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Primaries_GRP/L_Primaries_5_GRP/L_Primaries_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_1_GRP/L_PrimaryCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_2_GRP/L_PrimaryCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_3_GRP/L_PrimaryCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_4_GRP/L_PrimaryCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_PrimaryCoverts_GRP/L_PrimaryCoverts_5_GRP/L_PrimaryCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_1_GRP/L_Secondaries_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_2_GRP/L_Secondaries_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_3_GRP/L_Secondaries_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_4_GRP/L_Secondaries_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_5_GRP/L_Secondaries_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_6_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_Secondaries_GRP/L_Secondaries_6_GRP/L_Secondaries_6
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_1_GRP/L_SecondaryCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_2_GRP/L_SecondaryCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_3_GRP/L_SecondaryCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_4_GRP/L_SecondaryCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/L_SecondaryCoverts_GRP/L_SecondaryCoverts_5_GRP/L_SecondaryCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_1_GRP/R_Alula_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_2_GRP/R_Alula_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_3_GRP/R_Alula_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Alula_GRP/R_Alula_4_GRP/R_Alula_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_1_GRP/R_MedianCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_2_GRP/R_MedianCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_3_GRP/R_MedianCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_4_GRP/R_MedianCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_MedianCoverts_GRP/R_MedianCoverts_5_GRP/R_MedianCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_1_GRP/R_Primaries_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_2_GRP/R_Primaries_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_3_GRP/R_Primaries_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_4_GRP/R_Primaries_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Primaries_GRP/R_Primaries_5_GRP/R_Primaries_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_1_GRP/R_PrimaryCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_2_GRP/R_PrimaryCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_3_GRP/R_PrimaryCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_4_GRP/R_PrimaryCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_PrimaryCoverts_GRP/R_PrimaryCoverts_5_GRP/R_PrimaryCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_1_GRP/R_Secondaries_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_2_GRP/R_Secondaries_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_3_GRP/R_Secondaries_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_4_GRP/R_Secondaries_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_5_GRP/R_Secondaries_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_6_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_Secondaries_GRP/R_Secondaries_6_GRP/R_Secondaries_6
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_1_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_1_GRP/R_SecondaryCoverts_1
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_2_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_2_GRP/R_SecondaryCoverts_2
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_3_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_3_GRP/R_SecondaryCoverts_3
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_4_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_4_GRP/R_SecondaryCoverts_4
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_5_GRP
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/FeatherGroups/R_SecondaryCoverts_GRP/R_SecondaryCoverts_5_GRP/R_SecondaryCoverts_5
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT/L_Wing_2_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT/L_Wing_2_JNT/L_Wing_3_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT/L_Wing_2_JNT/L_Wing_3_JNT/L_Wing_4_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_FK/L_Wing_2_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_FK/L_Wing_2_JNT_FK/L_Wing_3_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_FK/L_Wing_2_JNT_FK/L_Wing_3_JNT_FK/L_Wing_4_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_IK/L_Wing_2_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_IK/L_Wing_2_JNT_IK/L_Wing_3_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/L_Wing_1_JNT_IK/L_Wing_2_JNT_IK/L_Wing_3_JNT_IK/L_Wing_4_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT/R_Wing_2_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT/R_Wing_2_JNT/R_Wing_3_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT/R_Wing_2_JNT/R_Wing_3_JNT/R_Wing_4_JNT
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_FK/R_Wing_2_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_FK/R_Wing_2_JNT_FK/R_Wing_3_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_FK/R_Wing_2_JNT_FK/R_Wing_3_JNT_FK/R_Wing_4_JNT_FK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_IK/R_Wing_2_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_IK/R_Wing_2_JNT_IK/R_Wing_3_JNT_IK
+        weight: 1
+      - path: Wings/MainWing_CON/XForm/Joints/R_Wing_1_JNT_IK/R_Wing_2_JNT_IK/R_Wing_3_JNT_IK/R_Wing_4_JNT_IK
+        weight: 1
+      - path: Wings/NoXForm
+        weight: 1
+      - path: Wings/NoXForm/L_Wing_IK
+        weight: 1
+      - path: Wings/NoXForm/R_Wing_IK
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

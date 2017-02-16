@@ -34,6 +34,9 @@ Thumbs.db
 # Jarvis generated #
 # ================ #
 Art/Characters/dex_char_anims.ma
+Art/Characters/*/WIP/
+Art/Characters/[Rr]eferences/
 Art/LevelDesign/
 Assets/Models/Downloaded/
 Game_Data/
+Art/Characters/.mayaSwatches/bird_wing_wip.ma.swatches

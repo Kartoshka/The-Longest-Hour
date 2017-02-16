@@ -7,6 +7,7 @@ public class DebugEntities : MonoBehaviour
 	public List<GameObject> m_activateOnStart;
 	public List<GameObject> m_deactivateOnStart;
 
+    public bool m_useWorldCam = false;
 
 	// Use this for initialization
 	void Start () {

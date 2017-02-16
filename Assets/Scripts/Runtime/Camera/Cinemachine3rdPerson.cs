@@ -11,6 +11,7 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 
 	public bool modifiable = true;
+	public bool setOnStart = true;
 	public CinemachineVirtualCamera controlledView;
 
 	private bool toggleView = false;
@@ -33,28 +34,39 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	public float maxXAngle = 90;
 
 
+	void Start()
+	{
+		if (setOnStart) {
+			setPosition ();
+		}
+	}
+
 	public void UpdatePosition()
 	{
 		if (modifiable) {
-			targetCurrentPosition = controlledView.CameraTransposerTarget.transform.position;
-
-			float appliedYaw = yaw + angleFromTarget.y;
-			float appliedPitch = pitch + angleFromTarget.x;
-
-			pitch = Mathf.Clamp (pitch, minXAngle, maxXAngle);
-
-			//Polar to cartesian conversion
-			float X = Mathf.Sin (Mathf.Deg2Rad * appliedPitch) * Mathf.Cos (Mathf.Deg2Rad * appliedYaw);
-			float Z = Mathf.Sin (Mathf.Deg2Rad * appliedPitch) * Mathf.Sin (Mathf.Deg2Rad * appliedYaw);
-			float Y = Mathf.Cos (Mathf.Deg2Rad * appliedPitch);
-
-			//Modify campera position
-			cameraPosition = new Vector3 (X, Y, Z) * distanceFromTarget; 
-			controlledView.TransposerTrackingOffset = cameraPosition;
+			setPosition ();
 		}
 
 	}
 
+	private void setPosition()
+	{
+		targetCurrentPosition = controlledView.CameraTransposerTarget.transform.position;
+
+		float appliedYaw = yaw + angleFromTarget.y;
+		float appliedPitch = pitch + angleFromTarget.x;
+
+		pitch = Mathf.Clamp (pitch, minXAngle, maxXAngle);
+
+		//Polar to cartesian conversion
+		float X = Mathf.Sin (Mathf.Deg2Rad * appliedPitch) * Mathf.Cos (Mathf.Deg2Rad * appliedYaw);
+		float Z = Mathf.Sin (Mathf.Deg2Rad * appliedPitch) * Mathf.Sin (Mathf.Deg2Rad * appliedYaw);
+		float Y = Mathf.Cos (Mathf.Deg2Rad * appliedPitch);
+
+		//Modify campera position
+		cameraPosition = new Vector3 (X, Y, Z) * distanceFromTarget; 
+		controlledView.TransposerTrackingOffset = cameraPosition;
+	}
 	
 	public void increaseYaw(float amt)
 	{

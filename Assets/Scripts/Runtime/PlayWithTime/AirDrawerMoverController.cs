@@ -76,6 +76,11 @@ public class AirDrawerMoverController : MonoBehaviour
 				m_moverComponent.getTransform().forward = new Vector3(horizontalInput, 0, depthInput);
 			}
 		}
+
+		if (Input.GetButtonDown("Fire1"))
+		{
+			m_moverComponent.activateMoverAction(MoverComponent.ActionTypeFlag.Jump);
+		}
 	}
 
 	#endregion

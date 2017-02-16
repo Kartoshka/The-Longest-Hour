@@ -14,6 +14,8 @@ public class AnimParameterController : MonoBehaviour
 	public List<Animator> m_animators;
 	public string timeParameter;
 
+    private bool m_active = false;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region  Constructors
@@ -31,19 +33,55 @@ public class AnimParameterController : MonoBehaviour
 
 	public float m_startTime = 0;
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Methods
-	//////////////////////////////////////////////////////////////////////////////////////////
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Methods
+    //////////////////////////////////////////////////////////////////////////////////////////
 
-	public void setParamValue(string parameterName, float value)
-	{
-		foreach(Animator animator in m_animators)
-		{
-			animator.SetFloat(parameterName, value);
-			animator.SetTime(value*250);
-		}
+    public void setParamValue(string parameterName, float value)
+    {
+        if (m_active) { 
+            foreach (Animator animator in m_animators)
+            {
+                animator.SetFloat(parameterName, value);
+                animator.SetTime(value * 250);
+            }
+        }
 	}
+
+    // increment time
+    public void incParamValue(string parameterName, float value)
+    {
+        if (m_active)
+        {
+            foreach (Animator animator in m_animators)
+            {
+                float curr = animator.GetFloat(parameterName);
+                float incremented_curr = Mathf.Clamp01(curr + value);
+                animator.SetFloat(parameterName, incremented_curr);
+                animator.SetTime(incremented_curr);
+            }
+        }
+    }
+
+    public void setAnimators(List<GameObject> objs)
+    {
+        m_animators = new List<Animator>();
+        foreach (GameObject go in objs)
+        {
+            m_animators.Add(go.GetComponent<Animator>());
+        }
+    }
+
+    public void setActive(bool active)
+    {
+        m_active = active;
+    }
+
+    public bool getActive()
+    {
+        return m_active;
+    }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
