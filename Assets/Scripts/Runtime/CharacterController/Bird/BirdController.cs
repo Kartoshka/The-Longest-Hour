@@ -36,14 +36,14 @@ public class BirdController : MonoBehaviour {
 	void Update () {
         //Camera movement input
         float verticalInput;
-        if (debug.m_useWorldCam)
+        if (!debug.m_useWorldCam)
             verticalInput = Input.GetAxis("VerticalRightStick");
         else
             verticalInput = 0;
 
 
         float horizontalInput;
-        if (debug.m_useWorldCam)
+        if (!debug.m_useWorldCam)
             horizontalInput = Input.GetAxis("HorizontalRightStick");
         else
             horizontalInput = 0;
