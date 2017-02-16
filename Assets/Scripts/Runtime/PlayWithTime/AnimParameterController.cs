@@ -57,8 +57,9 @@ public class AnimParameterController : MonoBehaviour
             foreach (Animator animator in m_animators)
             {
                 float curr = animator.GetFloat(parameterName);
-                animator.SetFloat(parameterName, curr + value);
-                animator.SetTime(curr + value);
+                float incremented_curr = Mathf.Clamp01(curr + value);
+                animator.SetFloat(parameterName, incremented_curr);
+                animator.SetTime(incremented_curr);
             }
         }
     }
