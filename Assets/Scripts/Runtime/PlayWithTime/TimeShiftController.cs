@@ -32,18 +32,24 @@ public class TimeShiftController : MonoBehaviour
 	public float m_rate = 1.0f;
 
 	public bool m_canShiftTime = true;
+    private float m_timeIncSize = 0.01f;
 	private float m_time = 0.0f;
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Accessors
-	//////////////////////////////////////////////////////////////////////////////////////////
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Accessors
+    //////////////////////////////////////////////////////////////////////////////////////////
 
-	#endregion
-	//////////////////////////////////////////////////////////////////////////////////////////
-	#region Methods
-	//////////////////////////////////////////////////////////////////////////////////////////  
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Methods
+    //////////////////////////////////////////////////////////////////////////////////////////  
 
+    public void setCanShiftTime(bool canShift)
+    {
+        m_canShiftTime = canShift;
+    }
+    
 	private bool canShiftTime()
 	{
 		return m_canShiftTime;
@@ -65,10 +71,10 @@ public class TimeShiftController : MonoBehaviour
 	{
 		ProcessInputs();
 
-		m_time = Mathf.Clamp01(m_time);
+		//m_time = Mathf.Clamp01(m_time);
 		if (m_animCtrl)
 		{
-			m_animCtrl.setParamValue(m_animCtrl.timeParameter, m_time);
+			m_animCtrl.incParamValue(m_animCtrl.timeParameter, m_time);
 		}
 	}
 
@@ -76,8 +82,17 @@ public class TimeShiftController : MonoBehaviour
 	{
 		if(canShiftTime())
 		{
-			m_time += m_rate * (Input.GetKey(KeyCode.E) ? 1 : 0) * Time.deltaTime;
-			m_time -= m_rate * (Input.GetKey(KeyCode.Q) ? 1 : 0) * Time.deltaTime;
+            if (Input.GetKey(KeyCode.E))
+            {
+                m_time = m_timeIncSize;
+            }
+
+            if (Input.GetKey(KeyCode.Q))
+            {
+                m_time = -1 * m_timeIncSize;
+            }
+            //m_time += m_rate * (Input.GetKey(KeyCode.E) ? 1 : 0) * Time.deltaTime;
+			//m_time -= m_rate * (Input.GetKey(KeyCode.Q) ? 1 : 0) * Time.deltaTime;
 		}
 	}
 

@@ -60,6 +60,8 @@ public class LineDrawerComponent : MonoBehaviour
 
     private Vector3 m_raycastedPosition = new Vector3(0, 0, 0);
 
+    public GameObject m_globalTime;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -132,6 +134,9 @@ public class LineDrawerComponent : MonoBehaviour
             m_encompassed[i].GetComponent<TimeControllable>().Deactivate();
         }
         m_encompassed = new List<GameObject>();
+
+        // deactivate global time controller
+        m_globalTime.GetComponent<AnimParameterController>().setActive(false);
 
         m_currentState = DrawState.Uncreated;
     }
@@ -244,7 +249,8 @@ public class LineDrawerComponent : MonoBehaviour
 						}
 					}
 				}
-
+                
+                // drawing is completed
 				if (checkIsComplete())
 				{
 					// TODO: Remove this once we have a cleaner way to reset this.
@@ -253,8 +259,8 @@ public class LineDrawerComponent : MonoBehaviour
 						m_timeAngle.reset();
 					}
 
+                    // get encompassed objects
                     GameObject[] controllables = GameObject.FindGameObjectsWithTag("TimeControllable");
-
                     for (int i = 0; i < controllables.Length; i++)
                     {
                         if (GeometryHelper.PolyContainsPoint(m_bezierSpline.GetPoints(), controllables[i].transform.position))
@@ -263,6 +269,10 @@ public class LineDrawerComponent : MonoBehaviour
                             controllables[i].gameObject.GetComponent<TimeControllable>().Activate();
                         }
                     }
+
+                    // activate global time controller
+                    m_globalTime.GetComponent<AnimParameterController>().setAnimators(m_encompassed);
+                    m_globalTime.GetComponent<AnimParameterController>().setActive(true);
 
                     m_currentState = DrawState.Complete;
 				}
