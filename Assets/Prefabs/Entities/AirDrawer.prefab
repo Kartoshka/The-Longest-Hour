@@ -12660,8 +12660,8 @@ MonoBehaviour:
   m_curveMode: 2
   m_particleEmitter: {fileID: 1005127574022792}
   m_completionDistanceCheck: 0.5
-  m_lineWalker: {fileID: 0}
-  m_timeAngle: {fileID: 0}
+  m_lineWalker: {fileID: 114457681111759554}
+  m_timeAngle: {fileID: 114138529461071956}
   drawableLayers:
     serializedVersion: 2
     m_Bits: 256
