@@ -32,6 +32,10 @@ public class HeightController : MonoBehaviour {
 
 	private void scaleHeight()
 	{
+		if (a_Player == null) 
+		{
+			a_Player = GameObject.FindGameObjectWithTag ("GroundPlayer").transform;
+		}
 
 		a_BeaconPosition = transform.position;
 		a_PlayerPosition = a_Player.position;
