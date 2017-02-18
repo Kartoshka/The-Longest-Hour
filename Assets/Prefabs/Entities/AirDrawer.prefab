@@ -3130,7 +3130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1562919624629724
 GameObject:
   m_ObjectHideFlags: 1
@@ -12690,6 +12690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 1371618828118426}
+  enabled: 0
   active: 0
   affectedLayers:
     serializedVersion: 2
@@ -12743,7 +12744,7 @@ MonoBehaviour:
   modifiable: 0
   setOnStart: 1
   controlledView: {fileID: 114321040510764246}
-  distanceFromTarget: 35
+  distanceFromTarget: 20
   angleFromTarget: {x: 1, y: 1}
   minXAngle: -90
   maxXAngle: 90
@@ -12938,7 +12939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 4452885226570436}
-  m_positionLerpScale: 20
+  m_positionLerpScale: 10
   m_rotationLerpScale: 10
   m_faceTarget: 1
   m_matchTargetForward: 0
@@ -13050,6 +13051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 1335069508362002}
+  enabled: 0
   active: 0
   affectedLayers:
     serializedVersion: 2
@@ -13140,9 +13142,9 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114596207234466592}
-  distanceFromTarget: 25
+  distanceFromTarget: 15
   angleFromTarget: {x: 1, y: -90}
-  minXAngle: 15
+  minXAngle: 75
   maxXAngle: 90
 --- !u!114 &114955164524268154
 MonoBehaviour:
