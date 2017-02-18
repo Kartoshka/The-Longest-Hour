@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: -867238956, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
   m_Name: DiveComposerView
   m_EditorClassIdentifier: 
-  TrackedObjectOffset: {x: 0, y: 1.7, z: 0}
-  m_HorizontalSoftDampening: 3
-  m_VerticalSoftDampening: 3
+  TrackedObjectOffset: {x: 0, y: 0.3, z: 0}
+  m_HorizontalSoftDampening: 1
+  m_VerticalSoftDampening: 1
   m_SoftGuideScreenPercents: {x: 0.45, y: 0.55, z: 0.55, w: 0.45}
   m_HardGuideScreenPercents: {x: 0.07, y: 0.9, z: 0.94, w: 0.1}
   m_Dutch: 0
