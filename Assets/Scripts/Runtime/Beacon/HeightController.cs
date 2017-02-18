@@ -27,11 +27,14 @@ public class HeightController : MonoBehaviour {
 	[SerializeField]
 	private float a_MinHeight;
 
+	[Range(0,1)]
+	public float lerpSpeed = 0.5f;
 	//private float a_Epsilon;
 
 
 	private void scaleHeight()
 	{
+		float newHeight = 0;
 		if (a_Player == null) 
 		{
 			a_Player = GameObject.FindGameObjectWithTag ("GroundPlayer").transform;
@@ -44,12 +47,14 @@ public class HeightController : MonoBehaviour {
 		a_ScaledSize.y = a_DistanceBetween;
 
 
-
+		a_ScaledSize.y = Mathf.Lerp (a_RectTransform.sizeDelta.y, a_ScaledSize.y, lerpSpeed);
 		if (a_ScaledSize.y >= a_MaxHeight) { a_ScaledSize.y = a_MaxHeight; }
 
 		if (a_ScaledSize.y <= a_MinHeight) { a_ScaledSize.y = a_MinHeight; }
 
-		a_RectTransform.sizeDelta = a_ScaledSize;
+
+
+		a_RectTransform.sizeDelta =  a_ScaledSize;
 		//a_ScaledPosition.y = 
 		//a_RectTransform.localPosition = a_ScaledPosition;
 		 
@@ -67,6 +72,7 @@ public class HeightController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 
 		scaleHeight();
 
