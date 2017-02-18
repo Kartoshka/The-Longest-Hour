@@ -39,7 +39,6 @@ public abstract class SelectableAbility : MonoBehaviour {
 	//Targeter is turned on (we can see targeting appearing)
 	public void Enable(){
 		if(!enabled){
-			Debug.Log ("enable air targeting module");
 			indicator.SetActive (true);
 			enabled = true;
 			OnEnableTargeting ();
