@@ -53,6 +53,9 @@ public class LineDrawerComponent : MonoBehaviour
 
 	private BezierSpline m_bezierSpline;
 	private DrawState m_currentState = DrawState.Uncreated;
+	public DrawState currentState{
+		get{ return m_currentState; }
+	}
 	private int m_splinePointCount = 0;
 	private float m_closedLoopStartPoint = 0;
 
@@ -97,7 +100,7 @@ public class LineDrawerComponent : MonoBehaviour
 		m_currentState = DrawState.Uncreated;
     }
 
-	private bool checkIsComplete()
+	public bool checkIsComplete()
 	{
 		bool isComplete = false;
 
