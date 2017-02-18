@@ -81,9 +81,15 @@ public class BirdController : MonoBehaviour {
 		}
 
 		if (topDown) {
-			if ((debug.m_useWorldCam && Input.GetButtonDown("Fire1Bird")) ||
-            !debug.m_useWorldCam && Input.GetButtonDown("Fire1")) {
-				targetControl.TriggerCurrent ();
+			if ((debug.m_useWorldCam && Input.GetButtonDown ("Fire1Bird")) ||
+			    !debug.m_useWorldCam && Input.GetButtonDown ("Fire1")) {
+				Debug.Log ("Hello mr activate");
+				targetControl.activateCurrent ();
+			} 
+			else if ((debug.m_useWorldCam && Input.GetButtonUp ("Fire1Bird")) ||
+				!debug.m_useWorldCam && Input.GetButtonUp ("Fire1")) {
+				Debug.Log ("Hello mr disactivate");
+				targetControl.disactivateCurrent ();
 			}
 			if ((debug.m_useWorldCam && Input.GetButtonDown("Fire2Bird")) ||
             !debug.m_useWorldCam && Input.GetButtonDown("Fire2")) {

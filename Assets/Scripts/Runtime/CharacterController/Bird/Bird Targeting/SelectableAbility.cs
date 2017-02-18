@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbAirTargeting : MonoBehaviour {
+public abstract class SelectableAbility : MonoBehaviour {
 
 	public GameObject indicator;
+	public bool enabled = false;
 	public bool active = false;
 	public LayerMask affectedLayers;
 
@@ -13,7 +14,7 @@ public abstract class AbAirTargeting : MonoBehaviour {
 	}
 
 	void Update () {
-		if (active) {
+		if (enabled) {
 			RaycastHit hit;
 			if(findTarget(out hit))	{
 				indicator.SetActive(true);
@@ -37,33 +38,46 @@ public abstract class AbAirTargeting : MonoBehaviour {
 
 	//Targeter is turned on (we can see targeting appearing)
 	public void Enable(){
-		if(!active){
+		if(!enabled){
 			Debug.Log ("enable air targeting module");
 			indicator.SetActive (true);
-			active = true;
+			enabled = true;
 			OnEnableTargeting ();
 		}
 	}
 
 	//Targeter is turned off (turn off targeting display and disable trigger)
 	public void Disable(){
-		if (active){
-			active = false;
+		if (enabled){
+			enabled = false;
 			OnDisableTargeting ();
             indicator.SetActive(false);
         }
 	}
 
+
 	//Do actual action
-	public void Trigger(){
-		if (active)	{
-			OnTriggerTargeting ();
+	public void Activate(){
+		if (enabled && !active)
+		{
+			active = true;
+			OnActivate ();
 		}
+	}
+
+	public void Disactivate(){
+		if (active) 
+		{
+			OnDisactivate ();
+			active = false;
+		}
+	
 	}
 
 	//Methods called when the targeter is turned on, triggered, and disabled
 	protected abstract void OnEnableTargeting ();
-	protected abstract void OnTriggerTargeting();
+	protected abstract void OnActivate();
+	protected abstract void OnDisactivate();
 	protected abstract void OnDisableTargeting();
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetingController : MonoBehaviour {
 
 
-	public List<AbAirTargeting> targeters;
+	public List<SelectableAbility> targeters;
 	private int currentTarget =0;
 
 	void OnEnable(){
@@ -19,32 +19,38 @@ public class TargetingController : MonoBehaviour {
 
 	private void disableCurrent(){
 		for(int i=0;i<targeters.Count;i++){
-			if (i == currentTarget && targeters[i].active) {
+			if (i == currentTarget && targeters[i].enabled) {
 				targeters [i].Disable ();
 			} 
 		}
 	}
 
-	private void activateCurrent(){
+	private void enableCurrent(){
 		for(int i=0;i<targeters.Count;i++){
-			if (i == currentTarget && !targeters[i].active) {
+			if (i == currentTarget && !targeters[i].enabled) {
 				targeters [i].Enable ();
-			} else if(targeters[i].active){
+			} else if(targeters[i].enabled){
 				targeters [i].Disable ();
 			}
 		}
 	}
 
 	public void toggle(){
+		disableCurrent ();
 		currentTarget = (currentTarget + 1) % targeters.Count;
-		activateCurrent ();
+		enableCurrent ();
 	}
 
-	public void TriggerCurrent(){
+	public void activateCurrent(){
 		if (targeters [currentTarget] != null) {
-			targeters [currentTarget].Trigger ();
+			targeters [currentTarget].Activate ();
 		}
 	}
 
+	public void disactivateCurrent(){
+		if (targeters [currentTarget] != null) {
+			targeters [currentTarget].Disactivate ();
+		}
+	}
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine.Utility;
 
-public class DiveTargetting : AbAirTargeting {
+public class DiveTargetting : SelectableAbility {
 
 	//The mover behaviour that takes care of actually making the bird dive
 	public DiveAnimation diveAnim;
@@ -26,7 +26,7 @@ public class DiveTargetting : AbAirTargeting {
         debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
 	}
 
-	protected override void OnTriggerTargeting ()
+	protected override void OnActivate ()
 	{
 		RaycastHit target;
 		if (findTarget (out target)) {
@@ -42,6 +42,11 @@ public class DiveTargetting : AbAirTargeting {
 			}
 
 		}
+	}
+
+	protected override void OnDisactivate ()
+	{
+		//Nothing to do
 	}
 
 	protected override void OnDisableTargeting()
