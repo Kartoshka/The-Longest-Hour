@@ -47,11 +47,11 @@ public class HeightController : MonoBehaviour {
 		a_ScaledSize.y = a_DistanceBetween;
 
 
-		a_ScaledSize.y = Mathf.Lerp (a_RectTransform.sizeDelta.y, a_ScaledSize.y, lerpSpeed);
 		if (a_ScaledSize.y >= a_MaxHeight) { a_ScaledSize.y = a_MaxHeight; }
 
 		if (a_ScaledSize.y <= a_MinHeight) { a_ScaledSize.y = a_MinHeight; }
 
+		a_ScaledSize.y = Mathf.Lerp (a_RectTransform.sizeDelta.y, a_ScaledSize.y, lerpSpeed);
 
 
 		a_RectTransform.sizeDelta =  a_ScaledSize;
