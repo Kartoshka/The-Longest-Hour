@@ -21,6 +21,7 @@ TagManager:
   - Grenade
   - FallRespawner
   - Debug
+  - GroundPlayer
   layers:
   - Default
   - TransparentFX
