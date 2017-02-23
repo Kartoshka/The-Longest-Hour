@@ -19,6 +19,8 @@ public class BirdController : MonoBehaviour {
 	[Header("Targeting controls")]
 	public TargetingController targetControl;
 
+    private float m_moveInputThreshold = 0.3f;
+
     private DebugEntities debug;
 
 
@@ -72,6 +74,11 @@ public class BirdController : MonoBehaviour {
             horizontalLeftStick = Input.GetAxis("HorizontalBird");
         else
             horizontalLeftStick = Input.GetAxis("Horizontal");
+
+        if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
+            verticalLeftStick = 0;
+        if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
+            horizontalLeftStick = 0;
 
         moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
 
