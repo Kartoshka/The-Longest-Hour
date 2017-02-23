@@ -66,6 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804467603197630}
   - component: {fileID: 95167488372839560}
+  - component: {fileID: 114195573619163856}
   m_Layer: 0
   m_Name: cage
   m_TagString: Untagged
@@ -1082,8 +1083,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067648167078320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -46.56, y: 0, z: 2.88}
   m_LocalScale: {x: 0.66, y: 0.66, z: 0.66}
   m_Children:
   - {fileID: 4708319175879514}
@@ -1091,7 +1092,7 @@ Transform:
   - {fileID: 4693235248571626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4809055360240422
 Transform:
   m_ObjectHideFlags: 1
@@ -1201,6 +1202,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114195573619163856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067648167078320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3a0078f4a4bd245a9039df7ecf0ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 95167488372839560}
+  m_boolParam: nextPhase
 --- !u!137 &137062567935810684
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
