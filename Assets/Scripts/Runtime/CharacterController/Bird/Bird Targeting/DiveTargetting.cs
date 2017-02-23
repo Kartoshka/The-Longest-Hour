@@ -11,7 +11,10 @@ public class DiveTargetting : SelectableAbility {
 
 	private bool diving = false;
 	private bool initialized = false;
-    
+
+	[Range(0,100)]
+	public float heightOffset = 0;
+
 	public Capturer captureModule;
 
     private DebugEntities debug;
@@ -28,11 +31,12 @@ public class DiveTargetting : SelectableAbility {
 
 	protected override void OnActivate ()
 	{
+		
 		RaycastHit target;
 		if (findTarget (out target)) {
 			if (!captureModule.containing) {
 				if (diveAnim != null && !diving) {
-					diveAnim.initialize (this.transform, target.transform.position.y);
+					diveAnim.initialize (this.transform, target.point.y + heightOffset);
 					diving = true;
                     if(!debug.m_useWorldCam)
 					    diveCam.gameObject.SetActive (true);
@@ -64,5 +68,5 @@ public class DiveTargetting : SelectableAbility {
 			captureModule.Capture (c.gameObject.GetComponent<Capturable> ());
 		}
 	}
-
+		
 }
