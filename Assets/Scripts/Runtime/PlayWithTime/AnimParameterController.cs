@@ -56,10 +56,17 @@ public class AnimParameterController : MonoBehaviour
         {
             foreach (Animator animator in m_animators)
             {
-                float curr = animator.GetFloat(parameterName);
-                float incremented_curr = Mathf.Clamp01(curr + value);
-                animator.SetFloat(parameterName, incremented_curr);
-                animator.SetTime(incremented_curr);
+                float totalTime = animator.GetCurrentAnimatorStateInfo(0).length;
+                float incrementedTime = (float) (animator.GetTime() + value);
+
+                if (incrementedTime > totalTime)
+                    incrementedTime = totalTime;
+                if (incrementedTime < 0)
+                    incrementedTime = 0;
+
+                float newTime = Mathf.Clamp01(incrementedTime / totalTime);
+                animator.SetFloat(parameterName, newTime);
+                animator.SetTime(incrementedTime);
             }
         }
     }
@@ -69,7 +76,12 @@ public class AnimParameterController : MonoBehaviour
         m_animators = new List<Animator>();
         foreach (GameObject go in objs)
         {
-            m_animators.Add(go.GetComponent<Animator>());
+            Animator anim = go.GetComponent<Animator>();
+            float currTime = (float) anim.GetTime();
+            float totalTime = anim.GetCurrentAnimatorStateInfo(0).length;
+            anim.SetFloat("time", currTime / totalTime);
+
+            m_animators.Add(anim);
         }
     }
 
