@@ -2155,6 +2155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activateOnStart:
   - {fileID: 470948456}
+  - {fileID: 1465620794}
   - {fileID: 302302805}
   m_deactivateOnStart: []
   m_useWorldCam: 0
@@ -2419,7 +2420,7 @@ Prefab:
     - target: {fileID: 114046703069340702, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_startTime
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
@@ -2493,6 +2494,16 @@ Prefab:
         type: 2}
       propertyPath: heightOffset
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23305161825126368, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23093067988310560, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
@@ -2597,6 +2608,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1465620794 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1015017301963698, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 2071870615}
 --- !u!1 &1483543130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,7 +3567,7 @@ Prefab:
       objectReference: {fileID: 1902592566}
     - target: {fileID: 1015017301963698, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1488788676921738, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
       propertyPath: m_IsActive
