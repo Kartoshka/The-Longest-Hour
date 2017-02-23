@@ -13,7 +13,8 @@ public class AnimInputController : MonoBehaviour
 
 	public Rigidbody m_rigidBody;
 	public Animator m_animator;
-	public string m_parameterName;
+	public string m_runSpeedParam;
+	public string m_attackParam;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +54,11 @@ public class AnimInputController : MonoBehaviour
 	{
 		float normalizedRunSpeed = Math.Abs(Input.GetAxis("Horizontal")) + Math.Abs(Input.GetAxis("Vertical"));
 		//float normalizedRunSpeed = velocity.normalized.x;
-		m_animator.SetFloat(m_parameterName, normalizedRunSpeed);
+		m_animator.SetFloat(m_runSpeedParam, normalizedRunSpeed);
+		if(Input.GetButtonDown("Fire1"))
+		{
+			m_animator.SetBool(m_attackParam, true);
+		}
     }
 
 	#endregion
