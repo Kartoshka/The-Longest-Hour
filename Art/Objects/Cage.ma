@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: Cage.ma
-//Last modified: Thu, Feb 23, 2017 01:40:42 AM
+//Last modified: Thu, Feb 23, 2017 02:11:03 AM
 //Codeset: 1252
 requires maya "2016";
 requires "stereoCamera" "10.0";
@@ -13,17 +13,17 @@ fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n
 createNode transform -s -n "persp";
 	rename -uid "CCD2B1E3-43A2-781C-8430-17A934C748EA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1485.3410989209885 1025.4770772738718 -36.249051433208393 ;
-	setAttr ".r" -type "double3" -29.738352729615357 93.799999999890645 2.5444437451708134e-014 ;
+	setAttr ".t" -type "double3" 1167.9691816301709 704.44889942240604 -211.67143004272003 ;
+	setAttr ".r" -type "double3" -22.538352729630358 98.599999999889249 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BBFFED8C-472C-3937-131E-F18E9EC58E1A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1717.0129693663471;
+	setAttr ".coi" 1189.1554322923182;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 1.5150632858276936 391.86890953457043 -104.25672156379981 ;
+	setAttr ".tp" -type "double3" 1.5151329040527344 438.07212829589844 1.2433567047119141 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "D2FCF40B-40C2-7709-FD84-4F93E63D1BB9";
@@ -2534,7 +2534,7 @@ createNode mesh -n "polySurfaceShape12Orig" -p "polySurface12";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface13" -p "CageMesh";
+createNode transform -n "cageCap" -p "CageMesh";
 	rename -uid "8CBC7A8A-4ABB-6106-0199-58A3D5613152";
 	setAttr -l on ".tx";
 	setAttr -l on ".ty";
@@ -2547,7 +2547,7 @@ createNode transform -n "polySurface13" -p "CageMesh";
 	setAttr -l on ".sz";
 	setAttr ".rp" -type "double3" 1.5151321887969973 438.07215710872845 1.2433589795556783 ;
 	setAttr ".sp" -type "double3" 1.5151321887969973 438.07215710872845 1.2433589795556783 ;
-createNode mesh -n "polySurfaceShape13" -p "polySurface13";
+createNode mesh -n "cageCapShape" -p "cageCap";
 	rename -uid "A102C930-40BB-6261-73BC-6799E82899B7";
 	setAttr -k off ".v";
 	setAttr -s 6 ".iog[0].og";
@@ -2559,18 +2559,25 @@ createNode mesh -n "polySurfaceShape13" -p "polySurface13";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".vcs" 2;
-createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
-	rename -uid "89666888-4F46-77DF-69B1-47BA2F872C8B";
+createNode mesh -n "cageCapShapeOrig" -p "cageCap";
+	rename -uid "80D55CC5-4FCA-136C-27F3-77B7D8021FD9";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 96 ".uvst[0].uvsp[0:95]" -type "float2" 0 0 1 0 0.5 1 0 0
+		 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0
+		 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1
+		 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5
+		 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5
+		 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5
+		 1 0 0 1 0 0.5 1;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 65 ".vt[0:64]"  -54.021934509 437.70587158 1.24337888 -52.95480347 437.70587158 -9.59136868
+	setAttr -s 66 ".vt[0:65]"  -54.021934509 437.70587158 1.24337888 -52.95480347 437.70587158 -9.59136868
 		 -49.79442978 437.70587158 -20.0097446442 -44.6622467 437.70587158 -29.61137581 -37.75550079 437.70587158 -38.027275085
 		 -29.33960342 437.70587158 -44.93402481 -19.73797226 437.70587158 -50.066196442 -9.31959724 437.70587158 -53.22657394
 		 1.51514912 437.70587158 -54.29369736 12.34989548 437.70587158 -53.22657013 22.76826668 437.70587158 -50.066184998
@@ -2591,8 +2598,9 @@ createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
 		 40.45583725 432.96841431 40.18406677 32.11069489 432.96841431 47.032840729 22.58970261 432.96841431 52.12186432
 		 12.25893879 432.96841431 55.2556572 1.51514506 432.96841431 56.31391525 -9.22864628 432.96841431 55.25565338
 		 -19.55940628 432.96841431 52.1218605 -29.080392838 432.96841431 47.032829285 -37.42553329 432.96841431 40.18405533
-		 -44.27430344 432.96841431 31.83891869 -49.36333084 432.96841431 22.3179245 -52.4971199 432.96841431 11.98716259;
-	setAttr -s 128 ".ed[0:127]"  0 30 0 30 1 0 1 0 0 30 2 0 2 1 0 30 3 0 3 2 0
+		 -44.27430344 432.96841431 31.83891869 -49.36333084 432.96841431 22.3179245 -52.4971199 432.96841431 11.98716259
+		 1.51514459 436.66986084 1.24335647;
+	setAttr -s 160 ".ed[0:159]"  0 30 0 30 1 0 1 0 0 30 2 0 2 1 0 30 3 0 3 2 0
 		 30 4 0 4 3 0 30 5 0 5 4 0 30 6 0 6 5 0 30 7 0 7 6 0 30 8 0 8 7 0 30 9 0 9 8 0 30 10 0
 		 10 9 0 30 11 0 11 10 0 30 12 0 12 11 0 30 13 0 13 12 0 30 14 0 14 13 0 30 15 0 15 14 0
 		 30 16 0 16 15 0 30 17 0 17 16 0 30 18 0 18 17 0 30 19 0 19 18 0 30 20 0 20 19 0 30 21 0
@@ -2603,8 +2611,11 @@ createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
 		 44 43 0 12 45 0 45 44 0 13 46 0 46 45 0 14 47 0 47 46 0 15 48 0 48 47 0 16 49 0 49 48 0
 		 17 50 0 50 49 0 18 51 0 51 50 0 19 52 0 52 51 0 20 53 0 53 52 0 21 54 0 54 53 0 22 55 0
 		 55 54 0 23 56 0 56 55 0 24 57 0 57 56 0 25 58 0 58 57 0 26 59 0 59 58 0 27 60 0 60 59 0
-		 28 61 0 61 60 0 29 62 0 62 61 0 31 63 0 63 62 0 32 64 0 64 63 0 33 64 0;
-	setAttr -s 224 ".n";
+		 28 61 0 61 60 0 29 62 0 62 61 0 31 63 0 63 62 0 32 64 0 64 63 0 33 64 0 34 65 1 33 65 1
+		 35 65 1 36 65 1 37 65 1 38 65 1 39 65 1 40 65 1 41 65 1 42 65 1 43 65 1 44 65 1 45 65 1
+		 46 65 1 47 65 1 48 65 1 49 65 1 50 65 1 51 65 1 52 65 1 53 65 1 54 65 1 55 65 1 56 65 1
+		 57 65 1 58 65 1 59 65 1 60 65 1 61 65 1 62 65 1 63 65 1 64 65 1;
+	setAttr -s 288 ".n";
 	setAttr ".n[0:165]" -type "float3"  -0.00072062336 0.0073165754 -7.0976581e-005
 		 -0.00072062336 0.0073165754 -7.0976581e-005 -0.00072062336 0.0073165754 -7.0976581e-005
 		 -0.00069293712 0.0073165749 -0.00021019972 -0.00069293712 0.0073165749 -0.00021019972
@@ -2689,7 +2700,7 @@ createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
 		 0.00071725575 0.0072820242 -0.00071713427 0.00071725575 0.0072820242 -0.00071713427
 		 0.00071725575 0.0070021809 -0.00071717013 0.0021240865 0.0070021809 -0.00071717013
 		 0.0021240865;
-	setAttr ".n[166:223]" -type "float3"  0.0070021809 -0.00071717013 0.0021240865
+	setAttr ".n[166:287]" -type "float3"  0.0070021809 -0.00071717013 0.0021240865
 		 0.0070021809 -0.00071717013 0.0021240865 0.0064532557 -0.00071712979 0.0034493227
 		 0.0064532557 -0.00071712979 0.0034493227 0.0064532557 -0.00071712979 0.0034493227
 		 0.0064532557 -0.00071712979 0.0034493227 0.0056563145 -0.00071714382 0.0046420284
@@ -2718,8 +2729,24 @@ createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
 		 -0.00071716902 0.0021240821 -0.0070021823 -0.00071716902 0.0021240821 -0.0070021823
 		 -0.00071716902 0.0021240821 -0.007282021 -0.00071713363 0.00071728736 -0.007282021
 		 -0.00071713363 0.00071728736 -0.007282021 -0.00071713363 0.00071728736 -0.007282021
-		 -0.00071713363 0.00071728736;
-	setAttr -s 64 -ch 224 ".fc[0:63]" -type "polyFaces" 
+		 -0.00071713363 0.00071728736 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020 1e+020
+		 1e+020 1e+020 1e+020 1e+020;
+	setAttr -s 96 -ch 320 ".fc[0:95]" -type "polyFaces" 
 		f 3 0 1 2
 		f 3 -2 3 4
 		f 3 -4 5 6
@@ -2783,11 +2810,76 @@ createNode mesh -n "polySurfaceShape13Orig" -p "polySurface13";
 		f 4 -59 121 122 -120
 		f 4 -61 123 124 -122
 		f 4 -63 125 126 -124
-		f 4 -64 -67 127 -126;
+		f 4 -64 -67 127 -126
+		f 3 -66 128 -130
+		mu 0 3 0 1 2
+		f 3 -69 130 -129
+		mu 0 3 3 4 5
+		f 3 -71 131 -131
+		mu 0 3 6 7 8
+		f 3 -73 132 -132
+		mu 0 3 9 10 11
+		f 3 -75 133 -133
+		mu 0 3 12 13 14
+		f 3 -77 134 -134
+		mu 0 3 15 16 17
+		f 3 -79 135 -135
+		mu 0 3 18 19 20
+		f 3 -81 136 -136
+		mu 0 3 21 22 23
+		f 3 -83 137 -137
+		mu 0 3 24 25 26
+		f 3 -85 138 -138
+		mu 0 3 27 28 29
+		f 3 -87 139 -139
+		mu 0 3 30 31 32
+		f 3 -89 140 -140
+		mu 0 3 33 34 35
+		f 3 -91 141 -141
+		mu 0 3 36 37 38
+		f 3 -93 142 -142
+		mu 0 3 39 40 41
+		f 3 -95 143 -143
+		mu 0 3 42 43 44
+		f 3 -97 144 -144
+		mu 0 3 45 46 47
+		f 3 -99 145 -145
+		mu 0 3 48 49 50
+		f 3 -101 146 -146
+		mu 0 3 51 52 53
+		f 3 -103 147 -147
+		mu 0 3 54 55 56
+		f 3 -105 148 -148
+		mu 0 3 57 58 59
+		f 3 -107 149 -149
+		mu 0 3 60 61 62
+		f 3 -109 150 -150
+		mu 0 3 63 64 65
+		f 3 -111 151 -151
+		mu 0 3 66 67 68
+		f 3 -113 152 -152
+		mu 0 3 69 70 71
+		f 3 -115 153 -153
+		mu 0 3 72 73 74
+		f 3 -117 154 -154
+		mu 0 3 75 76 77
+		f 3 -119 155 -155
+		mu 0 3 78 79 80
+		f 3 -121 156 -156
+		mu 0 3 81 82 83
+		f 3 -123 157 -157
+		mu 0 3 84 85 86
+		f 3 -125 158 -158
+		mu 0 3 87 88 89
+		f 3 -127 159 -159
+		mu 0 3 90 91 92
+		f 3 -128 129 -160
+		mu 0 3 93 94 95;
 	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".vcs" 2;
 createNode joint -n "joint_root";
 	rename -uid "2C51649B-4E95-3039-2148-8098A44B1F8A";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -2952,6 +3044,9 @@ createNode joint -n "joint_cap" -p "joint_root";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 5.951086769315439 -6.1640295346407354 ;
+	setAttr ".bps" -type "matrix" 1 5.6590014246010687e-017 5.5511151231257827e-017 0
+		 -5.5601078780170956e-017 1 1.1718919767548192e-014 0 -4.163336342344337e-017 -1.171422291477645e-014 1 0
+		 1.5150632858276318 443.17584228515625 1.2434136867523187 1;
 	setAttr ".radi" 2;
 	setAttr -k on ".blendParent1";
 createNode parentConstraint -n "joint_cap_parentConstraint1" -p "joint_cap";
@@ -3087,7 +3182,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "4A4662C0-44F3-CAD5-9C3B-D4A3D836A066";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 20 -ast 1 -aet 20 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 30 -ast 1 -aet 30 ";
 	setAttr ".st" 6;
 createNode animLayer -n "BaseAnimation";
 	rename -uid "766E465C-4FD9-1567-B0B4-A7AA1658DEEF";
@@ -3098,6 +3193,10 @@ createNode animLayer -n "PowerOn";
 	rename -uid "DE223B4D-42D5-1233-7CE1-F9AC4E022239";
 	setAttr -s 250 ".dsm";
 	setAttr -s 200 ".bnds";
+	setAttr ".mt" yes;
+	setAttr ".lo" yes;
+	setAttr ".pref" yes;
+	setAttr ".slct" yes;
 createNode animBlendNodeBoolean -n "joint_root_visibility_PowerOn";
 	rename -uid "40ACBF1F-447E-79F9-F9D7-FA98B2809CE5";
 	setAttr ".ia" yes;
@@ -6543,112 +6642,6 @@ createNode groupParts -n "groupParts36";
 	rename -uid "3E869A92-4DA4-9D54-6A34-6580D6199C81";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster13";
-	rename -uid "0E8E6011-46B0-B1F7-2B1F-5EADF7727D30";
-	setAttr -s 65 ".wl";
-	setAttr ".wl[0].w[0]"  1;
-	setAttr ".wl[1].w[0]"  1;
-	setAttr ".wl[2].w[0]"  1;
-	setAttr ".wl[3].w[0]"  1;
-	setAttr ".wl[4].w[0]"  1;
-	setAttr ".wl[5].w[0]"  1;
-	setAttr ".wl[6].w[0]"  1;
-	setAttr ".wl[7].w[0]"  1;
-	setAttr ".wl[8].w[0]"  1;
-	setAttr ".wl[9].w[0]"  1;
-	setAttr ".wl[10].w[0]"  1;
-	setAttr ".wl[11].w[0]"  1;
-	setAttr ".wl[12].w[0]"  1;
-	setAttr ".wl[13].w[0]"  1;
-	setAttr ".wl[14].w[0]"  1;
-	setAttr ".wl[15].w[0]"  1;
-	setAttr ".wl[16].w[0]"  1;
-	setAttr ".wl[17].w[0]"  1;
-	setAttr ".wl[18].w[0]"  1;
-	setAttr ".wl[19].w[0]"  1;
-	setAttr ".wl[20].w[0]"  1;
-	setAttr ".wl[21].w[0]"  1;
-	setAttr ".wl[22].w[0]"  1;
-	setAttr ".wl[23].w[0]"  1;
-	setAttr ".wl[24].w[0]"  1;
-	setAttr ".wl[25].w[0]"  1;
-	setAttr ".wl[26].w[0]"  1;
-	setAttr ".wl[27].w[0]"  1;
-	setAttr ".wl[28].w[0]"  1;
-	setAttr ".wl[29].w[0]"  1;
-	setAttr ".wl[30].w[0]"  1;
-	setAttr ".wl[31].w[0]"  1;
-	setAttr ".wl[32].w[0]"  1;
-	setAttr ".wl[33].w[0]"  1;
-	setAttr ".wl[34].w[0]"  1;
-	setAttr ".wl[35].w[0]"  1;
-	setAttr ".wl[36].w[0]"  1;
-	setAttr ".wl[37].w[0]"  1;
-	setAttr ".wl[38].w[0]"  1;
-	setAttr ".wl[39].w[0]"  1;
-	setAttr ".wl[40].w[0]"  1;
-	setAttr ".wl[41].w[0]"  1;
-	setAttr ".wl[42].w[0]"  1;
-	setAttr ".wl[43].w[0]"  1;
-	setAttr ".wl[44].w[0]"  1;
-	setAttr ".wl[45].w[0]"  1;
-	setAttr ".wl[46].w[0]"  1;
-	setAttr ".wl[47].w[0]"  1;
-	setAttr ".wl[48].w[0]"  1;
-	setAttr ".wl[49].w[0]"  1;
-	setAttr ".wl[50].w[0]"  1;
-	setAttr ".wl[51].w[0]"  1;
-	setAttr ".wl[52].w[0]"  1;
-	setAttr ".wl[53].w[0]"  1;
-	setAttr ".wl[54].w[0]"  1;
-	setAttr ".wl[55].w[0]"  1;
-	setAttr ".wl[56].w[0]"  1;
-	setAttr ".wl[57].w[0]"  1;
-	setAttr ".wl[58].w[0]"  1;
-	setAttr ".wl[59].w[0]"  1;
-	setAttr ".wl[60].w[0]"  1;
-	setAttr ".wl[61].w[0]"  1;
-	setAttr ".wl[62].w[0]"  1;
-	setAttr ".wl[63].w[0]"  1;
-	setAttr ".wl[64].w[0]"  1;
-	setAttr ".pm[0]" -type "matrix" 1 -5.659001424601134e-017 -5.5511151231257161e-017 -0
-		 5.5601078780170463e-017 1 -1.1718919767548192e-014 0 4.1633363423444024e-017 1.171422291477645e-014 1 -0
-		 -1.5150632858276565 -443.17584228515625 -1.2434136867471242 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mi" 3;
-	setAttr ".ucm" yes;
-createNode groupId -n "groupId65";
-	rename -uid "BF4A84E5-4ABE-2C8D-2A9E-9981AA68F9BB";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts37";
-	rename -uid "E6B78315-40D2-0D77-3F29-D9892D783595";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:63]";
-createNode tweak -n "tweak13";
-	rename -uid "8D9E42AA-46ED-EE62-7885-BFA70F219377";
-createNode objectSet -n "skinCluster13Set";
-	rename -uid "0FC28694-44F3-0E84-2E53-1FBF01A87AA8";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster13GroupId";
-	rename -uid "16F5F8E7-4848-FEC9-B7A7-13AB4E320131";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster13GroupParts";
-	rename -uid "88A08175-40D3-A556-DC6F-669F39071267";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet13";
-	rename -uid "330D910C-4444-637F-9BC2-928ECF20DEFB";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId67";
-	rename -uid "83EB12AF-40F8-0EE0-2D54-2AB8F803A316";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts39";
-	rename -uid "A76D475F-4842-ECC5-F0AC-11BC5F0D6C9B";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode dagPose -n "bindPose12";
 	rename -uid "B2469059-4DF0-3C4D-2571-93B8920C64E3";
 	setAttr -s 2 ".wm";
@@ -6663,7 +6656,7 @@ createNode dagPose -n "bindPose12";
 		 1.0000000000000002 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -0.0027909434857497258 -0.051834605655787187 0.05369288077290385 0.99720732991954841 1
 		 1 1 yes;
 	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 50.098234040288453 440.34234247528508
-		 -0.018658390949335135 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0.0027909434857555679 0.051834605655786854 -0.053692880772904149 0.99720732991954841 1
+		 -0.018658390949335857 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0.0027909434857555679 0.051834605655786854 -0.053692880772904149 0.99720732991954841 1
 		 1 1 yes;
 	setAttr -s 2 ".m";
 	setAttr -s 2 ".p";
@@ -6679,7 +6672,6 @@ createNode animBlendNodeAdditiveDL -n "capCtrl_translateX_PowerOn";
 	rename -uid "ACDE1082-488E-DFE0-B955-94980CEDC483";
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateY_PowerOn";
 	rename -uid "5709AEB7-491B-5160-B8FC-21836FF1EF30";
-	setAttr ".o" -4.7008970387420188;
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateZ_PowerOn";
 	rename -uid "637CFC84-4615-7B1B-D5D8-D88597A2B9E6";
 createNode animBlendNodeAdditiveRotation -n "capCtrl_rotate_PowerOn";
@@ -6703,7 +6695,6 @@ createNode animBlendNodeAdditiveDL -n "capCtrl_translateX_PowerOff";
 	rename -uid "F63D730E-4EC1-6A6F-6391-A7ADB0DA55D6";
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateY_PowerOff";
 	rename -uid "5D56B703-46F5-9289-C0C8-5F95E3F5B578";
-	setAttr ".o" -4.7008970387420188;
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateZ_PowerOff";
 	rename -uid "0CAE6FC0-4334-8A1A-0BF8-F09FC8C2796F";
 createNode animBlendNodeAdditiveRotation -n "capCtrl_rotate_PowerOff";
@@ -6724,7 +6715,6 @@ createNode animBlendNodeAdditiveDL -n "capCtrl_translateX_Damaged";
 	rename -uid "6DDB7E27-4A70-83BC-8958-279BAE2F81F2";
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateY_Damaged";
 	rename -uid "122454E2-4E37-86EF-FEF9-CE9D9B5A95D9";
-	setAttr ".o" -4.7008970387420188;
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateZ_Damaged";
 	rename -uid "7BD6E1C9-4285-EA75-4241-9493740E4717";
 createNode animBlendNodeAdditiveRotation -n "capCtrl_rotate_Damaged";
@@ -6742,53 +6732,63 @@ createNode animCurveTL -n "capCtrl_translateX_PowerOn_inputB";
 	rename -uid "31B9E118-4003-F5CD-78F2-7B8846E9B3E5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 24 0;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 0 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTL -n "capCtrl_translateY_PowerOn_inputB";
 	rename -uid "FB6F4B84-403E-897E-3800-6AA9B256D6DE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 12 -18.132027729708568 24 0;
+	setAttr -s 3 -l on ".ktv[0:2]"  1 0 12 -18.132027729708568 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTL -n "capCtrl_translateZ_PowerOn_inputB";
 	rename -uid "65611CD2-4CD8-38B3-384C-92A91BBFB16A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 24 0;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 0 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTU -n "capCtrl_visibility_PowerOn_inputB";
 	rename -uid "E52A0127-4D1A-43FA-C139-27979F8B9BA0";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 24 1;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 1 24 1;
+	setAttr -l on ".ktv";
 	setAttr -s 2 ".kot[0:1]"  5 5;
 createNode animCurveTA -n "capCtrl_rotate_PowerOn_inputBX";
 	rename -uid "E4E6C6CB-4542-F5C2-E889-638C0C832B7D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 24 0;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 0 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTA -n "capCtrl_rotate_PowerOn_inputBY";
 	rename -uid "E8A2D38A-49F8-D1C8-6530-AFAB72A7BB9F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 24 0;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 0 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTA -n "capCtrl_rotate_PowerOn_inputBZ";
 	rename -uid "94D170EF-4ABB-867D-8D82-1A83A9EE499C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 24 0;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 0 24 0;
+	setAttr -l on ".ktv";
 createNode animCurveTU -n "capCtrl_scaleX_PowerOn_inputB";
 	rename -uid "40836E76-47D5-D3AB-F51B-6AB8B052F3F8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 24 1;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 1 24 1;
+	setAttr -l on ".ktv";
 createNode animCurveTU -n "capCtrl_scaleY_PowerOn_inputB";
 	rename -uid "EE2539D3-4C2F-0A24-74ED-858466E5CEFD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 24 1;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 1 24 1;
+	setAttr -l on ".ktv";
 createNode animCurveTU -n "capCtrl_scaleZ_PowerOn_inputB";
 	rename -uid "69D6FBD7-41C1-86C6-FC9C-F7A0E3B008BD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 24 1;
+	setAttr -s 2 -l on ".ktv[0:1]"  1 1 24 1;
+	setAttr -l on ".ktv";
 createNode animCurveTL -n "capCtrl_translateX_PowerOff_inputB";
 	rename -uid "DC26592D-4ED8-5081-8381-AEBA7D212971";
 	setAttr ".tan" 18;
@@ -6919,8 +6919,6 @@ createNode animLayer -n "Destroyed";
 	setAttr -s 200 ".bnds";
 	setAttr ".mt" yes;
 	setAttr ".lo" yes;
-	setAttr ".pref" yes;
-	setAttr ".slct" yes;
 createNode animBlendNodeBoolean -n "joint_root_visibility_Destroyed";
 	rename -uid "78E0D6A5-4C02-2E33-2414-4D9441655334";
 	setAttr ".ib" yes;
@@ -7532,7 +7530,6 @@ createNode animBlendNodeAdditiveDL -n "capCtrl_translateX_Destroyed";
 	rename -uid "72940EDD-41AA-5096-04BE-F99CF240D397";
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateY_Destroyed";
 	rename -uid "5F5327EA-4A3F-C947-7161-2B89A63F4248";
-	setAttr ".o" -4.7008970387420188;
 createNode animBlendNodeAdditiveDL -n "capCtrl_translateZ_Destroyed";
 	rename -uid "AA4D23F8-4660-137C-0548-1AA78BD66F3A";
 createNode animBlendNodeAdditiveRotation -n "capCtrl_rotate_Destroyed";
@@ -8255,9 +8252,116 @@ createNode animCurveTA -n "capCtrl_rotate_Destroyed_inputBX1";
 	setAttr ".wgt" no;
 	setAttr -l on ".ktv[0]"  20 -174.65614126103108;
 	setAttr -l on ".ktv";
+createNode skinCluster -n "skinCluster13";
+	rename -uid "1901E7F8-49EA-E69A-5D3D-52A1CF8C7B8B";
+	setAttr -s 66 ".wl";
+	setAttr ".wl[0].w[0]"  1;
+	setAttr ".wl[1].w[0]"  1;
+	setAttr ".wl[2].w[0]"  1;
+	setAttr ".wl[3].w[0]"  1;
+	setAttr ".wl[4].w[0]"  1;
+	setAttr ".wl[5].w[0]"  1;
+	setAttr ".wl[6].w[0]"  1;
+	setAttr ".wl[7].w[0]"  1;
+	setAttr ".wl[8].w[0]"  1;
+	setAttr ".wl[9].w[0]"  1;
+	setAttr ".wl[10].w[0]"  1;
+	setAttr ".wl[11].w[0]"  1;
+	setAttr ".wl[12].w[0]"  1;
+	setAttr ".wl[13].w[0]"  1;
+	setAttr ".wl[14].w[0]"  1;
+	setAttr ".wl[15].w[0]"  1;
+	setAttr ".wl[16].w[0]"  1;
+	setAttr ".wl[17].w[0]"  1;
+	setAttr ".wl[18].w[0]"  1;
+	setAttr ".wl[19].w[0]"  1;
+	setAttr ".wl[20].w[0]"  1;
+	setAttr ".wl[21].w[0]"  1;
+	setAttr ".wl[22].w[0]"  1;
+	setAttr ".wl[23].w[0]"  1;
+	setAttr ".wl[24].w[0]"  1;
+	setAttr ".wl[25].w[0]"  1;
+	setAttr ".wl[26].w[0]"  1;
+	setAttr ".wl[27].w[0]"  1;
+	setAttr ".wl[28].w[0]"  1;
+	setAttr ".wl[29].w[0]"  1;
+	setAttr ".wl[30].w[0]"  1;
+	setAttr ".wl[31].w[0]"  1;
+	setAttr ".wl[32].w[0]"  1;
+	setAttr ".wl[33].w[0]"  1;
+	setAttr ".wl[34].w[0]"  1;
+	setAttr ".wl[35].w[0]"  1;
+	setAttr ".wl[36].w[0]"  1;
+	setAttr ".wl[37].w[0]"  1;
+	setAttr ".wl[38].w[0]"  1;
+	setAttr ".wl[39].w[0]"  1;
+	setAttr ".wl[40].w[0]"  1;
+	setAttr ".wl[41].w[0]"  1;
+	setAttr ".wl[42].w[0]"  1;
+	setAttr ".wl[43].w[0]"  1;
+	setAttr ".wl[44].w[0]"  1;
+	setAttr ".wl[45].w[0]"  1;
+	setAttr ".wl[46].w[0]"  1;
+	setAttr ".wl[47].w[0]"  1;
+	setAttr ".wl[48].w[0]"  1;
+	setAttr ".wl[49].w[0]"  1;
+	setAttr ".wl[50].w[0]"  1;
+	setAttr ".wl[51].w[0]"  1;
+	setAttr ".wl[52].w[0]"  1;
+	setAttr ".wl[53].w[0]"  1;
+	setAttr ".wl[54].w[0]"  1;
+	setAttr ".wl[55].w[0]"  1;
+	setAttr ".wl[56].w[0]"  1;
+	setAttr ".wl[57].w[0]"  1;
+	setAttr ".wl[58].w[0]"  1;
+	setAttr ".wl[59].w[0]"  1;
+	setAttr ".wl[60].w[0]"  1;
+	setAttr ".wl[61].w[0]"  1;
+	setAttr ".wl[62].w[0]"  1;
+	setAttr ".wl[63].w[0]"  1;
+	setAttr ".wl[64].w[0]"  1;
+	setAttr ".wl[65].w[0]"  1;
+	setAttr ".pm[0]" -type "matrix" 1 -5.659001424601134e-017 -5.5511151231257161e-017 -0
+		 5.5601078780170463e-017 1 -1.1718919767548192e-014 0 4.1633363423444024e-017 1.171422291477645e-014 1 -0
+		 -1.5150632858276565 -443.17584228515625 -1.243413686747125 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mi" 3;
+	setAttr ".ucm" yes;
+createNode groupId -n "groupId65";
+	rename -uid "9CDB5DAA-474A-5F49-A2E0-AD9483927A67";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts37";
+	rename -uid "145EEF2D-4E3E-87AD-2675-EF9E77158526";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:95]";
+createNode tweak -n "tweak13";
+	rename -uid "73E69C49-445E-7AAA-9317-CB81B1A87949";
+createNode objectSet -n "skinCluster13Set";
+	rename -uid "8CA179B7-492B-1184-FC33-2AB738CBD1C5";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster13GroupId";
+	rename -uid "D8EF64E9-4B5A-0AF5-CCFA-67AAE3CF86B4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster13GroupParts";
+	rename -uid "FE4234C4-4C93-6EBF-E964-31853F74ABD2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet13";
+	rename -uid "DE97785B-44E5-D56A-A757-218E555ACB17";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId67";
+	rename -uid "BFB84001-4B13-88BA-AF23-4F87162FC266";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts39";
+	rename -uid "BEAA1A5B-47FF-3120-0148-E6BD028A36D2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 select -ne :time1;
-	setAttr ".o" 20;
-	setAttr ".unw" 20;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -8381,14 +8485,14 @@ connectAttr "groupId52.id" "polySurfaceShape12.iog.og[2].gid";
 connectAttr "tweakSet8.mwc" "polySurfaceShape12.iog.og[2].gco";
 connectAttr "skinCluster8.og[0]" "polySurfaceShape12.i";
 connectAttr "tweak8.vl[0].vt[0]" "polySurfaceShape12.twl";
-connectAttr "groupId65.id" "polySurfaceShape13.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape13.iog.og[0].gco";
-connectAttr "skinCluster13GroupId.id" "polySurfaceShape13.iog.og[1].gid";
-connectAttr "skinCluster13Set.mwc" "polySurfaceShape13.iog.og[1].gco";
-connectAttr "groupId67.id" "polySurfaceShape13.iog.og[2].gid";
-connectAttr "tweakSet13.mwc" "polySurfaceShape13.iog.og[2].gco";
-connectAttr "skinCluster13.og[0]" "polySurfaceShape13.i";
-connectAttr "tweak13.vl[0].vt[0]" "polySurfaceShape13.twl";
+connectAttr "groupId65.id" "cageCapShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "cageCapShape.iog.og[0].gco";
+connectAttr "skinCluster13GroupId.id" "cageCapShape.iog.og[3].gid";
+connectAttr "skinCluster13Set.mwc" "cageCapShape.iog.og[3].gco";
+connectAttr "groupId67.id" "cageCapShape.iog.og[4].gid";
+connectAttr "tweakSet13.mwc" "cageCapShape.iog.og[4].gco";
+connectAttr "skinCluster13.og[0]" "cageCapShape.i";
+connectAttr "tweak13.vl[0].vt[0]" "cageCapShape.twl";
 connectAttr "joint_root_scaleX_Destroyed.o" "joint_root.sx";
 connectAttr "joint_root_scaleY_Destroyed.o" "joint_root.sy";
 connectAttr "joint_root_scaleZ_Destroyed.o" "joint_root.sz";
@@ -12335,26 +12439,6 @@ connectAttr "polySurfaceShape1.iog.og[2]" "tweakSet12.dsm" -na;
 connectAttr "tweak12.msg" "tweakSet12.ub[0]";
 connectAttr "groupParts34.og" "groupParts36.ig";
 connectAttr "groupId64.id" "groupParts36.gi";
-connectAttr "skinCluster13GroupParts.og" "skinCluster13.ip[0].ig";
-connectAttr "skinCluster13GroupId.id" "skinCluster13.ip[0].gi";
-connectAttr "bindPose12.msg" "skinCluster13.bp";
-connectAttr "joint_cap.wm" "skinCluster13.ma[0]";
-connectAttr "joint_cap.liw" "skinCluster13.lw[0]";
-connectAttr "joint_cap.obcc" "skinCluster13.ifcl[0]";
-connectAttr "polySurfaceShape13Orig.w" "groupParts37.ig";
-connectAttr "groupId65.id" "groupParts37.gi";
-connectAttr "groupParts39.og" "tweak13.ip[0].ig";
-connectAttr "groupId67.id" "tweak13.ip[0].gi";
-connectAttr "skinCluster13GroupId.msg" "skinCluster13Set.gn" -na;
-connectAttr "polySurfaceShape13.iog.og[1]" "skinCluster13Set.dsm" -na;
-connectAttr "skinCluster13.msg" "skinCluster13Set.ub[0]";
-connectAttr "tweak13.og[0]" "skinCluster13GroupParts.ig";
-connectAttr "skinCluster13GroupId.id" "skinCluster13GroupParts.gi";
-connectAttr "groupId67.msg" "tweakSet13.gn" -na;
-connectAttr "polySurfaceShape13.iog.og[2]" "tweakSet13.dsm" -na;
-connectAttr "tweak13.msg" "tweakSet13.ub[0]";
-connectAttr "groupParts37.og" "groupParts39.ig";
-connectAttr "groupId67.id" "groupParts39.gi";
 connectAttr "joint_root.msg" "bindPose12.m[0]";
 connectAttr "joint_cap.msg" "bindPose12.m[1]";
 connectAttr "bindPose12.w" "bindPose12.p[0]";
@@ -13905,6 +13989,26 @@ connectAttr "Destroyed.sam" "capCtrl_scaleZ_Destroyed.acm";
 connectAttr "Destroyed.bgwt" "capCtrl_scaleZ_Destroyed.wa";
 connectAttr "Destroyed.fgwt" "capCtrl_scaleZ_Destroyed.wb";
 connectAttr "capCtrl_scaleZ_Damaged.o" "capCtrl_scaleZ_Destroyed.ia";
+connectAttr "skinCluster13GroupParts.og" "skinCluster13.ip[0].ig";
+connectAttr "skinCluster13GroupId.id" "skinCluster13.ip[0].gi";
+connectAttr "joint_cap.wm" "skinCluster13.ma[0]";
+connectAttr "joint_cap.liw" "skinCluster13.lw[0]";
+connectAttr "joint_cap.obcc" "skinCluster13.ifcl[0]";
+connectAttr "bindPose12.msg" "skinCluster13.bp";
+connectAttr "cageCapShapeOrig.w" "groupParts37.ig";
+connectAttr "groupId65.id" "groupParts37.gi";
+connectAttr "groupParts39.og" "tweak13.ip[0].ig";
+connectAttr "groupId67.id" "tweak13.ip[0].gi";
+connectAttr "skinCluster13GroupId.msg" "skinCluster13Set.gn" -na;
+connectAttr "cageCapShape.iog.og[3]" "skinCluster13Set.dsm" -na;
+connectAttr "skinCluster13.msg" "skinCluster13Set.ub[0]";
+connectAttr "tweak13.og[0]" "skinCluster13GroupParts.ig";
+connectAttr "skinCluster13GroupId.id" "skinCluster13GroupParts.gi";
+connectAttr "groupId67.msg" "tweakSet13.gn" -na;
+connectAttr "cageCapShape.iog.og[4]" "tweakSet13.dsm" -na;
+connectAttr "tweak13.msg" "tweakSet13.ub[0]";
+connectAttr "groupParts37.og" "groupParts39.ig";
+connectAttr "groupId67.id" "groupParts39.gi";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "polySurfaceShape8.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape7.iog.og[0]" ":initialShadingGroup.dsm" -na;
@@ -13918,7 +14022,7 @@ connectAttr "polySurfaceShape11.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape10.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape9.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape13.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "cageCapShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId35.msg" ":initialShadingGroup.gn" -na;
