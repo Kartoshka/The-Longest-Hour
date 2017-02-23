@@ -35,25 +35,32 @@ public class HeightController : MonoBehaviour {
 	private void scaleHeight()
 	{
 		float newHeight = 0;
-		if (a_Player == null) 
+		if (a_Player == null && GameObject.FindGameObjectWithTag ("GroundPlayer") !=null) 
 		{
 			a_Player = GameObject.FindGameObjectWithTag ("GroundPlayer").transform;
+		
+
+			a_BeaconPosition = transform.position;
+			a_PlayerPosition = a_Player.position;
+
+			a_DistanceBetween = Vector3.Distance (a_BeaconPosition, a_PlayerPosition);
+			a_ScaledSize.y = a_DistanceBetween;
+
+
+			if (a_ScaledSize.y >= a_MaxHeight) {
+				a_ScaledSize.y = a_MaxHeight;
+			}
+
+			if (a_ScaledSize.y <= a_MinHeight) {
+				a_ScaledSize.y = a_MinHeight;
+			}
+
 		}
-
-		a_BeaconPosition = transform.position;
-		a_PlayerPosition = a_Player.position;
-
-		a_DistanceBetween = Vector3.Distance (a_BeaconPosition, a_PlayerPosition);
-		a_ScaledSize.y = a_DistanceBetween;
-
-
-		if (a_ScaledSize.y >= a_MaxHeight) { a_ScaledSize.y = a_MaxHeight; }
-
-		if (a_ScaledSize.y <= a_MinHeight) { a_ScaledSize.y = a_MinHeight; }
-
+		else 
+		{
+			a_ScaledSize.y = a_MinHeight;
+		}
 		a_ScaledSize.y = Mathf.Lerp (a_RectTransform.sizeDelta.y, a_ScaledSize.y, lerpSpeed);
-
-
 		a_RectTransform.sizeDelta =  a_ScaledSize;
 		//a_ScaledPosition.y = 
 		//a_RectTransform.localPosition = a_ScaledPosition;
