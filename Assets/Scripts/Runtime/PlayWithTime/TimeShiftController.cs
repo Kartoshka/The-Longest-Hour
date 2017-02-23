@@ -32,7 +32,7 @@ public class TimeShiftController : MonoBehaviour
 	public float m_rate = 1.0f;
 
 	public bool m_canShiftTime = true;
-    private float m_timeIncSize = 0.01f;
+    private float m_timeIncSize = 0.05f;
 	private float m_time = 0.0f;
 
     #endregion
