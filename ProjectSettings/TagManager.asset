@@ -22,6 +22,7 @@ TagManager:
   - FallRespawner
   - Debug
   - GroundPlayer
+  - Car
   layers:
   - Default
   - TransparentFX
