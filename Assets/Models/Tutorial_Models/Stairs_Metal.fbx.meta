@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f47fae659cdfc404288c7aa46b606504
-timeCreated: 1488159770
+guid: de09594ff03a84857b4b1aa5969e4a06
+timeCreated: 1488247168
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sculpture_1
+    4300000: Stairs_Metal
   materials:
     importMaterials: 1
     materialName: 0

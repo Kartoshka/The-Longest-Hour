@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f47fae659cdfc404288c7aa46b606504
-timeCreated: 1488159770
+guid: 6841d6b79f3d940139f57314c5693866
+timeCreated: 1488247167
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sculpture_1
+    4300000: Streetlamp_Orb
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +34,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

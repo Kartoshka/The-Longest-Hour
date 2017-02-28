@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f47fae659cdfc404288c7aa46b606504
-timeCreated: 1488159770
+guid: 341db59d8e63141fb8d71c32c69f2855
+timeCreated: 1488247167
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sculpture_1
+    4300000: House_Wall
   materials:
     importMaterials: 1
     materialName: 0
