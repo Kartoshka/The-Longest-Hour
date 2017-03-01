@@ -34,10 +34,22 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	public float maxXAngle = 90;
 
 
+	//Collision parameters
+	[Header("Collision Properties")]
+
+	public bool fixCollisions = false;
+	public LayerMask collisionLayers;
+	public float radiusCollision = 0.2f;
+	private RaycastHit hitCamera;
+
 	void Start()
 	{
 		if (setOnStart) {
 			setPosition ();
+
+			if (fixCollisions) {
+				collisionOffset (controlledView.CameraPosition);
+			}
 		}
 	}
 
@@ -45,6 +57,11 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	{
 		if (modifiable) {
 			setPosition ();
+			if (fixCollisions) {
+				collisionOffset (cameraPosition + controlledView.CameraTransposerTarget.position);
+			}
+
+			controlledView.TransposerTrackingOffset = cameraPosition;
 		}
 
 	}
@@ -65,9 +82,39 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 		//Modify campera position
 		cameraPosition = new Vector3 (X, Y, Z) * distanceFromTarget; 
-		controlledView.TransposerTrackingOffset = cameraPosition;
+
 	}
+
+	Vector3 directionRay;
+	Vector3 startRay;
 	
+	private void collisionOffset(Vector3 startPosition){
+		 directionRay = (controlledView.CameraTransposerTarget.position - controlledView.CameraPosition);
+		 startRay = startPosition;
+
+		// now check for a camera collision; if a collision, set a new distance clamped to the current zoom distance
+		// note that speedDistance is also modified according to the speed of input to ensure the distance lerp keeps up with the user's twitchiness
+		RaycastHit[] hits   = Physics.SphereCastAll(startRay, radiusCollision, directionRay, distanceFromTarget,collisionLayers);
+		hitCamera.distance  = Mathf.Infinity;
+		foreach (RaycastHit hit in hits)
+		{
+			if (hit.distance < hitCamera.distance)
+			{
+				hitCamera = hit;
+				if (hit.point == Vector3.zero) {
+					hitCamera.point = startRay - directionRay.normalized * radiusCollision * 5f;
+				}
+				//hitCamera.point -=directionRay.normalized * radiusCollision * 5f;
+			}
+		}
+
+		if (hitCamera.distance != Mathf.Infinity) {
+			float distance = Vector3.Distance (hitCamera.point,controlledView.CameraTransposerTarget.position);
+			cameraPosition = cameraPosition.normalized * (distance);
+		}
+			
+	}
+
 	public void increaseYaw(float amt)
 	{
 		if(modifiable)
