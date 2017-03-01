@@ -171,8 +171,7 @@ public class LinearInputMoverBehavior : MoverBehavior
                 m_inputMagnitude.x = 0;
             if (Mathf.Abs(m_inputMagnitude.z) < m_moveInputThreshold)
                 m_inputMagnitude.z = 0;
-
-            Debug.Log(m_inputMagnitude.x);
+            
         }
 		else
 		{
