@@ -19,7 +19,7 @@ public class BirdController : MonoBehaviour {
 	[Header("Targeting controls")]
 	public TargetingController targetControl;
 
-    private float m_moveInputThreshold = 0.3f;
+    private float m_moveInputThreshold = 0.5f;
 
     private DebugEntities debug;
 

@@ -40,6 +40,8 @@ public class LinearInputMoverBehavior : MoverBehavior
 
     private DebugEntities debug;
 
+    private float m_moveInputThreshold = 0.5f;
+
     #endregion
     //////////////////////////////////////////////////////////////////////////////////////////
     #region  Constructors
@@ -163,6 +165,14 @@ public class LinearInputMoverBehavior : MoverBehavior
 			    m_inputMagnitude.z = Input.GetAxis("Vertical");
             else
                 m_inputMagnitude.z = Input.GetAxis("VerticalGround");
+
+
+            if (Mathf.Abs(m_inputMagnitude.x) < m_moveInputThreshold)
+                m_inputMagnitude.x = 0;
+            if (Mathf.Abs(m_inputMagnitude.z) < m_moveInputThreshold)
+                m_inputMagnitude.z = 0;
+
+            Debug.Log(m_inputMagnitude.x);
         }
 		else
 		{
