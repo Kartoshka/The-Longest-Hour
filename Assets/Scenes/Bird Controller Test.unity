@@ -538,6 +538,16 @@ Prefab:
       propertyPath: m_ComposerCameraTarget
       value: 
       objectReference: {fileID: 1278514236}
+    - target: {fileID: 114936025009980720, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: pitchChangeSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936025009980720, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: yawChangeSpeed
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
   m_IsPrefabParent: 0

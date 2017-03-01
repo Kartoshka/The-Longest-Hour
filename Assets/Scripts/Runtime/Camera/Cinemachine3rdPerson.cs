@@ -27,6 +27,8 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	//Current rotation In degrees (TODO make into properties and use accessor methods to clamp them?)
 	private float pitch = 0;
 	private float yaw = 0;
+	public float pitchChangeSpeed = 5f;
+	public float yawChangeSpeed = 5f;
 
 	private Vector3 cameraPosition = Vector3.zero;
 
@@ -117,15 +119,17 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 	public void increaseYaw(float amt)
 	{
-		if(modifiable)
-			yaw = (yaw + amt) % 360;
+		if (modifiable) {
+			yaw = (yaw + amt*yawChangeSpeed*Time.deltaTime) % 360;
+		}
 
 	}
 
 	public void increasePitch(float amt)
 	{
-		if(modifiable)
-			pitch = (pitch + amt) % 360;
+		if (modifiable) {
+			pitch = (pitch + amt*pitchChangeSpeed*Time.deltaTime) % 360;
+		}
 	}
 
 
