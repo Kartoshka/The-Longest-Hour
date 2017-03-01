@@ -21,14 +21,20 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 2
+      time: 1.7509689
+      value: 0.2868136
+      inSlope: 0.48607588
+      outSlope: 0.48607588
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 3
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   m_CustomBlends:
   - BlendFromCameraName: Regular View Cam
     BlendToCameraName: Orthogonal View
@@ -42,7 +48,7 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 3
+        time: 1.5
         value: 1
         inSlope: 0
         outSlope: 0
