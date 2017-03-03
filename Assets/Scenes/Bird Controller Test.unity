@@ -193,7 +193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &550196024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &803041781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -547,6 +547,26 @@ Prefab:
         type: 2}
       propertyPath: yawChangeSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388504419891256, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: diveCam
+      value: 
+      objectReference: {fileID: 1617157897}
+    - target: {fileID: 114639453673640702, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: m_Priority
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388504419891256, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: duration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388504419891256, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: lerpAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
@@ -729,6 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   d_spline: {fileID: 0}
+  diveCam: {fileID: 0}
   duration: 3
   d_time: 0
   lerpAmount: 0.2
@@ -1038,6 +1059,12 @@ Transform:
   m_Father: {fileID: 1661192330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617157897 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114639453673640702, guid: a9ee51c7ac0183a4883672873f1c4d63,
+    type: 2}
+  m_PrefabInternal: {fileID: 804424621}
+  m_Script: {fileID: -1223560802, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
 --- !u!1 &1661192329
 GameObject:
   m_ObjectHideFlags: 0
