@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine.Utility;
+using Cinemachine.Attributes;
+using Cinemachine.Blending;
+using Cinemachine.Assets;
+using Cinemachine;
 
 public class SplineDive : MonoBehaviour {
 
 	[SerializeField]
 	private BezierSpline d_spline;
+
+	public CinemachineVirtualCamera diveCam;
 
 	public float duration = 3;
 	[SerializeField]
@@ -36,6 +43,9 @@ public class SplineDive : MonoBehaviour {
 			else 
 			{
 				d_time = 0;
+				if (diveCam != null) {
+					diveCam.gameObject.SetActive (false);
+				}
 				diving = false;
 			}
 
@@ -50,6 +60,9 @@ public class SplineDive : MonoBehaviour {
 
 		if (a != null && !diving) 
 		{
+			if (diveCam != null) {
+				diveCam.gameObject.SetActive (true);
+			}
 			d_spline = a;
 			diving = true;
 			d_time = 0;
