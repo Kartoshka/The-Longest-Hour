@@ -44,6 +44,10 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	public float radiusCollision = 0.2f;
 	private RaycastHit hitCamera;
 
+	//When the camera collides and zooms in, it will set itself to this factor (%) between the target and where the collision happened
+	[Range(0,1)]
+	public float zoomFactor =0.5f;
+
 	void Start()
 	{
 		if (setOnStart) {
@@ -89,13 +93,13 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 	Vector3 directionRay;
 	Vector3 startRay;
-	
+
+
+
 	private void collisionOffset(Vector3 startPosition){
 		 directionRay = (controlledView.CameraTransposerTarget.position - controlledView.CameraPosition);
 		 startRay = startPosition;
 
-		// now check for a camera collision; if a collision, set a new distance clamped to the current zoom distance
-		// note that speedDistance is also modified according to the speed of input to ensure the distance lerp keeps up with the user's twitchiness
 		RaycastHit[] hits   = Physics.SphereCastAll(startRay, radiusCollision, directionRay, distanceFromTarget,collisionLayers);
 		hitCamera.distance  = Mathf.Infinity;
 		foreach (RaycastHit hit in hits)
@@ -106,13 +110,12 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 				if (hit.point == Vector3.zero) {
 					hitCamera.point = startRay - directionRay.normalized * radiusCollision * 5f;
 				}
-				//hitCamera.point -=directionRay.normalized * radiusCollision * 5f;
 			}
 		}
 
 		if (hitCamera.distance != Mathf.Infinity) {
 			float distance = Vector3.Distance (hitCamera.point,controlledView.CameraTransposerTarget.position);
-			cameraPosition = cameraPosition.normalized * (distance);
+			cameraPosition = cameraPosition.normalized * (distance*zoomFactor);
 		}
 			
 	}
