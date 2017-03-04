@@ -1,0 +1,478 @@
+fileFormatVersion: 2
+guid: 04350db7e54fea8478b9d538fb0a2687
+timeCreated: 1488652282
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bearMeshGroup
+    100002: cannonArm
+    100004: cannonArmSwivel2_joint
+    100006: cannonArmSwivel3_joint
+    100008: cannonArmSwivel4_joint
+    100010: cannonArmSwivel5_joint
+    100012: cannonArmSwivel_joint
+    100014: cannonBack1_joint
+    100016: cannonBackTip_joint
+    100018: cannonBase_joint
+    100020: cannonFront1_joint
+    100022: cannonFront2_joint
+    100024: cannonFront3_joint
+    100026: cannonFront4_joint
+    100028: cannonFrontTip_joint
+    100030: cannonMesh
+    100032: cannonRoot_joint
+    100034: cannonTip_joint
+    100036: Chest_M
+    100038: //RootNode
+    100040: cybearMesh
+    100042: DeformationSystem
+    100044: eyeL
+    100046: eyeR
+    100048: FKExtraNeck_M
+    100050: FKNeck_M
+    100052: FKOffsetNeck_M
+    100054: FKParentConstraintToChest_M
+    100056: FKSystem
+    100058: Group
+    100060: Main
+    100062: MotionSystem
+    100064: Neck_M
+    100066: pCylinder1
+    100068: pCylinder10
+    100070: pCylinder11
+    100072: pCylinder13
+    100074: pCylinder14
+    100076: pCylinder18
+    100078: pCylinder19
+    100080: pCylinder20
+    100082: pCylinder21
+    100084: pCylinder26
+    100086: polySurface15
+    100088: polySurface16
+    100090: pPipe1
+    100092: pPipe2
+    100094: redEye
+    100096: Root_M
+    100098: Spine1_M
+    100100: tempCannonMesh
+    400000: bearMeshGroup
+    400002: cannonArm
+    400004: cannonArmSwivel2_joint
+    400006: cannonArmSwivel3_joint
+    400008: cannonArmSwivel4_joint
+    400010: cannonArmSwivel5_joint
+    400012: cannonArmSwivel_joint
+    400014: cannonBack1_joint
+    400016: cannonBackTip_joint
+    400018: cannonBase_joint
+    400020: cannonFront1_joint
+    400022: cannonFront2_joint
+    400024: cannonFront3_joint
+    400026: cannonFront4_joint
+    400028: cannonFrontTip_joint
+    400030: cannonMesh
+    400032: cannonRoot_joint
+    400034: cannonTip_joint
+    400036: Chest_M
+    400038: //RootNode
+    400040: cybearMesh
+    400042: DeformationSystem
+    400044: eyeL
+    400046: eyeR
+    400048: FKExtraNeck_M
+    400050: FKNeck_M
+    400052: FKOffsetNeck_M
+    400054: FKParentConstraintToChest_M
+    400056: FKSystem
+    400058: Group
+    400060: Main
+    400062: MotionSystem
+    400064: Neck_M
+    400066: pCylinder1
+    400068: pCylinder10
+    400070: pCylinder11
+    400072: pCylinder13
+    400074: pCylinder14
+    400076: pCylinder18
+    400078: pCylinder19
+    400080: pCylinder20
+    400082: pCylinder21
+    400084: pCylinder26
+    400086: polySurface15
+    400088: polySurface16
+    400090: pPipe1
+    400092: pPipe2
+    400094: redEye
+    400096: Root_M
+    400098: Spine1_M
+    400100: tempCannonMesh
+    4300000: cannonArm
+    4300002: pCylinder18
+    4300004: pCylinder19
+    4300006: pCylinder20
+    4300008: pCylinder21
+    4300010: pCylinder1
+    4300012: pPipe1
+    4300014: pCylinder13
+    4300016: pCylinder14
+    4300018: pCylinder10
+    4300020: polySurface15
+    4300022: polySurface16
+    4300024: cybearMesh
+    4300026: pPipe2
+    4300028: pCylinder26
+    4300030: eyeR
+    4300032: eyeL
+    4300034: redEye
+    4300036: pCylinder11
+    7400000: cybear_cannonReady
+    7400002: cybear_cannonFire
+    9500000: //RootNode
+    13700000: cannonArm
+    13700002: cybearMesh
+    13700004: eyeL
+    13700006: eyeR
+    13700008: pCylinder1
+    13700010: pCylinder10
+    13700012: pCylinder11
+    13700014: pCylinder13
+    13700016: pCylinder14
+    13700018: pCylinder18
+    13700020: pCylinder19
+    13700022: pCylinder20
+    13700024: pCylinder21
+    13700026: pCylinder26
+    13700028: polySurface15
+    13700030: polySurface16
+    13700032: pPipe1
+    13700034: pPipe2
+    13700036: redEye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: cybear_cannonReady
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bearMeshGroup
+        weight: 1
+      - path: bearMeshGroup/cannonArm
+        weight: 1
+      - path: bearMeshGroup/cannonMesh
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder1
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder10
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder13
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder14
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder18
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder19
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder20
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder21
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface15
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface16
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pPipe1
+        weight: 1
+      - path: bearMeshGroup/cybearMesh
+        weight: 1
+      - path: bearMeshGroup/eyeL
+        weight: 1
+      - path: bearMeshGroup/eyeR
+        weight: 1
+      - path: bearMeshGroup/pCylinder11
+        weight: 1
+      - path: bearMeshGroup/redEye
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pCylinder26
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pPipe2
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Main
+        weight: 1
+      - path: Group/Main/DeformationSystem
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint/cannonArmSwivel5_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint/cannonBackTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint/cannonFrontTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonTip_joint
+        weight: 1
+      - path: Group/Main/MotionSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKNeck_M
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: cybear_cannonFire
+      takeName: Take 001
+      firstFrame: 36
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bearMeshGroup
+        weight: 1
+      - path: bearMeshGroup/cannonArm
+        weight: 1
+      - path: bearMeshGroup/cannonMesh
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder1
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder10
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder13
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder14
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder18
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder19
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder20
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder21
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface15
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface16
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pPipe1
+        weight: 1
+      - path: bearMeshGroup/cybearMesh
+        weight: 1
+      - path: bearMeshGroup/eyeL
+        weight: 1
+      - path: bearMeshGroup/eyeR
+        weight: 1
+      - path: bearMeshGroup/pCylinder11
+        weight: 1
+      - path: bearMeshGroup/redEye
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pCylinder26
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pPipe2
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Main
+        weight: 1
+      - path: Group/Main/DeformationSystem
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint/cannonArmSwivel5_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint/cannonBackTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint/cannonFrontTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonTip_joint
+        weight: 1
+      - path: Group/Main/MotionSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKNeck_M
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
