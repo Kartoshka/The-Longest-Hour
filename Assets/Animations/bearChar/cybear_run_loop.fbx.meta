@@ -1,0 +1,2015 @@
+fileFormatVersion: 2
+guid: 23a821ca815e55742816e77e4146ff24
+timeCreated: 1488652284
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backAnkle_L
+    100002: backAnkle_R
+    100004: backHip_L
+    100006: backHip_R
+    100008: backKnee_L
+    100010: backKnee_R
+    100012: backRump_L
+    100014: backRump_R
+    100016: backToes_L
+    100018: backToes_R
+    100020: backToesEnd_L
+    100022: backToesEnd_R
+    100024: bearMeshGroup
+    100026: cannonArm
+    100028: cannonArmSwivel2_joint
+    100030: cannonArmSwivel3_joint
+    100032: cannonArmSwivel4_joint
+    100034: cannonArmSwivel5_joint
+    100036: cannonArmSwivel_joint
+    100038: cannonBack1_joint
+    100040: cannonBackTip_joint
+    100042: cannonBase_joint
+    100044: cannonFront1_joint
+    100046: cannonFront2_joint
+    100048: cannonFront3_joint
+    100050: cannonFront4_joint
+    100052: cannonFrontTip_joint
+    100054: cannonMesh
+    100056: cannonRoot_joint
+    100058: cannonTip_joint
+    100060: Chest_M
+    100062: //RootNode
+    100064: cybearMesh
+    100066: DeformationSystem
+    100068: Ear_L
+    100070: Ear_R
+    100072: EarEnd_L
+    100074: EarEnd_R
+    100076: Eye_L
+    100078: Eye_R
+    100080: EyeEnd_L
+    100082: EyeEnd_R
+    100084: eyeL
+    100086: eyeR
+    100088: FKbackAnkle_L
+    100090: FKbackAnkle_R
+    100092: FKbackHip_L
+    100094: FKbackHip_R
+    100096: FKbackKnee_L
+    100098: FKbackKnee_R
+    100100: FKbackRump_L
+    100102: FKbackRump_R
+    100104: FKbackToes_L
+    100106: FKbackToes_R
+    100108: FKChest_M
+    100110: FKEar_L
+    100112: FKEar_R
+    100114: FKExtrabackAnkle_L
+    100116: FKExtrabackAnkle_R
+    100118: FKExtrabackHip_L
+    100120: FKExtrabackHip_R
+    100122: FKExtrabackKnee_L
+    100124: FKExtrabackKnee_R
+    100126: FKExtrabackRump_L
+    100128: FKExtrabackRump_R
+    100130: FKExtrabackToes_L
+    100132: FKExtrabackToes_R
+    100134: FKExtraChest_M
+    100136: FKExtraEar_L
+    100138: FKExtraEar_R
+    100140: FKExtraEye_L
+    100142: FKExtraEye_R
+    100144: FKExtrafrontAnkle_L
+    100146: FKExtrafrontAnkle_R
+    100148: FKExtrafrontHip_L
+    100150: FKExtrafrontHip_R
+    100152: FKExtrafrontKnee_L
+    100154: FKExtrafrontKnee_R
+    100156: FKExtrafrontRump_L
+    100158: FKExtrafrontRump_R
+    100160: FKExtrafrontToes_L
+    100162: FKExtrafrontToes_R
+    100164: FKExtraHead_M
+    100166: FKExtraJaw_M
+    100168: FKExtraNeck_M
+    100170: FKExtraNeckPart1_M
+    100172: FKExtraNeckPart2_M
+    100174: FKExtraRoot_M
+    100176: FKExtraSpine1_M
+    100178: FKExtraTail0_M
+    100180: FKExtraTail1_M
+    100182: FKExtraTail2_M
+    100184: FKEye_L
+    100186: FKEye_R
+    100188: FKFootRollIKbackToes_L
+    100190: FKFootRollIKbackToes_R
+    100192: FKFootRollIKfrontToes_L
+    100194: FKFootRollIKfrontToes_R
+    100196: FKfrontAnkle_L
+    100198: FKfrontAnkle_R
+    100200: FKfrontHip_L
+    100202: FKfrontHip_R
+    100204: FKfrontKnee_L
+    100206: FKfrontKnee_R
+    100208: FKfrontRump_L
+    100210: FKfrontRump_R
+    100212: FKfrontToes_L
+    100214: FKfrontToes_R
+    100216: FKHead_M
+    100218: FKIKLegBack_L
+    100220: FKIKLegBack_R
+    100222: FKIKLegFront_L
+    100224: FKIKLegFront_R
+    100226: FKIKParentConstraintLegBack_L
+    100228: FKIKParentConstraintLegBack_R
+    100230: FKIKParentConstraintLegFront_L
+    100232: FKIKParentConstraintLegFront_R
+    100234: FKIKParentConstraintSpine_M
+    100236: FKIKParentConstraintSplineTail_M
+    100238: FKIKSpine_M
+    100240: FKIKSplineTail_M
+    100242: FKIKSystem
+    100244: FKJaw_M
+    100246: FKNeck_M
+    100248: FKNeckPart1_M
+    100250: FKNeckPart2_M
+    100252: FKOffsetbackAnkle_L
+    100254: FKOffsetbackAnkle_R
+    100256: FKOffsetbackHip_L
+    100258: FKOffsetbackHip_R
+    100260: FKOffsetbackKnee_L
+    100262: FKOffsetbackKnee_R
+    100264: FKOffsetbackRump_L
+    100266: FKOffsetbackRump_R
+    100268: FKOffsetbackToes_L
+    100270: FKOffsetbackToes_R
+    100272: FKOffsetChest_M
+    100274: FKOffsetEar_L
+    100276: FKOffsetEar_R
+    100278: FKOffsetEye_L
+    100280: FKOffsetEye_R
+    100282: FKOffsetfrontAnkle_L
+    100284: FKOffsetfrontAnkle_R
+    100286: FKOffsetfrontHip_L
+    100288: FKOffsetfrontHip_R
+    100290: FKOffsetfrontKnee_L
+    100292: FKOffsetfrontKnee_R
+    100294: FKOffsetfrontRump_L
+    100296: FKOffsetfrontRump_R
+    100298: FKOffsetfrontToes_L
+    100300: FKOffsetfrontToes_R
+    100302: FKOffsetHead_M
+    100304: FKOffsetJaw_M
+    100306: FKOffsetNeck_M
+    100308: FKOffsetNeckPart1_M
+    100310: FKOffsetNeckPart2_M
+    100312: FKOffsetRoot_M
+    100314: FKOffsetSpine1_M
+    100316: FKOffsetTail0_M
+    100318: FKOffsetTail1_M
+    100320: FKOffsetTail2_M
+    100322: FKParentConstraintTobackAnkle_L
+    100324: FKParentConstraintTobackAnkle_R
+    100326: FKParentConstraintTobackRump_L
+    100328: FKParentConstraintTobackRump_R
+    100330: FKParentConstraintToChest_M
+    100332: FKParentConstraintTofrontAnkle_L
+    100334: FKParentConstraintTofrontAnkle_R
+    100336: FKParentConstraintTofrontRump_L
+    100338: FKParentConstraintTofrontRump_R
+    100340: FKParentConstraintToRoot_M
+    100342: FKRoot_M
+    100344: FKSpine1_M
+    100346: FKSystem
+    100348: FKTail0_M
+    100350: FKTail1_M
+    100352: FKTail2_M
+    100354: FKXbackAnkle_L
+    100356: FKXbackAnkle_R
+    100358: FKXbackHip_L
+    100360: FKXbackHip_R
+    100362: FKXbackKnee_L
+    100364: FKXbackKnee_R
+    100366: FKXbackRump_L
+    100368: FKXbackRump_R
+    100370: FKXbackToes_L
+    100372: FKXbackToes_R
+    100374: FKXChest_M
+    100376: FKXEar_L
+    100378: FKXEar_R
+    100380: FKXEye_L
+    100382: FKXEye_R
+    100384: FKXfrontAnkle_L
+    100386: FKXfrontAnkle_R
+    100388: FKXfrontHip_L
+    100390: FKXfrontHip_R
+    100392: FKXfrontKnee_L
+    100394: FKXfrontKnee_R
+    100396: FKXfrontRump_L
+    100398: FKXfrontRump_R
+    100400: FKXfrontToes_L
+    100402: FKXfrontToes_R
+    100404: FKXHead_M
+    100406: FKXJaw_M
+    100408: FKXNeck_M
+    100410: FKXNeckPart1_M
+    100412: FKXNeckPart2_M
+    100414: FKXRoot_M
+    100416: FKXSpine1_M
+    100418: FKXTail0_M
+    100420: FKXTail1_M
+    100422: FKXTail2_M
+    100424: frontAnkle_L
+    100426: frontAnkle_R
+    100428: frontHip_L
+    100430: frontHip_R
+    100432: frontKnee_L
+    100434: frontKnee_R
+    100436: frontRump_L
+    100438: frontRump_R
+    100440: frontToes_L
+    100442: frontToes_R
+    100444: frontToesEnd_L
+    100446: frontToesEnd_R
+    100448: Group
+    100450: Head_M
+    100452: HeadEnd_M
+    100454: HipSwingerStabilizer
+    100456: IKCurve
+    100458: IKdistanceLegBack_L
+    100460: IKdistanceLegBack_R
+    100462: IKdistanceLegFront_L
+    100464: IKdistanceLegFront_R
+    100466: IKExtraLegBack_L
+    100468: IKExtraLegBack_R
+    100470: IKExtraLegFront_L
+    100472: IKExtraLegFront_R
+    100474: IKExtraSpine1_M
+    100476: IKExtraSpine2_M
+    100478: IKExtraSplineTail1_M
+    100480: IKExtraSplineTail2_M
+    100482: IKfake0Spine_M
+    100484: IKfake0SplineTail_M
+    100486: IKFKAlignedLegBack_L
+    100488: IKFKAlignedLegBack_R
+    100490: IKFKAlignedLegFront_L
+    100492: IKFKAlignedLegFront_R
+    100494: IKHandle
+    100496: IKJoints
+    100498: IKLegBack_L
+    100500: IKLegBack_R
+    100502: IKLegBackFootRockInnerPivot_L
+    100504: IKLegBackFootRockInnerPivot_R
+    100506: IKLegBackFootRockOuterPivot_L
+    100508: IKLegBackFootRockOuterPivot_R
+    100510: IKLegBackFootRockReverse_L
+    100512: IKLegBackFootRockReverse_R
+    100514: IKLegFront_L
+    100516: IKLegFront_R
+    100518: IKLegFrontFootRockInnerPivot_L
+    100520: IKLegFrontFootRockInnerPivot_R
+    100522: IKLegFrontFootRockOuterPivot_L
+    100524: IKLegFrontFootRockOuterPivot_R
+    100526: IKLegFrontFootRockReverse_L
+    100528: IKLegFrontFootRockReverse_R
+    100530: IKLocalExtraLegBack_L
+    100532: IKLocalExtraLegBack_R
+    100534: IKLocalExtraLegFront_L
+    100536: IKLocalExtraLegFront_R
+    100538: IKLocalLegBack_L
+    100540: IKLocalLegBack_R
+    100542: IKLocalLegFront_L
+    100544: IKLocalLegFront_R
+    100546: IKLocalOffsetLegBack_L
+    100548: IKLocalOffsetLegBack_R
+    100550: IKLocalOffsetLegFront_L
+    100552: IKLocalOffsetLegFront_R
+    100554: IKMessure
+    100556: IKmessureConstrainToLegBack_L
+    100558: IKmessureConstrainToLegBack_R
+    100560: IKmessureConstrainToLegFront_L
+    100562: IKmessureConstrainToLegFront_R
+    100564: IKMessureFrombackHip_L
+    100566: IKMessureFrombackHip_R
+    100568: IKMessureFromfrontHip_L
+    100570: IKMessureFromfrontHip_R
+    100572: IKmessureLoc1LegBack_L
+    100574: IKmessureLoc1LegBack_R
+    100576: IKmessureLoc1LegFront_L
+    100578: IKmessureLoc1LegFront_R
+    100580: IKmessureLoc2LegBack_L
+    100582: IKmessureLoc2LegBack_R
+    100584: IKmessureLoc2LegFront_L
+    100586: IKmessureLoc2LegFront_R
+    100588: IKOffsetLegBack_L
+    100590: IKOffsetLegBack_R
+    100592: IKOffsetLegFront_L
+    100594: IKOffsetLegFront_R
+    100596: IKOffsetSpine1_M
+    100598: IKOffsetSpine2_M
+    100600: IKOffsetSplineTail1_M
+    100602: IKOffsetSplineTail2_M
+    100604: IKParentConstraintbackHip_L
+    100606: IKParentConstraintbackHip_R
+    100608: IKParentConstraintfrontHip_L
+    100610: IKParentConstraintfrontHip_R
+    100612: IKParentConstraintRoot_M
+    100614: IKParentConstraintTail0_M
+    100616: IKRootConstraint
+    100618: IKScalerChest_M
+    100620: IKScalerRoot_M
+    100622: IKScalerSpine1_M
+    100624: IKScalerTail0_M
+    100626: IKScalerTail1_M
+    100628: IKScalerTail2_M
+    100630: IKSpChest_M
+    100632: IKSpChestFollowOffset_M
+    100634: IKSpine1_M
+    100636: IKSpine2_M
+    100638: IKSpine2AlignTo_M
+    100640: IKSpineCurve_M
+    100642: IKSpineLocator0_M
+    100644: IKSpineLocator1_M
+    100646: IKSpineLocator2_M
+    100648: IKSpineLocator3_M
+    100650: IKSplineTail1_M
+    100652: IKSplineTail2_M
+    100654: IKSplineTail2AlignTo_M
+    100656: IKSplineTailCurve_M
+    100658: IKSplineTailLocator0_M
+    100660: IKSplineTailLocator1_M
+    100662: IKSplineTailLocator2_M
+    100664: IKSplineTailLocator3_M
+    100666: IKSpRoot_M
+    100668: IKSpRootFollowOffset_M
+    100670: IKSpSpine1_M
+    100672: IKSpSpine1FollowOffset_M
+    100674: IKSpSpineOffset_M
+    100676: IKSpSplineTailOffset_M
+    100678: IKSpTail0_M
+    100680: IKSpTail0FollowOffset_M
+    100682: IKSpTail1_M
+    100684: IKSpTail1FollowOffset_M
+    100686: IKSpTail2_M
+    100688: IKSpTail2FollowOffset_M
+    100690: IKStiffOrientSpine1_M
+    100692: IKStiffOrientSpine2_M
+    100694: IKStiffOrientSplineTail1_M
+    100696: IKStiffOrientSplineTail2_M
+    100698: IKSystem
+    100700: IKXbackAnkle_L
+    100702: IKXbackAnkle_R
+    100704: IKXbackHip_L
+    100706: IKXbackHip_R
+    100708: IKXbackKnee_L
+    100710: IKXbackKnee_R
+    100712: IKXChest_M
+    100714: IKXfrontAnkle_L
+    100716: IKXfrontAnkle_R
+    100718: IKXfrontHip_L
+    100720: IKXfrontHip_R
+    100722: IKXfrontKnee_L
+    100724: IKXfrontKnee_R
+    100726: IKXOffsetbackHip_L
+    100728: IKXOffsetbackHip_R
+    100730: IKXOffsetfrontHip_L
+    100732: IKXOffsetfrontHip_R
+    100734: IKXOffsetRoot_M
+    100736: IKXOffsetTail0_M
+    100738: IKXRoot_M
+    100740: IKXSpine1_M
+    100742: IKXTail0_M
+    100744: IKXTail1_M
+    100746: IKXTail2_M
+    100748: Jaw_M
+    100750: JawEnd_M
+    100752: LegAimbackRump_L
+    100754: LegAimbackRump_R
+    100756: LegAimBlenderbackRump_L
+    100758: LegAimBlenderbackRump_R
+    100760: LegAimBlenderfrontRump_L
+    100762: LegAimBlenderfrontRump_R
+    100764: LegAimfrontRump_L
+    100766: LegAimfrontRump_R
+    100768: Main
+    100770: MotionSystem
+    100772: Neck_M
+    100774: NeckPart1_M
+    100776: NeckPart2_M
+    100778: pCylinder1
+    100780: pCylinder10
+    100782: pCylinder11
+    100784: pCylinder13
+    100786: pCylinder14
+    100788: pCylinder18
+    100790: pCylinder19
+    100792: pCylinder20
+    100794: pCylinder21
+    100796: pCylinder26
+    100798: PoleExtraLegBack_L
+    100800: PoleExtraLegBack_R
+    100802: PoleExtraLegFront_L
+    100804: PoleExtraLegFront_R
+    100806: PoleLegBack_L
+    100808: PoleLegBack_R
+    100810: PoleLegFront_L
+    100812: PoleLegFront_R
+    100814: PoleOffsetLegBack_L
+    100816: PoleOffsetLegBack_R
+    100818: PoleOffsetLegFront_L
+    100820: PoleOffsetLegFront_R
+    100822: polySurface15
+    100824: polySurface16
+    100826: pPipe1
+    100828: pPipe2
+    100830: redEye
+    100832: RollbackHeel_L
+    100834: RollbackHeel_R
+    100836: RollbackToes_L
+    100838: RollbackToes_R
+    100840: RollbackToesEnd_L
+    100842: RollbackToesEnd_R
+    100844: RollExtrabackHeel_L
+    100846: RollExtrabackHeel_R
+    100848: RollExtrabackToes_L
+    100850: RollExtrabackToes_R
+    100852: RollExtrabackToesEnd_L
+    100854: RollExtrabackToesEnd_R
+    100856: RollExtrafrontHeel_L
+    100858: RollExtrafrontHeel_R
+    100860: RollExtrafrontToes_L
+    100862: RollExtrafrontToes_R
+    100864: RollExtrafrontToesEnd_L
+    100866: RollExtrafrontToesEnd_R
+    100868: RollfrontHeel_L
+    100870: RollfrontHeel_R
+    100872: RollfrontToes_L
+    100874: RollfrontToes_R
+    100876: RollfrontToesEnd_L
+    100878: RollfrontToesEnd_R
+    100880: RollOffsetbackHeel_L
+    100882: RollOffsetbackHeel_R
+    100884: RollOffsetbackToes_L
+    100886: RollOffsetbackToes_R
+    100888: RollOffsetbackToesEnd_L
+    100890: RollOffsetbackToesEnd_R
+    100892: RollOffsetfrontHeel_L
+    100894: RollOffsetfrontHeel_R
+    100896: RollOffsetfrontToes_L
+    100898: RollOffsetfrontToes_R
+    100900: RollOffsetfrontToesEnd_L
+    100902: RollOffsetfrontToesEnd_R
+    100904: RollOffsetOffsetbackHeel_L
+    100906: RollOffsetOffsetbackHeel_R
+    100908: RollOffsetOffsetfrontHeel_L
+    100910: RollOffsetOffsetfrontHeel_R
+    100912: Root_M
+    100914: Spine1_M
+    100916: Tail0_M
+    100918: Tail1_M
+    100920: Tail2_M
+    100922: Tail3_M
+    100924: tempCannonMesh
+    100926: TwistBalancerHead_M
+    100928: TwistFollowParentHead_M
+    100930: TwistFollowParentOffsetHead_M
+    100932: TwistSystem
+    100934: UnTwistHead_M
+    400000: backAnkle_L
+    400002: backAnkle_R
+    400004: backHip_L
+    400006: backHip_R
+    400008: backKnee_L
+    400010: backKnee_R
+    400012: backRump_L
+    400014: backRump_R
+    400016: backToes_L
+    400018: backToes_R
+    400020: backToesEnd_L
+    400022: backToesEnd_R
+    400024: bearMeshGroup
+    400026: cannonArm
+    400028: cannonArmSwivel2_joint
+    400030: cannonArmSwivel3_joint
+    400032: cannonArmSwivel4_joint
+    400034: cannonArmSwivel5_joint
+    400036: cannonArmSwivel_joint
+    400038: cannonBack1_joint
+    400040: cannonBackTip_joint
+    400042: cannonBase_joint
+    400044: cannonFront1_joint
+    400046: cannonFront2_joint
+    400048: cannonFront3_joint
+    400050: cannonFront4_joint
+    400052: cannonFrontTip_joint
+    400054: cannonMesh
+    400056: cannonRoot_joint
+    400058: cannonTip_joint
+    400060: Chest_M
+    400062: //RootNode
+    400064: cybearMesh
+    400066: DeformationSystem
+    400068: Ear_L
+    400070: Ear_R
+    400072: EarEnd_L
+    400074: EarEnd_R
+    400076: Eye_L
+    400078: Eye_R
+    400080: EyeEnd_L
+    400082: EyeEnd_R
+    400084: eyeL
+    400086: eyeR
+    400088: FKbackAnkle_L
+    400090: FKbackAnkle_R
+    400092: FKbackHip_L
+    400094: FKbackHip_R
+    400096: FKbackKnee_L
+    400098: FKbackKnee_R
+    400100: FKbackRump_L
+    400102: FKbackRump_R
+    400104: FKbackToes_L
+    400106: FKbackToes_R
+    400108: FKChest_M
+    400110: FKEar_L
+    400112: FKEar_R
+    400114: FKExtrabackAnkle_L
+    400116: FKExtrabackAnkle_R
+    400118: FKExtrabackHip_L
+    400120: FKExtrabackHip_R
+    400122: FKExtrabackKnee_L
+    400124: FKExtrabackKnee_R
+    400126: FKExtrabackRump_L
+    400128: FKExtrabackRump_R
+    400130: FKExtrabackToes_L
+    400132: FKExtrabackToes_R
+    400134: FKExtraChest_M
+    400136: FKExtraEar_L
+    400138: FKExtraEar_R
+    400140: FKExtraEye_L
+    400142: FKExtraEye_R
+    400144: FKExtrafrontAnkle_L
+    400146: FKExtrafrontAnkle_R
+    400148: FKExtrafrontHip_L
+    400150: FKExtrafrontHip_R
+    400152: FKExtrafrontKnee_L
+    400154: FKExtrafrontKnee_R
+    400156: FKExtrafrontRump_L
+    400158: FKExtrafrontRump_R
+    400160: FKExtrafrontToes_L
+    400162: FKExtrafrontToes_R
+    400164: FKExtraHead_M
+    400166: FKExtraJaw_M
+    400168: FKExtraNeck_M
+    400170: FKExtraNeckPart1_M
+    400172: FKExtraNeckPart2_M
+    400174: FKExtraRoot_M
+    400176: FKExtraSpine1_M
+    400178: FKExtraTail0_M
+    400180: FKExtraTail1_M
+    400182: FKExtraTail2_M
+    400184: FKEye_L
+    400186: FKEye_R
+    400188: FKFootRollIKbackToes_L
+    400190: FKFootRollIKbackToes_R
+    400192: FKFootRollIKfrontToes_L
+    400194: FKFootRollIKfrontToes_R
+    400196: FKfrontAnkle_L
+    400198: FKfrontAnkle_R
+    400200: FKfrontHip_L
+    400202: FKfrontHip_R
+    400204: FKfrontKnee_L
+    400206: FKfrontKnee_R
+    400208: FKfrontRump_L
+    400210: FKfrontRump_R
+    400212: FKfrontToes_L
+    400214: FKfrontToes_R
+    400216: FKHead_M
+    400218: FKIKLegBack_L
+    400220: FKIKLegBack_R
+    400222: FKIKLegFront_L
+    400224: FKIKLegFront_R
+    400226: FKIKParentConstraintLegBack_L
+    400228: FKIKParentConstraintLegBack_R
+    400230: FKIKParentConstraintLegFront_L
+    400232: FKIKParentConstraintLegFront_R
+    400234: FKIKParentConstraintSpine_M
+    400236: FKIKParentConstraintSplineTail_M
+    400238: FKIKSpine_M
+    400240: FKIKSplineTail_M
+    400242: FKIKSystem
+    400244: FKJaw_M
+    400246: FKNeck_M
+    400248: FKNeckPart1_M
+    400250: FKNeckPart2_M
+    400252: FKOffsetbackAnkle_L
+    400254: FKOffsetbackAnkle_R
+    400256: FKOffsetbackHip_L
+    400258: FKOffsetbackHip_R
+    400260: FKOffsetbackKnee_L
+    400262: FKOffsetbackKnee_R
+    400264: FKOffsetbackRump_L
+    400266: FKOffsetbackRump_R
+    400268: FKOffsetbackToes_L
+    400270: FKOffsetbackToes_R
+    400272: FKOffsetChest_M
+    400274: FKOffsetEar_L
+    400276: FKOffsetEar_R
+    400278: FKOffsetEye_L
+    400280: FKOffsetEye_R
+    400282: FKOffsetfrontAnkle_L
+    400284: FKOffsetfrontAnkle_R
+    400286: FKOffsetfrontHip_L
+    400288: FKOffsetfrontHip_R
+    400290: FKOffsetfrontKnee_L
+    400292: FKOffsetfrontKnee_R
+    400294: FKOffsetfrontRump_L
+    400296: FKOffsetfrontRump_R
+    400298: FKOffsetfrontToes_L
+    400300: FKOffsetfrontToes_R
+    400302: FKOffsetHead_M
+    400304: FKOffsetJaw_M
+    400306: FKOffsetNeck_M
+    400308: FKOffsetNeckPart1_M
+    400310: FKOffsetNeckPart2_M
+    400312: FKOffsetRoot_M
+    400314: FKOffsetSpine1_M
+    400316: FKOffsetTail0_M
+    400318: FKOffsetTail1_M
+    400320: FKOffsetTail2_M
+    400322: FKParentConstraintTobackAnkle_L
+    400324: FKParentConstraintTobackAnkle_R
+    400326: FKParentConstraintTobackRump_L
+    400328: FKParentConstraintTobackRump_R
+    400330: FKParentConstraintToChest_M
+    400332: FKParentConstraintTofrontAnkle_L
+    400334: FKParentConstraintTofrontAnkle_R
+    400336: FKParentConstraintTofrontRump_L
+    400338: FKParentConstraintTofrontRump_R
+    400340: FKParentConstraintToRoot_M
+    400342: FKRoot_M
+    400344: FKSpine1_M
+    400346: FKSystem
+    400348: FKTail0_M
+    400350: FKTail1_M
+    400352: FKTail2_M
+    400354: FKXbackAnkle_L
+    400356: FKXbackAnkle_R
+    400358: FKXbackHip_L
+    400360: FKXbackHip_R
+    400362: FKXbackKnee_L
+    400364: FKXbackKnee_R
+    400366: FKXbackRump_L
+    400368: FKXbackRump_R
+    400370: FKXbackToes_L
+    400372: FKXbackToes_R
+    400374: FKXChest_M
+    400376: FKXEar_L
+    400378: FKXEar_R
+    400380: FKXEye_L
+    400382: FKXEye_R
+    400384: FKXfrontAnkle_L
+    400386: FKXfrontAnkle_R
+    400388: FKXfrontHip_L
+    400390: FKXfrontHip_R
+    400392: FKXfrontKnee_L
+    400394: FKXfrontKnee_R
+    400396: FKXfrontRump_L
+    400398: FKXfrontRump_R
+    400400: FKXfrontToes_L
+    400402: FKXfrontToes_R
+    400404: FKXHead_M
+    400406: FKXJaw_M
+    400408: FKXNeck_M
+    400410: FKXNeckPart1_M
+    400412: FKXNeckPart2_M
+    400414: FKXRoot_M
+    400416: FKXSpine1_M
+    400418: FKXTail0_M
+    400420: FKXTail1_M
+    400422: FKXTail2_M
+    400424: frontAnkle_L
+    400426: frontAnkle_R
+    400428: frontHip_L
+    400430: frontHip_R
+    400432: frontKnee_L
+    400434: frontKnee_R
+    400436: frontRump_L
+    400438: frontRump_R
+    400440: frontToes_L
+    400442: frontToes_R
+    400444: frontToesEnd_L
+    400446: frontToesEnd_R
+    400448: Group
+    400450: Head_M
+    400452: HeadEnd_M
+    400454: HipSwingerStabilizer
+    400456: IKCurve
+    400458: IKdistanceLegBack_L
+    400460: IKdistanceLegBack_R
+    400462: IKdistanceLegFront_L
+    400464: IKdistanceLegFront_R
+    400466: IKExtraLegBack_L
+    400468: IKExtraLegBack_R
+    400470: IKExtraLegFront_L
+    400472: IKExtraLegFront_R
+    400474: IKExtraSpine1_M
+    400476: IKExtraSpine2_M
+    400478: IKExtraSplineTail1_M
+    400480: IKExtraSplineTail2_M
+    400482: IKfake0Spine_M
+    400484: IKfake0SplineTail_M
+    400486: IKFKAlignedLegBack_L
+    400488: IKFKAlignedLegBack_R
+    400490: IKFKAlignedLegFront_L
+    400492: IKFKAlignedLegFront_R
+    400494: IKHandle
+    400496: IKJoints
+    400498: IKLegBack_L
+    400500: IKLegBack_R
+    400502: IKLegBackFootRockInnerPivot_L
+    400504: IKLegBackFootRockInnerPivot_R
+    400506: IKLegBackFootRockOuterPivot_L
+    400508: IKLegBackFootRockOuterPivot_R
+    400510: IKLegBackFootRockReverse_L
+    400512: IKLegBackFootRockReverse_R
+    400514: IKLegFront_L
+    400516: IKLegFront_R
+    400518: IKLegFrontFootRockInnerPivot_L
+    400520: IKLegFrontFootRockInnerPivot_R
+    400522: IKLegFrontFootRockOuterPivot_L
+    400524: IKLegFrontFootRockOuterPivot_R
+    400526: IKLegFrontFootRockReverse_L
+    400528: IKLegFrontFootRockReverse_R
+    400530: IKLocalExtraLegBack_L
+    400532: IKLocalExtraLegBack_R
+    400534: IKLocalExtraLegFront_L
+    400536: IKLocalExtraLegFront_R
+    400538: IKLocalLegBack_L
+    400540: IKLocalLegBack_R
+    400542: IKLocalLegFront_L
+    400544: IKLocalLegFront_R
+    400546: IKLocalOffsetLegBack_L
+    400548: IKLocalOffsetLegBack_R
+    400550: IKLocalOffsetLegFront_L
+    400552: IKLocalOffsetLegFront_R
+    400554: IKMessure
+    400556: IKmessureConstrainToLegBack_L
+    400558: IKmessureConstrainToLegBack_R
+    400560: IKmessureConstrainToLegFront_L
+    400562: IKmessureConstrainToLegFront_R
+    400564: IKMessureFrombackHip_L
+    400566: IKMessureFrombackHip_R
+    400568: IKMessureFromfrontHip_L
+    400570: IKMessureFromfrontHip_R
+    400572: IKmessureLoc1LegBack_L
+    400574: IKmessureLoc1LegBack_R
+    400576: IKmessureLoc1LegFront_L
+    400578: IKmessureLoc1LegFront_R
+    400580: IKmessureLoc2LegBack_L
+    400582: IKmessureLoc2LegBack_R
+    400584: IKmessureLoc2LegFront_L
+    400586: IKmessureLoc2LegFront_R
+    400588: IKOffsetLegBack_L
+    400590: IKOffsetLegBack_R
+    400592: IKOffsetLegFront_L
+    400594: IKOffsetLegFront_R
+    400596: IKOffsetSpine1_M
+    400598: IKOffsetSpine2_M
+    400600: IKOffsetSplineTail1_M
+    400602: IKOffsetSplineTail2_M
+    400604: IKParentConstraintbackHip_L
+    400606: IKParentConstraintbackHip_R
+    400608: IKParentConstraintfrontHip_L
+    400610: IKParentConstraintfrontHip_R
+    400612: IKParentConstraintRoot_M
+    400614: IKParentConstraintTail0_M
+    400616: IKRootConstraint
+    400618: IKScalerChest_M
+    400620: IKScalerRoot_M
+    400622: IKScalerSpine1_M
+    400624: IKScalerTail0_M
+    400626: IKScalerTail1_M
+    400628: IKScalerTail2_M
+    400630: IKSpChest_M
+    400632: IKSpChestFollowOffset_M
+    400634: IKSpine1_M
+    400636: IKSpine2_M
+    400638: IKSpine2AlignTo_M
+    400640: IKSpineCurve_M
+    400642: IKSpineLocator0_M
+    400644: IKSpineLocator1_M
+    400646: IKSpineLocator2_M
+    400648: IKSpineLocator3_M
+    400650: IKSplineTail1_M
+    400652: IKSplineTail2_M
+    400654: IKSplineTail2AlignTo_M
+    400656: IKSplineTailCurve_M
+    400658: IKSplineTailLocator0_M
+    400660: IKSplineTailLocator1_M
+    400662: IKSplineTailLocator2_M
+    400664: IKSplineTailLocator3_M
+    400666: IKSpRoot_M
+    400668: IKSpRootFollowOffset_M
+    400670: IKSpSpine1_M
+    400672: IKSpSpine1FollowOffset_M
+    400674: IKSpSpineOffset_M
+    400676: IKSpSplineTailOffset_M
+    400678: IKSpTail0_M
+    400680: IKSpTail0FollowOffset_M
+    400682: IKSpTail1_M
+    400684: IKSpTail1FollowOffset_M
+    400686: IKSpTail2_M
+    400688: IKSpTail2FollowOffset_M
+    400690: IKStiffOrientSpine1_M
+    400692: IKStiffOrientSpine2_M
+    400694: IKStiffOrientSplineTail1_M
+    400696: IKStiffOrientSplineTail2_M
+    400698: IKSystem
+    400700: IKXbackAnkle_L
+    400702: IKXbackAnkle_R
+    400704: IKXbackHip_L
+    400706: IKXbackHip_R
+    400708: IKXbackKnee_L
+    400710: IKXbackKnee_R
+    400712: IKXChest_M
+    400714: IKXfrontAnkle_L
+    400716: IKXfrontAnkle_R
+    400718: IKXfrontHip_L
+    400720: IKXfrontHip_R
+    400722: IKXfrontKnee_L
+    400724: IKXfrontKnee_R
+    400726: IKXOffsetbackHip_L
+    400728: IKXOffsetbackHip_R
+    400730: IKXOffsetfrontHip_L
+    400732: IKXOffsetfrontHip_R
+    400734: IKXOffsetRoot_M
+    400736: IKXOffsetTail0_M
+    400738: IKXRoot_M
+    400740: IKXSpine1_M
+    400742: IKXTail0_M
+    400744: IKXTail1_M
+    400746: IKXTail2_M
+    400748: Jaw_M
+    400750: JawEnd_M
+    400752: LegAimbackRump_L
+    400754: LegAimbackRump_R
+    400756: LegAimBlenderbackRump_L
+    400758: LegAimBlenderbackRump_R
+    400760: LegAimBlenderfrontRump_L
+    400762: LegAimBlenderfrontRump_R
+    400764: LegAimfrontRump_L
+    400766: LegAimfrontRump_R
+    400768: Main
+    400770: MotionSystem
+    400772: Neck_M
+    400774: NeckPart1_M
+    400776: NeckPart2_M
+    400778: pCylinder1
+    400780: pCylinder10
+    400782: pCylinder11
+    400784: pCylinder13
+    400786: pCylinder14
+    400788: pCylinder18
+    400790: pCylinder19
+    400792: pCylinder20
+    400794: pCylinder21
+    400796: pCylinder26
+    400798: PoleExtraLegBack_L
+    400800: PoleExtraLegBack_R
+    400802: PoleExtraLegFront_L
+    400804: PoleExtraLegFront_R
+    400806: PoleLegBack_L
+    400808: PoleLegBack_R
+    400810: PoleLegFront_L
+    400812: PoleLegFront_R
+    400814: PoleOffsetLegBack_L
+    400816: PoleOffsetLegBack_R
+    400818: PoleOffsetLegFront_L
+    400820: PoleOffsetLegFront_R
+    400822: polySurface15
+    400824: polySurface16
+    400826: pPipe1
+    400828: pPipe2
+    400830: redEye
+    400832: RollbackHeel_L
+    400834: RollbackHeel_R
+    400836: RollbackToes_L
+    400838: RollbackToes_R
+    400840: RollbackToesEnd_L
+    400842: RollbackToesEnd_R
+    400844: RollExtrabackHeel_L
+    400846: RollExtrabackHeel_R
+    400848: RollExtrabackToes_L
+    400850: RollExtrabackToes_R
+    400852: RollExtrabackToesEnd_L
+    400854: RollExtrabackToesEnd_R
+    400856: RollExtrafrontHeel_L
+    400858: RollExtrafrontHeel_R
+    400860: RollExtrafrontToes_L
+    400862: RollExtrafrontToes_R
+    400864: RollExtrafrontToesEnd_L
+    400866: RollExtrafrontToesEnd_R
+    400868: RollfrontHeel_L
+    400870: RollfrontHeel_R
+    400872: RollfrontToes_L
+    400874: RollfrontToes_R
+    400876: RollfrontToesEnd_L
+    400878: RollfrontToesEnd_R
+    400880: RollOffsetbackHeel_L
+    400882: RollOffsetbackHeel_R
+    400884: RollOffsetbackToes_L
+    400886: RollOffsetbackToes_R
+    400888: RollOffsetbackToesEnd_L
+    400890: RollOffsetbackToesEnd_R
+    400892: RollOffsetfrontHeel_L
+    400894: RollOffsetfrontHeel_R
+    400896: RollOffsetfrontToes_L
+    400898: RollOffsetfrontToes_R
+    400900: RollOffsetfrontToesEnd_L
+    400902: RollOffsetfrontToesEnd_R
+    400904: RollOffsetOffsetbackHeel_L
+    400906: RollOffsetOffsetbackHeel_R
+    400908: RollOffsetOffsetfrontHeel_L
+    400910: RollOffsetOffsetfrontHeel_R
+    400912: Root_M
+    400914: Spine1_M
+    400916: Tail0_M
+    400918: Tail1_M
+    400920: Tail2_M
+    400922: Tail3_M
+    400924: tempCannonMesh
+    400926: TwistBalancerHead_M
+    400928: TwistFollowParentHead_M
+    400930: TwistFollowParentOffsetHead_M
+    400932: TwistSystem
+    400934: UnTwistHead_M
+    4300000: cannonArm
+    4300002: pCylinder18
+    4300004: pCylinder19
+    4300006: pCylinder20
+    4300008: pCylinder21
+    4300010: pCylinder1
+    4300012: pPipe1
+    4300014: pCylinder13
+    4300016: pCylinder14
+    4300018: pCylinder10
+    4300020: polySurface15
+    4300022: polySurface16
+    4300024: cybearMesh
+    4300026: pPipe2
+    4300028: pCylinder26
+    4300030: eyeR
+    4300032: eyeL
+    4300034: redEye
+    4300036: pCylinder11
+    7400000: cybear_run_loop
+    9500000: //RootNode
+    13700000: cannonArm
+    13700002: cybearMesh
+    13700004: eyeL
+    13700006: eyeR
+    13700008: pCylinder1
+    13700010: pCylinder10
+    13700012: pCylinder11
+    13700014: pCylinder13
+    13700016: pCylinder14
+    13700018: pCylinder18
+    13700020: pCylinder19
+    13700022: pCylinder20
+    13700024: pCylinder21
+    13700026: pCylinder26
+    13700028: polySurface15
+    13700030: polySurface16
+    13700032: pPipe1
+    13700034: pPipe2
+    13700036: redEye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: cybear_run_loop
+      takeName: Take 001
+      firstFrame: 315
+      lastFrame: 331
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bearMeshGroup
+        weight: 1
+      - path: bearMeshGroup/cannonArm
+        weight: 1
+      - path: bearMeshGroup/cannonMesh
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder1
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder10
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder13
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder14
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder18
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder19
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder20
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pCylinder21
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface15
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/polySurface16
+        weight: 1
+      - path: bearMeshGroup/cannonMesh/pPipe1
+        weight: 1
+      - path: bearMeshGroup/cybearMesh
+        weight: 1
+      - path: bearMeshGroup/eyeL
+        weight: 1
+      - path: bearMeshGroup/eyeR
+        weight: 1
+      - path: bearMeshGroup/pCylinder11
+        weight: 1
+      - path: bearMeshGroup/redEye
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pCylinder26
+        weight: 1
+      - path: bearMeshGroup/tempCannonMesh/pPipe2
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Main
+        weight: 1
+      - path: Group/Main/DeformationSystem
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L/backHip_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L/backHip_L/backKnee_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L/backHip_L/backKnee_L/backAnkle_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L/backHip_L/backKnee_L/backAnkle_L/backToes_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_L/backHip_L/backKnee_L/backAnkle_L/backToes_L/backToesEnd_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R/backHip_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R/backHip_R/backKnee_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R/backHip_R/backKnee_R/backAnkle_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R/backHip_R/backKnee_R/backAnkle_R/backToes_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/backRump_R/backHip_R/backKnee_R/backAnkle_R/backToes_R/backToesEnd_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L/frontHip_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L/frontHip_L/frontKnee_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L/frontHip_L/frontKnee_L/frontAnkle_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L/frontHip_L/frontKnee_L/frontAnkle_L/frontToes_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_L/frontHip_L/frontKnee_L/frontAnkle_L/frontToes_L/frontToesEnd_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R/frontHip_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R/frontHip_R/frontKnee_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R/frontHip_R/frontKnee_R/frontAnkle_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R/frontHip_R/frontKnee_R/frontAnkle_R/frontToes_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/frontRump_R/frontHip_R/frontKnee_R/frontAnkle_R/frontToes_R/frontToesEnd_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonArmSwivel4_joint/cannonArmSwivel5_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonBack1_joint/cannonBackTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonArmSwivel_joint/cannonArmSwivel2_joint/cannonArmSwivel3_joint/cannonBase_joint/cannonFront1_joint/cannonFront2_joint/cannonFront3_joint/cannonFront4_joint/cannonFrontTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/cannonRoot_joint/cannonTip_joint
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Ear_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Ear_L/EarEnd_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Ear_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Ear_R/EarEnd_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_L/EyeEnd_L
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_R/EyeEnd_R
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/HeadEnd_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Jaw_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Spine1_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Jaw_M/JawEnd_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Tail0_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Tail0_M/Tail1_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Tail0_M/Tail1_M/Tail2_M
+        weight: 1
+      - path: Group/Main/DeformationSystem/Root_M/Tail0_M/Tail1_M/Tail2_M/Tail3_M
+        weight: 1
+      - path: Group/Main/MotionSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegBack_L/FKIKLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegBack_R/FKIKLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegFront_L/FKIKLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintLegFront_R/FKIKLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSpine_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSpine_M/FKIKSpine_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSplineTail_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSplineTail_M/FKIKSplineTail_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M/FKXSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M/FKXSpine1_M/FKOffsetChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M/FKXSpine1_M/FKOffsetChest_M/FKExtraChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M/FKXSpine1_M/FKOffsetChest_M/FKExtraChest_M/FKChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKRoot_M/FKXRoot_M/FKOffsetSpine1_M/HipSwingerStabilizer/FKExtraSpine1_M/FKSpine1_M/FKXSpine1_M/FKOffsetChest_M/FKExtraChest_M/FKChest_M/FKXChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L/FKOffsetbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L/FKOffsetbackToes_L/FKFootRollIKbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L/FKOffsetbackToes_L/FKFootRollIKbackToes_L/FKExtrabackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L/FKOffsetbackToes_L/FKFootRollIKbackToes_L/FKExtrabackToes_L/FKbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_L/FKOffsetbackToes_L/FKFootRollIKbackToes_L/FKExtrabackToes_L/FKbackToes_L/FKXbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R/FKOffsetbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R/FKOffsetbackToes_R/FKFootRollIKbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R/FKOffsetbackToes_R/FKFootRollIKbackToes_R/FKExtrabackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R/FKOffsetbackToes_R/FKFootRollIKbackToes_R/FKExtrabackToes_R/FKbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackAnkle_R/FKOffsetbackToes_R/FKFootRollIKbackToes_R/FKExtrabackToes_R/FKbackToes_R/FKXbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L/FKXbackKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L/FKXbackKnee_L/FKOffsetbackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L/FKXbackKnee_L/FKOffsetbackAnkle_L/FKExtrabackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L/FKXbackKnee_L/FKOffsetbackAnkle_L/FKExtrabackAnkle_L/FKbackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_L/FKOffsetbackHip_L/FKExtrabackHip_L/FKbackHip_L/FKXbackHip_L/FKOffsetbackKnee_L/FKExtrabackKnee_L/FKbackKnee_L/FKXbackKnee_L/FKOffsetbackAnkle_L/FKExtrabackAnkle_L/FKbackAnkle_L/FKXbackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R/FKXbackKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R/FKXbackKnee_R/FKOffsetbackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R/FKXbackKnee_R/FKOffsetbackAnkle_R/FKExtrabackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R/FKXbackKnee_R/FKOffsetbackAnkle_R/FKExtrabackAnkle_R/FKbackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTobackRump_R/FKOffsetbackHip_R/FKExtrabackHip_R/FKbackHip_R/FKXbackHip_R/FKOffsetbackKnee_R/FKExtrabackKnee_R/FKbackKnee_R/FKXbackKnee_R/FKOffsetbackAnkle_R/FKExtrabackAnkle_R/FKbackAnkle_R/FKXbackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_L/FKExtraEar_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_L/FKExtraEar_L/FKEar_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_L/FKExtraEar_L/FKEar_L/FKXEar_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_R/FKExtraEar_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_R/FKExtraEar_R/FKEar_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEar_R/FKExtraEar_R/FKEar_R/FKXEar_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_L/FKExtraEye_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_L/FKExtraEye_L/FKEye_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_L/FKExtraEye_L/FKEye_L/FKXEye_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_R/FKExtraEye_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_R/FKExtraEye_R/FKEye_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetEye_R/FKExtraEye_R/FKEye_R/FKXEye_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetJaw_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetJaw_M/FKExtraJaw_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetJaw_M/FKExtraJaw_M/FKJaw_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/FKOffsetNeck_M/FKExtraNeck_M/FKXNeck_M/FKOffsetNeckPart1_M/FKExtraNeckPart1_M/FKNeckPart1_M/FKXNeckPart1_M/FKOffsetNeckPart2_M/FKExtraNeckPart2_M/FKNeckPart2_M/FKXNeckPart2_M/FKOffsetHead_M/FKExtraHead_M/FKHead_M/FKXHead_M/FKOffsetJaw_M/FKExtraJaw_M/FKJaw_M/FKXJaw_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L/LegAimBlenderfrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L/LegAimBlenderfrontRump_L/FKOffsetfrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L/LegAimBlenderfrontRump_L/FKOffsetfrontRump_L/FKExtrafrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L/LegAimBlenderfrontRump_L/FKOffsetfrontRump_L/FKExtrafrontRump_L/FKfrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_L/LegAimBlenderfrontRump_L/FKOffsetfrontRump_L/FKExtrafrontRump_L/FKfrontRump_L/FKXfrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R/LegAimBlenderfrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R/LegAimBlenderfrontRump_R/FKOffsetfrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R/LegAimBlenderfrontRump_R/FKOffsetfrontRump_R/FKExtrafrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R/LegAimBlenderfrontRump_R/FKOffsetfrontRump_R/FKExtrafrontRump_R/FKfrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToChest_M/LegAimfrontRump_R/LegAimBlenderfrontRump_R/FKOffsetfrontRump_R/FKExtrafrontRump_R/FKfrontRump_R/FKXfrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L/FKOffsetfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L/FKOffsetfrontToes_L/FKFootRollIKfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L/FKOffsetfrontToes_L/FKFootRollIKfrontToes_L/FKExtrafrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L/FKOffsetfrontToes_L/FKFootRollIKfrontToes_L/FKExtrafrontToes_L/FKfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_L/FKOffsetfrontToes_L/FKFootRollIKfrontToes_L/FKExtrafrontToes_L/FKfrontToes_L/FKXfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R/FKOffsetfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R/FKOffsetfrontToes_R/FKFootRollIKfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R/FKOffsetfrontToes_R/FKFootRollIKfrontToes_R/FKExtrafrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R/FKOffsetfrontToes_R/FKFootRollIKfrontToes_R/FKExtrafrontToes_R/FKfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontAnkle_R/FKOffsetfrontToes_R/FKFootRollIKfrontToes_R/FKExtrafrontToes_R/FKfrontToes_R/FKXfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L/FKXfrontKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L/FKXfrontKnee_L/FKOffsetfrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L/FKXfrontKnee_L/FKOffsetfrontAnkle_L/FKExtrafrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L/FKXfrontKnee_L/FKOffsetfrontAnkle_L/FKExtrafrontAnkle_L/FKfrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_L/FKOffsetfrontHip_L/FKExtrafrontHip_L/FKfrontHip_L/FKXfrontHip_L/FKOffsetfrontKnee_L/FKExtrafrontKnee_L/FKfrontKnee_L/FKXfrontKnee_L/FKOffsetfrontAnkle_L/FKExtrafrontAnkle_L/FKfrontAnkle_L/FKXfrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R/FKXfrontKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R/FKXfrontKnee_R/FKOffsetfrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R/FKXfrontKnee_R/FKOffsetfrontAnkle_R/FKExtrafrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R/FKXfrontKnee_R/FKOffsetfrontAnkle_R/FKExtrafrontAnkle_R/FKfrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintTofrontRump_R/FKOffsetfrontHip_R/FKExtrafrontHip_R/FKfrontHip_R/FKXfrontHip_R/FKOffsetfrontKnee_R/FKExtrafrontKnee_R/FKfrontKnee_R/FKXfrontKnee_R/FKOffsetfrontAnkle_R/FKExtrafrontAnkle_R/FKfrontAnkle_R/FKXfrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M/FKXTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M/FKXTail1_M/FKOffsetTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M/FKXTail1_M/FKOffsetTail2_M/FKExtraTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M/FKXTail1_M/FKOffsetTail2_M/FKExtraTail2_M/FKTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/FKOffsetTail0_M/FKExtraTail0_M/FKTail0_M/FKXTail0_M/FKOffsetTail1_M/FKExtraTail1_M/FKTail1_M/FKXTail1_M/FKOffsetTail2_M/FKExtraTail2_M/FKTail2_M/FKXTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L/LegAimBlenderbackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L/LegAimBlenderbackRump_L/FKOffsetbackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L/LegAimBlenderbackRump_L/FKOffsetbackRump_L/FKExtrabackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L/LegAimBlenderbackRump_L/FKOffsetbackRump_L/FKExtrabackRump_L/FKbackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_L/LegAimBlenderbackRump_L/FKOffsetbackRump_L/FKExtrabackRump_L/FKbackRump_L/FKXbackRump_L
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R/LegAimBlenderbackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R/LegAimBlenderbackRump_R/FKOffsetbackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R/LegAimBlenderbackRump_R/FKOffsetbackRump_R/FKExtrabackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R/LegAimBlenderbackRump_R/FKOffsetbackRump_R/FKExtrabackRump_R/FKbackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/FKSystem/FKParentConstraintToRoot_M/LegAimbackRump_R/LegAimBlenderbackRump_R/FKOffsetbackRump_R/FKExtrabackRump_R/FKbackRump_R/FKXbackRump_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKCurve
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKCurve/IKSpineCurve_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKCurve/IKSplineTailCurve_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKFKAlignedLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L/RollOffsetbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L/RollOffsetbackToes_L/RollExtrabackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L/RollOffsetbackToes_L/RollExtrabackToes_L/RollbackToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L/RollOffsetbackToes_L/RollExtrabackToes_L/RollbackToes_L/IKLegBackFootRockReverse_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_L/IKExtraLegBack_L/IKLegBack_L/IKLegBackFootRockInnerPivot_L/IKLegBackFootRockOuterPivot_L/IKLocalOffsetLegBack_L/IKLocalExtraLegBack_L/IKLocalLegBack_L/RollOffsetOffsetbackHeel_L/RollOffsetbackHeel_L/RollExtrabackHeel_L/RollbackHeel_L/RollOffsetbackToesEnd_L/RollExtrabackToesEnd_L/RollbackToesEnd_L/RollOffsetbackToes_L/RollExtrabackToes_L/RollbackToes_L/IKLegBackFootRockReverse_L/IKmessureConstrainToLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKFKAlignedLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R/RollOffsetbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R/RollOffsetbackToes_R/RollExtrabackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R/RollOffsetbackToes_R/RollExtrabackToes_R/RollbackToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R/RollOffsetbackToes_R/RollExtrabackToes_R/RollbackToes_R/IKLegBackFootRockReverse_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegBack_R/IKExtraLegBack_R/IKLegBack_R/IKLegBackFootRockInnerPivot_R/IKLegBackFootRockOuterPivot_R/IKLocalOffsetLegBack_R/IKLocalExtraLegBack_R/IKLocalLegBack_R/RollOffsetOffsetbackHeel_R/RollOffsetbackHeel_R/RollExtrabackHeel_R/RollbackHeel_R/RollOffsetbackToesEnd_R/RollExtrabackToesEnd_R/RollbackToesEnd_R/RollOffsetbackToes_R/RollExtrabackToes_R/RollbackToes_R/IKLegBackFootRockReverse_R/IKmessureConstrainToLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKFKAlignedLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L/RollOffsetfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L/RollOffsetfrontToes_L/RollExtrafrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L/RollOffsetfrontToes_L/RollExtrafrontToes_L/RollfrontToes_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L/RollOffsetfrontToes_L/RollExtrafrontToes_L/RollfrontToes_L/IKLegFrontFootRockReverse_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_L/IKExtraLegFront_L/IKLegFront_L/IKLegFrontFootRockInnerPivot_L/IKLegFrontFootRockOuterPivot_L/IKLocalOffsetLegFront_L/IKLocalExtraLegFront_L/IKLocalLegFront_L/RollOffsetOffsetfrontHeel_L/RollOffsetfrontHeel_L/RollExtrafrontHeel_L/RollfrontHeel_L/RollOffsetfrontToesEnd_L/RollExtrafrontToesEnd_L/RollfrontToesEnd_L/RollOffsetfrontToes_L/RollExtrafrontToes_L/RollfrontToes_L/IKLegFrontFootRockReverse_L/IKmessureConstrainToLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKFKAlignedLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R/RollOffsetfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R/RollOffsetfrontToes_R/RollExtrafrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R/RollOffsetfrontToes_R/RollExtrafrontToes_R/RollfrontToes_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R/RollOffsetfrontToes_R/RollExtrafrontToes_R/RollfrontToes_R/IKLegFrontFootRockReverse_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKOffsetLegFront_R/IKExtraLegFront_R/IKLegFront_R/IKLegFrontFootRockInnerPivot_R/IKLegFrontFootRockOuterPivot_R/IKLocalOffsetLegFront_R/IKLocalExtraLegFront_R/IKLocalLegFront_R/RollOffsetOffsetfrontHeel_R/RollOffsetfrontHeel_R/RollExtrafrontHeel_R/RollfrontHeel_R/RollOffsetfrontToesEnd_R/RollExtrafrontToesEnd_R/RollfrontToesEnd_R/RollOffsetfrontToes_R/RollExtrafrontToes_R/RollfrontToes_R/IKLegFrontFootRockReverse_R/IKmessureConstrainToLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M/IKExtraSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M/IKExtraSpine1_M/IKSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M/IKExtraSpine1_M/IKSpine1_M/IKSpineLocator0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M/IKExtraSpine1_M/IKSpine1_M/IKStiffOrientSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine1_M/IKExtraSpine1_M/IKSpine1_M/IKStiffOrientSpine1_M/IKSpineLocator1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M/IKSpine2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M/IKSpine2_M/IKSpine2AlignTo_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M/IKSpine2_M/IKSpineLocator3_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M/IKSpine2_M/IKStiffOrientSpine2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSpine2_M/IKExtraSpine2_M/IKSpine2_M/IKStiffOrientSpine2_M/IKSpineLocator2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M/IKExtraSplineTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M/IKExtraSplineTail1_M/IKSplineTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M/IKExtraSplineTail1_M/IKSplineTail1_M/IKSplineTailLocator0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M/IKExtraSplineTail1_M/IKSplineTail1_M/IKStiffOrientSplineTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail1_M/IKExtraSplineTail1_M/IKSplineTail1_M/IKStiffOrientSplineTail1_M/IKSplineTailLocator1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M/IKSplineTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M/IKSplineTail2_M/IKSplineTail2AlignTo_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M/IKSplineTail2_M/IKSplineTailLocator3_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M/IKSplineTail2_M/IKStiffOrientSplineTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKRootConstraint/IKOffsetSplineTail2_M/IKExtraSplineTail2_M/IKSplineTail2_M/IKStiffOrientSplineTail2_M/IKSplineTailLocator2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/IKScalerTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_L/PoleExtraLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_L/PoleExtraLegBack_L/PoleLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_R/PoleExtraLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegBack_R/PoleExtraLegBack_R/PoleLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_L/PoleExtraLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_L/PoleExtraLegFront_L/PoleLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_R/PoleExtraLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKHandle/PoleOffsetLegFront_R/PoleExtraLegFront_R/PoleLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L/IKMessureFrombackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L/IKXOffsetbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L/IKXOffsetbackHip_L/IKXbackHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L/IKXOffsetbackHip_L/IKXbackHip_L/IKXbackKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_L/IKXOffsetbackHip_L/IKXbackHip_L/IKXbackKnee_L/IKXbackAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R/IKMessureFrombackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R/IKXOffsetbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R/IKXOffsetbackHip_R/IKXbackHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R/IKXOffsetbackHip_R/IKXbackHip_R/IKXbackKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintbackHip_R/IKXOffsetbackHip_R/IKXbackHip_R/IKXbackKnee_R/IKXbackAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L/IKMessureFromfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L/IKXOffsetfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L/IKXOffsetfrontHip_L/IKXfrontHip_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L/IKXOffsetfrontHip_L/IKXfrontHip_L/IKXfrontKnee_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_L/IKXOffsetfrontHip_L/IKXfrontHip_L/IKXfrontKnee_L/IKXfrontAnkle_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R/IKMessureFromfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R/IKXOffsetfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R/IKXOffsetfrontHip_R/IKXfrontHip_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R/IKXOffsetfrontHip_R/IKXfrontHip_R/IKXfrontKnee_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintfrontHip_R/IKXOffsetfrontHip_R/IKXfrontHip_R/IKXfrontKnee_R/IKXfrontAnkle_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKfake0Spine_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKfake0Spine_M/IKSpSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKfake0Spine_M/IKSpSpine1_M/IKSpChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKfake0Spine_M/IKSpSpine1_M/IKSpChest_M/IKSpChestFollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKfake0Spine_M/IKSpSpine1_M/IKSpSpine1FollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKXOffsetRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKXOffsetRoot_M/IKXRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKXOffsetRoot_M/IKXRoot_M/IKXSpine1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintRoot_M/IKXOffsetRoot_M/IKXRoot_M/IKXSpine1_M/IKXChest_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKfake0SplineTail_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKfake0SplineTail_M/IKSpTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKfake0SplineTail_M/IKSpTail1_M/IKSpTail1FollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKfake0SplineTail_M/IKSpTail1_M/IKSpTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKfake0SplineTail_M/IKSpTail1_M/IKSpTail2_M/IKSpTail2FollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKXOffsetTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKXOffsetTail0_M/IKXTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKXOffsetTail0_M/IKXTail0_M/IKXTail1_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKParentConstraintTail0_M/IKXOffsetTail0_M/IKXTail0_M/IKXTail1_M/IKXTail2_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSpineOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSpineOffset_M/IKSpRoot_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSpineOffset_M/IKSpRoot_M/IKSpRootFollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSplineTailOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSplineTailOffset_M/IKSpTail0_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKJoints/IKSpSplineTailOffset_M/IKSpTail0_M/IKSpTail0FollowOffset_M
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKdistanceLegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKdistanceLegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKdistanceLegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKdistanceLegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegBack_L/IKmessureLoc2LegBack_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegBack_R/IKmessureLoc2LegBack_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegFront_L/IKmessureLoc2LegFront_L
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/IKSystem/IKMessure/IKmessureLoc1LegFront_R/IKmessureLoc2LegFront_R
+        weight: 1
+      - path: Group/Main/MotionSystem/TwistSystem
+        weight: 1
+      - path: Group/Main/MotionSystem/TwistSystem/TwistFollowParentOffsetHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/TwistSystem/TwistFollowParentOffsetHead_M/TwistFollowParentHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/TwistSystem/TwistFollowParentOffsetHead_M/TwistFollowParentHead_M/UnTwistHead_M
+        weight: 1
+      - path: Group/Main/MotionSystem/TwistSystem/TwistFollowParentOffsetHead_M/TwistFollowParentHead_M/UnTwistHead_M/TwistBalancerHead_M
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

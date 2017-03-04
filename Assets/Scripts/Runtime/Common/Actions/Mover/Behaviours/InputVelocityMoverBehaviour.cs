@@ -19,6 +19,8 @@ public class InputVelocityMoverBehaviour : MoverBehavior {
 	#region Properties
 	////////////////////////////////////////////////////////////////////////////////////////// 	
 	public bool relativeToCamera = true;
+	private bool refreshBasis = true;
+	private Vector3 forward;
 
 	//For a given input [0,1], for each axis it is multiplied by this amount
 	public Vector3 stepPerAxis = new Vector3(5,5,5);
@@ -72,14 +74,19 @@ public class InputVelocityMoverBehaviour : MoverBehavior {
 		return transform.position + m_velocity*deltaTime;
 	}
 
-
 	public void updateInput(Vector3 m_input){
 
+		if (m_input.magnitude == 0) {
+			refreshBasis = true;
+		}
 		Vector3 forwardBasis = new Vector3 (1, 0,0);
 		Vector3 sideBasis = new Vector3 (0, 0, 1);
 
 		if (relativeToCamera) {
-			Vector3 forward = Camera.main.transform.forward;
+			if (/*refreshBasis*/true) {
+				forward = Camera.main.transform.forward;
+				refreshBasis = false;
+			}
 			forwardBasis = new Vector3 (forward.x,0, forward.z).normalized * stepPerAxis.x;
 			sideBasis = new Vector3 (forward.z, 0,-forward.x).normalized * stepPerAxis.z;
 		}

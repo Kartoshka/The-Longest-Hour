@@ -27,6 +27,8 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	//Current rotation In degrees (TODO make into properties and use accessor methods to clamp them?)
 	private float pitch = 0;
 	private float yaw = 0;
+	public float pitchChangeSpeed = 5f;
+	public float yawChangeSpeed = 5f;
 
 	private Vector3 cameraPosition = Vector3.zero;
 
@@ -34,10 +36,26 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	public float maxXAngle = 90;
 
 
+	//Collision parameters
+	[Header("Collision Properties")]
+
+	public bool fixCollisions = false;
+	public LayerMask collisionLayers;
+	public float radiusCollision = 0.2f;
+	private RaycastHit hitCamera;
+
+	//When the camera collides and zooms in, it will set itself to this factor (%) between the target and where the collision happened
+	[Range(0,1)]
+	public float zoomFactor =0.5f;
+
 	void Start()
 	{
 		if (setOnStart) {
 			setPosition ();
+
+			if (fixCollisions) {
+				collisionOffset (controlledView.CameraPosition);
+			}
 		}
 	}
 
@@ -45,6 +63,11 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	{
 		if (modifiable) {
 			setPosition ();
+			if (fixCollisions) {
+				collisionOffset (cameraPosition + controlledView.CameraTransposerTarget.position);
+			}
+
+			controlledView.TransposerTrackingOffset = cameraPosition;
 		}
 
 	}
@@ -65,20 +88,51 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 		//Modify campera position
 		cameraPosition = new Vector3 (X, Y, Z) * distanceFromTarget; 
-		controlledView.TransposerTrackingOffset = cameraPosition;
+
 	}
-	
+
+	Vector3 directionRay;
+	Vector3 startRay;
+
+
+
+	private void collisionOffset(Vector3 startPosition){
+		 directionRay = (controlledView.CameraTransposerTarget.position - controlledView.CameraPosition);
+		 startRay = startPosition;
+
+		RaycastHit[] hits   = Physics.SphereCastAll(startRay, radiusCollision, directionRay, distanceFromTarget,collisionLayers);
+		hitCamera.distance  = Mathf.Infinity;
+		foreach (RaycastHit hit in hits)
+		{
+			if (hit.distance < hitCamera.distance)
+			{
+				hitCamera = hit;
+				if (hit.point == Vector3.zero) {
+					hitCamera.point = startRay - directionRay.normalized * radiusCollision * 5f;
+				}
+			}
+		}
+
+		if (hitCamera.distance != Mathf.Infinity) {
+			float distance = Vector3.Distance (hitCamera.point,controlledView.CameraTransposerTarget.position);
+			cameraPosition = cameraPosition.normalized * (distance*zoomFactor);
+		}
+			
+	}
+
 	public void increaseYaw(float amt)
 	{
-		if(modifiable)
-			yaw = (yaw + amt) % 360;
+		if (modifiable) {
+			yaw = (yaw + amt*yawChangeSpeed*Time.deltaTime) % 360;
+		}
 
 	}
 
 	public void increasePitch(float amt)
 	{
-		if(modifiable)
-			pitch = (pitch + amt) % 360;
+		if (modifiable) {
+			pitch = (pitch + amt*pitchChangeSpeed*Time.deltaTime) % 360;
+		}
 	}
 
 
