@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e3491349ea12aa84b8108e58b26382ef
-timeCreated: 1489088268
+guid: 0d8769fc25a010f4f843d989586833c9
+timeCreated: 1489088266
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -888,7 +888,7 @@ ModelImporter:
     4300124: birdEyeLMesh
     4300126: birdBodyMesh
     4300128: birdEyeRMesh
-    7400000: astroBird_flyForward_loop
+    7400000: astroBird_hover_loop
     9500000: //RootNode
     13700000: birdBodyMesh
     13700002: birdEyeLMesh
@@ -915,10 +915,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: astroBird_flyForward_loop
+      name: astroBird_hover_loop
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 22
+      firstFrame: 8
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
