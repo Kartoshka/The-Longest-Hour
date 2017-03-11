@@ -56,7 +56,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-  - BlendFromCameraName: Orthogonal View
+  - BlendFromCameraName: '**ANY CAMERA**'
     BlendToCameraName: Regular View Cam
     Blending:
       serializedVersion: 2
@@ -68,7 +68,7 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.49235407
+        time: 0.10257376
         value: 1
         inSlope: 0
         outSlope: 0

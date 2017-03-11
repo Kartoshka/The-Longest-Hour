@@ -52,23 +52,23 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	{
 		if (setOnStart) {
 			setPosition ();
-
-			if (fixCollisions) {
-				collisionOffset (controlledView.CameraPosition);
-			}
-		}
-	}
-
-	public void UpdatePosition()
-	{
-		if (modifiable) {
-			setPosition ();
 			if (fixCollisions) {
 				collisionOffset (cameraPosition + controlledView.CameraTransposerTarget.position);
 			}
 
 			controlledView.TransposerTrackingOffset = cameraPosition;
 		}
+	}
+
+	public void UpdatePosition()
+	{
+		setPosition ();
+		if (fixCollisions) {
+			collisionOffset (cameraPosition + controlledView.CameraTransposerTarget.position);
+		}
+
+		controlledView.TransposerTrackingOffset = cameraPosition;
+
 
 	}
 

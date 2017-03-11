@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: -867238956, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
   m_Name: CenterViewFlight
   m_EditorClassIdentifier: 
-  TrackedObjectOffset: {x: 0, y: 0.2, z: 0}
+  TrackedObjectOffset: {x: 0, y: 0.1, z: 0}
   m_HorizontalSoftDampening: 1
-  m_VerticalSoftDampening: 3
-  m_SoftGuideScreenPercents: {x: 0.475, y: 0.56, z: 0.525, w: 0.47}
-  m_HardGuideScreenPercents: {x: 0.1, y: 0.9, z: 0.9, w: 0.1}
+  m_VerticalSoftDampening: 1
+  m_SoftGuideScreenPercents: {x: 0.468, y: 0.515, z: 0.545, w: 0.468}
+  m_HardGuideScreenPercents: {x: 0.1, y: 0.9, z: 0.9, w: 0}
   m_Dutch: 0
