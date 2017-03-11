@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -264415343, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
-  m_Name: TestTransposer
+  m_Name: BearRegTransposer
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_XDampening: 3
-  m_YDampening: 3
-  m_ZDampening: 3
+  m_TrackedObjectOffset: {x: 0, y: 0, z: -10}
+  m_XDampening: 3.17
+  m_YDampening: 3.63
+  m_ZDampening: 3.24
   m_TransposerOffsetMode: 3
