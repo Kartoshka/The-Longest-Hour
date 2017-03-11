@@ -210,7 +210,7 @@ MonoBehaviour:
   - {fileID: 1179066254}
   m_nextSceneId: 0
   m_sceneNames:
-  - NetworkedLevelSelect2
+  - NetworkedLevelSelect
   - CustomPlayerSpawnTest
 --- !u!4 &210055414
 Transform:
