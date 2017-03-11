@@ -8,43 +8,43 @@ public class AssignPlayerAuthority : NetworkBehaviour
 	public List<NetworkIdentity> m_toBeAssignedToP1;
 	public List<NetworkIdentity> m_toBeAssignedToP2;
 
-	void Start()
-	{
-		if (Network.isServer)
-		{
-			RpcSetAuthority();
-		}
-		else if (isServer)
-		{
-			RpcSetAuthority();
-		}
-		else if (isClient)
-		{
-			// Do nothing;
-		}
-	}
+	//void Start()
+	//{
+	//	if (Network.isServer)
+	//	{
+	//		RpcSetAuthority();
+	//	}
+	//	else if (isServer)
+	//	{
+	//		RpcSetAuthority();
+	//	}
+	//	else if (isClient)
+	//	{
+	//		// Do nothing;
+	//	}
+	//}
 
-	void OnLevelWasLoaded()
-	{
-		if(Network.isServer)
-		{
-			RpcSetAuthority();
-        }
-		else if (isServer)
-		{
-			RpcSetAuthority();
-		}
-		else if(isClient)
-		{
-			// Do nothing;
-		}
-	}
+	//void OnLevelWasLoaded()
+	//{
+	//	if(Network.isServer)
+	//	{
+	//		RpcSetAuthority();
+ //       }
+	//	else if (isServer)
+	//	{
+	//		RpcSetAuthority();
+	//	}
+	//	else if(isClient)
+	//	{
+	//		// Do nothing;
+	//	}
+	//}
 
-	[ClientRpc] // Make the change.
-	private void RpcSetAuthority(NetworkConnection netConn)
-	{
-		assignAuthority(netConn.connectionId, netConn);
-    }
+	//[ClientRpc] // Make the change.
+	//private void RpcSetAuthority(NetworkConnection netConn)
+	//{
+	//	assignAuthority(netConn.connectionId, netConn);
+ //   }
 
 	public void assignAuthority(int playerId, NetworkConnection netConn)
 	{

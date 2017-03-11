@@ -5,14 +5,14 @@ using UnityEngine.Networking;
 
 public class SetPlayerAuthority : MonoBehaviour
 {
-	void OnLevelWasLoaded()
-	{
-		//if(Network.isServer)
-		//{
-		//	RpcSetAuthority();
-		//}
-	//	ClientScene.AddPlayer(0);
-	}
+	//void OnLevelWasLoaded()
+	//{
+	//	//if(Network.isServer)
+	//	//{
+	//	//	RpcSetAuthority();
+	//	//}
+	////	ClientScene.AddPlayer(0);
+	//}
 
 	//[ClientRpc] // Make the change.
 	//private void RpcSetAuthority()

@@ -12,7 +12,7 @@ public class CustomPlayerLobbyManager : LobbyManager
 {
 	//public List<List<GameObject>> m_localPlayerAuthorityObjects;
 
-	private int playerPrefabIndex = 0;
+	//private int playerPrefabIndex = 0;
 	//Dictionary<int, int> currentPlayers;
 
 	//public void addLocalPlayerAuthorityObject(int playerId, GameObject objectToBeControlled)
@@ -196,10 +196,10 @@ public class CustomPlayerLobbyManager : LobbyManager
 		SetServerInfo("Offline", "None");
 	}
 
-	void OnLevelWasLoaded()
-	{
-//		ClientScene.AddPlayer(0);
-	}
+//	void OnLevelWasLoaded()
+//	{
+////		ClientScene.AddPlayer(0);
+//	}
 
 	//void OnLevelWasLoaded()
 	//{
