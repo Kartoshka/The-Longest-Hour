@@ -10,17 +10,24 @@ using Prototype.NetworkLobby;
 
 public class CustomPlayerLobbyManager : LobbyManager
 {
+	//public List<List<GameObject>> m_localPlayerAuthorityObjects;
+
 	private int playerPrefabIndex = 0;
 	//Dictionary<int, int> currentPlayers;
 
-	Dictionary<int, int> currentPlayers = new Dictionary<int, int>();
-	public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
-	{
-		if (!currentPlayers.ContainsKey(conn.connectionId))
-			currentPlayers.Add(conn.connectionId, playerPrefabIndex++); // TODO: Set this to 0, and use a function to attach the playerPrefabIndex with the connectionID.
+	//public void addLocalPlayerAuthorityObject(int playerId, GameObject objectToBeControlled)
+	//{
+	//	m_localPlayerAuthorityObjects[playerId].Add(objectToBeControlled);
+	//   }
 
-		return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
-	}
+	//Dictionary<int, int> currentPlayers = new Dictionary<int, int>();
+	//public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
+	//{
+	//	if (!currentPlayers.ContainsKey(conn.connectionId))
+	//		currentPlayers.Add(conn.connectionId, playerPrefabIndex++); // TODO: Set this to 0, and use a function to attach the playerPrefabIndex with the connectionID.
+
+	//	return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
+	//}
 
 	//public void SetPlayerTypeLobby(NetworkConnection conn, int playerPrefabIndex)
 	//{
@@ -28,18 +35,25 @@ public class CustomPlayerLobbyManager : LobbyManager
 	//		currentPlayers[conn.connectionId] = playerPrefabIndex;
 	//}
 
-	public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
-	{
-		int index = currentPlayers[conn.connectionId];
+	//public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+	//{
+	//	GameObject gamePlayer = base.OnLobbyServerCreateGamePlayer(conn, playerControllerId);
+	//	DontDestroyOnLoad(gamePlayer);
+	//	return gamePlayer;
+	//}
 
-		GameObject _temp = (GameObject)GameObject.Instantiate(spawnPrefabs[index],
-			startPositions[conn.connectionId].position,//GetStartPosition().position
-			Quaternion.identity);
+	//public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+	//{
+	//	int index = currentPlayers[conn.connectionId];
 
-		//NetworkServer.AddPlayerForConnection(conn, _temp, playerControllerId);
+	//	GameObject _temp = (GameObject)GameObject.Instantiate(spawnPrefabs[index],
+	//		startPositions[conn.connectionId].position,//GetStartPosition().position
+	//		Quaternion.identity);
 
-		return _temp;
-	}
+	//	//NetworkServer.AddPlayerForConnection(conn, _temp, playerControllerId);
+
+	//	return _temp;
+	//}
 
 	//// I have put a toggle UI on gameObjects called PC1 and PC2 to select two different character types.
 	//// on toggle, this function is called, which updates the playerPrefabIndex
@@ -180,6 +194,66 @@ public class CustomPlayerLobbyManager : LobbyManager
 		DontDestroyOnLoad(gameObject);
 
 		SetServerInfo("Offline", "None");
-
 	}
+
+	void OnLevelWasLoaded()
+	{
+//		ClientScene.AddPlayer(0);
+	}
+
+	//void OnLevelWasLoaded()
+	//{
+	//	setAuthority();
+
+	//	//GameObject networkAuthorityGroup = GameObject.Find("NetworkAuthorityGroup");
+	//	//if (networkAuthorityGroup)
+	//	//{
+	//	//	AssignPlayerAuthority assignPlayerAuthority = networkAuthorityGroup.GetComponent<AssignPlayerAuthority>();
+	//	//	if (assignPlayerAuthority)
+	//	//	{
+	//	//		for(int i = 0; i < lobbySlots.Length; ++i)
+	//	//		{
+	//	//			NetworkLobbyPlayer player = lobbySlots[i];
+	// //                  assignPlayerAuthority.assignAuthority(player.slot, player.connectionToClient);
+	// //              }
+	//	//	}
+	//	//}
+	//}
+
+	////[Command]
+	//void setAuthority()
+	//{
+	//	GameObject networkAuthorityGroup = GameObject.Find("NetworkAuthorityGroup");
+	//	if (networkAuthorityGroup)
+	//	{
+	//		AssignPlayerAuthority assignPlayerAuthority = networkAuthorityGroup.GetComponent<AssignPlayerAuthority>();
+	//		if (assignPlayerAuthority)
+	//		{
+	//			foreach(NetworkConnection netConn in NetworkServer.connections)
+	//			{
+	//                   assignPlayerAuthority.assignAuthority(netConn.connectionId, netConn);
+	//			}
+	//			//for (int i = 0; i < lobbySlots.Length; ++i)
+	//			//{
+	//			//	NetworkLobbyPlayer player = lobbySlots[i];
+	//			//	if(player.connectionToClient != null)
+	//			//	{
+	//			//		assignPlayerAuthority.assignAuthority(player.slot, player.connectionToClient);
+	//			//	}
+	//			//}
+	//		}
+	//	}
+
+	//	////DontDestroyOnLoad(this);
+
+	//	//GameObject networkAuthorityGroup = GameObject.Find("NetworkAuthorityGroup");
+	//	//if (networkAuthorityGroup)
+	//	//{
+	//	//	AssignPlayerAuthority assignPlayerAuthority = networkAuthorityGroup.GetComponent<AssignPlayerAuthority>();
+	//	//	if (assignPlayerAuthority)
+	//	//	{
+	//	//		assignPlayerAuthority.assignAuthority(playerNetID.clientAuthorityOwner.connectionId, playerNetID.clientAuthorityOwner);//alt: (playerId, playerNetID.connectionToClient);
+	//	//	}
+	//	//}
+	//}
 }
