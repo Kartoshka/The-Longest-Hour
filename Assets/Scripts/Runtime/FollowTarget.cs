@@ -71,7 +71,7 @@ public class FollowTarget : MonoBehaviour
 			viewDirection = Vector3.Lerp(this.transform.forward, m_target.position - this.transform.position, m_rotationLerpScale * Time.deltaTime);
 		}
 
-		if (viewDirection.sqrMagnitude > 0)
+		if (viewDirection != Vector3.zero)
 		{
 			this.transform.forward = viewDirection;
 		}

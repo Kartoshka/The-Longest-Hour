@@ -33,25 +33,29 @@ public class BirdController : MonoBehaviour {
 		targetControl.gameObject.SetActive (topDown);
 
         debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
-    }
+		if (debug == null)
+		{
+			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
+		}
+	}
 	
 	void Update () {
         //Camera movement input
         float verticalInput;
-        if (!debug.m_useWorldCam)
+        if (debug && !debug.m_useWorldCam)
             verticalInput = Input.GetAxis("VerticalRightStick");
         else
             verticalInput = 0;
 
 
         float horizontalInput;
-        if (!debug.m_useWorldCam)
+        if (debug && !debug.m_useWorldCam)
             horizontalInput = Input.GetAxis("HorizontalRightStick");
         else
             horizontalInput = 0;
 
         //Move active camera
-        if (!debug.m_useWorldCam)
+        if (debug && !debug.m_useWorldCam)
         {
             active.increasePitch(-verticalInput);
             active.increaseYaw(horizontalInput);
@@ -64,13 +68,13 @@ public class BirdController : MonoBehaviour {
 
         //Movement controls
         float verticalLeftStick;
-        if (debug.m_useWorldCam)
+        if (debug && debug.m_useWorldCam)
             verticalLeftStick = Input.GetAxis("VerticalBird");
         else
             verticalLeftStick = Input.GetAxis("Vertical");
 
         float horizontalLeftStick;
-        if (debug.m_useWorldCam)
+        if (debug && debug.m_useWorldCam)
             horizontalLeftStick = Input.GetAxis("HorizontalBird");
         else
             horizontalLeftStick = Input.GetAxis("Horizontal");
@@ -82,22 +86,26 @@ public class BirdController : MonoBehaviour {
 
         moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
 
-		if ((debug.m_useWorldCam && Input.GetButtonDown ("JumpBird")) ||
-            !debug.m_useWorldCam && Input.GetButtonDown("Jump")) {
+		if (debug && (
+			(debug.m_useWorldCam && Input.GetButtonDown ("JumpBird")) ||
+            !debug.m_useWorldCam && Input.GetButtonDown("Jump"))) {
 			switchCameras ();
 		}
 
 		if (topDown) {
-			if ((debug.m_useWorldCam && Input.GetButtonDown ("Fire1Bird")) ||
-			    !debug.m_useWorldCam && Input.GetButtonDown ("Fire1")) {
+			if (debug && (
+				(debug.m_useWorldCam && Input.GetButtonDown ("Fire1Bird")) ||
+			    !debug.m_useWorldCam && Input.GetButtonDown ("Fire1"))) {
 				targetControl.activateCurrent ();
 			} 
-			else if ((debug.m_useWorldCam && Input.GetButtonUp ("Fire1Bird")) ||
-				!debug.m_useWorldCam && Input.GetButtonUp ("Fire1")) {
+			else if (debug && (
+				(debug.m_useWorldCam && Input.GetButtonUp ("Fire1Bird")) ||
+				!debug.m_useWorldCam && Input.GetButtonUp ("Fire1"))) {
 				targetControl.disactivateCurrent ();
 			}
-			if ((debug.m_useWorldCam && Input.GetButtonDown("Fire2Bird")) ||
-            !debug.m_useWorldCam && Input.GetButtonDown("Fire2")) {
+			if (debug && (
+				(debug.m_useWorldCam && Input.GetButtonDown("Fire2Bird")) ||
+				!debug.m_useWorldCam && Input.GetButtonDown("Fire2"))) {
 				targetControl.toggle ();
 			}
 		}

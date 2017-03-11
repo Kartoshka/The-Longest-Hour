@@ -29,25 +29,29 @@ public class BearController : MonoBehaviour {
 	void Start () {
 		topDown = false;
 		debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
+		if(debug == null)
+		{
+			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
+		}
 	}
 
 	void Update () {
 		//Camera movement input
 		float verticalInput;
-		if (!debug.m_useWorldCam)
+		if (debug && !debug.m_useWorldCam)
 			verticalInput = Input.GetAxis("VerticalRightStick");
 		else
 			verticalInput = 0;
 
 
 		float horizontalInput;
-		if (!debug.m_useWorldCam)
+		if (debug && !debug.m_useWorldCam)
 			horizontalInput = Input.GetAxis("HorizontalRightStick");
 		else
 			horizontalInput = 0;
 
 		//Move active camera
-		if (!debug.m_useWorldCam && bearCam != null)
+		if (debug && !debug.m_useWorldCam && bearCam != null)
 		{
 			bearCam.increasePitch(-verticalInput);
 			bearCam.increaseYaw(horizontalInput);
@@ -56,13 +60,13 @@ public class BearController : MonoBehaviour {
 
 		//Movement controls
 		float verticalLeftStick;
-		if (debug.m_useWorldCam)
+		if (debug && debug.m_useWorldCam)
 			verticalLeftStick = Input.GetAxis("VerticalBird");
 		else
 			verticalLeftStick = Input.GetAxis("Vertical");
 
 		float horizontalLeftStick;
-		if (debug.m_useWorldCam)
+		if (debug && debug.m_useWorldCam)
 			horizontalLeftStick = Input.GetAxis("HorizontalBird");
 		else
 			horizontalLeftStick = Input.GetAxis("Horizontal");
