@@ -10,6 +10,76 @@ using Prototype.NetworkLobby;
 
 public class CustomPlayerLobbyManager : LobbyManager
 {
+	
+	//public virtual void OnClientConnect(NetworkConnection conn)
+	//{
+	//	if (string.IsNullOrEmpty(m_OnlineScene) || (m_OnlineScene == m_OfflineScene))
+	//	{
+	//		ClientScene.Ready(conn);
+	//		if (m_AutoCreatePlayer)
+	//		{
+	//			ClientScene.AddPlayer(0);
+	//		}
+	//	}
+	//	else
+	//	{
+	//		// player will be added when on-line scene finishes loading
+	//	}
+	//}
+
+	// Reference: https://forum.unity3d.com/threads/solved-server-not-adding-player-for-reconnecting-client.333171/
+	public override void OnClientSceneChanged(NetworkConnection conn)
+	{
+		base.OnClientSceneChanged(conn);
+
+		// always become ready.
+		ClientScene.Ready(conn);
+
+		if (!this.autoCreatePlayer)
+		{
+			return;
+		}
+
+		bool addPlayer = false;
+		if (ClientScene.localPlayers.Count == 0)
+		{
+			// no players exist
+			addPlayer = true;
+		}
+
+		bool foundPlayer = false;
+		foreach (var playerController in ClientScene.localPlayers)
+		{
+			if (playerController.gameObject != null)
+			{
+				foundPlayer = true;
+				break;
+			}
+		}
+		if (!foundPlayer)
+		{
+			// there are players, but their game objects have all been deleted
+			addPlayer = true;
+		}
+		if (addPlayer)
+		{
+			ClientScene.AddPlayer(0);
+		}
+	}
+
+	public int getPlayerSlot(NetworkConnection netConn)
+	{
+		foreach (NetworkLobbyPlayer lobbyPlayer in lobbySlots)
+		{
+			if (lobbyPlayer.connectionToClient == netConn 
+				|| lobbyPlayer.connectionToServer == netConn)
+			{
+				return lobbyPlayer.slot;
+			}
+        }
+		return -1;
+	}
+
 	//public List<List<GameObject>> m_localPlayerAuthorityObjects;
 
 	//private int playerPrefabIndex = 0;
