@@ -27,45 +27,45 @@ public class CustomPlayerLobbyManager : LobbyManager
 	//	}
 	//}
 
-	// Reference: https://forum.unity3d.com/threads/solved-server-not-adding-player-for-reconnecting-client.333171/
-	public override void OnClientSceneChanged(NetworkConnection conn)
-	{
-		base.OnClientSceneChanged(conn);
+	//// Reference: https://forum.unity3d.com/threads/solved-server-not-adding-player-for-reconnecting-client.333171/
+	//public override void OnClientSceneChanged(NetworkConnection conn)
+	//{
+	//	base.OnClientSceneChanged(conn);
 
-		// always become ready.
-		ClientScene.Ready(conn);
+	//	// always become ready.
+	//	ClientScene.Ready(conn);
 
-		if (!this.autoCreatePlayer)
-		{
-			return;
-		}
+	//	if (!this.autoCreatePlayer)
+	//	{
+	//		return;
+	//	}
 
-		bool addPlayer = false;
-		if (ClientScene.localPlayers.Count == 0)
-		{
-			// no players exist
-			addPlayer = true;
-		}
+	//	bool addPlayer = false;
+	//	if (ClientScene.localPlayers.Count == 0)
+	//	{
+	//		// no players exist
+	//		addPlayer = true;
+	//	}
 
-		bool foundPlayer = false;
-		foreach (var playerController in ClientScene.localPlayers)
-		{
-			if (playerController.gameObject != null)
-			{
-				foundPlayer = true;
-				break;
-			}
-		}
-		if (!foundPlayer)
-		{
-			// there are players, but their game objects have all been deleted
-			addPlayer = true;
-		}
-		if (addPlayer)
-		{
-			ClientScene.AddPlayer(0);
-		}
-	}
+	//	bool foundPlayer = false;
+	//	foreach (var playerController in ClientScene.localPlayers)
+	//	{
+	//		if (playerController.gameObject != null)
+	//		{
+	//			foundPlayer = true;
+	//			break;
+	//		}
+	//	}
+	//	if (!foundPlayer)
+	//	{
+	//		// there are players, but their game objects have all been deleted
+	//		addPlayer = true;
+	//	}
+	//	if (addPlayer)
+	//	{
+	//		ClientScene.AddPlayer(0);
+	//	}
+	//}
 
 	public int getPlayerSlot(NetworkConnection netConn)
 	{

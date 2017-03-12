@@ -37054,7 +37054,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384996344702180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.002003, y: -0.215, z: 21.670029}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676916042656872}
@@ -48199,7 +48199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665882356245960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.002003, y: -0.215, z: 21.670029}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4058774087950266}
@@ -48690,7 +48690,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015017301963698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3, y: 0.46, z: -224.6}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4287567500097182}
@@ -52073,7 +52073,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285396953497510}
-  m_LocalRotation: {x: -0.03564107, y: 0.548476, z: 0.5692367, w: 0.611452}
+  m_LocalRotation: {x: -0.035641067, y: 0.5484759, z: 0.56923664, w: 0.6114519}
   m_LocalPosition: {x: 0.07278174, y: -0.17817244, z: 0.15935759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55472,7 +55472,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985465690977874}
-  m_LocalRotation: {x: 0.6520108, y: 0.27364576, z: 0.6520108, w: -0.27364576}
+  m_LocalRotation: {x: 0.65201074, y: 0.27364573, z: 0.65201074, w: -0.27364573}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -57821,7 +57821,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015017301963698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e796f4309608d8e46bcf8213a7a71ec0, type: 3}
   m_Name: 
@@ -57888,7 +57888,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015017301963698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 673537d80ba27734fb8bb0ada73fbeb1, type: 3}
   m_Name: 
@@ -57976,12 +57976,12 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114695932065784176}
-  distanceFromTarget: 12.2
-  angleFromTarget: {x: -7.92, y: -88}
-  pitchChangeSpeed: 15
+  distanceFromTarget: 12
+  angleFromTarget: {x: 15, y: 74}
+  pitchChangeSpeed: 0
   yawChangeSpeed: 50
-  minXAngle: 80
-  maxXAngle: 80
+  minXAngle: 58.7
+  maxXAngle: 111.6
   fixCollisions: 0
   collisionLayers:
     serializedVersion: 2
