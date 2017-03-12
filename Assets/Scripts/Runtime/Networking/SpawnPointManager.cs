@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
-public class SpawnPointManager : MonoBehaviour
+
+public class SpawnPointManager : NetworkBehaviour
 {
 	public Transform groundPlayerSpawnPosition;
 	public Transform airPlayerStartPosition;
@@ -12,16 +14,23 @@ public class SpawnPointManager : MonoBehaviour
 
 	public List<Transform> allySpawnPositions = new List<Transform>();
 
-	// Use this for initialization
-	void Start()
+	public Transform getPlayerSpawnTransform(int playerId)
 	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
+		Transform spawnTransform = null;
+		switch(playerId)
+		{
+			case (0):
+			{
+				spawnTransform = groundPlayerSpawnPosition;
+                break;
+			}
+			case (1):
+			{
+				spawnTransform = airPlayerStartPosition;
+				break;
+			}
+		}
+		return spawnTransform;
 	}
 }
 

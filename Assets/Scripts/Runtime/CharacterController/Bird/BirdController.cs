@@ -32,8 +32,12 @@ public class BirdController : MonoBehaviour {
 		topDown = false;
 		targetControl.gameObject.SetActive (topDown);
 
-        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
-		if (debug == null)
+		GameObject debugObject = GameObject.FindGameObjectWithTag("Debug");
+		if (debugObject)
+		{
+			debug = debugObject.GetComponent<DebugEntities>();
+		}
+		else
 		{
 			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
 		}
