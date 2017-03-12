@@ -32,6 +32,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: idle
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -59,6 +65,7 @@ MonoBehaviour:
   m_onParams: []
   m_offParams:
   - isAiming
+  - idle
 --- !u!114 &114295502071562656
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -87,6 +94,20 @@ MonoBehaviour:
   m_onParams: []
   m_offParams:
   - isAttacking
+--- !u!114 &114557920573065006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9222ea60fa84d545a020ea5b9a85125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onParams:
+  - idle
+  m_offParams: []
 --- !u!114 &114560426956528262
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -129,6 +150,7 @@ MonoBehaviour:
   m_onParams: []
   m_offParams:
   - isAttacking
+  - idle
 --- !u!114 &114837610937186098
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -143,6 +165,20 @@ MonoBehaviour:
   m_onParams: []
   m_offParams:
   - isAttacking
+--- !u!114 &114993596911767160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1384a56b7961408fad1143ddb84ddb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onParams: []
+  m_offParams:
+  - idle
 --- !u!206 &206000012075621922
 BlendTree:
   m_ObjectHideFlags: 1
@@ -574,7 +610,9 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101228942854459552}
   - {fileID: 1101886538351032054}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 114557920573065006}
+  - {fileID: 114993596911767160}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -880,7 +918,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 48, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102846749735771700}

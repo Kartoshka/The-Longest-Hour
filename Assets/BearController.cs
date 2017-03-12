@@ -19,9 +19,14 @@ public class BearController : MonoBehaviour {
 	public Animator m_animator;
 
 
+	private bool canWalk = false;
+
 	public string m_attackParam;
 	public string m_runSpeedParam;
 
+
+	private bool awake = false;
+	private bool attacking = true;
 
 	//Flag for knowing we're in top down view
 	bool topDown = false;
@@ -81,19 +86,25 @@ public class BearController : MonoBehaviour {
 		if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
 			horizontalLeftStick = 0;
 
-		//Bear paw swipe
-		if (Input.GetButtonDown ("Fire1") && !m_animator.GetBool(m_attackParam)) {
-			m_animator.SetBool (m_attackParam, true);
-			moverBehaviour.updateInput (Vector3.zero);
-			m_animator.SetFloat(m_runSpeedParam, 0);
 
-		} else {
+		//Bear paw swipe
+		if (Input.GetButtonDown ("Fire1")) {
+			m_animator.SetBool (m_attackParam, true);
+	
+
+		} else if(m_animator.GetBool("idle")){
 			float normalizedRunSpeed = Math.Abs(verticalLeftStick) + Math.Abs(horizontalLeftStick);
-			//float normalizedRunSpeed = velocity.normalized.x;
 			m_animator.SetFloat(m_runSpeedParam, normalizedRunSpeed);
 			moverBehaviour.updateInput (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
+		}else{
+			moverBehaviour.updateInput (Vector3.zero);
+			m_animator.SetFloat(m_runSpeedParam, 0);
 		}
 
+	}
+
+
+	private void checkWalkStatus(){
 	}
 
 }
