@@ -37,26 +37,29 @@ public class CustomNetworkedPlayer : NetworkBehaviour
 				{
 					CmdInstantiateCustomPlayer(netId, null);
 				}
-				else if (isServer)
-				{
-					RpcInstantiateCustomPlayer(netId, null);
-				}
+				//else if (isServer)
+				//{
+				//	RpcInstantiateCustomPlayer(netId, null);
+				//}
 			}
 		}
 	}
 
+	public float m_spawnDelayTimer = 1;
 	bool waitingForDelayedStart = true;
-	float timer = 1;
 	void FixedUpdate()
 	{
-		if(waitingForDelayedStart)
+		if(isLocalPlayer)
 		{
-			timer -= Time.deltaTime;
-			if (timer <= 0)
+			if (waitingForDelayedStart)
 			{
-				waitingForDelayedStart = false;
-				tryInstantiatePlayerObject();
-            }
+				m_spawnDelayTimer -= Time.deltaTime;
+				if (m_spawnDelayTimer <= 0)
+				{
+					waitingForDelayedStart = false;
+					tryInstantiatePlayerObject();
+				}
+			}
 		}
 	}
 
