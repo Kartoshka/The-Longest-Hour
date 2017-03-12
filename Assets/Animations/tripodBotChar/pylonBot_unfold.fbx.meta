@@ -231,7 +231,7 @@ ModelImporter:
       name: tripodBot_folded_pose
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 1
+      lastFrame: 2
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
