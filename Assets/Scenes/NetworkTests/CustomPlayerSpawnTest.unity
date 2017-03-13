@@ -2068,7 +2068,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137145842}
-  m_LocalRotation: {x: 0.1190194, y: -0.022035904, z: 0.0026421356, w: 0.9926439}
+  m_LocalRotation: {x: 0.11903, y: -0.023343384, z: 0.0027992427, w: 0.9926123}
   m_LocalPosition: {x: 0.4051183, y: 4.2538023, z: -11.601071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6494,10 +6494,9 @@ Prefab:
       propertyPath: m_maxSpeed
       value: 0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 114975973806126052, guid: 34354644d19e94142b1edbc360f3389a,
-        type: 2}
-      propertyPath: m_moveDistanceScale
-      value: 1.9
+    - target: {fileID: 1504952470356188, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
@@ -8532,10 +8531,9 @@ Prefab:
       propertyPath: m_maxSpeed
       value: 0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 114975973806126052, guid: 34354644d19e94142b1edbc360f3389a,
-        type: 2}
-      propertyPath: m_moveDistanceScale
-      value: 1.9
+    - target: {fileID: 1504952470356188, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
@@ -10376,10 +10374,9 @@ Prefab:
       propertyPath: m_maxSpeed
       value: 0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 114975973806126052, guid: 34354644d19e94142b1edbc360f3389a,
-        type: 2}
-      propertyPath: m_moveDistanceScale
-      value: 1.9
+    - target: {fileID: 1504952470356188, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
@@ -19583,10 +19580,9 @@ Prefab:
       propertyPath: m_maxSpeed
       value: 0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 114975973806126052, guid: 34354644d19e94142b1edbc360f3389a,
-        type: 2}
-      propertyPath: m_moveDistanceScale
-      value: 1.9
+    - target: {fileID: 1504952470356188, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
