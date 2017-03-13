@@ -63,11 +63,11 @@ public class AnimInputController : MonoBehaviour
 	private void ProcessInputs()
 	{
 		Vector3 position = m_transform.position;
-		float normalizedRunSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
+		float runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
 		m_prevPosition = position;
 
 		//float normalizedRunSpeed = velocity.normalized.x;
-		m_animator.SetFloat(m_runSpeedParam, normalizedRunSpeed);
+		m_animator.SetFloat(m_runSpeedParam, runSpeed);
 		if(Input.GetButtonDown("Fire1"))
 		{
 			m_animator.SetBool(m_attackParam, true);
