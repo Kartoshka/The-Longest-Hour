@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 114169014049242766}
   - component: {fileID: 114181996499751580}
   - component: {fileID: 65978543829242480}
+  - component: {fileID: 114330014366364226}
   m_Layer: 0
   m_Name: tripodBot
   m_TagString: Untagged
@@ -1378,7 +1379,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910950288222908}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1418,7 +1419,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504952470356188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b28136e6921469c4c93c70ccc7726cb4, type: 3}
   m_Name: 
@@ -1451,7 +1452,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504952470356188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56ba0fcdd4697b4fabc3cfed08bdccd, type: 3}
   m_Name: 
@@ -1460,6 +1461,19 @@ MonoBehaviour:
   m_maxSpeed: 0.06
   m_maxForce: 1
   m_maxTurnRate: 0.5
+--- !u!114 &114330014366364226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504952470356188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5342ee067ab364783de297b942b97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_steeringBehaviours: {fileID: 114169014049242766}
+  m_movingEntity: {fileID: 114181996499751580}
 --- !u!114 &114335837594379290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1523,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4407964b16b944c94dec429d3637b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_steeringBehaviours: {fileID: 114169014049242766}
+  m_movingEntity: {fileID: 114181996499751580}
 --- !u!137 &137170270743099862
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

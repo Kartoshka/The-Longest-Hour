@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlockingMovementController : MonoBehaviour
+public class SteeringController : MonoBehaviour
 {
+	public SteeringBehaviours m_steeringBehaviours;
 	public MovingEntity m_movingEntity;
 
-	public void stopMovement()
+	public void stopSteering()
 	{
 		if(m_movingEntity)
 		{
@@ -14,7 +15,7 @@ public class FlockingMovementController : MonoBehaviour
         }
 	}
 
-	public void startMovement()
+	public void startSteering()
 	{
 		if (m_movingEntity)
 		{
@@ -23,19 +24,12 @@ public class FlockingMovementController : MonoBehaviour
 	}
 
 	// Use this for initialization
-	void Start ()
-	{
-		stopMovement();
-    }
-
-	//float timer = 10.0f;
+	void Start () {
+		
+	}
+	
 	// Update is called once per frame
-	void Update ()
-	{
-		//timer -= Time.deltaTime;
-		//if(timer < 0)
-		//{
-		//	startMovement();
-  //      }
+	void Update () {
+		
 	}
 }

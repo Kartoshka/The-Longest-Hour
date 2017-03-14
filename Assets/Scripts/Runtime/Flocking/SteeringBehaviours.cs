@@ -68,14 +68,23 @@ public class SteeringBehaviours : MonoBehaviour
 
 	private Vector3 m_steeringForce;
 
+	private Observer<SteeringBehaviours> m_observer;
+
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public void setIsWandering(bool isWandering) { m_isWandering = isWandering;	}
+	public void setIsWandering(bool isWandering)
+	{
+		m_isWandering = isWandering;
+	}
 
-	public void setIsPathFinding(bool isPathfinding) { m_isPathfinding = isPathfinding;	}
+	public void setIsPathFinding(bool isPathfinding)
+	{
+		m_isPathfinding = isPathfinding;
+	}
 
 	public void AddWaypoint(GameObject waypoint)
 	{
@@ -96,6 +105,8 @@ public class SteeringBehaviours : MonoBehaviour
 			m_target = target;
 		}
 	}
+
+	public Observer<SteeringBehaviours> getObserver() { return m_observer; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -402,6 +413,11 @@ public class SteeringBehaviours : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////  
+
+	void Awake()
+	{
+		m_observer = new Observer<SteeringBehaviours>(this);
+	}
 
 	// Use this for initialization
 	void Start()
