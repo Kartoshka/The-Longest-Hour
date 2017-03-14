@@ -47,7 +47,15 @@ public class LinearInputMoverBehavior : MoverBehavior
     #region  Constructors
     //////////////////////////////////////////////////////////////////////////////////////////
     void Start() {
-        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
+		GameObject debugObject = GameObject.FindGameObjectWithTag("Debug");
+		if (debugObject)
+		{
+			debug = debugObject.GetComponent<DebugEntities>();
+		}
+		else
+		{
+			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
+		}
     }
        
     public LinearInputMoverBehavior()
@@ -154,14 +162,14 @@ public class LinearInputMoverBehavior : MoverBehavior
 	{
 		if(getEnableUserInput())
 		{
-            if (!debug.m_useWorldCam)
+            if (debug && !debug.m_useWorldCam)
                 m_inputMagnitude.x = Input.GetAxis("Horizontal");
             else
                 m_inputMagnitude.x = Input.GetAxis("HorizontalGround");
 
             m_inputMagnitude.y = 0;
 
-            if(!debug.m_useWorldCam)
+            if(debug && !debug.m_useWorldCam)
 			    m_inputMagnitude.z = Input.GetAxis("Vertical");
             else
                 m_inputMagnitude.z = Input.GetAxis("VerticalGround");
