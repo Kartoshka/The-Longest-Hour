@@ -16,6 +16,10 @@ public class AnimInputController : MonoBehaviour
 	public string m_runSpeedParam;
 	public string m_attackParam;
 
+	public float m_moveDistanceScale;
+	private Transform m_transform;
+	private Vector3 m_prevPosition;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region  Constructors
@@ -41,6 +45,12 @@ public class AnimInputController : MonoBehaviour
 	#region Runtime
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	void Start()
+	{
+		m_transform = this.transform;
+		m_prevPosition = m_transform.position;
+    }
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -52,9 +62,12 @@ public class AnimInputController : MonoBehaviour
 
 	private void ProcessInputs()
 	{
-		float normalizedRunSpeed = Math.Abs(Input.GetAxis("Horizontal")) + Math.Abs(Input.GetAxis("Vertical"));
+		Vector3 position = m_transform.position;
+		float runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
+		m_prevPosition = position;
+
 		//float normalizedRunSpeed = velocity.normalized.x;
-		m_animator.SetFloat(m_runSpeedParam, normalizedRunSpeed);
+		m_animator.SetFloat(m_runSpeedParam, runSpeed);
 		if(Input.GetButtonDown("Fire1"))
 		{
 			m_animator.SetBool(m_attackParam, true);
