@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FlockingMovementController : MonoBehaviour
 {
-	public SteeringBehaviours m_steeringBehaviours;
+	public MovingEntity m_movingEntity;
 
 	public void stopMovement()
 	{
-		if(m_steeringBehaviours)
+		if(m_movingEntity)
 		{
-			m_steeringBehaviours.enabled = false;
+			m_movingEntity.enabled = false;
         }
 	}
 
 	public void startMovement()
 	{
-		if (m_steeringBehaviours)
+		if (m_movingEntity)
 		{
-			m_steeringBehaviours.enabled = true;
+			m_movingEntity.enabled = true;
 		}
 	}
 

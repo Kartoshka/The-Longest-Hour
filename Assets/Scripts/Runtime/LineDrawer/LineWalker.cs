@@ -118,7 +118,7 @@ public class LineWalker : MonoBehaviour
 			}
 
 			Vector3 position = m_spline.GetPoint(m_progress);
-			transform.localPosition = position;
+            transform.localPosition = new Vector3(position.x, -8f, position.z) ;
 			if (m_lookForward)
 			{
 				transform.LookAt(position + m_spline.GetDirection(m_progress));
