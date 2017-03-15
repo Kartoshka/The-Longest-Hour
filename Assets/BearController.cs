@@ -1,107 +1,215 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using Cinemachine.Utility;
+using Cinemachine.Attributes;
+using Cinemachine.Blending;
+using Cinemachine.Assets;
+using Cinemachine;
+using System.Collections.Generic;
 
 public class BearController : MonoBehaviour {
+		
+	[Header("Cameras")]
+	public Cinemachine3rdPerson runningCam;
+	public Cinemachine3rdPerson aimCam;
+	public CameraController m_camControls;
 
-	//Active camera being modified
-	public Cinemachine3rdPerson bearCam;
 
 	[Space(5)]
-	[Tooltip("Character movement")]
+	[Header("Character movement")]
 	public InputVelocityMoverBehaviour moverBehaviour;
 
-	private float m_moveInputThreshold = 0.5f;
+	[Space(5)]
+	[Header("Aiming")]
+	public GameObject aimingModule;
+
 
 	[Space(5)]
-	[Tooltip("Animation")]
-	private DebugEntities debug;
-	public Animator m_animator;
+	[Header("Animation states")]
+	public string idleStateName;
+	private CharacterControllerStateTrigger idleState;
+	public string attackStateName;
+	private CharacterControllerStateTrigger attackState;
+	public string aimReadyStateName;
+	private CharacterControllerStateTrigger aimReadyState;
+	public string sleepStateName;
+	private CharacterControllerStateTrigger sleepState;
+	public string fireStateName;
+	private CharacterControllerStateTrigger fireState;
 
+	[Space(5)]
+	[Header("AnimationController")]
+	public BearAnimationController m_animC;
 
-	private bool canWalk = false;
+	//States to know when we can do things
+	public bool isIdle = false;
+	public bool isAsleep = false;
+	public bool isAttacking = false;
+	public bool isAiming = false;
+	public bool isFiring = false;
 
-	public string m_attackParam;
-	public string m_runSpeedParam;
+	Action enable(bool val){
+		return () => val = true;
+	}
 
-
-	private bool awake = false;
-	private bool attacking = true;
-
-	//Flag for knowing we're in top down view
+	Action disable(bool val){
+		return () => val = true;
+	}
 
 	void Start () {
-		GameObject debugObject = GameObject.FindGameObjectWithTag("Debug");
-		if (debugObject)
+
+		if (m_animC.getControllerTrigger (idleStateName, out idleState))
 		{
-			debug = debugObject.GetComponent<DebugEntities>();
+			Debug.Log ("gotIdle");
+			idleState.onEnter += enable (isIdle);
+			idleState.onExit += disable (isIdle);
 		}
-		else
+
+		if (m_animC.getControllerTrigger (attackStateName, out attackState))
 		{
-			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
+			attackState.onEnter += enable (isAttacking);
+			attackState.onExit += disable (isAttacking);
+		}
+
+		if (m_animC.getControllerTrigger (aimReadyStateName, out aimReadyState))
+		{
+			aimReadyState.onEnter += enable (isAiming);
+			aimReadyState.onExit += disable (isAiming);
+		}
+
+		if (m_animC.getControllerTrigger (fireStateName, out fireState))
+		{
+			fireState.onEnter += enable (isFiring);
+			fireState.onExit += disable (isFiring);
 		}
 	}
-
-	void Update () {
-		//Camera movement input
-		float verticalInput;
-		if (debug && !debug.m_useWorldCam)
-			verticalInput = Input.GetAxis("VerticalRightStick");
-		else
-			verticalInput = 0;
-
-
-		float horizontalInput;
-		if (debug && !debug.m_useWorldCam)
-			horizontalInput = Input.GetAxis("HorizontalRightStick");
-		else
-			horizontalInput = 0;
-
-		//Move active camera
-		if (debug && !debug.m_useWorldCam && bearCam != null)
+		
+	public void moveBear(Vector3 velocity){
+		if (isIdle)
 		{
-			bearCam.increasePitch(-verticalInput);
-			bearCam.increaseYaw(horizontalInput);
-			bearCam.UpdatePosition();
-		}
-
-		//Movement controls
-		float verticalLeftStick;
-		if (debug && debug.m_useWorldCam)
-			verticalLeftStick = Input.GetAxis("VerticalBird");
-		else
-			verticalLeftStick = Input.GetAxis("Vertical");
-
-		float horizontalLeftStick;
-		if (debug && debug.m_useWorldCam)
-			horizontalLeftStick = Input.GetAxis("HorizontalBird");
-		else
-			horizontalLeftStick = Input.GetAxis("Horizontal");
-
-		if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
-			verticalLeftStick = 0;
-		if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
-			horizontalLeftStick = 0;
-
-
-		//Bear paw swipe
-		if (Input.GetButtonDown ("Fire1")) {
-			m_animator.SetBool (m_attackParam, true);
-	
-
-		} else if(m_animator.GetBool("idle")){
-			float normalizedRunSpeed = Math.Abs(verticalLeftStick) + Math.Abs(horizontalLeftStick);
-			m_animator.SetFloat(m_runSpeedParam, normalizedRunSpeed);
-			moverBehaviour.updateInput (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
-		}else{
+			moverBehaviour.updateInput (velocity);
+		} else
+		{
 			moverBehaviour.updateInput (Vector3.zero);
-			m_animator.SetFloat(m_runSpeedParam, 0);
 		}
+	}
 
+	public void attack(){
+		if ((isAsleep || isIdle) && !isAttacking)
+		{
+			moverBehaviour.updateInput (Vector3.zero);
+			m_animC.doAttack ();
+		}
+	}
+
+	public void aim(){
+		if (isIdle && !isAiming)
+		{
+			moverBehaviour.updateInput (Vector3.zero);
+			m_camControls.changeCamera (aimCam);
+			m_animC.startAim ();
+		}
+	}
+
+	public void disableAim(){
+		if (isAiming && !isIdle)
+		{
+			moverBehaviour.updateInput (Vector3.zero);
+			m_camControls.changeCamera (runningCam);
+			m_animC.endAim ();
+		}
 	}
 
 
-	private void checkWalkStatus(){
-	}
-
+//	void Update () {
+//
+//		if (isIdle)
+//		{
+//			currentState = states.Idle;
+//		}
+//
+//		//Bear paw swipe
+//		if (Input.GetButtonDown ("Fire1") && (currentState == states.Idle || currentState == states.Sleep))
+//		{
+//			currentState = states.Attacking;
+//			m_animator.SetBool ("idle", false);
+//		} else if (Input.GetButtonDown ("Jump") && (currentState == states.Idle))
+//		{
+//			aim ();
+//			currentState = states.Aiming;
+//		} 
+//		else if (!Input.GetButton ("Jump") && (currentState == states.Aiming))
+//		{
+//			
+//			currentState = states.Idle;
+//		} 
+//		else if (currentState == states.Idle && normalizedRunSpeed > 0)
+//		{ 
+//			currentState = states.Running;
+//		}
+//
+//			
+//		switch (currentState)
+//		{
+//		case states.Aiming:
+//			changeActiveCam (aimCam);
+//			run (Vector3.zero, 0);
+//			break;
+//		case states.Attacking:
+//			run (Vector3.zero, 0);
+//			m_animator.SetBool (m_attackParam, true);
+//			break;
+//		case states.Running:
+//			run(new Vector3 (verticalLeftStick, 0, horizontalLeftStick),normalizedRunSpeed);
+//			break;
+//		case states.Sleep:
+//			break;
+//		case states.Idle:
+//			m_animator.SetBool (m_aimParam, false);
+//			m_animator.SetBool (m_attackParam, false);
+//			run (Vector3.zero, 0);
+//			break;
+//		}
+//			
+//	}
+//
+//	public void moveBear(Vector3 velocity){
+//		
+//	}
+//
+//	private void aim(){
+//		//Look in direction of camera, fam :/
+//		changeActiveCam (aimCam);
+//		m_animator.SetBool (m_aimParam, true);
+//		m_animator.SetBool ("idle", false);
+//	}
+//		
+//	
+//	private void run(Vector3 moveSpeed, float normalizedRunSpeed){
+//		changeActiveCam (runningCam);
+//
+//		//Update animation
+//		m_animator.SetFloat (m_runSpeedParam, normalizedRunSpeed);
+//		//Update moverbehaviour
+//		moverBehaviour.updateInput (moveSpeed);
+//
+//		moverBehaviour.enabled = moveSpeed.magnitude>0.0;
+//
+//	}
+//
+//	private void changeActiveCam(Cinemachine3rdPerson newCam){
+//		Debug.Log (newCam.gameObject.name);
+//		if (activeCamera == newCam)
+//		{
+//			return;
+//		}
+//
+//		if (activeCamera != null)
+//		{
+//			activeCamera.gameObject.SetActive (false);
+//		}
+//		activeCamera = newCam;
+//		activeCamera.gameObject.SetActive (true);
+//	}
 }
