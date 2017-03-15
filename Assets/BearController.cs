@@ -31,8 +31,10 @@ public class BearController : MonoBehaviour {
 	private CharacterControllerStateTrigger idleState;
 	public string attackStateName;
 	private CharacterControllerStateTrigger attackState;
-	public string aimReadyStateName;
-	private CharacterControllerStateTrigger aimReadyState;
+	public string startAimStateName;
+	private CharacterControllerStateTrigger aimStartState;
+	public string endAimStateName;
+	private CharacterControllerStateTrigger aimEndState;
 	public string sleepStateName;
 	private CharacterControllerStateTrigger sleepState;
 	public string fireStateName;
@@ -43,10 +45,10 @@ public class BearController : MonoBehaviour {
 	public BearAnimationController m_animC;
 
 	//States to know when we can do things
-	private bool isIdle = false;
+	public bool isIdle = false;
 	private bool isAsleep = true;
 	private bool isAttacking = false;
-	private bool isAiming = false;
+	public bool isAiming = false;
 	private bool isFiring = false;
 
 	Action enable(bool val){
@@ -74,10 +76,14 @@ public class BearController : MonoBehaviour {
 			attackState.onExit += disableAttacking;
 		}
 
-		if (m_animC.getControllerTrigger (aimReadyStateName, out aimReadyState))
+		if (m_animC.getControllerTrigger (startAimStateName, out aimStartState))
 		{
-			aimReadyState.onEnter += enableAiming;
-			aimReadyState.onExit += disableAiming;
+			aimStartState.onEnter += enableAiming;
+		}
+
+		if (m_animC.getControllerTrigger (endAimStateName, out aimEndState))
+		{
+			aimEndState.onExit += disableAiming;
 		}
 
 		if (m_animC.getControllerTrigger (fireStateName, out fireState))
@@ -126,6 +132,13 @@ public class BearController : MonoBehaviour {
 			moverBehaviour.updateInput (Vector3.zero);
 			m_camControls.changeCamera (runningCam);
 			m_animC.endAim ();
+		}
+	}
+
+	public void fireGrenade(){
+		if (isAiming && !isFiring)
+		{
+			m_animC.shootGrenade ();
 		}
 	}
 

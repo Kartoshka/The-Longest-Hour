@@ -832,6 +832,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35d9362108032a945bbe50489c220592, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1294921947 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4663505294646518, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 1989165394}
 --- !u!1 &1308429595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8740ba7d56d146ae8b46870ef783d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedTransform: {fileID: 0}
+  trackedTransform: {fileID: 1294921947}
   m_animator: {fileID: 126055924}
   m_idleParam: idle
   m_attackParam: isAttacking
@@ -1253,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCamera: {fileID: 2138805139}
+  activeCamera: {fileID: 0}
 --- !u!1001 &1989165394
 Prefab:
   m_ObjectHideFlags: 0
@@ -1407,6 +1413,16 @@ Prefab:
       propertyPath: m_animC
       value: 
       objectReference: {fileID: 1663792788}
+    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: startAimStateName
+      value: CannonReady
+      objectReference: {fileID: 0}
+    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: endAimStateName
+      value: CannonRelease
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
   m_IsPrefabParent: 0

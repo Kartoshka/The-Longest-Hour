@@ -76,7 +76,7 @@ public class BearAnimationController : MonoBehaviour {
 
 	public void endAim()
 	{
-		if (!m_animator.GetBool (m_aimParam))
+		if (m_animator.GetBool (m_aimParam))
 		{
 			m_animator.SetBool (m_aimParam, false);
 		}

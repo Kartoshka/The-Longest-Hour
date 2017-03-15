@@ -17127,6 +17127,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1577543358863858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4399948607721808}
+  - component: {fileID: 114869749541300302}
+  m_Layer: 0
+  m_Name: AnimationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1578120376978510
 GameObject:
   m_ObjectHideFlags: 1
@@ -22234,8 +22250,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199675666265128}
+  - component: {fileID: 114572778500229582}
   m_Layer: 0
-  m_Name: Cameras
+  m_Name: Camera Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25901,6 +25918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287567500097182}
   - component: {fileID: 114301582777173366}
+  - component: {fileID: 114001973541061048}
   m_Layer: 0
   m_Name: BearController
   m_TagString: Untagged
@@ -30724,7 +30742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676916042656872}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4029224677831710
 Transform:
@@ -37076,7 +37094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676916042656872}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4250984347058810
 Transform:
@@ -37999,7 +38017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676916042656872}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4287615195150574
 Transform:
@@ -41122,6 +41140,19 @@ Transform:
   - {fileID: 4081329043820948}
   - {fileID: 4541589841026026}
   m_Father: {fileID: 4236215414628848}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4399948607721808
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577543358863858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4676916042656872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4400341757089794
@@ -48241,7 +48272,7 @@ Transform:
   - {fileID: 4873248899749226}
   - {fileID: 4480568847333548}
   m_Father: {fileID: 4676916042656872}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4663542376266878
 Transform:
@@ -48724,11 +48755,12 @@ Transform:
   m_LocalPosition: {x: 176.4, y: 0.5, z: -185.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4399948607721808}
   - {fileID: 4287567500097182}
   - {fileID: 4250624742239290}
   - {fileID: 4663505294646518}
-  - {fileID: 4027828628188478}
   - {fileID: 4199675666265128}
+  - {fileID: 4027828628188478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52104,7 +52136,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285396953497510}
-  m_LocalRotation: {x: -0.03564107, y: 0.548476, z: 0.5692367, w: 0.611452}
+  m_LocalRotation: {x: -0.035641067, y: 0.5484759, z: 0.56923664, w: 0.6114519}
   m_LocalPosition: {x: 0.07278174, y: -0.17817244, z: 0.15935759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55503,7 +55535,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985465690977874}
-  m_LocalRotation: {x: 0.6520108, y: 0.27364576, z: 0.6520108, w: -0.27364576}
+  m_LocalRotation: {x: 0.65201074, y: 0.27364573, z: 0.65201074, w: -0.27364573}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -57642,6 +57674,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114001973541061048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865315940162308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4992e04d4944a4a80fcf55b209ea59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bearCameras: {fileID: 114572778500229582}
+  m_bearControls: {fileID: 114301582777173366}
 --- !u!114 &114136612259491140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57671,16 +57716,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ae9b49774354c01b9acbb34054d580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   runningCam: {fileID: 114983130417015822}
-  moverBehaviour: {fileID: 114136612259491140}
-  m_animator: {fileID: 95879998424068704}
-  m_attackParam: isAttacking
-  m_runSpeedParam: speedScale
-  m_aimParam: 
-  aimingModule: {fileID: 0}
   aimCam: {fileID: 114903739070602264}
-  test: 0
+  m_camControls: {fileID: 114572778500229582}
+  moverBehaviour: {fileID: 114136612259491140}
+  aimingModule: {fileID: 0}
+  idleStateName: IdleToRunBlend
+  attackStateName: Attack1
+  startAimStateName: CannonReady
+  endAimStateName: CannonRelease
+  sleepStateName: Resting_Loop
+  fireStateName: CannonFire
+  m_animC: {fileID: 114869749541300302}
+  isIdle: 0
+  isAiming: 0
 --- !u!114 &114304247728654988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57863,6 +57912,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grenadeControllerComponent: {fileID: 114538273771620466}
+--- !u!114 &114572778500229582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757144231876718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2229064a2203421c93bab996a70974b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCamera: {fileID: 114983130417015822}
+  activeCamera: {fileID: 0}
 --- !u!114 &114599938532382322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57972,6 +58034,25 @@ MonoBehaviour:
         duration: 0
   m_transformComponent: {fileID: 4250624742239290}
   m_alwaysUpdate: 1
+--- !u!114 &114869749541300302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577543358863858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8740ba7d56d146ae8b46870ef783d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedTransform: {fileID: 4663505294646518}
+  m_animator: {fileID: 95879998424068704}
+  m_idleParam: idle
+  m_attackParam: isAttacking
+  m_runSpeedParam: speedScale
+  m_aimParam: isAiming
+  m_grenadeParam: fire
+  m_moveDistanceScale: 1
 --- !u!114 &114871725821389710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58030,7 +58111,7 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114888267780819956}
-  distanceFromTarget: 0
+  distanceFromTarget: 5
   angleFromTarget: {x: 0, y: 0}
   pitchChangeSpeed: 5
   yawChangeSpeed: 5

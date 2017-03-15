@@ -61,8 +61,20 @@ public class BearInputController : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1"))
 		{
 			m_bearControls.doAttack ();
+		} 
+
+		if (Input.GetButton ("AimBear"))
+		{
+			m_bearControls.startAim ();
+		} else
+		{
+			m_bearControls.stopAim ();
 		}
 
+
+		if(Input.GetButton("FireBear")){
+			m_bearControls.fireGrenade ();
+		}
 		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
 
 	
