@@ -78,7 +78,7 @@ Material:
     m_Floats:
     - first:
         name: _AlphaSlider
-      second: 0.7
+      second: 1
     - first:
         name: _BumpScale
       second: 1

@@ -44,7 +44,12 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	private int m_recordLength = 200;
 	private PhysicalState m_lastRecordedState;
 
-	private float m_timeBetweenRecordings = 0.02f;
+	public bool m_isTimeBasedRecording = false;
+	public bool m_isDistanceBasedRecording = true;
+
+	public float m_positionalDifferenceThreshold = 0.01f;
+	public float m_timeBetweenRecordings = 0.02f;
+
 	private float m_timeSinceLastRecord = 0.0f;
 
 	#endregion
@@ -89,7 +94,8 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	public void updateForward(float deltaTime)
 	{
 		m_timeSinceLastRecord -= deltaTime;
-		if (m_timeSinceLastRecord <= 0)
+		if ((m_isTimeBasedRecording && m_timeSinceLastRecord <= 0) 
+			|| (m_isDistanceBasedRecording && Vector3.Distance(m_rigidBody.position, m_lastRecordedState.position) > m_positionalDifferenceThreshold))
 		{
 			m_timeSinceLastRecord = m_timeBetweenRecordings;
 			recordState();

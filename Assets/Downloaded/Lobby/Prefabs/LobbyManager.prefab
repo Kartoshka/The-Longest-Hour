@@ -3240,7 +3240,7 @@ MonoBehaviour:
   m_MatchPort: 443
   matchName: default
   matchSize: 4
-  isNetworkActive: 1
+  isNetworkActive: 0
   matchMaker: {fileID: 0}
   m_ShowLobbyGUI: 0
   m_MaxPlayers: 3
