@@ -21,8 +21,9 @@ public class BearController : MonoBehaviour {
 	public InputVelocityMoverBehaviour moverBehaviour;
 
 	[Space(5)]
-	[Header("Aiming")]
-	public GameObject aimingModule;
+	[Header("Actions")]
+	public GrenadeControllerComponent grenadeShooter;
+	public TagSingle bearSwipeTag;
 
 
 	[Space(5)]
@@ -45,10 +46,10 @@ public class BearController : MonoBehaviour {
 	public BearAnimationController m_animC;
 
 	//States to know when we can do things
-	public bool isIdle = false;
+	private bool isIdle = false;
 	private bool isAsleep = true;
 	private bool isAttacking = false;
-	public bool isAiming = false;
+	private bool isAiming = false;
 	private bool isFiring = false;
 
 	Action enable(bool val){
@@ -103,7 +104,8 @@ public class BearController : MonoBehaviour {
 		if (isIdle)
 		{
 			moverBehaviour.updateInput (velocity);
-		} else
+		}
+		else
 		{
 			moverBehaviour.updateInput (Vector3.zero);
 		}
@@ -114,6 +116,7 @@ public class BearController : MonoBehaviour {
 		{
 			moverBehaviour.updateInput (Vector3.zero);
 			m_animC.doAttack ();
+			bearSwipeTag.toggleTagging ();
 		}
 	}
 
@@ -139,6 +142,7 @@ public class BearController : MonoBehaviour {
 		if (isAiming && !isFiring)
 		{
 			m_animC.shootGrenade ();
+			grenadeShooter.FireProjectile ();
 		}
 	}
 
@@ -181,5 +185,14 @@ public class BearController : MonoBehaviour {
 	}
 	public void disableFiring(){
 		isFiring = false;
+	}
+
+
+	private Vector3 getAimOffsetCharacter(){
+		Vector3 camForward = m_camControls.getActive ().transform.forward;
+		camForward.y = 0;
+		Vector3 playerForward = moverBehaviour.transform.position;
+		playerForward.y = 0;
+		return (camForward - playerForward).normalized;
 	}
 }

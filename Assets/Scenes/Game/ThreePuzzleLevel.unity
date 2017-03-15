@@ -160,45 +160,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 26607685}
---- !u!95 &126055924 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95879998424068704, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
 --- !u!1 &184477453 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1015017301963698, guid: 888aa35b9e5d97947bb557477db9b754,
     type: 2}
   m_PrefabInternal: {fileID: 1989165394}
---- !u!4 &184477460 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4676916042656872, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
---- !u!1 &290032667 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1865315940162308, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
---- !u!114 &290032669 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
-  m_Script: {fileID: 11500000, guid: c6ae9b49774354c01b9acbb34054d580, type: 3}
---- !u!114 &290032670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 290032667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4992e04d4944a4a80fcf55b209ea59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bearCameras: {fileID: 1683627655}
-  m_bearControls: {fileID: 290032669}
 --- !u!1 &750495414
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,11 +798,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35d9362108032a945bbe50489c220592, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1294921947 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4663505294646518, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
 --- !u!1 &1308429595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,72 +1154,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1663792786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1663792787}
-  - component: {fileID: 1663792788}
-  m_Layer: 0
-  m_Name: AnimationController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1663792787
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663792786}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 184477460}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1663792788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663792786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8740ba7d56d146ae8b46870ef783d26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackedTransform: {fileID: 1294921947}
-  m_animator: {fileID: 126055924}
-  m_idleParam: idle
-  m_attackParam: isAttacking
-  m_runSpeedParam: speedScale
-  m_aimParam: isAiming
-  m_grenadeParam: fire
-  m_moveDistanceScale: 1
---- !u!1 &1683627654 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1757144231876718, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
---- !u!114 &1683627655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1683627654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2229064a2203421c93bab996a70974b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCamera: {fileID: 2138805139}
-  activeCamera: {fileID: 0}
 --- !u!1001 &1989165394
 Prefab:
   m_ObjectHideFlags: 0
@@ -1266,11 +1161,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: events.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4676916042656872, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
       propertyPath: m_LocalPosition.x
       value: 176.4
@@ -1335,100 +1225,6 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.27364573
       objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: m_aimParam
-      value: isAiming
-      objectReference: {fileID: 0}
-    - target: {fileID: 114903739070602264, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: distanceFromTarget
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1637975399610426, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663505294646518, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027828628188478, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199675666265128, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4287567500097182, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250624742239290, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1757144231876718, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
-      propertyPath: m_Name
-      value: Camera Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: idleStateName
-      value: IdleToRunBlend
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: attackStateName
-      value: Attack1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: aimReadyStateName
-      value: CannonReady
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: sleepStateName
-      value: Resting_Loop
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: fireStateName
-      value: CannonFire
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: m_camControls
-      value: 
-      objectReference: {fileID: 1683627655}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: m_animC
-      value: 
-      objectReference: {fileID: 1663792788}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: startAimStateName
-      value: CannonReady
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: endAimStateName
-      value: CannonRelease
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &2138805139 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114983130417015822, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
-  m_Script: {fileID: 11500000, guid: 3bf88306375934ec9bea28c5f89f590f, type: 3}

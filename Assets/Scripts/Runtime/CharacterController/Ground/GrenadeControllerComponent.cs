@@ -22,7 +22,7 @@ public class GrenadeControllerComponent : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	private bool m_canFireProjectile = false;
+	private bool m_canFireProjectile = true;
 
 	private Observer<GrenadeControllerComponent> m_observer;    // For the networked component to be notified when projectile is fired.
 	private Observer<CollisionObserver>.Listener m_collisionListener;   // For listening to when the character has picked up a projectile.
@@ -51,7 +51,7 @@ public class GrenadeControllerComponent : MonoBehaviour
 		m_canFireProjectile = true;
 	}
 
-	void FireProjectile()
+	public void FireProjectile()
 	{
 		//if(Network.peerType.Equals(NetworkPeerType.Disconnected))
 		//{
@@ -121,10 +121,10 @@ public class GrenadeControllerComponent : MonoBehaviour
 
 	public void update()
 	{
-		if (m_canFireProjectile && Input.GetButtonDown("Fire1"))
-		{
-			FireProjectile();
-		}
+//		if (m_canFireProjectile && Input.GetButtonDown("Fire1"))
+//		{
+//			FireProjectile();
+//		}
 	}
 
 	// Update is called once per frame
