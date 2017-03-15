@@ -37106,8 +37106,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384996344702180}
-  m_LocalRotation: {x: -0.00031898502, y: -0.3826834, z: -0.00013212793, w: 0.9238795}
-  m_LocalPosition: {x: 1.6971283, y: 0, z: -57.452835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6971283, y: 0.05, z: -57.452835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676916042656872}
@@ -57747,6 +57747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ae9b49774354c01b9acbb34054d580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetFollower: {fileID: 114529071121646760}
   runningCam: {fileID: 114983130417015822}
   aimCam: {fileID: 114903739070602264}
   m_camControls: {fileID: 114572778500229582}
@@ -57760,8 +57761,6 @@ MonoBehaviour:
   sleepStateName: Resting_Loop
   fireStateName: CannonFire
   m_animC: {fileID: 114869749541300302}
-  isIdle: 0
-  isAiming: 0
 --- !u!114 &114304247728654988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57883,6 +57882,7 @@ MonoBehaviour:
   m_rotationLerpScale: 100
   m_faceTarget: 1
   m_matchTargetForward: 0
+  m_matchTargetForwardAtStart: 1
   m_offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114538273771620466
 MonoBehaviour:

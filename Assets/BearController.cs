@@ -10,6 +10,9 @@ using System.Collections.Generic;
 
 public class BearController : MonoBehaviour {
 		
+	//fixes bug where bear is looking at floor during sleep
+	public FollowTarget targetFollower;
+
 	[Header("Cameras")]
 	public Cinemachine3rdPerson runningCam;
 	public Cinemachine3rdPerson aimCam;
@@ -153,9 +156,19 @@ public class BearController : MonoBehaviour {
 	 */
 
 	public void enableSleeping(){
+		if (targetFollower)
+		{
+			targetFollower.m_faceTarget = false;
+			targetFollower.m_matchTargetForward = true;
+		}
 		isAsleep = true;
 	}
 	public void disableSleeping(){
+		if (targetFollower)
+		{
+			targetFollower.m_faceTarget = true;
+			targetFollower.m_matchTargetForward = false;
+		}
 		isAsleep = false;
 	}
 
