@@ -10,14 +10,17 @@ public class CharacterControllerStateTrigger : StateMachineBehaviour {
 	public delegate void OnStateChange();
 
 	public string s_id;
-	public event Action onEnter;
-	public event Action onExit;
+	public event OnStateChange onEnter;
+	public event OnStateChange onExit;
 
 
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		onEnter ();
+		if (onEnter != null)
+		{
+			onEnter ();
+		}
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,7 +30,10 @@ public class CharacterControllerStateTrigger : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		onExit ();
+		if (onExit != null)
+		{
+			onExit ();
+		}
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

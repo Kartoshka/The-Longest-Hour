@@ -20,20 +20,20 @@ public class BearInputController : MonoBehaviour {
 	void Update () {
 		//Camera movement input
 		float verticalInput;
-		if (debug && !debug.m_useWorldCam)
+//		if (debug && !debug.m_useWorldCam)
 			verticalInput = Input.GetAxis("VerticalRightStick");
-		else
-			verticalInput = 0;
+//		else
+//			verticalInput = 0;
 
 
 		float horizontalInput;
-		if (debug && !debug.m_useWorldCam)
+//		if (debug && !debug.m_useWorldCam)
 			horizontalInput = Input.GetAxis("HorizontalRightStick");
-		else
-			horizontalInput = 0;
+//		else
+//			horizontalInput = 0;
 
 		//Move active camera
-		if (debug && !debug.m_useWorldCam)
+		if (bearCameras.getActive())
 		{
 			bearCameras.getActive().increasePitch(-verticalInput);
 			bearCameras.getActive().increaseYaw(horizontalInput);
@@ -60,10 +60,10 @@ public class BearInputController : MonoBehaviour {
 
 		if (Input.GetButtonDown ("Fire1"))
 		{
-			m_bearControls.attack ();
+			m_bearControls.doAttack ();
 		}
 
-		m_bearControls.moveBear (new Vector3 (horizontalLeftStick, 0, verticalLeftStick));
+		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
 
 	
 	}

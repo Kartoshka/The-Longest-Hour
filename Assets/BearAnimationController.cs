@@ -5,6 +5,8 @@ using UnityEngine;
 public class BearAnimationController : MonoBehaviour {
 
 
+	public Transform trackedTransform;
+
 	[Space(5)]
 	[Header("Animation")]
 	private DebugEntities debug;
@@ -20,6 +22,18 @@ public class BearAnimationController : MonoBehaviour {
 	private Vector3 m_prevPosition;
 	// Update is called once per frame
 
+	void Start()
+	{
+		if (trackedTransform == null)
+		{
+			m_transform = this.transform;
+		} else
+		{
+			m_transform = trackedTransform;
+		}
+
+		m_prevPosition = m_transform.position;
+	}
 
 	void Update () {
 		updateRun ();
@@ -27,9 +41,10 @@ public class BearAnimationController : MonoBehaviour {
 
 
 	public void updateRun(){
-		Vector3 position = this.transform.position;
+		Vector3 position = m_transform.position;
 		float runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
 		m_prevPosition = position;
+
 		if (m_animator.GetBool (m_idleParam))
 		{	
 			m_animator.SetFloat(m_runSpeedParam, runSpeed);

@@ -180,6 +180,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1865315940162308, guid: 888aa35b9e5d97947bb557477db9b754,
     type: 2}
   m_PrefabInternal: {fileID: 1989165394}
+--- !u!114 &290032669 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 1989165394}
+  m_Script: {fileID: 11500000, guid: c6ae9b49774354c01b9acbb34054d580, type: 3}
 --- !u!114 &290032670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bearCameras: {fileID: 1683627655}
+  m_bearControls: {fileID: 290032669}
 --- !u!1 &750495414
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +468,11 @@ Prefab:
         type: 2}
       propertyPath: angleFromTarget.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955164524268154, guid: a9ee51c7ac0183a4883672873f1c4d63,
+        type: 2}
+      propertyPath: m_moveDistanceScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9ee51c7ac0183a4883672873f1c4d63, type: 2}
@@ -952,6 +964,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114189951505913256, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
+        type: 2}
+      propertyPath: m_activeOnStartObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4458647339820172, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1211,13 +1228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8740ba7d56d146ae8b46870ef783d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackedTransform: {fileID: 0}
   m_animator: {fileID: 126055924}
   m_idleParam: idle
   m_attackParam: isAttacking
   m_runSpeedParam: speedScale
   m_aimParam: isAiming
   m_grenadeParam: fire
-  m_moveDistanceScale: 0
+  m_moveDistanceScale: 1
 --- !u!1 &1683627654 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1757144231876718, guid: 888aa35b9e5d97947bb557477db9b754,

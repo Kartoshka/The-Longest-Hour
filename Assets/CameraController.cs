@@ -9,7 +9,7 @@ using Cinemachine;
 public class CameraController : MonoBehaviour {
 
 	public Cinemachine3rdPerson defaultCamera;
-	private Cinemachine3rdPerson activeCamera;
+	public Cinemachine3rdPerson activeCamera;
 
 	
 	public void Update(){

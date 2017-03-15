@@ -43,11 +43,11 @@ public class BearController : MonoBehaviour {
 	public BearAnimationController m_animC;
 
 	//States to know when we can do things
-	public bool isIdle = false;
-	public bool isAsleep = false;
-	public bool isAttacking = false;
-	public bool isAiming = false;
-	public bool isFiring = false;
+	private bool isIdle = false;
+	private bool isAsleep = true;
+	private bool isAttacking = false;
+	private bool isAiming = false;
+	private bool isFiring = false;
 
 	Action enable(bool val){
 		return () => val = true;
@@ -57,31 +57,39 @@ public class BearController : MonoBehaviour {
 		return () => val = true;
 	}
 
+
+
 	void Start () {
+
 
 		if (m_animC.getControllerTrigger (idleStateName, out idleState))
 		{
-			Debug.Log ("gotIdle");
-			idleState.onEnter += enable (isIdle);
-			idleState.onExit += disable (isIdle);
+			idleState.onEnter += enableIdling;
+			idleState.onExit += disableIdling;
 		}
 
 		if (m_animC.getControllerTrigger (attackStateName, out attackState))
 		{
-			attackState.onEnter += enable (isAttacking);
-			attackState.onExit += disable (isAttacking);
+			attackState.onEnter += enableAttacking;
+			attackState.onExit += disableAttacking;
 		}
 
 		if (m_animC.getControllerTrigger (aimReadyStateName, out aimReadyState))
 		{
-			aimReadyState.onEnter += enable (isAiming);
-			aimReadyState.onExit += disable (isAiming);
+			aimReadyState.onEnter += enableAiming;
+			aimReadyState.onExit += disableAiming;
 		}
 
 		if (m_animC.getControllerTrigger (fireStateName, out fireState))
 		{
-			fireState.onEnter += enable (isFiring);
-			fireState.onExit += disable (isFiring);
+			fireState.onEnter += enableFiring;
+			fireState.onExit += disableFiring;
+		}
+
+		if (m_animC.getControllerTrigger (sleepStateName, out sleepState))
+		{
+			sleepState.onEnter += enableSleeping;
+			sleepState.onExit += disableSleeping;
 		}
 	}
 		
@@ -95,7 +103,7 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
-	public void attack(){
+	public void doAttack(){
 		if ((isAsleep || isIdle) && !isAttacking)
 		{
 			moverBehaviour.updateInput (Vector3.zero);
@@ -103,7 +111,7 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
-	public void aim(){
+	public void startAim(){
 		if (isIdle && !isAiming)
 		{
 			moverBehaviour.updateInput (Vector3.zero);
@@ -112,7 +120,7 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
-	public void disableAim(){
+	public void stopAim(){
 		if (isAiming && !isIdle)
 		{
 			moverBehaviour.updateInput (Vector3.zero);
@@ -122,94 +130,43 @@ public class BearController : MonoBehaviour {
 	}
 
 
-//	void Update () {
-//
-//		if (isIdle)
-//		{
-//			currentState = states.Idle;
-//		}
-//
-//		//Bear paw swipe
-//		if (Input.GetButtonDown ("Fire1") && (currentState == states.Idle || currentState == states.Sleep))
-//		{
-//			currentState = states.Attacking;
-//			m_animator.SetBool ("idle", false);
-//		} else if (Input.GetButtonDown ("Jump") && (currentState == states.Idle))
-//		{
-//			aim ();
-//			currentState = states.Aiming;
-//		} 
-//		else if (!Input.GetButton ("Jump") && (currentState == states.Aiming))
-//		{
-//			
-//			currentState = states.Idle;
-//		} 
-//		else if (currentState == states.Idle && normalizedRunSpeed > 0)
-//		{ 
-//			currentState = states.Running;
-//		}
-//
-//			
-//		switch (currentState)
-//		{
-//		case states.Aiming:
-//			changeActiveCam (aimCam);
-//			run (Vector3.zero, 0);
-//			break;
-//		case states.Attacking:
-//			run (Vector3.zero, 0);
-//			m_animator.SetBool (m_attackParam, true);
-//			break;
-//		case states.Running:
-//			run(new Vector3 (verticalLeftStick, 0, horizontalLeftStick),normalizedRunSpeed);
-//			break;
-//		case states.Sleep:
-//			break;
-//		case states.Idle:
-//			m_animator.SetBool (m_aimParam, false);
-//			m_animator.SetBool (m_attackParam, false);
-//			run (Vector3.zero, 0);
-//			break;
-//		}
-//			
-//	}
-//
-//	public void moveBear(Vector3 velocity){
-//		
-//	}
-//
-//	private void aim(){
-//		//Look in direction of camera, fam :/
-//		changeActiveCam (aimCam);
-//		m_animator.SetBool (m_aimParam, true);
-//		m_animator.SetBool ("idle", false);
-//	}
-//		
-//	
-//	private void run(Vector3 moveSpeed, float normalizedRunSpeed){
-//		changeActiveCam (runningCam);
-//
-//		//Update animation
-//		m_animator.SetFloat (m_runSpeedParam, normalizedRunSpeed);
-//		//Update moverbehaviour
-//		moverBehaviour.updateInput (moveSpeed);
-//
-//		moverBehaviour.enabled = moveSpeed.magnitude>0.0;
-//
-//	}
-//
-//	private void changeActiveCam(Cinemachine3rdPerson newCam){
-//		Debug.Log (newCam.gameObject.name);
-//		if (activeCamera == newCam)
-//		{
-//			return;
-//		}
-//
-//		if (activeCamera != null)
-//		{
-//			activeCamera.gameObject.SetActive (false);
-//		}
-//		activeCamera = newCam;
-//		activeCamera.gameObject.SetActive (true);
-//	}
+	/*
+	 * All the flag setters for our booleans.  
+	 * 
+	 */
+
+	public void enableSleeping(){
+		isAsleep = true;
+	}
+	public void disableSleeping(){
+		isAsleep = false;
+	}
+
+	public void enableIdling(){
+		isIdle = true;
+	}
+	public void disableIdling(){
+		isIdle = false;
+	}
+
+	public void enableAttacking(){
+		isAttacking = true;
+	}
+	public void disableAttacking(){
+		isAttacking = false;
+	}
+
+	public void enableAiming(){
+		isAiming = true;
+	}
+	public void disableAiming(){
+		isAiming = false;
+	}
+
+	public void enableFiring(){
+		isFiring = true;
+	}
+	public void disableFiring(){
+		isFiring = false;
+	}
 }
