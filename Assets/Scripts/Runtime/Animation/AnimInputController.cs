@@ -49,7 +49,7 @@ public class AnimInputController : MonoBehaviour
 	{
 		m_transform = this.transform;
 		m_prevPosition = m_transform.position;
-    }
+        }
 
 	// Update is called once per frame
 	void Update()
@@ -63,7 +63,7 @@ public class AnimInputController : MonoBehaviour
 	private void ProcessInputs()
 	{
 		updateRun ();
-    }
+        }
 
 	public void updateRun()
 	{
