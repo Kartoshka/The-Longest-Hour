@@ -19,6 +19,7 @@ public class NetworkMovingEntity : NetworkBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		m_movingEntity.enabled = false; // TODO: Hack, since the AnimEvent causes this to become true;
 		if (isServer)
 		{
 			if (m_movingEntity)
