@@ -7,15 +7,46 @@ public class CarSpawnerManager : MonoBehaviour {
     public GameObject source;
     public List<GameObject> cars;
     public int carsToSpawn;
+    public bool isAffectedByTime;
+    public float timeBetweenRewinds;
+
+    bool isRewinding;
+
+    List<GameObject> carsSpawned;
 
 	// Use this for initialization
 	void Start ()
     {
+        isRewinding = false;
         for(int i = 0; i < carsToSpawn; i++)
         {
             spawnCar();
         }
 	}
+
+    void Update()
+    {
+        if(!isAffectedByTime)
+        {
+            return;
+        }
+
+        if(!isRewinding)
+        {
+            StartCoroutine(rewind());
+        }
+    }
+
+    IEnumerator rewind()
+    {
+        isRewinding = true;
+        yield return new WaitForSeconds(timeBetweenRewinds);
+        foreach(GameObject car in carsSpawned)
+        {
+            car.transform.position = car.transform.position - car.transform.forward;
+        }
+        isRewinding = false;
+    }
 	
 	
     public void spawnCar()
@@ -26,7 +57,11 @@ public class CarSpawnerManager : MonoBehaviour {
         float y = source.transform.position.y + Random.Range(-20.0f, 20.0f);
         float z = source.transform.position.z + Random.Range(-20.0f, 20.0f);
 
-        Instantiate(car, new Vector3(x, y, z), transform.rotation);
+        GameObject spawnedCar = Instantiate(car, new Vector3(x, y, z), transform.rotation);
         
+        if(isAffectedByTime)
+        {
+            carsSpawned.Add(spawnedCar);
+        }
     }
 }
