@@ -25,6 +25,7 @@ TagManager:
   - Car
   - generatorBall
   - CameraEffects
+  - LevelManager
   layers:
   - Default
   - TransparentFX
