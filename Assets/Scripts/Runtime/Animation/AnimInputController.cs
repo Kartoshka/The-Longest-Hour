@@ -11,12 +11,13 @@ public class AnimInputController : MonoBehaviour
 	#region GameObjects
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public Transform m_characterTransform;
+	public Rigidbody m_rigidBody;
 	public Animator m_animator;
 	public string m_runSpeedParam;
 	public string m_attackParam;
 
 	public float m_moveDistanceScale;
+	private Transform m_transform;
 	private Vector3 m_prevPosition;
 
 	#endregion
@@ -46,10 +47,8 @@ public class AnimInputController : MonoBehaviour
 
 	void Start()
 	{
-		if(m_characterTransform)
-		{
-			m_prevPosition = m_characterTransform.position;
-		}
+		m_transform = this.transform;
+		m_prevPosition = m_transform.position;
     }
 
 	// Update is called once per frame
@@ -63,21 +62,18 @@ public class AnimInputController : MonoBehaviour
 
 	private void ProcessInputs()
 	{
-		float runSpeed = 0;
-        if (m_characterTransform)
-		{
-			Vector3 position = m_characterTransform.position;
-			runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
-			m_prevPosition = position;
-		}
+		updateRun ();
+    }
+
+	public void updateRun()
+	{
+		Vector3 position = m_transform.position;
+		float runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
+		m_prevPosition = position;
 
 		//float normalizedRunSpeed = velocity.normalized.x;
 		m_animator.SetFloat(m_runSpeedParam, runSpeed);
-		if(Input.GetButtonDown("Fire1"))
-		{
-			doAttack();
-        }
-    }
+	}
 
 	public void doAttack()
 	{
