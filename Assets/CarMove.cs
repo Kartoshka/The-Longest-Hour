@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CarMove : MonoBehaviour {
 
+    public float timeUntilDeath;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        StartCoroutine(killMe());
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    IEnumerator killMe()
+    {
+        yield return new WaitForSeconds(timeUntilDeath);
+        Destroy(gameObject);
+    }
 }
