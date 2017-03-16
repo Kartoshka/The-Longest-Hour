@@ -15,8 +15,11 @@ public class EntityVision : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	public const string m_obstacleTag = "Ground";
+	public const string m_enemyTag = "Player";
+
 	private List<GameObject> m_observedObstacles = new List<GameObject>();
-	private static string m_observationTag = "terrain"; 
+	private List<GameObject> m_observedEnemies = new List<GameObject>();
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -58,17 +61,30 @@ public class EntityVision : MonoBehaviour
 
 	void OnTriggerEnter(Collider hit)
 	{
-		if (hit.tag.Equals(m_observationTag))
+		switch(hit.tag)
 		{
-			m_observedObstacles.Add(hit.gameObject);
+			case (m_obstacleTag):
+			{
+				m_observedObstacles.Add(hit.gameObject);
+				break;
+			}
+			case (m_enemyTag):
+			{
+				m_observedEnemies.Add(hit.gameObject);
+				break;
+			}
 		}
 	}
 
 	void OnTriggerExit(Collider hit)
 	{
-		if (hit.tag.Equals(m_observationTag))
+		switch (hit.tag)
 		{
-			m_observedObstacles.Remove(hit.gameObject);
+			case (m_obstacleTag):
+			{
+				m_observedObstacles.Remove(hit.gameObject);
+				break;
+			}
 		}
 	}
 

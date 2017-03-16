@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class NetworkActivation : NetworkBehaviour {
 
-	public List<GameObject> m_localOnlyObjects = new List<GameObject>();
-	public List<MonoBehaviour> m_localOnlyBehaviours = new List<MonoBehaviour>();
+	public List<GameObject> m_offliineOnlyObjects = new List<GameObject>();
+	public List<MonoBehaviour> m_offlineOnlyBehaviours = new List<MonoBehaviour>();
 
 	// Use this for initialization
 	void Start ()
@@ -30,11 +30,11 @@ public class NetworkActivation : NetworkBehaviour {
 
 	private void setActive(bool isActive)
 	{
-		foreach (GameObject gameObject in m_localOnlyObjects)
+		foreach (GameObject gameObject in m_offliineOnlyObjects)
 		{
 			gameObject.SetActive(isActive);
 		}
-		foreach (MonoBehaviour behaviour in m_localOnlyBehaviours)
+		foreach (MonoBehaviour behaviour in m_offlineOnlyBehaviours)
 		{
 			behaviour.enabled = isActive;
 		}

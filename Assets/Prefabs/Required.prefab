@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4246132688699306}
   - component: {fileID: 114744868489662776}
   - component: {fileID: 114622225424294416}
+  - component: {fileID: 114472134273107464}
   m_Layer: 0
   m_Name: SpawnPointManager
   m_TagString: Untagged
@@ -147,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040242369925012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4246132688699306}
@@ -245,7 +246,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965607486954382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 16.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4246132688699306}
@@ -287,12 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554f51f46cd648844bc24d7bf743f803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeOnStartObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_activeOnStartObjects: []
   m_activeOnStartComponents: []
   m_deactiveOnStartObjects: []
   m_deactiveOnStartComponents: []
@@ -307,11 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_localOnlyObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_localOnlyBehaviours: []
+  m_offliineOnlyObjects: []
+  m_offlineOnlyBehaviours: []
 --- !u!114 &114368194762174992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,6 +337,20 @@ MonoBehaviour:
     i15: 228
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114472134273107464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140092877205380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eeea99aa15283459052431e89c3390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabNetworkIndex: 2
+  m_enemySpawnLocations: []
+  maxEnemies: 1
 --- !u!114 &114533655480894082
 MonoBehaviour:
   m_ObjectHideFlags: 1
