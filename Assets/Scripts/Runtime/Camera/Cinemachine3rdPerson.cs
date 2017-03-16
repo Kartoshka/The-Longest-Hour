@@ -135,5 +135,19 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 		}
 	}
 
+	public void resetPitchYaw(){
+		pitch = 0;
+		yaw = 0; 
+	}
+
+	public void disableCamera(){
+		controlledView.gameObject.SetActive (false);
+	}
+
+	public void enableCamera(){
+		controlledView.gameObject.SetActive (true);
+	}
+
+
 
 }
