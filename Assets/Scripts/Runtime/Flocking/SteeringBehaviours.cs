@@ -429,17 +429,6 @@ public class SteeringBehaviours : MonoBehaviour
 		m_previousPosition = m_movingEntity.transform.position;
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		ProcessInputs();
-	}
-
-	private void ProcessInputs()
-	{
-
-	}
-
 	#endregion
 
 	//public void Update_Path(){

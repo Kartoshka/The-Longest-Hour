@@ -16,6 +16,8 @@ public class MovingEntity : MonoBehaviour
 	//	private GameWorld _gameWorld; //Reference to the GameWorld to view objects
 	private SteeringBehaviours m_steering; //The steering behaviours this entity uses
 
+	private bool m_canUpdate = true;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -26,6 +28,8 @@ public class MovingEntity : MonoBehaviour
 	public float getMaxSpeed() { return m_maxSpeed; }
 
 	public float getMaxForce() { return m_maxForce; }
+
+	public void setCanUpdate(bool canUpdate) { m_canUpdate = canUpdate; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -43,24 +47,32 @@ public class MovingEntity : MonoBehaviour
 		m_steering = this.GetComponent<SteeringBehaviours>();
 	}
 
+	public void update()
+	{
+		if(m_canUpdate)
+		{
+			Vector3 steeringForce = m_steering.CalculateSteeringForce();
+			Vector3 acceleration = steeringForce / m_mass;
+			m_velocity += acceleration * Time.deltaTime;
+			float magnitude = Vector3.Magnitude(m_velocity);
+			if (magnitude > m_maxSpeed)
+			{
+				m_velocity -= (m_velocity.normalized * (magnitude - m_maxSpeed));
+			}
+			Vector3 position = this.transform.position + m_velocity;// * Time.deltaTime;
+			this.transform.position = position;
+			if (m_velocity.magnitude > 0.0001f)
+			{
+				this.transform.forward = m_velocity.normalized; //Rotate the entity towards direction travelled
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
-		Vector3 steeringForce = m_steering.CalculateSteeringForce();
-		Vector3 acceleration = steeringForce / m_mass;
-		m_velocity += acceleration * Time.deltaTime;
-		float magnitude = Vector3.Magnitude(m_velocity);
-		if (magnitude > m_maxSpeed)
-		{
-			m_velocity -= (m_velocity.normalized * (magnitude - m_maxSpeed));
-		}
-		Vector3 position = this.transform.position + m_velocity;// * Time.deltaTime;
-		this.transform.position = position;
-		if (m_velocity.magnitude > 0.0001f)
-		{
-			this.transform.forward = m_velocity.normalized; //Rotate the entity towards direction travelled
-		}
-	}
+		update();
+    }
 
 	#endregion
 }

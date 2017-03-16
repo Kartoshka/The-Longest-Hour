@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: dde6ea0d6fb13f040811a4b288694bd8
+timeCreated: 1489658762
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body_base
+    100002: body_main
+    100004: ikHandle1
+    100006: ikHandle2
+    100008: ikHandle3
+    100010: leg1
+    100012: leg2
+    100014: leg3
+    100016: leg_1
+    100018: leg_1 1
+    100020: leg_1 2
+    100022: leg_2
+    100024: leg_2 1
+    100026: leg_2 2
+    100028: leg_3
+    100030: leg_3 1
+    100032: leg_3 2
+    100034: leg_backLeft_Ctrl
+    100036: leg_backLeft_Ctrl_group
+    100038: leg_backLeft_Ctrl_group1
+    100040: leg_backLeft_joint_1
+    100042: leg_backLeft_joint_2
+    100044: leg_backLeft_joint_3
+    100046: leg_backRight_Ctrl
+    100048: leg_backRight_joint_1
+    100050: leg_backRight_joint_2
+    100052: leg_backRight_joint_3
+    100054: leg_front_Ctrl
+    100056: leg_front_Ctrl_group
+    100058: leg_front_joint_1
+    100060: leg_front_joint_2
+    100062: leg_front_joint_3
+    100064: mainCtrl
+    100066: pylonBot
+    100068: //RootNode
+    100070: root_joint
+    100072: rootCtrl
+    400000: body_base
+    400002: body_main
+    400004: ikHandle1
+    400006: ikHandle2
+    400008: ikHandle3
+    400010: leg1
+    400012: leg2
+    400014: leg3
+    400016: leg_1
+    400018: leg_1 1
+    400020: leg_1 2
+    400022: leg_2
+    400024: leg_2 1
+    400026: leg_2 2
+    400028: leg_3
+    400030: leg_3 1
+    400032: leg_3 2
+    400034: leg_backLeft_Ctrl
+    400036: leg_backLeft_Ctrl_group
+    400038: leg_backLeft_Ctrl_group1
+    400040: leg_backLeft_joint_1
+    400042: leg_backLeft_joint_2
+    400044: leg_backLeft_joint_3
+    400046: leg_backRight_Ctrl
+    400048: leg_backRight_joint_1
+    400050: leg_backRight_joint_2
+    400052: leg_backRight_joint_3
+    400054: leg_front_Ctrl
+    400056: leg_front_Ctrl_group
+    400058: leg_front_joint_1
+    400060: leg_front_joint_2
+    400062: leg_front_joint_3
+    400064: mainCtrl
+    400066: pylonBot
+    400068: //RootNode
+    400070: root_joint
+    400072: rootCtrl
+    4300000: leg_2
+    4300002: leg_3
+    4300004: leg_1
+    4300006: leg_2
+    4300008: leg_3
+    4300010: leg_1
+    4300012: leg_2
+    4300014: leg_3
+    4300016: leg_1
+    4300018: body_main
+    4300020: body_base
+    7400000: tripodBot_attack_spin
+    9500000: //RootNode
+    13700000: body_base
+    13700002: body_main
+    13700004: leg_1
+    13700006: leg_1 1
+    13700008: leg_1 2
+    13700010: leg_2
+    13700012: leg_2 1
+    13700014: leg_2 2
+    13700016: leg_3
+    13700018: leg_3 1
+    13700020: leg_3 2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: tripodBot_attack_spin
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: mainCtrl
+        weight: 1
+      - path: mainCtrl/leg_backLeft_Ctrl_group
+        weight: 1
+      - path: mainCtrl/leg_backLeft_Ctrl_group/leg_backLeft_Ctrl
+        weight: 1
+      - path: mainCtrl/leg_backLeft_Ctrl_group1
+        weight: 1
+      - path: mainCtrl/leg_backLeft_Ctrl_group1/leg_backRight_Ctrl
+        weight: 1
+      - path: mainCtrl/leg_front_Ctrl_group
+        weight: 1
+      - path: mainCtrl/leg_front_Ctrl_group/leg_front_Ctrl
+        weight: 1
+      - path: mainCtrl/rootCtrl
+        weight: 1
+      - path: pylonBot
+        weight: 1
+      - path: pylonBot/body_base
+        weight: 1
+      - path: pylonBot/body_main
+        weight: 1
+      - path: pylonBot/leg1
+        weight: 1
+      - path: pylonBot/leg1/leg_1
+        weight: 1
+      - path: pylonBot/leg1/leg_2
+        weight: 1
+      - path: pylonBot/leg1/leg_3
+        weight: 1
+      - path: pylonBot/leg2
+        weight: 1
+      - path: pylonBot/leg2/leg_1 1
+        weight: 1
+      - path: pylonBot/leg2/leg_2 1
+        weight: 1
+      - path: pylonBot/leg2/leg_3 1
+        weight: 1
+      - path: pylonBot/leg3
+        weight: 1
+      - path: pylonBot/leg3/leg_1 2
+        weight: 1
+      - path: pylonBot/leg3/leg_2 2
+        weight: 1
+      - path: pylonBot/leg3/leg_3 2
+        weight: 1
+      - path: root_joint
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2/leg_backLeft_joint_3
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2/leg_backRight_joint_3
+        weight: 1
+      - path: root_joint/leg_front_joint_1
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2/leg_front_joint_3
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
