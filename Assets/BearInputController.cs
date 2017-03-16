@@ -63,7 +63,7 @@ public class BearInputController : MonoBehaviour {
 			m_bearControls.doAttack ();
 		} 
 
-		if (Input.GetAxis("AimBear") < 0.001f)
+		if (Input.GetAxis("AimBear") > 0.001f)
 		{
 			m_bearControls.startAim ();
 		} else
