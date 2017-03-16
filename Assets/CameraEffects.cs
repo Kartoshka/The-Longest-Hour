@@ -1,24 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 public class CameraEffects : MonoBehaviour {
 
     Camera main;
-
+    Twirl twirl;
     void Start()
     {
         main = Camera.main;
-        main.GetComponent<Twirl>();
+        twirl = main.GetComponent<Twirl>();
     }
 
-	void fadeIn()
+	public void transition()
     {
-
+       while(twirl.angle < 270f)
+        {
+            twirl.angle++;
+        }
+       
+       while(twirl.angle > 0)
+        {
+            twirl.angle--;
+        }
     }
-
-    void fadeOut()
-    {
-
-    }
+    
 }
