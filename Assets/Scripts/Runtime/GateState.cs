@@ -1,22 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GateState : MonoBehaviour {
+public class GateState : NetworkBehaviour {
 
     public GameObject redKey;
     public GameObject blueKey;
     public GameObject greenKey;
     public GameObject yellowKey;
-
+    
+    [SyncVar]
     int numLocks;
 
 	// Use this for initialization
 	void Start ()
     {
-        numLocks = 4;	
+        CmdSetLockCount(4);	
 	}
 
+    [Command]
+    void CmdSetLockCount(int lockCount)
+    {
+        numLocks = lockCount;
+    }
+
+    [Command]
+    void CmdDecreaseLockCount()
+    {
+        numLocks--;
+    }
+    
     public void disableLock(int key)
     {
         numLocks--;
@@ -37,7 +51,13 @@ public class GateState : MonoBehaviour {
                 break;
         }
 
-        if(numLocks == 0)
+        CmdDecreaseLockCount();
+
+    }
+
+    void Update()
+    {
+        if (numLocks == 0)
         {
             Destroy(gameObject);
         }

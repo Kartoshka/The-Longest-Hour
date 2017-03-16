@@ -24,7 +24,7 @@ public class GeneratorStart : MonoBehaviour {
             entered = true;
             GeneratorBall gb = other.gameObject.GetComponent<GeneratorBall>();
             contained = gb;
-            gb.chargeAmount = 100;
+            gb.giveCharge(100);
             other.gameObject.transform.position = donePosition.position;
             other.gameObject.GetComponent<MeshRenderer>().material = chargedMaterial;
         }

@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GeneratorBall : MonoBehaviour {
+public class GeneratorBall : NetworkBehaviour {
 
+    [SyncVar]
     public int chargeAmount;
+    
+	public void giveCharge(int amount)
+    {
+        CmdIncreaseChargeAmount(amount);
+    }
 
-	// Use this for initialization
-	void Start () {
-        chargeAmount = 0;
-	}
-	
-	void giveCharge(int amount)
+    [Command]
+    void CmdIncreaseChargeAmount( int amount)
     {
         chargeAmount += amount;
     }
