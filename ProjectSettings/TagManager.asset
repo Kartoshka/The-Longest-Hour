@@ -23,7 +23,8 @@ TagManager:
   - Debug
   - GroundPlayer
   - Car
-  - Terrain
+  - generatorBall
+  - CameraEffects
   layers:
   - Default
   - TransparentFX
