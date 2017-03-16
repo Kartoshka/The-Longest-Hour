@@ -75,9 +75,14 @@ public class AnimInputController : MonoBehaviour
 		m_animator.SetFloat(m_runSpeedParam, runSpeed);
 		if(Input.GetButtonDown("Fire1"))
 		{
-			m_animator.SetBool(m_attackParam, true);
-		}
+			doAttack();
+        }
     }
+
+	public void doAttack()
+	{
+		m_animator.SetBool(m_attackParam, true);
+	}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////

@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 114476753484055718}
   m_Layer: 0
   m_Name: tripodBot
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,7 +799,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910950288222908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: -0, z: 2}
   m_LocalScale: {x: 4.5909863, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 4492176020877628}
@@ -1445,8 +1445,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0.49, z: 0}
 --- !u!95 &95030503896148692
 Animator:
   serializedVersion: 3
@@ -1494,10 +1494,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ba0fcdd4697b4fabc3cfed08bdccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mass: 10
+  m_mass: 1
   m_maxSpeed: 0.06
-  m_maxForce: 1
-  m_maxTurnRate: 0.5
+  m_maxForce: 2
+  m_maxTurnRate: 3
+  m_targetRangeThreshold: 1.2
+  m_constrainYAxisRotation: 1
 --- !u!114 &114126763683682440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1539,9 +1541,9 @@ MonoBehaviour:
   m_isPathfinding: 0
   m_wayPoints: []
   m_arrivalThreshold: 0.1
-  m_separation: 1
-  m_alignment: 1
-  m_cohesion: 1
+  m_separation: 0
+  m_alignment: 0
+  m_cohesion: 0
 --- !u!114 &114335837594379290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1573,7 +1575,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504952470356188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 348607eb82a815f46a56dc9b9d048669, type: 3}
   m_Name: 
@@ -1654,7 +1656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47ab5afd516b424aa15613cc79fbc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sightSource: {fileID: 0}
+  m_sightSource: {fileID: 4984411522709098}
 --- !u!114 &114767431492723044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1667,6 +1669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movingEntity: {fileID: 114081843191039878}
+  m_animInputController: {fileID: 114975973806126052}
 --- !u!114 &114855383141685326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1698,7 +1701,7 @@ MonoBehaviour:
   m_characterTransform: {fileID: 4515102552423490}
   m_animator: {fileID: 95030503896148692}
   m_runSpeedParam: speedScale
-  m_attackParam: 
+  m_attackParam: isAttacking
   m_moveDistanceScale: 20
 --- !u!137 &137039327057951594
 SkinnedMeshRenderer:

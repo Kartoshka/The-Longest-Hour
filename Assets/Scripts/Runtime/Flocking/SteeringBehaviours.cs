@@ -76,15 +76,39 @@ public class SteeringBehaviours : MonoBehaviour
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
+	private void setStates(bool value)
+	{
+		m_isPursuing = value;
+		m_isPathfinding = value;
+		m_isWandering = value;
+    }
+	
 	public void setIsWandering(bool isWandering)
 	{
+		if (isWandering)
+		{
+			setStates(false);
+		}
 		m_isWandering = isWandering;
 	}
 
 	public void setIsPathFinding(bool isPathfinding)
 	{
+		if (isPathfinding)
+		{
+			setStates(false);
+		}
 		m_isPathfinding = isPathfinding;
 	}
+
+	public void setIsPursuing(bool isPursuing)
+	{
+		if(isPursuing)
+		{
+			setStates(false);
+		}
+		m_isPursuing = isPursuing;
+    }
 
 	public void AddWaypoint(GameObject waypoint)
 	{
@@ -99,14 +123,21 @@ public class SteeringBehaviours : MonoBehaviour
 
 	public void setPursuitTarget(bool pursueImmediate, GameObject target)
 	{
-		m_isPursuing = pursueImmediate;
+		setIsPursuing(pursueImmediate);
 		if (m_isPursuing)
 		{
 			m_target = target;
 		}
 	}
 
+	public GameObject getPursuitTarget()
+	{
+		return m_target;
+	}
+
 	public Observer<SteeringBehaviours> getObserver() { return m_observer; }
+
+	public EntityVision getEntityVision() { return m_vision; }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////

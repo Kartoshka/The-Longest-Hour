@@ -15,8 +15,8 @@ public class EntityVision : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public const string m_obstacleTag = "Ground";
-	public const string m_enemyTag = "Player";
+	public static string m_obstacleTag = "Terrain";
+	public static string m_enemyTag = "Player";
 
 	private List<GameObject> m_observedObstacles = new List<GameObject>();
 	private List<GameObject> m_observedEnemies = new List<GameObject>();
@@ -33,12 +33,12 @@ public class EntityVision : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
-	public GameObject GetClosestObstacle()
+	private GameObject GetClosestObject(List<GameObject> gameObjects)
 	{
-		if (m_observedObstacles.Count > 0)
+		if (gameObjects.Count > 0)
 		{
-			GameObject closestObject = m_observedObstacles[0];
-			foreach (GameObject obstacle in m_observedObstacles)
+			GameObject closestObject = gameObjects[0];
+			foreach (GameObject obstacle in gameObjects)
 			{
 				//Debug.DrawRay(body.transform.position, (obstacle.transform.position - body.transform.position)* Vector3.Distance(body.transform.position, obstacle.transform.position), Color.cyan);
 				if (Vector3.SqrMagnitude(obstacle.transform.position - m_sightSource.position) < Vector3.SqrMagnitude(closestObject.transform.position - m_sightSource.position))
@@ -54,6 +54,16 @@ public class EntityVision : MonoBehaviour
 		}
 	}
 
+	public GameObject GetClosestObstacle()
+	{
+		return GetClosestObject(m_observedObstacles);
+	}
+
+	public GameObject GetClosestEnemy()
+	{
+		return GetClosestObject(m_observedEnemies);
+	}
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
@@ -61,30 +71,21 @@ public class EntityVision : MonoBehaviour
 
 	void OnTriggerEnter(Collider hit)
 	{
-		switch(hit.tag)
+		if(hit.tag.Equals(m_obstacleTag))
 		{
-			case (m_obstacleTag):
-			{
-				m_observedObstacles.Add(hit.gameObject);
-				break;
-			}
-			case (m_enemyTag):
-			{
-				m_observedEnemies.Add(hit.gameObject);
-				break;
-			}
+			m_observedObstacles.Add(hit.gameObject);
+		}
+		else if(hit.tag.Equals(m_enemyTag))
+		{
+			m_observedEnemies.Add(hit.gameObject);
 		}
 	}
 
 	void OnTriggerExit(Collider hit)
 	{
-		switch (hit.tag)
+		if (hit.tag.Equals(m_obstacleTag))
 		{
-			case (m_obstacleTag):
-			{
-				m_observedObstacles.Remove(hit.gameObject);
-				break;
-			}
+			m_observedObstacles.Remove(hit.gameObject);
 		}
 	}
 

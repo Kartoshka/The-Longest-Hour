@@ -13,6 +13,9 @@ public class MovingEntity : MonoBehaviour
 	public float m_maxForce = 1.0f; //maximum force entity can produce to power itself
 	public float m_maxTurnRate = 0.5f; //radians per second
 
+	public float m_targetRangeThreshold = 1.0f;
+	public bool m_constrainYAxisRotation = true;
+
 	//	private GameWorld _gameWorld; //Reference to the GameWorld to view objects
 	private SteeringBehaviours m_steering; //The steering behaviours this entity uses
 
@@ -34,7 +37,18 @@ public class MovingEntity : MonoBehaviour
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Methods
-	//////////////////////////////////////////////////////////////////////////////////////////  
+	//////////////////////////////////////////////////////////////////////////////////////////
+	
+	public bool isInTargetRange()
+	{
+		bool isInRange = false;
+		if (m_steering && 
+			(m_steering.m_isPursuing || m_steering.m_isPathfinding))
+		{
+			isInRange = Vector3.Distance(this.transform.position, m_steering.getPursuitTarget().transform.position) < m_targetRangeThreshold;
+		}
+		return isInRange;
+    }
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +77,11 @@ public class MovingEntity : MonoBehaviour
 			this.transform.position = position;
 			if (m_velocity.magnitude > 0.0001f)
 			{
-				this.transform.forward = m_velocity.normalized; //Rotate the entity towards direction travelled
+				if(m_constrainYAxisRotation)
+				{
+					m_velocity.y = 0;
+				}
+                this.transform.forward = m_velocity.normalized; //Rotate the entity towards direction travelled
 			}
 		}
 	}
