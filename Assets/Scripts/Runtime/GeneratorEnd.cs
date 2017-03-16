@@ -7,7 +7,6 @@ public class GeneratorEnd : MonoBehaviour {
     public Transform startPosForBall;
     public GameObject targetDoor;
 
-
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("generatorBall"))

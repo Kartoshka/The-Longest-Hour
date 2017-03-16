@@ -20,31 +20,16 @@ public class LevelManager : MonoBehaviour {
     public bool startAtFirstLevel;
     public bool startAtSecondLevel;
 
-    public GameObject spawnPointP1;
-    public GameObject spawnPointP2;
+    GameObject spawnPointP1;
+    GameObject spawnPointP2;
+    
 
-    void Awake()
-    {
-        if (startAtFirstLevel)
-        {
-            spawnPointP1.transform.position = tutorialBearSpawn.transform.position;
-            spawnPointP2.transform.position = tutorialBirdSpawn.transform.position;
-        }
-        else if (startAtSecondLevel)
-        {
-            spawnPointP1.transform.position = threePuzzleBearSpawn.transform.position;
-            spawnPointP2.transform.position = threePuzzleBirdSpawn.transform.position;
-        }
-        else
-        {
-            spawnPointP1.transform.position = lastlevelBearSpawn.transform.position;
-            spawnPointP2.transform.position = lastLevelBirdSpawn.transform.position;
-        }
-    }
-
+    bool doOnce;
 
     void Start()
     {
+        doOnce = false;
+
         if(startAtFirstLevel)
         {
             tutorial.SetActive(true);
@@ -67,7 +52,9 @@ public class LevelManager : MonoBehaviour {
         {
             tutorial.SetActive(false);
             threePuzzleLevel.SetActive(true);
-            
+
+            spawnPointP1 = GameObject.Find("SpawnPoint_P1");
+            spawnPointP2 = GameObject.Find("SpawnPoint_P2");
             spawnPointP1.transform.position = threePuzzleBearSpawn.transform.position;
             spawnPointP2.transform.position = threePuzzleBirdSpawn.transform.position;
         }
@@ -76,9 +63,36 @@ public class LevelManager : MonoBehaviour {
         {
             threePuzzleLevel.SetActive(false);
             lastLevel.SetActive(true);
-            
+
+            spawnPointP1 = GameObject.Find("SpawnPoint_P1");
+            spawnPointP2 = GameObject.Find("SpawnPoint_P2");
             spawnPointP1.transform.position = lastlevelBearSpawn.transform.position;
             spawnPointP2.transform.position = lastLevelBirdSpawn.transform.position;
+        }
+    }
+
+    void LateUpdate()
+    {
+        if(doOnce)
+        {
+            doOnce = true;
+            spawnPointP1 = GameObject.Find("SpawnPoint_P1");
+            spawnPointP2 = GameObject.Find("SpawnPoint_P2");
+            if (startAtFirstLevel)
+            {
+                spawnPointP1.transform.position = tutorialBearSpawn.transform.position;
+                spawnPointP2.transform.position = tutorialBirdSpawn.transform.position;
+            }
+            else if (startAtSecondLevel)
+            {
+                spawnPointP1.transform.position = threePuzzleBearSpawn.transform.position;
+                spawnPointP2.transform.position = threePuzzleBirdSpawn.transform.position;
+            }
+            else
+            {
+                spawnPointP1.transform.position = lastlevelBearSpawn.transform.position;
+                spawnPointP2.transform.position = lastLevelBirdSpawn.transform.position;
+            }
         }
     }
 
