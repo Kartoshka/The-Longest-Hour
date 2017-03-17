@@ -24,13 +24,13 @@ public class TagSingle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetButtonDown("Fire1"))
-        {
-            if(m_isInTaggableTrigger)
-            {
-				toggleTagging();
-            }
-        }
+//		if(Input.GetButtonDown("Fire1"))
+//        {
+//            if(m_isInTaggableTrigger)
+//            {
+//				toggleTagging();
+//            }
+//        }
 	}
 
 	private Observer<CollisionObserver>.Listener createCollisionListener()
@@ -51,9 +51,13 @@ public class TagSingle : MonoBehaviour
 		return m_collisionListener;
 	}
 
-	void toggleTagging()
+	public void toggleTagging()
     {
-        if(m_tagTarget.GetComponent<TimeControllable>().enabled)
+		if (!m_tagTarget || !m_tagTarget.GetComponent<TimeControllable> ())
+		{
+			return;
+		}
+		if(m_tagTarget.GetComponent<TimeControllable>().enabled)
         {
 			m_tagTarget.GetComponent<TimeControllable>().Deactivate();
 			m_tagTarget.GetComponent<TimeControllable>().enabled = false;

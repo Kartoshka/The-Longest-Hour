@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Abyss
-  m_Shader: {fileID: 4800000, guid: b1528a57bd539b84fb768938c42f24b9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2b0d5d2606fd9224795c7941bcc0141d, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -78,7 +78,7 @@ Material:
     m_Floats:
     - first:
         name: _AlphaSlider
-      second: 1
+      second: 1.98
     - first:
         name: _BumpScale
       second: 1
@@ -99,7 +99,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0
     - first:
         name: _GlossyReflections
       second: 1
@@ -133,7 +133,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.0627451, g: 0.015686275, b: 0.04705883, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

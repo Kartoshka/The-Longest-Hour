@@ -90,7 +90,7 @@ public class MoverComponent : MonoBehaviour
 	public Transform getTransform() { return m_transformComponent; }
 	public void setTransform(Transform transform) { m_transformComponent = transform; }
 
-	public bool getAlwaysUpdate() {	return m_alwaysUpdate; }
+	public bool getAlwaysUpdate() { return m_alwaysUpdate; }
 	public void setAlwaysUpdate(bool alwaysUpdate) { m_alwaysUpdate = alwaysUpdate; }
 
 	public Observer<MoverComponent> getObserver() { return m_observer; }
@@ -145,7 +145,7 @@ public class MoverComponent : MonoBehaviour
 			createMoverAction(actionTypeFlag);
 			mover = m_actionMovers.Dictionary[actionTypeFlag];
 		}
-		if(!mover.getState().Equals(Mover.State.Active))
+		if (!mover.getState().Equals(Mover.State.Active))
 		{
 			m_activeActionMovers.AddLast(mover);
 			mover.beginMove(m_transformComponent);
