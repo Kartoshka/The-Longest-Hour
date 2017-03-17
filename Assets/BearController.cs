@@ -166,8 +166,8 @@ public class BearController : MonoBehaviour {
 	public void disableSleeping(){
 		if (targetFollower)
 		{
-			targetFollower.m_faceTarget = true;
-			targetFollower.m_matchTargetForward = false;
+//			targetFollower.m_faceTarget = true;
+//			targetFollower.m_matchTargetForward = false;
 		}
 		isAsleep = false;
 	}
