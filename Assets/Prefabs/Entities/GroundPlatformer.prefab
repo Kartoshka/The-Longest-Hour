@@ -11455,6 +11455,7 @@ GameObject:
   - component: {fileID: 114136612259491140}
   - component: {fileID: 65969693163781130}
   - component: {fileID: 114864089957105566}
+  - component: {fileID: 114336672060263694}
   m_Layer: 0
   m_Name: MovementController
   m_TagString: Untagged
@@ -52187,7 +52188,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285396953497510}
-  m_LocalRotation: {x: -0.035641067, y: 0.5484759, z: 0.56923664, w: 0.6114519}
+  m_LocalRotation: {x: -0.03564107, y: 0.548476, z: 0.5692367, w: 0.611452}
   m_LocalPosition: {x: -0.04495108, y: 5.32907e-16, z: 1.3977804e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55599,7 +55600,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985465690977874}
-  m_LocalRotation: {x: 0.65201074, y: 0.27364573, z: 0.65201074, w: -0.27364573}
+  m_LocalRotation: {x: 0.6520108, y: 0.27364576, z: 0.6520108, w: -0.27364576}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -57799,13 +57800,14 @@ MonoBehaviour:
   moverBehaviour: {fileID: 114136612259491140}
   grenadeShooter: {fileID: 114538273771620466}
   bearSwipeTag: {fileID: 114975755756980254}
+  aimForwardMatching: {fileID: 114336672060263694}
   idleStateName: IdleToRunBlend
   attackStateName: Attack1
-  startAimStateName: CannonReady
-  endAimStateName: CannonRelease
+  aimStateName: CannonAim
   sleepStateName: Resting_Loop
   fireStateName: CannonFire
   m_animC: {fileID: 114869749541300302}
+  isAiming: 0
 --- !u!114 &114304247728654988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57837,6 +57839,20 @@ MonoBehaviour:
   m_animCtrl: {fileID: 0}
   m_rate: 0.01
   m_canShiftTime: 1
+--- !u!114 &114336672060263694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384996344702180}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5703e3cd5dc24e5990dceaf16e6f631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezeX: 0
+  freezeY: 1
+  freezeZ: 0
 --- !u!114 &114403246574636484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58133,6 +58149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.1
+  freezeX: 0
+  freezeY: 1
+  freezeZ: 0
 --- !u!114 &114869749541300302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58224,10 +58243,10 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114888267780819956}
-  distanceFromTarget: 5
+  distanceFromTarget: 0
   angleFromTarget: {x: 0, y: 0}
   pitchChangeSpeed: 0
-  yawChangeSpeed: 0
+  yawChangeSpeed: 20
   minXAngle: -90
   maxXAngle: 90
   fixCollisions: 0
@@ -58268,7 +58287,7 @@ MonoBehaviour:
   yawChangeSpeed: 50
   minXAngle: 58.7
   maxXAngle: 111.6
-  fixCollisions: 0
+  fixCollisions: 1
   collisionLayers:
     serializedVersion: 2
     m_Bits: 512

@@ -38,10 +38,8 @@ public class BearController : MonoBehaviour {
 	private CharacterControllerStateTrigger idleState;
 	public string attackStateName;
 	private CharacterControllerStateTrigger attackState;
-	public string startAimStateName;
-	private CharacterControllerStateTrigger aimStartState;
-	public string endAimStateName;
-	private CharacterControllerStateTrigger aimEndState;
+	public string aimStateName;
+	private CharacterControllerStateTrigger aimState;
 	public string sleepStateName;
 	private CharacterControllerStateTrigger sleepState;
 	public string fireStateName;
@@ -55,7 +53,7 @@ public class BearController : MonoBehaviour {
 	private bool isIdle = false;
 	private bool isAsleep = true;
 	private bool isAttacking = false;
-	private bool isAiming = false;
+	public bool isAiming = false;
 	private bool isFiring = false;
 
 	Action enable(bool val){
@@ -83,14 +81,10 @@ public class BearController : MonoBehaviour {
 			attackState.onExit += disableAttacking;
 		}
 
-		if (m_animC.getControllerTrigger (startAimStateName, out aimStartState))
+		if (m_animC.getControllerTrigger (aimStateName, out aimState))
 		{
-			aimStartState.onEnter += enableAiming;
-		}
-
-		if (m_animC.getControllerTrigger (endAimStateName, out aimEndState))
-		{
-			aimEndState.onExit += disableAiming;
+			aimState.onEnter += enableAiming;
+			aimState.onExit += disableAiming;
 		}
 
 		if (m_animC.getControllerTrigger (fireStateName, out fireState))
