@@ -10,6 +10,7 @@ using System.Collections.Generic;
 
 public class BearController : MonoBehaviour {
 		
+	//TODO add objects which enable on state start, those objects will have scripts that enable other objects. a la component method!
 	//fixes bug where bear is looking at floor during sleep
 	public FollowTarget targetFollower;
 
@@ -27,6 +28,8 @@ public class BearController : MonoBehaviour {
 	[Header("Actions")]
 	public GrenadeControllerComponent grenadeShooter;
 	public TagSingle bearSwipeTag;
+	public MatchCameraForward aimForwardMatching;
+	
 
 
 	[Space(5)]
@@ -126,6 +129,10 @@ public class BearController : MonoBehaviour {
 	public void startAim(){
 		if (isIdle && !isAiming)
 		{
+			if (aimForwardMatching)
+			{
+				aimForwardMatching.enabled = true;
+			}
 			moverBehaviour.updateInput (Vector3.zero);
 			m_camControls.changeCamera (aimCam);
 			m_animC.startAim ();
@@ -135,6 +142,11 @@ public class BearController : MonoBehaviour {
 	public void stopAim(){
 		if (isAiming && !isIdle)
 		{
+			if (aimForwardMatching)
+			{
+				aimForwardMatching.enabled = false;
+			}
+
 			moverBehaviour.updateInput (Vector3.zero);
 			m_camControls.changeCamera (runningCam);
 			m_animC.endAim ();
