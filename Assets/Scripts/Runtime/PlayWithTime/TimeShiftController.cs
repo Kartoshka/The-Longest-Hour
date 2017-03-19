@@ -29,6 +29,7 @@ public class TimeShiftController : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public AnimParameterController m_animCtrl;
+	public PhysicsParameterController m_physicsCtrl;
 	public float m_rate = 1.0f;
 
 	public bool m_canShiftTime = true;
@@ -63,7 +64,8 @@ public class TimeShiftController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+		m_animCtrl = FindObjectOfType<AnimParameterController> ();
+		m_physicsCtrl = FindObjectOfType<PhysicsParameterController> ();
 	}
 
 	// Update is called once per frame
@@ -82,18 +84,32 @@ public class TimeShiftController : MonoBehaviour
 	{
 		if(canShiftTime())
 		{
-            if (Input.GetKey(KeyCode.E))
-            {
-                m_time = m_timeIncSize;
-            }
-
-            if (Input.GetKey(KeyCode.Q))
-            {
-                m_time = -1 * m_timeIncSize;
-            }
+//            if (Input.GetKey(KeyCode.E))
+//            {
+//                m_time = m_timeIncSize;
+//            }
+//
+//            if (Input.GetKey(KeyCode.Q))
+//            {
+//                m_time = -1 * m_timeIncSize;
+//            }
             //m_time += m_rate * (Input.GetKey(KeyCode.E) ? 1 : 0) * Time.deltaTime;
 			//m_time -= m_rate * (Input.GetKey(KeyCode.Q) ? 1 : 0) * Time.deltaTime;
 		}
+	}
+
+	public void setTime(float t){
+		t = Mathf.Clamp (t,-1.0f,1.0f);
+		m_physicsCtrl.setTime (t);
+		m_time = t;
+
+	}
+	public void rewind(){
+		m_time = -1 * m_timeIncSize;
+	}
+
+	public void forward(){
+		m_time = m_timeIncSize;
 	}
 
 	#endregion

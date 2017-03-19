@@ -185,9 +185,17 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
+	public void setTime(float t){
+		t= Mathf.Clamp (t,-1.0f,1.0f);
+		if (timeShifter)
+		{
+			timeShifter.setTime (t);
+		}
+
+	}
 	public void rewind(float t){
-	
 		t= Mathf.Clamp01 (t);
+
 		if (timeShifter)
 		{
 			timeShifter.setTime (-1 * t);

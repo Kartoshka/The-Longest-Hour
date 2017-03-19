@@ -37,7 +37,7 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	private float m_timeScale = 1.0f;
+	public float m_timeScale = 1.0f;
 	private Rigidbody m_rigidBody;
 
 	private LinkedList<PhysicalState> m_recordedState = new LinkedList<PhysicalState>();
@@ -51,6 +51,8 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	public float m_timeBetweenRecordings = 0.02f;
 
 	private float m_timeSinceLastRecord = 0.0f;
+
+	public bool isModifiable = false;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -121,45 +123,61 @@ public class PhysicsTimeCtrl : MonoBehaviour
 	void Start()
 	{
 		m_rigidBody = GetComponent<Rigidbody>();
+		PhysicsParameterController ctrler = FindObjectOfType<PhysicsParameterController> () as PhysicsParameterController;
+		if (ctrler)
+		{
+			ctrler.register (this);
+		} else
+		{
+			Debug.Log ("Warning, no global phyics controller found, " + this.gameObject.name + " may not be time controllable");
+		}
     }
 
 	void FixedUpdate()
 	{
 		processInputs();
 
-		if (m_timeScale > 0)
+		float usedScale = isModifiable ? m_timeScale : 1.0f;
+		if (usedScale > 0)
 		{
-            m_rigidBody.velocity *= m_timeScale;
-			m_rigidBody.angularVelocity *= m_timeScale;
-			updateForward(Time.fixedDeltaTime * m_timeScale);
-        }
+			m_rigidBody.velocity *= usedScale;
+			m_rigidBody.angularVelocity *= usedScale;
+			updateForward (Time.fixedDeltaTime * usedScale);
+			m_rigidBody.isKinematic = false;
+
+		} else if (usedScale == 0)
+		{
+			m_rigidBody.isKinematic = true;
+		}
 		else
 		{
+			m_rigidBody.isKinematic = false;
+
 			m_rigidBody.velocity = Vector3.zero;
 			m_rigidBody.angularVelocity = Vector3.zero;
-			updateReverse(Time.fixedDeltaTime * m_timeScale);
+			updateReverse(Time.fixedDeltaTime * usedScale);
 		}
 	}
 
 	private void processInputs()
 	{
-		if(Input.GetKey(KeyCode.Space))
-		{
-			m_timeScale = 0.1f;
-		}
-		else if(Input.GetKey(KeyCode.LeftShift))
-		{
-			m_timeScale = 0.0f;
-        }
-		else
-		{
-			m_timeScale = 1.0f;
-		}
-
-		if (Input.GetKey(KeyCode.LeftControl))
-		{
-			m_timeScale *= -1f;
-		}
+//		if(Input.GetKey(KeyCode.Space))
+//		{
+//			m_timeScale = 0.1f;
+//		}
+//		else if(Input.GetKey(KeyCode.LeftShift))
+//		{
+//			m_timeScale = 0.0f;
+//        }
+//		else
+//		{
+//			m_timeScale = 1.0f;
+//		}
+//
+//		if (Input.GetKey(KeyCode.LeftControl))
+//		{
+//			m_timeScale *= -1f;
+//		}
 	}
 
 	#endregion
