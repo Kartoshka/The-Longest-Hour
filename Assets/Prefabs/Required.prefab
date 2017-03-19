@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4686548092662874}
   - component: {fileID: 114046703069340702}
+  - component: {fileID: 114388617552293536}
   m_Layer: 0
   m_Name: GlobalTimeController
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040242369925012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.91, y: 0, z: 0}
+  m_LocalPosition: {x: -29, y: 1.49, z: -182.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4246132688699306}
@@ -246,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965607486954382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 16.54}
+  m_LocalPosition: {x: 176.43, y: 0.71, z: -184.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4246132688699306}
@@ -337,6 +338,18 @@ MonoBehaviour:
     i15: 228
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114388617552293536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106805752370698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3ebdf730e8649adbaa18b8363861dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeControllables: []
 --- !u!114 &114472134273107464
 MonoBehaviour:
   m_ObjectHideFlags: 1
