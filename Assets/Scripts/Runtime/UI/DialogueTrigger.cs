@@ -10,23 +10,22 @@ public class DialogueTrigger : MonoBehaviour {
     List<UIDialogueLine> lines;
     UIManager uiManager;
 	// Use this for initialization
-	void Start ()
-    {
-        uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
-        lines = new List<UIDialogueLine>();
-
-        for(int i = 0; i < bearLines.Count; i++)
-        {
-            lines.Add(new UIDialogueLine("Bear", bearLines[i]));
-            lines.Add(new UIDialogueLine("Bird", birdLines[i]));
-        }
-	}
 	
-	void OnTriggerEnter(Collider other)
+	void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
         {
+            lines = new List<UIDialogueLine>();
+
+            for (int i = 0; i < bearLines.Count; i++)
+            {
+                lines.Add(new UIDialogueLine("Bear", bearLines[i]));
+                lines.Add(new UIDialogueLine("Bird", birdLines[i]));
+            }
+
+            uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
             uiManager.playDialogue(lines);
+
             Destroy(gameObject);
         }
     }
