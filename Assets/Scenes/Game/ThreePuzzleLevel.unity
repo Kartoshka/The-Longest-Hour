@@ -165,126 +165,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1015017301963698, guid: 888aa35b9e5d97947bb557477db9b754,
     type: 2}
   m_PrefabInternal: {fileID: 1989165394}
---- !u!4 &467668060 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4199675666265128, guid: 888aa35b9e5d97947bb557477db9b754,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989165394}
---- !u!1 &659775578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 659775579}
-  - component: {fileID: 659775580}
-  - component: {fileID: 659775582}
-  - component: {fileID: 659775581}
-  - component: {fileID: 659775583}
-  m_Layer: 0
-  m_Name: LookAtBirdCam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &659775579
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 659775578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 467668060}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &659775580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 659775578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf88306375934ec9bea28c5f89f590f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modifiable: 0
-  setOnStart: 0
-  controlledView: {fileID: 659775581}
-  distanceFromTarget: 0
-  angleFromTarget: {x: 0, y: 0}
-  pitchChangeSpeed: 5
-  yawChangeSpeed: 5
-  minXAngle: -90
-  maxXAngle: 90
-  fixCollisions: 0
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  radiusCollision: 0.2
-  zoomFactor: 0.5
---- !u!114 &659775581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 659775578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1223560802, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoAddToPriorityStack: 1
-  m_Priority: 1
-  LensAttributes:
-    FieldOfView: 40
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-  m_NoiseSettings: {fileID: 0}
-  m_ComposerSettings: {fileID: 11400000, guid: fdd6ae348e5cf4d028579882c49b18ac, type: 2}
-  m_TransposerSettings: {fileID: 0}
-  m_ComposerCameraTarget: {fileID: 2142562832}
-  m_TransposerCameraTarget: {fileID: 0}
-  TransposerTrackingOffset: {x: 0, y: 0, z: 0}
-  TransposerDampingOffset: {x: 0, y: 0, z: 0}
-  ComposerTrackingOffset: {x: 0, y: 0, z: 0}
-  ComposerDampingOffset: {x: 0, y: 0}
-  DutchOffset: 0
-  NoiseAmplitudeScalar: 1
-  NoiseSpeedScalar: 1
---- !u!114 &659775582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 659775578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b1d2e9dd22646c08d7790f67f01e14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &659775583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 659775578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_target: {fileID: 1449011222}
-  m_positionLerpScale: 500000
-  m_rotationLerpScale: 500000
-  m_faceTarget: 0
-  m_matchTargetForward: 0
-  m_offset: {x: 0, y: 0, z: 0}
 --- !u!1 &750495414
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,19 +280,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.05482977
+      value: 0.054675937
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8522914
+      value: 0.8538057
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.09125005
+      value: -0.091616884
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.5121197
+      value: 0.50954175
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_RootOrder
@@ -1334,6 +1214,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114581574341413726, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: m_target
+      value: 
+      objectReference: {fileID: 1449011222}
+    - target: {fileID: 114505837333027280, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: m_ComposerCameraTarget
+      value: 
+      objectReference: {fileID: 2142562832}
     - target: {fileID: 4800887572497532, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0.03564107
@@ -1368,26 +1258,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
         type: 2}
-      propertyPath: relativeToCamera
-      value: 1
+      propertyPath: maxSpeed
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114903739070602264, guid: 888aa35b9e5d97947bb557477db9b754,
+    - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
         type: 2}
-      propertyPath: distanceFromTarget
-      value: 0.1
+      propertyPath: stepPerAxis.x
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
+    - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
         type: 2}
-      propertyPath: locateBirdCam
-      value: 
-      objectReference: {fileID: 659775580}
-    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: m_camControls
-      value: 
+      propertyPath: stepPerAxis.z
+      value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114572778500229582, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2142562832 stripped
