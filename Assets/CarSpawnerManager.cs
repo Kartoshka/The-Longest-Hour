@@ -101,7 +101,7 @@ public class CarSpawnerManager : MonoBehaviour {
         float y = source.transform.position.y + Random.Range(-20.0f, 20.0f);
         float z = source.transform.position.z + Random.Range(-20.0f, 20.0f);
 
-        GameObject spawnedCar = Instantiate<GameObject>(car, new Vector3(x, y, z), transform.rotation);
+        GameObject spawnedCar = Instantiate<GameObject>(car, new Vector3(x, y, z), transform.rotation, source.transform);
         
         if(isAffectedByTime)
         {

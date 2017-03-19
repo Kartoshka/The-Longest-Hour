@@ -17,8 +17,10 @@ public class TagSingle : MonoBehaviour
 		if (m_collisionObserver)
 		{
 			m_collisionListener = createCollisionListener();
-			m_collisionObserver.getObserver().add(m_collisionListener);
-		}
+			Observer<CollisionObserver> observer = m_collisionObserver.getObserver();
+			observer.add(m_collisionListener);
+			m_collisionObserver.gameObject.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
@@ -42,14 +44,36 @@ public class TagSingle : MonoBehaviour
 			{
 				if (collider.gameObject.tag == "TimeControllable")
 				{
-					bool isEntering = collisionObserver.getIsEntering();
+                    bool isEntering = collisionObserver.getIsEntering();
                     m_isInTaggableTrigger = isEntering;
 					m_tagTarget = isEntering ? collider.gameObject : null;
-				}
+					activateTimeControl();
+                }
 			}
 		};
 		return m_collisionListener;
 	}
+
+	private void activateTimeControl()
+	{
+		TimeControllable timeControllable = m_tagTarget.GetComponent<TimeControllable>();
+        if (timeControllable)
+		{
+			m_tagTarget.GetComponent<TimeControllable>().enabled = true;
+			m_tagTarget.GetComponent<TimeControllable>().Activate();
+		}
+	}
+
+	private void deactivateTimeControl()
+	{
+		TimeControllable timeControllable = m_tagTarget.GetComponent<TimeControllable>();
+		if (timeControllable)
+		{
+			m_tagTarget.GetComponent<TimeControllable>().Deactivate();
+			m_tagTarget.GetComponent<TimeControllable>().enabled = false;
+		}
+	}
+
 
 	public void toggleTagging()
     {
@@ -59,13 +83,24 @@ public class TagSingle : MonoBehaviour
 		}
 		if(m_tagTarget.GetComponent<TimeControllable>().enabled)
         {
-			m_tagTarget.GetComponent<TimeControllable>().Deactivate();
-			m_tagTarget.GetComponent<TimeControllable>().enabled = false;
+			deactivateTimeControl();
         }
 		else
 		{
-			m_tagTarget.GetComponent<TimeControllable>().enabled = true;
-			m_tagTarget.GetComponent<TimeControllable>().Activate();
-		}
+			activateTimeControl();
+        }
     }
+
+	//// TODO: Debug Hack. Perhaps remove.
+	//void OnTriggerEnter(Collider collider)
+	//{
+	//	if (collider != null)
+	//	{
+	//		if (collider.gameObject.tag == "TimeControllable")
+	//		{
+	//			m_isInTaggableTrigger = true;
+	//			m_tagTarget = true ? collider.gameObject : null;
+	//		}
+	//	}
+	//}
 }
