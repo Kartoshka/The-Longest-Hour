@@ -13,14 +13,14 @@ public class CarSpawnerManager : MonoBehaviour {
     bool isRewinding;
     bool rewinded;
     List<GameObject> carsSpawned;
-
+    GameObject carParent;
 	// Use this for initialization
 	void Start ()
     {
         isRewinding = false;
         rewinded = false;
         carsSpawned = new List<GameObject>();
-
+        carParent = GameObject.Find("SpawnedCars");
         for(int i = 0; i < carsToSpawn; i++)
         {
             spawnCar();
@@ -101,7 +101,8 @@ public class CarSpawnerManager : MonoBehaviour {
         float y = source.transform.position.y + Random.Range(-20.0f, 20.0f);
         float z = source.transform.position.z + Random.Range(-20.0f, 20.0f);
 
-        GameObject spawnedCar = Instantiate<GameObject>(car, new Vector3(x, y, z), transform.rotation, source.transform);
+        GameObject spawnedCar = Instantiate<GameObject>(car, new Vector3(x, y, z), transform.rotation, carParent.transform);
+        spawnedCar.transform.localScale = car.transform.localScale;
         
         if(isAffectedByTime)
         {
