@@ -348,9 +348,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4eeea99aa15283459052431e89c3390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabNetworkIndex: 2
+  enemyPrefabNetworkIndex: 5
   m_enemySpawnLocations: []
-  maxEnemies: 1
+  trashbinPrefabNetworkIndex: 4
+  m_trashbinSpawnLocations: []
+  cratePrefabNetworkIndex: 3
+  m_crateSpawnLocations: []
 --- !u!114 &114533655480894082
 MonoBehaviour:
   m_ObjectHideFlags: 1

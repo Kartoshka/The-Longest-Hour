@@ -71,17 +71,9 @@ public class BirdController : MonoBehaviour {
         }
 
         //Movement controls
-        float verticalLeftStick;
-        if (debug && debug.m_useWorldCam)
-            verticalLeftStick = Input.GetAxis("VerticalBird");
-        else
-            verticalLeftStick = Input.GetAxis("Vertical");
+        float verticalLeftStick = Input.GetAxis("Vertical");
 
-        float horizontalLeftStick;
-        if (debug && debug.m_useWorldCam)
-            horizontalLeftStick = Input.GetAxis("HorizontalBird");
-        else
-            horizontalLeftStick = Input.GetAxis("Horizontal");
+        float horizontalLeftStick = Input.GetAxis("Horizontal");
 
         if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
             verticalLeftStick = 0;
@@ -90,33 +82,80 @@ public class BirdController : MonoBehaviour {
 
         moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
 
-		if (debug && (
-			(debug.m_useWorldCam && Input.GetButtonDown ("JumpBird")) ||
-            !debug.m_useWorldCam && Input.GetButtonDown("Jump"))) {
+        float rightTrigger = Input.GetAxis("RightTrigger");
+        float leftTrigger = Input.GetAxis("LeftTrigger");
+
+
+        // ability controls
+        /*
+		if (Input.GetButtonDown("Jump")) {
 			switchCameras ();
-		}
+            targetControl.toggle();
+        }
 
 		if (topDown) {
-			if (debug && (
-				(debug.m_useWorldCam && Input.GetButtonDown ("Fire1Bird")) ||
-			    !debug.m_useWorldCam && Input.GetButtonDown ("Fire1"))) {
+			if (Input.GetButtonDown ("Fire1")) {
 				targetControl.activateCurrent ();
 			} 
-			else if (debug && (
-				(debug.m_useWorldCam && Input.GetButtonUp ("Fire1Bird")) ||
-				!debug.m_useWorldCam && Input.GetButtonUp ("Fire1"))) {
+			else if (Input.GetButtonUp ("Fire1")) {
 				targetControl.disactivateCurrent ();
 			}
-			if (debug && (
-				(debug.m_useWorldCam && Input.GetButtonDown("Fire2Bird")) ||
-				!debug.m_useWorldCam && Input.GetButtonDown("Fire2"))) {
+			if (Input.GetButtonDown("Fire2")) {
 				targetControl.toggle ();
 			}
 		}
+        */
 
-	}
+        // hold left trigger to go top down view
+        if (!topDown && leftTrigger == 1)
+        {
+            switchCameras();
+        }
+        else if (topDown && leftTrigger == 0)
+        {
+            switchCameras();
+        }
 
-	private void switchCameras()
+        // press right trigger, draw
+        if(rightTrigger == 1)
+        {
+            targetControl.gameObject.SetActive(true);
+            targetControl.toggleDraw();
+            targetControl.activateCurrent();
+        }
+        // if detected divable object, press x to dive to it
+        else if (Input.GetButtonDown("Fire3"))
+        {
+            if (topDown)
+            {
+                switchCameras();
+            }
+            targetControl.gameObject.SetActive(true);
+            targetControl.toggleDive();
+            targetControl.activateCurrent();
+        }
+        // y for beacon
+        else if (Input.GetButtonDown("Jump"))
+        {
+            targetControl.gameObject.SetActive(true);
+            targetControl.toggleBeacon();
+            targetControl.activateCurrent();
+        } else
+        {
+            targetControl.gameObject.SetActive(false);
+            targetControl.disactivateCurrent();
+        }
+
+
+        // if holding object, press a to let go? (bcus we might want to dive under something while holding obj?)
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+        }
+        
+    }
+
+    private void switchCameras()
 	{
 		if (active == regularView) {
 			topDown = !topDown;
@@ -126,9 +165,6 @@ public class BirdController : MonoBehaviour {
 			topDown = !topDown;
 			activateCamera (regularView);
 		}
-
-		targetControl.gameObject.SetActive (topDown);
-
 	}
 
 	private void activateCamera(Cinemachine3rdPerson cam)

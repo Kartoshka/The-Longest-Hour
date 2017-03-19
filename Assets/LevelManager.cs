@@ -55,8 +55,8 @@ public class LevelManager : MonoBehaviour {
 
             spawnPointP1 = GameObject.Find("SpawnPoint_P1");
             spawnPointP2 = GameObject.Find("SpawnPoint_P2");
-            spawnPointP1.transform.position = threePuzzleBearSpawn.transform.position;
-            spawnPointP2.transform.position = threePuzzleBirdSpawn.transform.position;
+            //spawnPointP1.transform.position = threePuzzleBearSpawn.transform.position;
+            //spawnPointP2.transform.position = threePuzzleBirdSpawn.transform.position;
         }
 
         if(threePuzzleLevel.active)
@@ -66,8 +66,8 @@ public class LevelManager : MonoBehaviour {
 
             spawnPointP1 = GameObject.Find("SpawnPoint_P1");
             spawnPointP2 = GameObject.Find("SpawnPoint_P2");
-            spawnPointP1.transform.position = lastlevelBearSpawn.transform.position;
-            spawnPointP2.transform.position = lastLevelBirdSpawn.transform.position;
+            //spawnPointP1.transform.position = lastlevelBearSpawn.transform.position;
+            //spawnPointP2.transform.position = lastLevelBirdSpawn.transform.position;
         }
     }
 

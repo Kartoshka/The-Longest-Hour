@@ -16,9 +16,9 @@ public class NetworkSpawnEntity : NetworkBehaviour
 
 	private void spawnEntities(int networkPrefabIndex, List<Transform> spawnLocations)
 	{
-		for (int i = 0; i < m_enemySpawnLocations.Count; ++i)
+		for (int i = 0; i < spawnLocations.Count; ++i)
 		{
-			Transform transform = m_enemySpawnLocations[i];
+			Transform transform = spawnLocations[i];
 			GameObject gameObject = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[networkPrefabIndex], transform.position, transform.rotation, this.transform);
 			NetworkServer.Spawn(gameObject);
 		}
