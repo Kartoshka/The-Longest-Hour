@@ -24,7 +24,14 @@ public class CollisionObserver : MonoBehaviour
 	#region Accessors
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public Observer<CollisionObserver> getObserver() { return m_observer; }
+	public Observer<CollisionObserver> getObserver()
+	{
+		if(m_observer == null)
+		{
+			createObserver();
+		}
+		return m_observer;
+	}
 
 	public Collision getPreviousCollision() { return m_previousCollision; }
 	public Collider getPreviousCollider() { return m_previousCollider; }
@@ -35,6 +42,11 @@ public class CollisionObserver : MonoBehaviour
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////  
 
+	private void createObserver()
+	{
+		m_observer = new Observer<CollisionObserver>(this);
+	}
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Runtime
@@ -42,7 +54,7 @@ public class CollisionObserver : MonoBehaviour
 
 	void Awake()
 	{
-		m_observer = new Observer<CollisionObserver>(this);
+		createObserver();
 	}
 
 	void OnCollisionEnter(Collision collision)

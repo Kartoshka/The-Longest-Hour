@@ -8,7 +8,11 @@ public class TargetingController : MonoBehaviour {
 	public List<SelectableAbility> targeters;
 	private int currentTarget =0;
 
-	void OnEnable(){
+    int m_DIVE = 0;
+    int m_DRAW = 1;
+    int m_BEACON = 2;
+
+    void OnEnable(){
 		activateCurrent ();
 	}
 
@@ -41,7 +45,28 @@ public class TargetingController : MonoBehaviour {
 		enableCurrent ();
 	}
 
-	public void activateCurrent(){
+    public void toggleDraw()
+    {
+        disableCurrent();
+        currentTarget = m_DRAW;
+        enableCurrent();
+    }
+
+    public void toggleDive()
+    {
+        disableCurrent();
+        currentTarget = m_DIVE;
+        enableCurrent();
+    }
+
+    public void toggleBeacon()
+    {
+        disableCurrent();
+        currentTarget = m_BEACON;
+        enableCurrent();
+    }
+
+    public void activateCurrent(){
 		if (targeters [currentTarget] != null) {
 			targeters [currentTarget].Activate ();
 		}

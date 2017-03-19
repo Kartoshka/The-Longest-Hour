@@ -116,7 +116,6 @@ public class BearController : MonoBehaviour {
 		{
 			moverBehaviour.updateInput (Vector3.zero);
 			m_animC.doAttack ();
-			bearSwipeTag.toggleTagging ();
 		}
 	}
 
