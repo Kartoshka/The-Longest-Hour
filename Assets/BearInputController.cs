@@ -61,7 +61,7 @@ public class BearInputController : MonoBehaviour {
 			m_bearControls.doAttack ();
 		} 
 
-		if (Input.GetAxis("AimBear") > 0.001f)
+		if (Input.GetButton("AimBear"))
 		{
 			m_bearControls.startAim ();
 		} else
@@ -74,9 +74,10 @@ public class BearInputController : MonoBehaviour {
 			m_bearControls.fireGrenade ();
 		}
 
+		bool run = Input.GetButton ("Sprint");
 
 		m_bearControls.locateOther (Input.GetButton ("LocateOther"));
-		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
+		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick),run);
 
 	
 	}

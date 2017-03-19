@@ -96,13 +96,15 @@ public class BearController : MonoBehaviour {
 		}
 	}
 		
-	public void moveBear(Vector3 velocity){
+	public void moveBear(Vector3 velocity, bool run){
 		if (isIdle)
 		{
+			moverBehaviour.sprinting = run;
 			moverBehaviour.updateInput (velocity);
 		}
 		else
 		{
+			moverBehaviour.sprinting = false;
 			moverBehaviour.updateInput (Vector3.zero);
 		}
 	}
@@ -172,7 +174,6 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
-	
 
 	/*
 	 * All the flag setters for our booleans.  

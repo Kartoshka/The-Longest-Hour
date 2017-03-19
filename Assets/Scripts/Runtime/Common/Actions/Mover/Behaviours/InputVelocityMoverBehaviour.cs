@@ -25,7 +25,9 @@ public class InputVelocityMoverBehaviour : MoverBehavior {
 	//For a given input [0,1], for each axis it is multiplied by this amount
 	public Vector3 stepPerAxis = new Vector3(5,5,5);
 
-	public float maxSpeed = 50;
+	public float maxWalkSpeed = 7;
+	public float maxRunSpeed = 14;
+	public bool sprinting;
 
 	public Vector3 m_velocity = Vector3.zero;
 	public Vector3 Velocity{
@@ -33,6 +35,7 @@ public class InputVelocityMoverBehaviour : MoverBehavior {
 			return m_velocity; 
 		}
 		set{ 
+			float maxSpeed = sprinting ? maxRunSpeed : maxWalkSpeed;
 			float speed = maxSpeed < value.magnitude ? maxSpeed : value.magnitude;
 			m_velocity = value.normalized * speed;
 		}
