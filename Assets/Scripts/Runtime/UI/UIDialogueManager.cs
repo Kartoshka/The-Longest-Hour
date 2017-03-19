@@ -34,30 +34,9 @@ public class UIDialogueManager : MonoBehaviour {
 	/// </summary>
 	private bool isDisplayingDialogue;
 
-	/// <summary>
-	/// TODO : Remove afterwards
-	/// Test script to debug dialogue system
-	/// </summary>
-	public List<UIDialogueLine> _TestLines;
 
 	// Use this for initialization
 	void Start () {
-
-		// TODO : remove _TestLines after debugging
-		_TestLines = new List<UIDialogueLine>();;
-		_TestLines.Add( new UIDialogueLine("Bear", "Argh, let's get to the door as quick as possible!") );
-		_TestLines.Add( new UIDialogueLine("Bird", "All in the name of worldbuilding!") );
-		_TestLines.Add( new UIDialogueLine("Bear", "Argh, now we can put the battery in the charger!") );
-		_TestLines.Add( new UIDialogueLine("Bear", "Argh, I hope it's a Duracell, lololol!") );
-		_TestLines.Add( new UIDialogueLine("Bird", "That was not funny...") );
-		_TestLines.Add( new UIDialogueLine("Bird", "Also, you wanna tell them you're a girl or should I?") );
-		_TestLines.Add( new UIDialogueLine("Bear", "Stick to the script...") );
-		_TestLines.Add( new UIDialogueLine("Bird", "My b. \nOnce the battery's charged, put it in the door slot!") );
-		_TestLines.Add( new UIDialogueLine("Bear", "Argh, once it's in the door slot, the door will open!") );
-		_TestLines.Add( new UIDialogueLine("Bear", "These lines... idek.") );
-		_TestLines.Add( new UIDialogueLine("Bird", "same") );
-		//-----------
-
 
 		// Get the Animator component
 		animator = GetComponent<Animator> ();
@@ -73,10 +52,10 @@ public class UIDialogueManager : MonoBehaviour {
 
 	private void handleInput()
 	{
-		if (Input.GetKeyDown (KeyCode.Alpha1)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha1)) 
 		{
 			showDialogue(_TestLines);
-		}
+		}*/
 
 	}
 
