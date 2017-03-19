@@ -24,7 +24,10 @@ public class DialogueTrigger : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
     {
-        //uiManager.submitLines(lines);
-        //Destroy(gameObject);
+        if(other.gameObject.tag.Equals("Player"))
+        {
+            uiManager.playDialogue(lines);
+            Destroy(gameObject);
+        }
     }
 }
