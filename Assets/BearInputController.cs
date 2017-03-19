@@ -32,7 +32,6 @@ public class BearInputController : MonoBehaviour {
 //		else
 //			horizontalInput = 0;
 
-		Debug.Log ("v: " + verticalInput);
 		m_bearControls.updateCamera (new Vector2 (horizontalInput, -verticalInput));
 //		bearCameras.getActive().increasePitch(-verticalInput);
 //		bearCameras.getActive().increaseYaw(horizontalInput);
@@ -75,6 +74,9 @@ public class BearInputController : MonoBehaviour {
 		}
 
 		bool run = Input.GetButton ("Sprint");
+
+		m_bearControls.rewind (Input.GetAxis ("RewindTime"));
+		m_bearControls.forward (Input.GetAxis ("ForwardTime"));
 
 		m_bearControls.locateOther (Input.GetButton ("LocateOther"));
 		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick),run);

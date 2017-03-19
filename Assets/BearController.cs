@@ -29,6 +29,7 @@ public class BearController : MonoBehaviour {
 	public GrenadeControllerComponent grenadeShooter;
 	public TagSingle bearSwipeTag;
 	public MatchCameraForward aimForwardMatching;
+	public TimeShiftController timeShifter;
 	
 
 
@@ -65,6 +66,7 @@ public class BearController : MonoBehaviour {
 	}
 
 	void Start () {
+		
 		if (m_animC.getControllerTrigger (idleStateName, out idleState))
 		{
 			idleState.onEnter += enableIdling;
@@ -184,6 +186,23 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
+	public void rewind(float t){
+	
+		t= Mathf.Clamp01 (t);
+		if (timeShifter)
+		{
+			timeShifter.setTime (-1 * t);
+		}
+	}
+
+	public void forward(float t){
+		t= Mathf.Clamp01 (t);
+
+		if (timeShifter)
+		{
+			timeShifter.setTime (t);
+		}
+	}
 
 	/*
 	 * All the flag setters for our booleans.  
