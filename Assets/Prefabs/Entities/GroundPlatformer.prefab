@@ -57810,8 +57810,10 @@ MonoBehaviour:
   m_targetPositionOffset: {x: 0, y: 0, z: 0}
   m_moveRelative: 1
   relativeToCamera: 1
-  stepPerAxis: {x: 5, y: 5, z: 5}
-  maxSpeed: 50
+  stepPerAxis: {x: 10, y: 5, z: 10}
+  maxWalkSpeed: 7
+  maxRunSpeed: 14
+  sprinting: 0
   m_velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114149065678975214
 MonoBehaviour:
