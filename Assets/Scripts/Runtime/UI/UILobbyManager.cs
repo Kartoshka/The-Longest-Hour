@@ -12,6 +12,11 @@ public class UILobbyManager : MonoBehaviour {
 	/// </summary>
 	private bool _frameWait;
 
+	/// <summary>
+	/// Animator component of this instance
+	/// </summary>
+	private Animator _Animator;
+
 	#region Player Ready attributes
 
 	/// <summary>
@@ -104,6 +109,7 @@ public class UILobbyManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		_Animator = GetComponent<Animator> ();
 		//startLobbyScreen ();
 
 	}
@@ -163,7 +169,6 @@ public class UILobbyManager : MonoBehaviour {
 		if (Input.GetAxisRaw ("Submit") > 0 && !_hasPressed) 
 		{
 			_PromptAnimator.Play ("Pressed");
-			Debug.Log("Submit val: " + Input.GetAxisRaw ("Submit") );
 			_hasPressed = true;
 
 		}
@@ -197,26 +202,7 @@ public class UILobbyManager : MonoBehaviour {
 		_BearReadyImage.gameObject.SetActive(true);
 		_isBearReady = true;
 	}
-
-
-	/// <summary>
-	/// Reveals the BirdReady Image, first the trail and then the bird image
-	/// </summary>
-	/// <returns>The image coroutine.</returns>
-	private IEnumerator co_ShowBirdReady()
-	{
-		_BirdTrailImage.gameObject.SetActive(true);
-
-		for (float f = 0; f <= 1; f+= 0.1f) 
-		{
-			_BirdTrailImage.fillAmount = f;
-			yield return new WaitForSeconds (0.01f);
-		}
-
-		yield return new WaitForSeconds (0.02f);
-		_BirdReadyImage.gameObject.SetActive (true);
-		_isBirdReady = true;
-	}
+		
 
 
 	/// <summary>
@@ -227,11 +213,18 @@ public class UILobbyManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (_PressedAnimationLength);
 
-		//TODO: Make so calls this method if Bird Player
-		StartCoroutine("co_ShowBirdReady");
+		_BearReadyImage.gameObject.SetActive (true);
+		_BirdTrailImage.gameObject.SetActive(true);
+		_BirdReadyImage.gameObject.SetActive (true);
 
-		//TODO: Make so calls this method if Bear Player
-		showBearReady ();
+		_Animator.Play ("ShowPlayersReady");
+
+		//TODO : If Bird Player
+		_isBirdReady = true;
+
+		// TODO : If Bear Player
+		_isBearReady = true;
+
 	}
 		
 		
@@ -243,16 +236,16 @@ public class UILobbyManager : MonoBehaviour {
 	/// </summary>
 	private IEnumerator co_StartGame()
 	{
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (2.6f);
 		_ImageThe.gameObject.SetActive (true);
 
-		yield return new WaitForSeconds (1.1f);
+		yield return new WaitForSeconds (1.2f);
 		_ImageLongest.gameObject.SetActive (true);
 
 		yield return new WaitForSeconds (1f);
 		_ImageHour.gameObject.SetActive (true);
 
-		yield return new WaitForSeconds (2.5f);
+		yield return new WaitForSeconds (5.3f);
 		UIManager.canPause = true;
 		gameObject.SetActive (false);
 		

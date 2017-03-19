@@ -6,21 +6,6 @@ using UnityEngine.UI;
 
 public class UIHUDManager : MonoBehaviour {
 
-	#region Panels
-
-	/// <summary>
-	/// The top panel of HUD
-	/// </summary>
-	[SerializeField]
-	private Transform _TopPanel;
-
-	/// <summary>
-	/// The bottom panel of HUD
-	/// </summary>
-	[SerializeField]
-	private Transform _BottomPanel;
-
-	#endregion
 
 	#region Button Icons
 
@@ -57,9 +42,9 @@ public class UIHUDManager : MonoBehaviour {
 	[SerializeField]
 	private Image _BearInteractIcon;
 	[SerializeField]
-	private Image _BearRoarIcon;
-	[SerializeField]
 	private Image _BearThrowTagIcon;
+	[SerializeField]
+	private Image _BearRoarIcon;
 
 	#endregion 
 
@@ -83,9 +68,13 @@ public class UIHUDManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		showPlayerCharacterIcon ();
+
 		// Set all button images to inactive at start
 		deactivateButtonImages();
 
+		// Set all ability icons to inactive at start
+		deactivateAbilityImages ();
 
 	}
 
@@ -129,12 +118,14 @@ public class UIHUDManager : MonoBehaviour {
 			//do something
 			break;
 		case "Bear-Interact":
-			//do something
-			break;
-		case "Bear-Roar":
-			//do something
+			_BearInteractIcon.gameObject.SetActive (true);
+			_BearThrowTagIcon.gameObject.SetActive (false);
 			break;
 		case "Bear-ThrowTag":
+			_BearInteractIcon.gameObject.SetActive (false);
+			_BearThrowTagIcon.gameObject.SetActive (true);
+			break;
+		case "Bear-Roar":
 			//do something
 			break;
 		default:
@@ -167,6 +158,28 @@ public class UIHUDManager : MonoBehaviour {
 		}
 	}
 
+
+	/// <summary>
+	/// Shows the player character icon based on if server or if client
+	/// </summary>
+	private void showPlayerCharacterIcon()
+	{
+		//TODO if (isServer)
+		//{
+			//_CurrentPlayerBearImage.gameObject.SetActive(true);
+			//_CurrentPlayerBirdImage.gameObject.SetActive(false);
+		//}
+
+		//TODO if (isClient)
+		//{
+			//_CurrentPlayerBirdImage.gameObject.SetActive(true);
+			//_CurrentPlayerBearImage.gameObject.SetActive(false);
+		//}
+	}
+
+	/// <summary>
+	/// Deactivates the button images for HUD
+	/// </summary>
 	private void deactivateButtonImages()
 	{
 		_AButtonImage.gameObject.SetActive (false);
@@ -176,6 +189,20 @@ public class UIHUDManager : MonoBehaviour {
 
 	}
 
+	/// <summary>
+	/// Deactivates the ability images for HUD
+	/// </summary>
+	private void deactivateAbilityImages()
+	{
+		_BearInteractIcon.gameObject.SetActive (false);
+		_BearRoarIcon.gameObject.SetActive (false);
+		_BearThrowTagIcon.gameObject.SetActive (false);
+
+		_BirdDrawIcon.gameObject.SetActive (false);
+		_BirdPickDropIcon.gameObject.SetActive (false);
+		_BirdSwoopIcon.gameObject.SetActive (false);
+
+	}
 	// Update is called once per frame
 	void Update () {
 		handleInput ();

@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour {
 	#region HUD Panel Attributes
 
 	[SerializeField]
-	private Transform _HUDBottomPanel;
+	private Transform _HUDPanel;
 
 	#endregion
 
@@ -45,26 +45,33 @@ public class UIManager : MonoBehaviour {
 	[SerializeField]
 	private Transform _DialoguePanel;
 
+	private UIDialogueManager _DialogueManager;
+
 	#endregion
 
 	// Use this for initialization
 	void Start () {
 
-		//_LobbyPanel.gameObject.SetActive (true);
-		//_LobbyPanel.GetComponent<UILobbyManager> ().startLobbyScreen ();
+		openLobbyFirst ();
 
 		setPausePanel ();
-		hideDialoguePanel ();
+		setDialoguePanel ();
 	}
 
 
+	/// <summary>
+	/// Handles Player input
+	/// </summary>
 	private void handleInput()
 	{
+
+		// TODO: Get proper Player input to listen for
 		if (Input.GetKeyDown (KeyCode.K)) 
 		{
 			pauseGame ();
 		}
 
+		// TODO : Get proper player input to listen for
 		if (Input.GetKeyDown (KeyCode.P)) 
 		{
 			unpauseGame ();
@@ -72,13 +79,21 @@ public class UIManager : MonoBehaviour {
 	}
 
 
-	private void hideDialoguePanel()
+	/// <summary>
+	/// Sets the dialogue panel and hides it on start
+	/// </summary>
+	private void setDialoguePanel()
 	{
 		_DialoguePanel.gameObject.SetActive (true);
+		_DialogueManager = _DialoguePanel.GetComponent<UIDialogueManager> ();
+
 		Animator _DialogueAnimator = _DialoguePanel.GetComponent<Animator> ();
 		_DialogueAnimator.Play ("HideDialogue");
 	}
 
+	/// <summary>
+	/// Sets the pause panel and hides it on start
+	/// </summary>
 	private void setPausePanel()
 	{
 		// Set all animation values for the Pressed animation for smooth transitioning
@@ -108,6 +123,14 @@ public class UIManager : MonoBehaviour {
 		_PausePanel.GetComponent<Animator> ().Play ("CloseAnimation");
 	}
 		
+	/// <summary>
+	/// Plays through dialogue contained in parameter p_Lines
+	/// </summary>
+	/// <param name="p_Lines">P lines.</param>
+	public void playDialogue(List<UIDialogueLine> p_Lines)
+	{
+		_DialogueManager.showDialogue (p_Lines);	
+	}
 
 	/// <summary>
 	/// Starts the Lobby screen when called
@@ -116,8 +139,16 @@ public class UIManager : MonoBehaviour {
 	{
 		canPause = false;
 
-		hideDialoguePanel ();
+		setDialoguePanel ();
 		unpauseGame ();
+
+		_LobbyPanel.gameObject.SetActive (true);
+		_LobbyPanel.GetComponent<UILobbyManager> ().startLobbyScreen ();
+	}
+
+	private void openLobbyFirst()
+	{
+		canPause = false;
 
 		_LobbyPanel.gameObject.SetActive (true);
 		_LobbyPanel.GetComponent<UILobbyManager> ().startLobbyScreen ();
