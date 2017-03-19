@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 64584154145056216}
   - component: {fileID: 114003055949902024}
   - component: {fileID: 114909688279625728}
+  - component: {fileID: 114613387557487124}
   m_Layer: 0
   m_Name: trash_body
-  m_TagString: Untagged
+  m_TagString: TimeControllable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,9 +66,10 @@ GameObject:
   - component: {fileID: 64731810146372582}
   - component: {fileID: 114996415273737826}
   - component: {fileID: 114921843003264850}
+  - component: {fileID: 114989805576197322}
   m_Layer: 0
   m_Name: trash_lid
-  m_TagString: Untagged
+  m_TagString: TimeControllable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501287515653516}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.74, y: 0, z: 8.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316230399632848}
@@ -261,22 +263,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 174
+    i1: 252
+    i2: 4
+    i3: 100
+    i4: 27
+    i5: 127
+    i6: 78
+    i7: 180
+    i8: 25
+    i9: 206
+    i10: 101
+    i11: 62
+    i12: 187
+    i13: 189
+    i14: 135
+    i15: 158
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114085492185855928
@@ -330,6 +332,20 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114613387557487124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472109435749670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeMaterial: {fileID: 2100000, guid: 95ea8a883b34e45999319862c07b5130, type: 2}
+  m_inactiveMaterial: {fileID: 2100000, guid: 39e85527b50243446a9048001263e842, type: 2}
+  airTag: {fileID: 1297552286539458, guid: 59911ae815e4513488d823cecd8be074, type: 2}
 --- !u!114 &114877826439547318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +425,20 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114989805576197322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540281909382816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeMaterial: {fileID: 2100000, guid: 95ea8a883b34e45999319862c07b5130, type: 2}
+  m_inactiveMaterial: {fileID: 2100000, guid: 39e85527b50243446a9048001263e842, type: 2}
+  airTag: {fileID: 1297552286539458, guid: 59911ae815e4513488d823cecd8be074, type: 2}
 --- !u!114 &114996415273737826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,21 +453,21 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 174
+    i1: 252
+    i2: 4
+    i3: 100
+    i4: 27
+    i5: 127
+    i6: 78
+    i7: 180
+    i8: 25
+    i9: 206
+    i10: 101
+    i11: 62
+    i12: 187
+    i13: 189
+    i14: 135
+    i15: 158
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0

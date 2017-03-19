@@ -8,7 +8,7 @@ namespace DigitalRuby.RainMaker
 {
     public class BaseRainScript : MonoBehaviour
     {
-        [Tooltip("Camera the rain should hover over, defaults to main camera")]
+    //    [Tooltip("Camera the rain should hover over, defaults to main camera")]
         public Camera Camera;
 
         [Tooltip("Whether rain should follow the camera. If false, rain must be moved manually and will not follow the camera.")]
@@ -218,10 +218,9 @@ namespace DigitalRuby.RainMaker
 
 #endif
 
-            if (Camera == null)
-            {
-                Camera = Camera.main;
-            }
+            
+            Camera = Camera.main;
+            
 
             audioSourceRainLight = new LoopingAudioSource(this, RainSoundLight);
             audioSourceRainMedium = new LoopingAudioSource(this, RainSoundMedium);
