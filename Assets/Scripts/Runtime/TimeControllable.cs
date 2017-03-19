@@ -8,6 +8,7 @@ public class TimeControllable : MonoBehaviour
     public Material m_activeMaterial;
     public Material m_inactiveMaterial;
     public GameObject airTag;
+	public PhysicsTimeCtrl m_physicsController;
 
     bool timeControllable;
 
@@ -16,6 +17,7 @@ public class TimeControllable : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+		m_physicsController = gameObject.GetComponent<PhysicsTimeCtrl> ();
         renderer = gameObject.GetComponent<Renderer>();
         timeControllable = false;
 	}
@@ -36,6 +38,10 @@ public class TimeControllable : MonoBehaviour
         {
             childFlashing.enabled = true;
         }
+		if (m_physicsController)
+		{
+			m_physicsController.isModifiable = true;
+		}
         timeControllable = true;
         airTag.SetActive(true);
     }
@@ -50,6 +56,11 @@ public class TimeControllable : MonoBehaviour
         {
             childFlashing.enabled = false;
         }
+
+		if (m_physicsController)
+		{
+			m_physicsController.isModifiable = false;
+		}
         airTag.SetActive(false);
         timeControllable = false;
     }
