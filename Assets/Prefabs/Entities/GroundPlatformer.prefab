@@ -57810,9 +57810,9 @@ MonoBehaviour:
   m_targetPositionOffset: {x: 0, y: 0, z: 0}
   m_moveRelative: 1
   relativeToCamera: 1
-  stepPerAxis: {x: 10, y: 5, z: 10}
+  stepPerAxis: {x: 20, y: 5, z: 20}
   maxWalkSpeed: 7
-  maxRunSpeed: 14
+  maxRunSpeed: 20
   sprinting: 0
   m_velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114149065678975214
@@ -58384,10 +58384,10 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114695932065784176}
-  distanceFromTarget: 12
+  distanceFromTarget: 6
   angleFromTarget: {x: 15, y: -88}
-  pitchChangeSpeed: 0
-  yawChangeSpeed: 50
+  pitchChangeSpeed: 20
+  yawChangeSpeed: 65
   minXAngle: 58.7
   maxXAngle: 111.6
   fixCollisions: 1

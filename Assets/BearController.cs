@@ -153,7 +153,17 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
+//	public GameObject birdTracker;
+//	public GameObject bearTracker;
 	public void locateOther(bool active){
+		
+//		if (((isIdle || isAsleep || isAttacking) && active))
+//		{
+//			runningCam.controlledView.CameraComposerTarget = birdTracker.transform;
+//		} else
+//		{
+//			runningCam.controlledView.CameraComposerTarget = bearTracker.transform;
+//		}
 		locateBirdCam.gameObject.SetActive (((isIdle || isAsleep || isAttacking) && active));
 	}
 
