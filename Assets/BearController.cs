@@ -17,7 +17,7 @@ public class BearController : MonoBehaviour {
 	[Header("Cameras")]
 	public Cinemachine3rdPerson runningCam;
 	public Cinemachine3rdPerson aimCam;
-	public CameraController m_camControls;
+	public Cinemachine3rdPerson locateBirdCam;
 
 
 	[Space(5)]
@@ -64,11 +64,7 @@ public class BearController : MonoBehaviour {
 		return () => val = true;
 	}
 
-
-
 	void Start () {
-
-
 		if (m_animC.getControllerTrigger (idleStateName, out idleState))
 		{
 			idleState.onEnter += enableIdling;
@@ -128,7 +124,7 @@ public class BearController : MonoBehaviour {
 				aimForwardMatching.enabled = true;
 			}
 			moverBehaviour.updateInput (Vector3.zero);
-			m_camControls.changeCamera (aimCam);
+			aimCam.gameObject.SetActive (true);
 			m_animC.startAim ();
 		}
 	}
@@ -142,7 +138,7 @@ public class BearController : MonoBehaviour {
 			}
 
 			moverBehaviour.updateInput (Vector3.zero);
-			m_camControls.changeCamera (runningCam);
+			aimCam.gameObject.SetActive (false);
 			m_animC.endAim ();
 		}
 	}
@@ -155,6 +151,28 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
+	public void locateOther(bool active){
+		locateBirdCam.gameObject.SetActive (((isIdle || isAsleep || isAttacking) && active));
+	}
+
+	public void updateCamera(Vector2 change){
+		Cinemachine3rdPerson active =null;
+		if (isIdle || isAttacking || isAsleep)
+		{
+			active = runningCam;
+		} else if (isAiming)
+		{
+			active = aimCam;
+		}
+		if (active)
+		{
+			active.increasePitch (change.y);
+			active.increaseYaw (change.x);
+			active.UpdatePosition ();
+		}
+	}
+
+	
 
 	/*
 	 * All the flag setters for our booleans.  
@@ -162,19 +180,9 @@ public class BearController : MonoBehaviour {
 	 */
 
 	public void enableSleeping(){
-		if (targetFollower)
-		{
-//			targetFollower.m_faceTarget = false;
-//			targetFollower.m_matchTargetForward = true;
-		}
 		isAsleep = true;
 	}
 	public void disableSleeping(){
-		if (targetFollower)
-		{
-//			targetFollower.m_faceTarget = true;
-//			targetFollower.m_matchTargetForward = false;
-		}
 		isAsleep = false;
 	}
 
@@ -207,11 +215,5 @@ public class BearController : MonoBehaviour {
 	}
 
 
-	private Vector3 getAimOffsetCharacter(){
-		Vector3 camForward = m_camControls.getActive ().transform.forward;
-		camForward.y = 0;
-		Vector3 playerForward = moverBehaviour.transform.position;
-		playerForward.y = 0;
-		return (camForward - playerForward).normalized;
-	}
+
 }

@@ -6,7 +6,7 @@ public class BearInputController : MonoBehaviour {
 
 	private DebugEntities debug;
 
-	public CameraController bearCameras;
+//	public CameraController bearCameras;
 	public BearController m_bearControls;
 
 	private float m_moveInputThreshold = 0.5f;
@@ -32,18 +32,16 @@ public class BearInputController : MonoBehaviour {
 //		else
 //			horizontalInput = 0;
 
-		//Move active camera
-		if (bearCameras.getActive())
-		{
-			bearCameras.getActive().increasePitch(-verticalInput);
-			bearCameras.getActive().increaseYaw(horizontalInput);
-			bearCameras.getActive().UpdatePosition();
-		}
+
+		m_bearControls.updateCamera (new Vector2 (horizontalInput, -verticalInput));
+//		bearCameras.getActive().increasePitch(-verticalInput);
+//		bearCameras.getActive().increaseYaw(horizontalInput);
+//		bearCameras.getActive().UpdatePosition();
 
 		//Movement controls
 		float verticalLeftStick;
 		if (debug && debug.m_useWorldCam)
-			verticalLeftStick = Input.GetAxis("VerticalBird");
+			verticalLeftStick = Input.GetAxis("VerticalBear");
 		else
 			verticalLeftStick = Input.GetAxis("Vertical");
 
@@ -75,6 +73,9 @@ public class BearInputController : MonoBehaviour {
 		if(Input.GetButton("Fire1")){
 			m_bearControls.fireGrenade ();
 		}
+
+
+		m_bearControls.locateOther (Input.GetButton ("LocateOther"));
 		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick));
 
 	

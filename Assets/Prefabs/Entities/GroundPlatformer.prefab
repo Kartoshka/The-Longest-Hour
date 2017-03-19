@@ -22286,7 +22286,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199675666265128}
-  - component: {fileID: 114572778500229582}
   m_Layer: 0
   m_Name: Camera Controller
   m_TagString: Untagged
@@ -28236,6 +28235,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1951137649858240
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4665189699677032}
+  - component: {fileID: 114931983926654454}
+  - component: {fileID: 114149065678975214}
+  - component: {fileID: 114505837333027280}
+  - component: {fileID: 114581574341413726}
+  m_Layer: 0
+  m_Name: LookAtBirdCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1951941335470818
 GameObject:
   m_ObjectHideFlags: 1
@@ -35805,6 +35823,7 @@ Transform:
   m_Children:
   - {fileID: 4431133055275006}
   - {fileID: 4452864702940300}
+  - {fileID: 4665189699677032}
   m_Father: {fileID: 4676916042656872}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48384,6 +48403,19 @@ Transform:
   m_Father: {fileID: 4091174077276414}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4665189699677032
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4199675666265128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4665223392672658
 Transform:
   m_ObjectHideFlags: 1
@@ -57762,7 +57794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4992e04d4944a4a80fcf55b209ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bearCameras: {fileID: 114572778500229582}
   m_bearControls: {fileID: 114301582777173366}
 --- !u!114 &114136612259491140
 MonoBehaviour:
@@ -57782,6 +57813,17 @@ MonoBehaviour:
   stepPerAxis: {x: 5, y: 5, z: 5}
   maxSpeed: 50
   m_velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &114149065678975214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b1d2e9dd22646c08d7790f67f01e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114301582777173366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57796,7 +57838,7 @@ MonoBehaviour:
   targetFollower: {fileID: 114529071121646760}
   runningCam: {fileID: 114983130417015822}
   aimCam: {fileID: 114903739070602264}
-  m_camControls: {fileID: 114572778500229582}
+  locateBirdCam: {fileID: 114931983926654454}
   moverBehaviour: {fileID: 114136612259491140}
   grenadeShooter: {fileID: 114538273771620466}
   bearSwipeTag: {fileID: 114975755756980254}
@@ -57916,6 +57958,35 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
+--- !u!114 &114505837333027280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223560802, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoAddToPriorityStack: 1
+  m_Priority: 1
+  LensAttributes:
+    FieldOfView: 40
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+  m_NoiseSettings: {fileID: 0}
+  m_ComposerSettings: {fileID: 11400000, guid: fdd6ae348e5cf4d028579882c49b18ac, type: 2}
+  m_TransposerSettings: {fileID: 0}
+  m_ComposerCameraTarget: {fileID: 0}
+  m_TransposerCameraTarget: {fileID: 0}
+  TransposerTrackingOffset: {x: 0, y: 0, z: 0}
+  TransposerDampingOffset: {x: 0, y: 0, z: 0}
+  ComposerTrackingOffset: {x: 0, y: 0, z: 0}
+  ComposerDampingOffset: {x: 0, y: 0}
+  DutchOffset: 0
+  NoiseAmplitudeScalar: 1
+  NoiseSpeedScalar: 1
 --- !u!114 &114520039295091304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58004,19 +58075,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grenadeControllerComponent: {fileID: 114538273771620466}
---- !u!114 &114572778500229582
+--- !u!114 &114581574341413726
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757144231876718}
+  m_GameObject: {fileID: 1951137649858240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2229064a2203421c93bab996a70974b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCamera: {fileID: 114983130417015822}
-  activeCamera: {fileID: 114983130417015822}
+  m_target: {fileID: 0}
+  m_positionLerpScale: 500000
+  m_rotationLerpScale: 500000
+  m_faceTarget: 0
+  m_matchTargetForward: 0
+  m_offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114599938532382322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58243,10 +58318,36 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   controlledView: {fileID: 114888267780819956}
-  distanceFromTarget: 0
+  distanceFromTarget: 0.1
   angleFromTarget: {x: 0, y: 0}
   pitchChangeSpeed: 0
   yawChangeSpeed: 20
+  minXAngle: -90
+  maxXAngle: 90
+  fixCollisions: 0
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  radiusCollision: 0.2
+  zoomFactor: 0.5
+--- !u!114 &114931983926654454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf88306375934ec9bea28c5f89f590f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifiable: 0
+  setOnStart: 0
+  controlledView: {fileID: 114505837333027280}
+  distanceFromTarget: 0
+  angleFromTarget: {x: 0, y: 0}
+  pitchChangeSpeed: 5
+  yawChangeSpeed: 5
   minXAngle: -90
   maxXAngle: 90
   fixCollisions: 0
