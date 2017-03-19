@@ -50,6 +50,7 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 	void Start()
 	{
+		
 		if (setOnStart) {
 			setPosition ();
 			if (fixCollisions) {

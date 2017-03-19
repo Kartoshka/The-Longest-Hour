@@ -100,7 +100,7 @@ public class PlatformerMoverController : MonoBehaviour
 
 		if (yawInput != 0 )//|| pitchInput != 0)
 		{
-			m_moverComponent.getTransform().Rotate(new Vector3(0, m_turnRate * yawInput, 0));
+			//m_moverComponent.getTransform().Rotate(new Vector3(0, m_turnRate * yawInput, 0));
 		}
 
 		if ((Network.peerType == NetworkPeerType.Disconnected && Input.GetButtonDown("JumpGround")) ||

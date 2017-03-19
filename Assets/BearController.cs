@@ -10,13 +10,14 @@ using System.Collections.Generic;
 
 public class BearController : MonoBehaviour {
 		
+	//TODO add objects which enable on state start, those objects will have scripts that enable other objects. a la component method!
 	//fixes bug where bear is looking at floor during sleep
 	public FollowTarget targetFollower;
 
 	[Header("Cameras")]
 	public Cinemachine3rdPerson runningCam;
 	public Cinemachine3rdPerson aimCam;
-	public CameraController m_camControls;
+	public Cinemachine3rdPerson locateBirdCam;
 
 
 	[Space(5)]
@@ -27,6 +28,8 @@ public class BearController : MonoBehaviour {
 	[Header("Actions")]
 	public GrenadeControllerComponent grenadeShooter;
 	public TagSingle bearSwipeTag;
+	public MatchCameraForward aimForwardMatching;
+	
 
 
 	[Space(5)]
@@ -35,10 +38,8 @@ public class BearController : MonoBehaviour {
 	private CharacterControllerStateTrigger idleState;
 	public string attackStateName;
 	private CharacterControllerStateTrigger attackState;
-	public string startAimStateName;
-	private CharacterControllerStateTrigger aimStartState;
-	public string endAimStateName;
-	private CharacterControllerStateTrigger aimEndState;
+	public string aimStateName;
+	private CharacterControllerStateTrigger aimState;
 	public string sleepStateName;
 	private CharacterControllerStateTrigger sleepState;
 	public string fireStateName;
@@ -52,7 +53,7 @@ public class BearController : MonoBehaviour {
 	private bool isIdle = false;
 	private bool isAsleep = true;
 	private bool isAttacking = false;
-	private bool isAiming = false;
+	public bool isAiming = false;
 	private bool isFiring = false;
 
 	Action enable(bool val){
@@ -63,11 +64,7 @@ public class BearController : MonoBehaviour {
 		return () => val = true;
 	}
 
-
-
 	void Start () {
-
-
 		if (m_animC.getControllerTrigger (idleStateName, out idleState))
 		{
 			idleState.onEnter += enableIdling;
@@ -80,14 +77,10 @@ public class BearController : MonoBehaviour {
 			attackState.onExit += disableAttacking;
 		}
 
-		if (m_animC.getControllerTrigger (startAimStateName, out aimStartState))
+		if (m_animC.getControllerTrigger (aimStateName, out aimState))
 		{
-			aimStartState.onEnter += enableAiming;
-		}
-
-		if (m_animC.getControllerTrigger (endAimStateName, out aimEndState))
-		{
-			aimEndState.onExit += disableAiming;
+			aimState.onEnter += enableAiming;
+			aimState.onExit += disableAiming;
 		}
 
 		if (m_animC.getControllerTrigger (fireStateName, out fireState))
@@ -103,13 +96,15 @@ public class BearController : MonoBehaviour {
 		}
 	}
 		
-	public void moveBear(Vector3 velocity){
+	public void moveBear(Vector3 velocity, bool run){
 		if (isIdle)
 		{
+			moverBehaviour.sprinting = run;
 			moverBehaviour.updateInput (velocity);
 		}
 		else
 		{
+			moverBehaviour.sprinting = false;
 			moverBehaviour.updateInput (Vector3.zero);
 		}
 	}
@@ -126,8 +121,12 @@ public class BearController : MonoBehaviour {
 	public void startAim(){
 		if (isIdle && !isAiming)
 		{
+			if (aimForwardMatching)
+			{
+				aimForwardMatching.enabled = true;
+			}
 			moverBehaviour.updateInput (Vector3.zero);
-			m_camControls.changeCamera (aimCam);
+			aimCam.gameObject.SetActive (true);
 			m_animC.startAim ();
 		}
 	}
@@ -135,8 +134,13 @@ public class BearController : MonoBehaviour {
 	public void stopAim(){
 		if (isAiming && !isIdle)
 		{
+			if (aimForwardMatching)
+			{
+				aimForwardMatching.enabled = false;
+			}
+
 			moverBehaviour.updateInput (Vector3.zero);
-			m_camControls.changeCamera (runningCam);
+			aimCam.gameObject.SetActive (false);
 			m_animC.endAim ();
 		}
 	}
@@ -149,6 +153,37 @@ public class BearController : MonoBehaviour {
 		}
 	}
 
+//	public GameObject birdTracker;
+//	public GameObject bearTracker;
+	public void locateOther(bool active){
+		
+//		if (((isIdle || isAsleep || isAttacking) && active))
+//		{
+//			runningCam.controlledView.CameraComposerTarget = birdTracker.transform;
+//		} else
+//		{
+//			runningCam.controlledView.CameraComposerTarget = bearTracker.transform;
+//		}
+		locateBirdCam.gameObject.SetActive (((isIdle || isAsleep || isAttacking) && active));
+	}
+
+	public void updateCamera(Vector2 change){
+		Cinemachine3rdPerson active =null;
+		if (isIdle || isAttacking || isAsleep)
+		{
+			active = runningCam;
+		} else if (isAiming)
+		{
+			active = aimCam;
+		}
+		if (active)
+		{
+			active.increasePitch (change.y);
+			active.increaseYaw (change.x);
+			active.UpdatePosition ();
+		}
+	}
+
 
 	/*
 	 * All the flag setters for our booleans.  
@@ -156,19 +191,9 @@ public class BearController : MonoBehaviour {
 	 */
 
 	public void enableSleeping(){
-		if (targetFollower)
-		{
-			targetFollower.m_faceTarget = false;
-			targetFollower.m_matchTargetForward = true;
-		}
 		isAsleep = true;
 	}
 	public void disableSleeping(){
-		if (targetFollower)
-		{
-			targetFollower.m_faceTarget = true;
-			targetFollower.m_matchTargetForward = false;
-		}
 		isAsleep = false;
 	}
 
@@ -201,11 +226,5 @@ public class BearController : MonoBehaviour {
 	}
 
 
-	private Vector3 getAimOffsetCharacter(){
-		Vector3 camForward = m_camControls.getActive ().transform.forward;
-		camForward.y = 0;
-		Vector3 playerForward = moverBehaviour.transform.position;
-		playerForward.y = 0;
-		return (camForward - playerForward).normalized;
-	}
+
 }
