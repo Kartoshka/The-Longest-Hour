@@ -40509,6 +40509,15 @@ Prefab:
       propertyPath: m_TagString
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1841566696023482, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933027895878408, guid: ceb7ff8e8a2b84d7eaf1ee317454623d,
+        type: 2}
+      propertyPath: _HUDPanel
+      value: 
+      objectReference: {fileID: 1914353932}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
   m_IsPrefabParent: 0
@@ -40582,6 +40591,11 @@ GameObject:
 --- !u!1 &1914353931 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1818142740722624, guid: ceb7ff8e8a2b84d7eaf1ee317454623d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1914353924}
+--- !u!224 &1914353932 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224084736211079604, guid: ceb7ff8e8a2b84d7eaf1ee317454623d,
     type: 2}
   m_PrefabInternal: {fileID: 1914353924}
 --- !u!1001 &1925393711

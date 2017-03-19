@@ -93,7 +93,7 @@ public class UIDialogueManager : MonoBehaviour {
 		{
 			_Text.text = dialogue.Value;
 			setSpeakerTo (dialogue.Speaker);
-			yield return new WaitForSeconds (5f);
+			yield return new WaitForSeconds (3f);
 		}
 			
 		// Once over, hide dialogue box and set speaker to None to disable the icon
