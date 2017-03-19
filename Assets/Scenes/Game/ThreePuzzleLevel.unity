@@ -280,19 +280,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.054675937
+      value: 0.053896476
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8538057
+      value: 0.83354974
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.091616884
+      value: -0.082650095
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.50954175
+      value: 0.54356134
       objectReference: {fileID: 0}
     - target: {fileID: 4858208024741500, guid: aee04ca687e3ad046b27f9923aa6d657, type: 2}
       propertyPath: m_RootOrder
@@ -1256,24 +1256,39 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.27364576
       objectReference: {fileID: 0}
-    - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
+    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
         type: 2}
-      propertyPath: maxSpeed
-      value: 7
+      propertyPath: bearTracker
+      value: 
+      objectReference: {fileID: 1991808890}
+    - target: {fileID: 114301582777173366, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: birdTracker
+      value: 
+      objectReference: {fileID: 2142562831}
+    - target: {fileID: 114983130417015822, guid: 888aa35b9e5d97947bb557477db9b754,
+        type: 2}
+      propertyPath: pitchChangeSpeed
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
+    - target: {fileID: 114983130417015822, guid: 888aa35b9e5d97947bb557477db9b754,
         type: 2}
-      propertyPath: stepPerAxis.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114136612259491140, guid: 888aa35b9e5d97947bb557477db9b754,
-        type: 2}
-      propertyPath: stepPerAxis.z
-      value: 10
+      propertyPath: yawChangeSpeed
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 888aa35b9e5d97947bb557477db9b754, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1991808890 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1665882356245960, guid: 888aa35b9e5d97947bb557477db9b754,
+    type: 2}
+  m_PrefabInternal: {fileID: 1989165394}
+--- !u!1 &2142562831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1670295891486646, guid: a9ee51c7ac0183a4883672873f1c4d63,
+    type: 2}
+  m_PrefabInternal: {fileID: 996555355}
 --- !u!4 &2142562832 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4148581221030964, guid: a9ee51c7ac0183a4883672873f1c4d63,
