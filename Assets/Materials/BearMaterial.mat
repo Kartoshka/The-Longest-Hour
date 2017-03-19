@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: bearNoseMat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: BearMaterial
+  m_Shader: {fileID: 4800000, guid: b05537e55a69cf641aadf712e51e1203, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fca88b081e3f051468a0f9dc15dd17ca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -69,13 +69,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _PixelTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 358f4cf9be6f8e545bb871a0477e7432, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
       second: 1
     - first:
         name: _Cutoff
-      second: 0.5
+      second: 0
+    - first:
+        name: _CutoffEnd
+      second: 0.415
     - first:
         name: _DetailNormalMapScale
       second: 1
@@ -83,14 +92,23 @@ Material:
         name: _DstBlend
       second: 0
     - first:
+        name: _EdgeFade
+      second: 0.796
+    - first:
+        name: _FurLength
+      second: 0.107
+    - first:
         name: _GlossMapScale
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0.932
     - first:
         name: _GlossyReflections
       second: 1
+    - first:
+        name: _GravityStrength
+      second: 0.298
     - first:
         name: _Metallic
       second: 0
@@ -121,7 +139,10 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _Gravity
+      second: {r: 0, g: -1, b: 0, a: 0}
