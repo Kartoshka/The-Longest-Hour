@@ -14,6 +14,14 @@ public class UIManager : MonoBehaviour {
 
 	#endregion
 
+
+	#region HUD Panel Attributes
+
+	[SerializeField]
+	private Transform _HUDBottomPanel;
+
+	#endregion
+
 	#region Pause Panel Attributes
 	/// <summary>
 	/// The pause panel transform
@@ -42,8 +50,8 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		_LobbyPanel.gameObject.SetActive (true);
-		_LobbyPanel.GetComponent<UILobbyManager> ().startLobbyScreen ();
+		//_LobbyPanel.gameObject.SetActive (true);
+		//_LobbyPanel.GetComponent<UILobbyManager> ().startLobbyScreen ();
 
 		setPausePanel ();
 		hideDialoguePanel ();
