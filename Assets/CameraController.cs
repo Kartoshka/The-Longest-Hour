@@ -34,6 +34,7 @@ public class CameraController : MonoBehaviour {
 				activeCamera.gameObject.SetActive (false);
 			}
 			activeCamera = newCam;
+			newCam.resetPitchYaw ();
 			newCam.gameObject.SetActive (true);
 
 		}

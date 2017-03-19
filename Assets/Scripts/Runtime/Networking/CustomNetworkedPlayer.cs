@@ -95,7 +95,7 @@ public class CustomNetworkedPlayer : NetworkBehaviour
 				SpawnPointManager spawnPointManager = spawnPointerManagerObject.GetComponent<SpawnPointManager>();
 				if (spawnPointManager)
 				{
-					spawnPointManager.getPlayerSpawnTransform(netConn.connectionId);
+					spawnTranform = spawnPointManager.getPlayerSpawnTransform(netConn.connectionId);
 				}
 			}
 			if(spawnTranform == null)
