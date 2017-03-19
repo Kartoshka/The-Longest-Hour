@@ -138,14 +138,34 @@ MonoBehaviour:
       - serializedVersion: 2
         time: 0
         value: 0
-        inSlope: 1
-        outSlope: 1
+        inSlope: 4.0000005
+        outSlope: 4.0000005
         tangentMode: 34
       - serializedVersion: 2
-        time: 1
+        time: 0.24999999
         value: 1
-        inSlope: 1
-        outSlope: 1
+        inSlope: 4.0000005
+        outSlope: 4.0000005
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - BlendFromCameraName: AimCamera
+    BlendToCameraName: '**ANY CAMERA**'
+    Blending:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 4.0000005
+        outSlope: 4.0000005
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.24999999
+        value: 1
+        inSlope: 4.0000005
+        outSlope: 4.0000005
         tangentMode: 34
       m_PreInfinity: 2
       m_PostInfinity: 2
