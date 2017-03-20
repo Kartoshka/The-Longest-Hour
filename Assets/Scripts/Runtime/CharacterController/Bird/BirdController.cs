@@ -41,7 +41,9 @@ public class BirdController : MonoBehaviour {
 		{
 			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
 		}
-	}
+
+        targetControl.gameObject.SetActive(true);
+    }
 	
 	void Update () {
         //Camera movement input
@@ -119,7 +121,6 @@ public class BirdController : MonoBehaviour {
         // press right trigger, draw
         if(rightTrigger == 1)
         {
-            targetControl.gameObject.SetActive(true);
             targetControl.toggleDraw();
             targetControl.activateCurrent();
         }
@@ -130,28 +131,28 @@ public class BirdController : MonoBehaviour {
             {
                 switchCameras();
             }
-            targetControl.gameObject.SetActive(true);
             targetControl.toggleDive();
             targetControl.activateCurrent();
         }
         // y for beacon
         else if (Input.GetButtonDown("Jump"))
         {
-            targetControl.gameObject.SetActive(true);
+            
             targetControl.toggleBeacon();
             targetControl.activateCurrent();
-        } else
+        }
+        // otherwise, reset abilities
+        else
         {
-            targetControl.gameObject.SetActive(false);
             targetControl.disactivateCurrent();
         }
 
 
         // if holding object, press a to let go? (bcus we might want to dive under something while holding obj?)
-        if (Input.GetButtonDown("Fire1"))
-        {
+        //if (Input.GetButtonDown("Fire1"))
+        //{
 
-        }
+        //}
         
     }
 
