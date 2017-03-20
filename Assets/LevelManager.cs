@@ -86,5 +86,10 @@ public class LevelManager : MonoBehaviour {
             p2.transform.GetChild(2).position = spawnPointP2.transform.position;
             p2.transform.GetChild(3).position = spawnPointP2.transform.position;
         }
+
+        if(lastLevel.active)
+        {
+            GetComponent<DialogueTrigger>().forceSubmit();
+        }
     }
 }
