@@ -30,7 +30,6 @@ public class TimeControllable : MonoBehaviour
         if(isCar)
         {
             transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_activeMaterial;
-            transform.parent.gameObject.GetComponentInChildren<GroundTagFlashing>().enabled = true;
             timeControllable = true;
             airTag.SetActive(true);
             return;
@@ -57,7 +56,6 @@ public class TimeControllable : MonoBehaviour
         if (isCar)
         {
             transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_inactiveMaterial;
-            transform.parent.gameObject.GetComponentInChildren<GroundTagFlashing>().enabled = false;
             airTag.SetActive(false);
             timeControllable = false;
             return;
