@@ -27,6 +27,7 @@ TagManager:
   - CameraEffects
   - LevelManager
   - UI
+  - SpawnPointManager
   layers:
   - Default
   - TransparentFX
