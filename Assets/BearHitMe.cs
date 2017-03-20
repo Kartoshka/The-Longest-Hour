@@ -6,7 +6,7 @@ public class BearHitMe : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.name.Equals("Attack Collider"))
+        if(other.gameObject.name.Equals("AttackCollision"))
         {
             Destroy(gameObject);
         }

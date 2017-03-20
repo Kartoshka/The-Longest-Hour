@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerGoal : MonoBehaviour {
 
-    LevelManager lm;
-
-	// Use this for initialization
-	void Start () {
-        lm = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
-	}
+    public bool lastLevel;
 	
 	void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
         {
-            lm.nextLevel();
+           
+            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().nextLevel();
+
+            if(lastLevel)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

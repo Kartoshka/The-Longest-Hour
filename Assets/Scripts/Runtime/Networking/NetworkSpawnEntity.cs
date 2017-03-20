@@ -24,8 +24,15 @@ public class NetworkSpawnEntity : NetworkBehaviour
 		}
 	}
 
-	// Use this for initialization
-	void Start ()
+    public void spawnEnemy()
+    {
+        Transform transform = m_enemySpawnLocations[Random.Range(0, m_enemySpawnLocations.Count)];
+        GameObject gameObject = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[2], transform.position, transform.rotation, this.transform);
+        NetworkServer.Spawn(gameObject);
+    }
+
+    // Use this for initialization
+    void Start ()
 	{
 		if(isServer)
 		{

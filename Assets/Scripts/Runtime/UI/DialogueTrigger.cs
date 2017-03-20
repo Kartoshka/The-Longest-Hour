@@ -29,4 +29,18 @@ public class DialogueTrigger : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void forceSubmit()
+    {
+        lines = new List<UIDialogueLine>();
+
+        for (int i = 0; i < bearLines.Count; i++)
+        {
+            lines.Add(new UIDialogueLine("Bear", bearLines[i]));
+            lines.Add(new UIDialogueLine("Bird", birdLines[i]));
+        }
+
+        uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
+        uiManager.playDialogue(lines);
+    }
 }
