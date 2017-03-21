@@ -25895,7 +25895,8 @@ MonoBehaviour:
   m_animator: {fileID: 95465412657122188}
   m_runSpeedParam: speedScale
   m_attackParam: 
-  m_moveDistanceScale: 0
+  m_moveDistanceScale: 2.2
+  m_movingTransform: {fileID: 4148581221030964}
 --- !u!135 &135193486787474492
 SphereCollider:
   m_ObjectHideFlags: 1

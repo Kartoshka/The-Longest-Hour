@@ -17,7 +17,7 @@ public class AnimInputController : MonoBehaviour
 	public string m_attackParam;
 
 	public float m_moveDistanceScale;
-	private Transform m_transform;
+	public Transform m_movingTransform;
 	private Vector3 m_prevPosition;
 
 	#endregion
@@ -47,9 +47,8 @@ public class AnimInputController : MonoBehaviour
 
 	void Start()
 	{
-		m_transform = this.transform;
-		m_prevPosition = m_transform.position;
-        }
+		m_prevPosition = m_movingTransform.position;
+	}
 
 	// Update is called once per frame
 	void Update()
@@ -63,11 +62,11 @@ public class AnimInputController : MonoBehaviour
 	private void ProcessInputs()
 	{
 		updateRun ();
-        }
+	}
 
 	public void updateRun()
 	{
-		Vector3 position = m_transform.position;
+		Vector3 position = m_movingTransform.position;
 		float runSpeed = Vector3.Distance(position, m_prevPosition) * m_moveDistanceScale;
 		m_prevPosition = position;
 
