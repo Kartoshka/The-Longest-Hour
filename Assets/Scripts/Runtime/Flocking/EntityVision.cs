@@ -18,6 +18,8 @@ public class EntityVision : MonoBehaviour
 	public string m_obstacleTag = "Terrain";
 	public string m_enemyTag = "Player";
 
+	public int m_obstacleLayerIndex = -1;
+
 	private List<GameObject> m_observedObstacles = new List<GameObject>();
 	private List<GameObject> m_observedEnemies = new List<GameObject>();
 
@@ -71,7 +73,7 @@ public class EntityVision : MonoBehaviour
 
 	void OnTriggerEnter(Collider hit)
 	{
-		if(hit.tag.Equals(m_obstacleTag))
+		if(hit.tag.Equals(m_obstacleTag) || hit.gameObject.layer == m_obstacleLayerIndex)
 		{
 			m_observedObstacles.Add(hit.gameObject);
 		}
@@ -83,7 +85,7 @@ public class EntityVision : MonoBehaviour
 
 	void OnTriggerExit(Collider hit)
 	{
-		if (hit.tag.Equals(m_obstacleTag))
+		if (hit.tag.Equals(m_obstacleTag) || hit.gameObject.layer == m_obstacleLayerIndex)
 		{
 			m_observedObstacles.Remove(hit.gameObject);
 		}
