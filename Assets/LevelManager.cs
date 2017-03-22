@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : NetworkBehaviour {
 
     public GameObject tutorial;
     public GameObject threePuzzleLevel;
@@ -46,9 +47,24 @@ public class LevelManager : MonoBehaviour {
 
     public void nextLevel()
     {
+        if(isServer)
+        {
+            CmdNextLevel();
+        }
+    }
+
+    [Command]
+    public void CmdNextLevel()
+    {
+        RpcNextLevel();
+    }
+
+    [ClientRpc]
+    public void RpcNextLevel()
+    {
         GameObject.FindGameObjectWithTag("CameraEffects").GetComponent<CameraEffects>().transition();
 
-        if(tutorial.active)
+        if (tutorial.active)
         {
             tutorial.SetActive(false);
             threePuzzleLevel.SetActive(true);
@@ -68,7 +84,7 @@ public class LevelManager : MonoBehaviour {
 
         }
 
-        if(threePuzzleLevel.active)
+        if (threePuzzleLevel.active)
         {
             threePuzzleLevel.SetActive(false);
             lastLevel.SetActive(true);
@@ -87,7 +103,7 @@ public class LevelManager : MonoBehaviour {
             p2.transform.GetChild(3).position = spawnPointP2.transform.position;
         }
 
-        if(lastLevel.active)
+        if (lastLevel.active)
         {
             GetComponent<DialogueTrigger>().forceSubmit();
         }
