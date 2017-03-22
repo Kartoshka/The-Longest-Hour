@@ -15,8 +15,8 @@ public class EntityVision : MonoBehaviour
 	#region Attributes
 	//////////////////////////////////////////////////////////////////////////////////////////
 
-	public static string m_obstacleTag = "Terrain";
-	public static string m_enemyTag = "Player";
+	public string m_obstacleTag = "Terrain";
+	public string m_enemyTag = "Player";
 
 	private List<GameObject> m_observedObstacles = new List<GameObject>();
 	private List<GameObject> m_observedEnemies = new List<GameObject>();

@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 33239796917666126}
   - component: {fileID: 65177295874158666}
   - component: {fileID: 23896815110287154}
+  - component: {fileID: 114097050371988224}
   m_Layer: 0
   m_Name: VisualEntity
   m_TagString: Untagged
@@ -453,6 +454,7 @@ GameObject:
   - component: {fileID: 4076803889637136}
   - component: {fileID: 95143875070700476}
   - component: {fileID: 114317463348185956}
+  - component: {fileID: 114487633268088664}
   m_Layer: 0
   m_Name: hoverBot
   m_TagString: Untagged
@@ -537,6 +539,7 @@ GameObject:
   - component: {fileID: 114216806175528156}
   - component: {fileID: 114081843191039878}
   - component: {fileID: 114767431492723044}
+  - component: {fileID: 114460933084501336}
   m_Layer: 0
   m_Name: MovementController
   m_TagString: Untagged
@@ -2578,11 +2581,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188252990244324}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.04, y: 1, z: 2.2}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!65 &65853027197505080
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2665,6 +2668,18 @@ MonoBehaviour:
   m_maxTurnRate: 3
   m_targetRangeThreshold: 1.2
   m_constrainYAxisRotation: 1
+  m_collisionObserver: {fileID: 114097050371988224}
+--- !u!114 &114097050371988224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1188252990244324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ac4a11da7d0d34ebdbf4cb3197ea4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114126763683682440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2746,6 +2761,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_offliineOnlyObjects: []
   m_offlineOnlyBehaviours: []
+--- !u!114 &114460933084501336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347348263650876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a1dc5d2b4c6b348bbfea99fbad18e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_altMaterial: {fileID: 2100000, guid: 5c51cfd4e5715f44ead7a2a2d229112c, type: 2}
+  m_skinnedMeshRenderer: {fileID: 137595434885831946}
 --- !u!114 &114476753484055718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2755,6 +2783,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 348607eb82a815f46a56dc9b9d048669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_movingEntity: {fileID: 114081843191039878}
+--- !u!114 &114487633268088664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269198898856230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ba118c5732dd24394f991e67c190ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_movingEntity: {fileID: 114081843191039878}
@@ -2834,6 +2874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sightSource: {fileID: 4984411522709098}
+  m_obstacleTag: Terrain
+  m_enemyTag: Player
 --- !u!114 &114767431492723044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2847,7 +2889,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movingEntity: {fileID: 114081843191039878}
   m_animInputController: {fileID: 114975973806126052}
-  m_delayBeforePursue: 15
+  m_delayBeforePursue: 5
+  m_materialSwap: {fileID: 114460933084501336}
 --- !u!114 &114855383141685326
 MonoBehaviour:
   m_ObjectHideFlags: 1

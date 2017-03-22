@@ -6,12 +6,15 @@ public class FlockingMovementController : MonoBehaviour
 {
 	public MovingEntity m_movingEntity;
 	public AnimInputController m_animInputController;
+	//public ApplyAttack m_applyAttack;
 
 	public float m_delayBeforePursue = 5.0f;
 	private float m_wanderTimer;
 
 	private SteeringBehaviours m_steering;
 	private EntityVision m_entityVision;
+
+	public MaterialSwap m_materialSwap;
 
 	public void stopMovement()
 	{
@@ -53,6 +56,10 @@ public class FlockingMovementController : MonoBehaviour
 				m_animInputController.doAttack();
 				m_steering.setIsWandering(true);
 				m_wanderTimer = m_delayBeforePursue;
+				if(m_materialSwap)
+				{
+					m_materialSwap.setDefaultMaterial();
+                }
             }
 
 			GameObject enemyObject = m_entityVision.GetClosestEnemy();
@@ -63,6 +70,10 @@ public class FlockingMovementController : MonoBehaviour
 				{
 					m_wanderTimer = -1;
 					m_steering.setPursuitTarget(true, enemyObject);
+					if (m_materialSwap)
+					{
+						m_materialSwap.setAltMaterial();
+					}
 				}
             }
 		}

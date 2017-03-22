@@ -21,6 +21,12 @@ public class MovingEntity : MonoBehaviour
 
 	private bool m_canUpdate = true;
 
+	public CollisionObserver m_collisionObserver;
+	private Observer<CollisionObserver>.Listener m_collisionListener;
+
+	private bool m_isInTargetRange = false;
+	private GameObject m_targetObject;
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Accessors
@@ -34,20 +40,57 @@ public class MovingEntity : MonoBehaviour
 
 	public void setCanUpdate(bool canUpdate) { m_canUpdate = canUpdate; }
 
+	public GameObject getTargetObject()
+	{
+		return m_targetObject;
+    }
+
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
 	#region Methods
 	//////////////////////////////////////////////////////////////////////////////////////////
-	
+
+	private Observer<CollisionObserver>.Listener createCollisionListener()
+	{
+		m_collisionListener = delegate (CollisionObserver collisionObserver)
+		{
+			Collider collider = collisionObserver.getPreviousCollider();
+			if (collider != null)
+			{
+				bool success = false;
+				if (collider.gameObject.tag == "Player")
+				{
+					success = true;
+				}
+				else if(m_steering)
+				{
+					if(collider.gameObject.Equals(m_steering.getPursuitTarget()))
+					{
+						success = true;
+                    }
+				}
+				if(success)
+				{
+					bool isEntering = collisionObserver.getIsEntering();
+					m_isInTargetRange = isEntering;
+					m_targetObject = collider.gameObject;
+                }
+			}
+		};
+		return m_collisionListener;
+	}
+
 	public bool isInTargetRange()
 	{
-		bool isInRange = false;
-		if (m_steering && 
-			(m_steering.m_isPursuing || m_steering.m_isPathfinding))
-		{
-			isInRange = Vector3.Distance(this.transform.position, m_steering.getPursuitTarget().transform.position) < m_targetRangeThreshold;
-		}
-		return isInRange;
+		//bool isInRange = false;
+		//if (m_steering && 
+		//	(m_steering.m_isPursuing || m_steering.m_isPathfinding))
+		//{
+		//	isInRange = Vector3.Distance(this.transform.position, m_steering.getPursuitTarget().transform.position) < m_targetRangeThreshold;
+		//}
+		//return isInRange;
+
+		return m_isInTargetRange;
     }
 
 	#endregion
@@ -59,6 +102,13 @@ public class MovingEntity : MonoBehaviour
 	void Start()
 	{
 		m_steering = this.GetComponent<SteeringBehaviours>();
+
+		if (m_collisionObserver)
+		{
+			m_collisionListener = createCollisionListener();
+			Observer<CollisionObserver> observer = m_collisionObserver.getObserver();
+			observer.add(m_collisionListener);
+		}
 	}
 
 	public void update()
