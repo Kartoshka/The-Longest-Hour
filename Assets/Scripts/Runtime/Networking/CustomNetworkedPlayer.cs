@@ -106,8 +106,11 @@ public class CustomNetworkedPlayer : NetworkBehaviour
 			Debug.Assert(spawnTranform != null, "Could not find a spawn point for the custom networked character.");
 
 			GameObject playerObject = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[netConn.connectionId], spawnTranform.position, spawnTranform.rotation, this.transform);
-            playerObject.transform.GetChild(2).position = spawnTranform.position;
-            playerObject.transform.GetChild(3).position = spawnTranform.position;
+            for(int i = 0; i < playerObject.transform.GetChildCount(); i++)
+            {
+                playerObject.transform.GetChild(i).position = spawnTranform.position;
+            }
+
 			NetworkServer.SpawnWithClientAuthority(playerObject, netConn);
 		}
 	}
