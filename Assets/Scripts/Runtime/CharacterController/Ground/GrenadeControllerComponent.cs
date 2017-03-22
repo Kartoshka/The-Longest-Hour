@@ -14,6 +14,8 @@ public class GrenadeControllerComponent : MonoBehaviour
 	public Transform m_projectileSource;
 	public GameObject m_projectilePrefab;
 	public float m_impulseMagnitude;
+	public float cooldown=1;
+	private float lastFired = -1;
 
 	public CollisionObserver m_collisionObserver;
 
@@ -53,26 +55,30 @@ public class GrenadeControllerComponent : MonoBehaviour
 
 	public void FireProjectile()
 	{
-		//if(Network.peerType.Equals(NetworkPeerType.Disconnected))
-		//{
+		if ((Time.time - lastFired) > cooldown)
+		{
+			lastFired = Time.time;
+			//if(Network.peerType.Equals(NetworkPeerType.Disconnected))
+			//{
 			if (m_projectilePrefab)
 			{
 				//GameObject spawnedObject = (GameObject)Instantiate(m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
-				m_previouslySpawnedProjectile = NetworkLobbyManager.Instantiate<GameObject>(m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
+				m_previouslySpawnedProjectile = NetworkLobbyManager.Instantiate<GameObject> (m_projectilePrefab, m_projectileSource.position, Quaternion.identity);
 				if (m_previouslySpawnedProjectile)
 				{
-					Rigidbody rigidBody = m_previouslySpawnedProjectile.GetComponent<Rigidbody>();
+					Rigidbody rigidBody = m_previouslySpawnedProjectile.GetComponent<Rigidbody> ();
 					if (rigidBody)
 					{
 						rigidBody.velocity = m_projectileSource.forward * m_impulseMagnitude;
 					}
 				}
 			}
-		//}
-		//else
-		//{
-		//	// If networked, move functionality to networked component.
-			m_observer.notify();
+			//}
+			//else
+			//{
+			//	// If networked, move functionality to networked component.
+			m_observer.notify ();
+		}
 		//}
 	}
 
