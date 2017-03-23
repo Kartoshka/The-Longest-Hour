@@ -23,36 +23,41 @@ public class BearInputController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        float XaxisInvert = 1.0f;
-        float YaxisInvert = 1.0f;
+		processInputs();
+	}
 
-        if(invertX)
-        {
-            XaxisInvert = -1.0f;
-        }
+	private void processInputs()
+	{
+		float XaxisInvert = 1.0f;
+		float YaxisInvert = 1.0f;
 
-        if(invertY)
-        {
-            YaxisInvert = -1.0f;
-        }
+		if (invertX)
+		{
+			XaxisInvert = -1.0f;
+		}
+
+		if (invertY)
+		{
+			YaxisInvert = -1.0f;
+		}
 		//Camera movement input
 		float verticalInput;
-//		if (debug && !debug.m_useWorldCam)
-			verticalInput = Input.GetAxis("VerticalRightStick") * YaxisInvert;
-//		else
-//			verticalInput = 0;
+		//		if (debug && !debug.m_useWorldCam)
+		verticalInput = Input.GetAxis("VerticalRightStick") * YaxisInvert;
+		//		else
+		//			verticalInput = 0;
 
 
 		float horizontalInput;
-//		if (debug && !debug.m_useWorldCam)
-			horizontalInput = Input.GetAxis("HorizontalRightStick") * XaxisInvert;
-//		else
-//			horizontalInput = 0;
+		//		if (debug && !debug.m_useWorldCam)
+		horizontalInput = Input.GetAxis("HorizontalRightStick") * XaxisInvert;
+		//		else
+		//			horizontalInput = 0;
 
-		m_bearControls.m_camControlers.updateCamera (new Vector2 (horizontalInput, verticalInput));
-//		bearCameras.getActive().increasePitch(-verticalInput);
-//		bearCameras.getActive().increaseYaw(horizontalInput);
-//		bearCameras.getActive().UpdatePosition();
+		m_bearControls.m_camControlers.updateCamera(new Vector2(horizontalInput, verticalInput));
+		//		bearCameras.getActive().increasePitch(-verticalInput);
+		//		bearCameras.getActive().increaseYaw(horizontalInput);
+		//		bearCameras.getActive().UpdatePosition();
 
 		//Movement controls
 		float verticalLeftStick;
@@ -69,36 +74,58 @@ public class BearInputController : MonoBehaviour {
 
 		if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
 			verticalLeftStick = 0;
-		if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
+		if (Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
 			horizontalLeftStick = 0;
 
-		if (Input.GetButtonDown ("Fire1"))
+		if (Input.GetButtonDown("Fire1"))
 		{
-			m_bearControls.doAttack ();
-		} 
+			m_bearControls.doAttack();
+		}
 
 		if (Input.GetButton("AimBear"))
 		{
-			m_bearControls.startAim ();
-		} else
+			m_bearControls.startAim();
+		}
+		else
 		{
-			m_bearControls.stopAim ();
+			m_bearControls.stopAim();
 		}
 
 
-		if(Input.GetButton("Fire1")){
-			m_bearControls.fireGrenade ();
+		if (Input.GetButton("Fire1"))
+		{
+			m_bearControls.fireGrenade();
 		}
 
-		bool run = Input.GetButton ("Sprint");
+		bool run = Input.GetButton("Sprint");
 
-		float rTrgr = Mathf.Clamp01 (Input.GetAxis ("RightTrigger"));
-		float lTrgr = Mathf.Clamp01 (Input.GetAxis ("LeftTrigger"));
-		m_bearControls.setTime ( rTrgr - lTrgr);
+		float rTrgr = Mathf.Clamp01(Input.GetAxis("RightTrigger"));
+		float lTrgr = Mathf.Clamp01(Input.GetAxis("LeftTrigger"));
+		setTime(rTrgr - lTrgr);
 
-		m_bearControls.locateOther (Input.GetButton ("LocateOther"));
-		m_bearControls.moveBear (new Vector3 (verticalLeftStick, 0, horizontalLeftStick),run);
+		m_bearControls.locateOther(Input.GetButton("LocateOther"));
+		m_bearControls.moveBear(new Vector3(verticalLeftStick, 0, horizontalLeftStick), run);
+	}
 
-	
+	public void processInputs(bool isFiring, bool isAiming)
+	{
+		if (isFiring)
+		{
+			m_bearControls.doAttack();
+		}
+
+		if (isAiming)
+		{
+			m_bearControls.startAim();
+		}
+		else
+		{
+			m_bearControls.stopAim();
+		}
+	}
+
+	public void setTime(float time)
+	{
+		m_bearControls.setTime(time);
 	}
 }

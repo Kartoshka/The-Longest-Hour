@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 114755415586859490}
   - component: {fileID: 114570675304191570}
   - component: {fileID: 114471006932453710}
+  - component: {fileID: 114081415363746184}
   m_Layer: 0
   m_Name: GroundPlatformer
   m_TagString: Player
@@ -77625,6 +77626,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localPlayer: {fileID: 1015017301963698}
   target: {fileID: 0}
+--- !u!114 &114081415363746184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23095a2f3d1d86a43a49d77644ea4c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_inputController: {fileID: 114001973541061048}
 --- !u!114 &114136612259491140
 MonoBehaviour:
   m_ObjectHideFlags: 1
