@@ -132,7 +132,7 @@ public class Cinemachine3rdPerson :CinemachineController  {
 
 	override public void resetPitchYaw(){
 		pitch = 0;
-		yaw = 0; 
+		yaw = (minXAngle+maxXAngle)*0.5f; 
 	}
 		
 

@@ -20,6 +20,5 @@ public class UpdateForward : MonoBehaviour {
 			this.gameObject.transform.forward = new Vector3 (freezeX?this.transform.forward.x:movDifference.x, freezeY?this.transform.forward.y:movDifference.y, freezeZ?this.transform.forward.z:movDifference.z).normalized;
 		}
 		lastPos = this.transform.position;
-		
 	}
 }
