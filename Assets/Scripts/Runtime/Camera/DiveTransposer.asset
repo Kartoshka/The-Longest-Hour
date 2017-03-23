@@ -15,4 +15,4 @@ MonoBehaviour:
   m_XDampening: 1
   m_YDampening: 1
   m_ZDampening: 1
-  m_TransposerOffsetMode: 2
+  m_TransposerOffsetMode: 1
