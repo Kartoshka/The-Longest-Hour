@@ -45,6 +45,14 @@ public class LevelManager : NetworkBehaviour {
         }
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A) && isServer)
+        {
+            nextLevel();
+        }
+    }
+
     public void nextLevel()
     {
         if(isServer)
@@ -73,18 +81,19 @@ public class LevelManager : NetworkBehaviour {
             spawnPointP2 = GameObject.Find("SpawnPoint_P2");
 
             GameObject p1 = GameObject.Find("GroundPlatformer(Clone)");
-            p1.transform.position = spawnPointP1.transform.position;
-            p1.transform.GetChild(2).position = spawnPointP1.transform.position;
-            p1.transform.GetChild(3).position = spawnPointP1.transform.position;
+            for(int i = 0; i < p1.transform.GetChildCount(); i++)
+            {
+                p1.transform.GetChild(i).position = spawnPointP1.transform.position;
+            }
 
             GameObject p2 = GameObject.Find("AirDrawer(Clone)");
-            p2.transform.position = spawnPointP2.transform.position;
-            p2.transform.GetChild(2).position = spawnPointP2.transform.position;
-            p2.transform.GetChild(3).position = spawnPointP2.transform.position;
+            for (int i = 0; i < p2.transform.GetChildCount(); i++)
+            {
+                p2.transform.GetChild(i).position = spawnPointP2.transform.position;
+            }
 
-        }
 
-        if (threePuzzleLevel.active)
+        }else if (threePuzzleLevel.active)
         {
             threePuzzleLevel.SetActive(false);
             lastLevel.SetActive(true);
@@ -93,14 +102,16 @@ public class LevelManager : NetworkBehaviour {
             spawnPointP2 = GameObject.Find("SpawnPoint_P2");
 
             GameObject p1 = GameObject.Find("GroundPlatformer(Clone)");
-            p1.transform.position = spawnPointP1.transform.position;
-            p1.transform.GetChild(2).position = spawnPointP1.transform.position;
-            p1.transform.GetChild(3).position = spawnPointP1.transform.position;
+            for (int i = 0; i < p1.transform.GetChildCount(); i++)
+            {
+                p1.transform.GetChild(i).position = spawnPointP1.transform.position;
+            }
 
             GameObject p2 = GameObject.Find("AirDrawer(Clone)");
-            p2.transform.position = spawnPointP2.transform.position;
-            p2.transform.GetChild(2).position = spawnPointP2.transform.position;
-            p2.transform.GetChild(3).position = spawnPointP2.transform.position;
+            for (int i = 0; i < p2.transform.GetChildCount(); i++)
+            {
+                p2.transform.GetChild(i).position = spawnPointP2.transform.position;
+            }
         }
 
         if (lastLevel.active)

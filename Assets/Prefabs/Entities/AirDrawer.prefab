@@ -6091,7 +6091,6 @@ GameObject:
   - component: {fileID: 114841729182676536}
   - component: {fileID: 114313186452093566}
   - component: {fileID: 114896064793293402}
-  - component: {fileID: 114325362248738574}
   m_Layer: 2
   m_Name: AirDrawer
   m_TagString: Player
@@ -25508,8 +25507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_offliineOnlyObjects: []
+  m_offlineOnlyObjects: []
   m_offlineOnlyBehaviours: []
+  m_serverOnlyObjects: []
+  m_serverOnlyBehaviours: []
+  m_clientOnlyObjects: []
+  m_clientOnlyBehaviours: []
 --- !u!114 &114313186452093566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25559,19 +25562,6 @@ MonoBehaviour:
   DutchOffset: 0
   NoiseAmplitudeScalar: 1
   NoiseSpeedScalar: 1
---- !u!114 &114325362248738574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1560549525078014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c4afe29f35848d48bec0993af90394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeOnlyAuthority:
-  - {fileID: 1490312840816758}
 --- !u!114 &114388463372143480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25685,6 +25675,8 @@ MonoBehaviour:
   m_faceTarget: 1
   m_matchTargetForward: 0
   m_offset: {x: 0, y: 0, z: 0}
+  m_followTag: 
+  followTaggedObj: 0
 --- !u!114 &114565239990862332
 MonoBehaviour:
   m_ObjectHideFlags: 1
