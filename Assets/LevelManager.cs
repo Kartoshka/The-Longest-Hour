@@ -67,12 +67,24 @@ public class LevelManager : NetworkBehaviour {
             p1.transform.GetChild(i).position = spawnPointP1.transform.position;
         }
 
-        GameObject p2 = GameObject.Find("AirDrawer(Clone)");
+		TimeShiftController timeShiftController = p1.GetComponentInChildren<TimeShiftController>();
+		if(timeShiftController)
+		{
+			timeShiftController.findParamControllers();
+        }
+
+		GameObject p2 = GameObject.Find("AirDrawer(Clone)");
         for (int i = 0; i < p2.transform.GetChildCount(); i++)
         {
             p2.transform.GetChild(i).position = spawnPointP2.transform.position;
         }
-    }
+
+		timeShiftController = p2.GetComponentInChildren<TimeShiftController>();
+		if (timeShiftController)
+		{
+			timeShiftController.findParamControllers();
+		}
+	}
 
     void Update()
     {

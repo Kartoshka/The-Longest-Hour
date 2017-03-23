@@ -27,23 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1106805752370698
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4686548092662874}
-  - component: {fileID: 114046703069340702}
-  - component: {fileID: 114388617552293536}
-  m_Layer: 0
-  m_Name: GlobalTimeController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1140092877205380
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +177,7 @@ Transform:
   - {fileID: 4892479843214920}
   - {fileID: 4028832337146414}
   m_Father: {fileID: 4458647339820172}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4338573415679838
 Transform:
@@ -222,23 +205,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4338573415679838}
-  - {fileID: 4686548092662874}
   - {fileID: 4246132688699306}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4686548092662874
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1106805752370698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4458647339820172}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4892479843214920
 Transform:
@@ -253,20 +222,6 @@ Transform:
   m_Father: {fileID: 4246132688699306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114046703069340702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1106805752370698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f809c4a5de9b00f459ae77c3aee28ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_animators: []
-  timeParameter: time
-  m_startTime: 0
 --- !u!114 &114170664238963736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,8 +259,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_offliineOnlyObjects: []
+  m_offlineOnlyObjects: []
   m_offlineOnlyBehaviours: []
+  m_serverOnlyObjects: []
+  m_serverOnlyBehaviours: []
+  m_clientOnlyObjects: []
+  m_clientOnlyBehaviours: []
 --- !u!114 &114368194762174992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,18 +297,6 @@ MonoBehaviour:
     i15: 228
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114388617552293536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1106805752370698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3ebdf730e8649adbaa18b8363861dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeControllables: []
 --- !u!114 &114472134273107464
 MonoBehaviour:
   m_ObjectHideFlags: 1

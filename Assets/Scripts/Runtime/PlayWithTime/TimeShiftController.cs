@@ -64,13 +64,38 @@ public class TimeShiftController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		m_animCtrl = FindObjectOfType<AnimParameterController> ();
-		m_physicsCtrl = FindObjectOfType<PhysicsParameterController> ();
+		findParamControllers();
+    }
+
+	public void findParamControllers()
+	{
+		GameObject globalTimeControllerObject = GameObject.Find("GlobalTimeController");
+		if(globalTimeControllerObject)
+		{
+			m_animCtrl = globalTimeControllerObject.GetComponent<AnimParameterController>();
+			m_physicsCtrl = globalTimeControllerObject.GetComponent<PhysicsParameterController>();
+		}
+		//m_animCtrl = FindObjectOfType<AnimParameterController>();
+		//m_physicsCtrl = FindObjectOfType<PhysicsParameterController>();
 	}
+
+	//bool m_isDelayedUpdate = true;
+	//float m_delayUpdateCounter = 15.0f;
 
 	// Update is called once per frame
 	void Update()
 	{
+		//if(m_isDelayedUpdate)
+		//{
+		//	m_delayUpdateCounter -= Time.deltaTime;
+		//	if(m_delayUpdateCounter <= 0.0f)
+		//	{
+		//		m_animCtrl = FindObjectOfType<AnimParameterController>();
+		//		m_physicsCtrl = FindObjectOfType<PhysicsParameterController>();
+		//		m_isDelayedUpdate = false;
+		//	}
+		//}
+
 		ProcessInputs();
 
 		//m_time = Mathf.Clamp01(m_time);
@@ -100,7 +125,10 @@ public class TimeShiftController : MonoBehaviour
 
 	public void setTime(float t){
 		t = Mathf.Clamp (t,-1.0f,1.0f);
-		m_physicsCtrl.setTime (t);
+		if(m_physicsCtrl)
+		{
+			m_physicsCtrl.setTime(t);
+		}
 		m_time = t;
 
 	}
