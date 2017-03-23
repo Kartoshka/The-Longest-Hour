@@ -8811,7 +8811,7 @@ Prefab:
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_crateSpawnLocations.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4458647339820172, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8879,6 +8879,26 @@ Prefab:
       propertyPath: m_crateSpawnLocations.Array.data[0]
       value: 
       objectReference: {fileID: 2123089147}
+    - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
+        type: 2}
+      propertyPath: m_crateSpawnLocations.Array.data[1]
+      value: 
+      objectReference: {fileID: 1323450493}
+    - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
+        type: 2}
+      propertyPath: m_crateSpawnLocations.Array.data[2]
+      value: 
+      objectReference: {fileID: 843392870}
+    - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
+        type: 2}
+      propertyPath: m_crateSpawnLocations.Array.data[3]
+      value: 
+      objectReference: {fileID: 1119525856}
+    - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
+        type: 2}
+      propertyPath: m_crateSpawnLocations.Array.data[4]
+      value: 
+      objectReference: {fileID: 432893607}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
   m_IsPrefabParent: 0
@@ -20604,12 +20624,12 @@ Prefab:
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_enemySpawnLocations.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_crateSpawnLocations.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
@@ -21077,7 +21097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSpawnNetworkIndex: 9
-  m_blockSpawn: {fileID: 945708557}
+  m_blockSpawn: {fileID: 0}
   ballSpawnNetworkIndex: 7
   m_ballSpawns:
   - {fileID: 808491222}
@@ -37098,12 +37118,12 @@ Prefab:
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_crateSpawnLocations.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114472134273107464, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4,
         type: 2}
       propertyPath: m_enemySpawnLocations.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4458647339820172, guid: 1511b9a2ad77d7a4eb09f9cec6eebae4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -54217,16 +54237,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1995813175887666, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1607864299022468, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114045213529700164, guid: ceb7ff8e8a2b84d7eaf1ee317454623d,
         type: 2}
       propertyPath: m_Text
-      value: 'A
+      value: 'B
 
 '
       objectReference: {fileID: 0}
