@@ -12255,11 +12255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_taggedMaterial: {fileID: 0}
   m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 64ce823601a02cb4faf8b12d191eae0b, type: 2}
   airTag: {fileID: 1416814939}
   m_physicsController: {fileID: 0}
   isCar: 1
+  myAnimator: {fileID: 0}
 --- !u!114 &444733813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15630,11 +15632,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_taggedMaterial: {fileID: 0}
   m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 9dd2fc22cd41c594e85063e785f5d076, type: 2}
   airTag: {fileID: 57283614}
   m_physicsController: {fileID: 0}
   isCar: 1
+  myAnimator: {fileID: 0}
 --- !u!114 &578839127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17040,11 +17044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_taggedMaterial: {fileID: 0}
   m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 0b954e2a3fe8e6e4885dacca819f3820, type: 2}
   airTag: {fileID: 1777938954}
   m_physicsController: {fileID: 0}
   isCar: 1
+  myAnimator: {fileID: 0}
 --- !u!114 &628770928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58722,11 +58728,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_taggedMaterial: {fileID: 0}
   m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 213b0980565b63d4b929caf812f455cb, type: 2}
   airTag: {fileID: 1716304794}
   m_physicsController: {fileID: 0}
   isCar: 1
+  myAnimator: {fileID: 0}
 --- !u!114 &2093845141
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class TimeControllable : MonoBehaviour
         }
         else
         {
-            myAnimator = GetComponentInChildren<Animator>();
+            myAnimator = GetComponentInParent<Animator>();
         }
 
         airTag.SetActive(false);
