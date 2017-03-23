@@ -2520,6 +2520,7 @@ GameObject:
   - component: {fileID: 54184026539344956}
   - component: {fileID: 65643535702454872}
   - component: {fileID: 114388504419891256}
+  - component: {fileID: 114059341573561496}
   m_Layer: 2
   m_Name: MovementController
   m_TagString: Untagged
@@ -4205,7 +4206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1356444906964736
 GameObject:
   m_ObjectHideFlags: 1
@@ -12220,7 +12221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1670295891486646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 40, z: 0}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4164879700888222}
@@ -14770,8 +14771,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560549525078014}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -24.4, y: 0, z: -193.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4351625231236690}
@@ -25322,7 +25323,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.26}
 --- !u!95 &95021504729438220
 Animator:
   serializedVersion: 3
@@ -25378,8 +25379,7 @@ MonoBehaviour:
   drawableLayers:
     serializedVersion: 2
     m_Bits: 256
-  m_globalTime: {fileID: 1000012122886782, guid: 57586cc355ecb054886c26012cd01a9c,
-    type: 2}
+  m_globalTime: {fileID: 0}
 --- !u!114 &114040416781025748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25392,6 +25392,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moverComponent: {fileID: 114565239990862332}
+--- !u!114 &114059341573561496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212876674929932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872d131f68128e44aa9827021a445d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreCollisionsOnLayer:
+    serializedVersion: 2
+    m_Bits: 1280
 --- !u!114 &114066756799607100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25413,6 +25427,7 @@ MonoBehaviour:
   diveCam: {fileID: 114639453673640702}
   heightOffset: 1
   captureModule: {fileID: 114450351289419642}
+  birdRigidbody: {fileID: 0}
 --- !u!114 &114070548272137154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25481,6 +25496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33544b069a3af4d56a2f4f382e889e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  captured: {fileID: 0}
+  dropOffset: 0
 --- !u!114 &114123180541878754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25679,6 +25696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33544b069a3af4d56a2f4f382e889e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  captured: {fileID: 0}
+  dropOffset: 2
 --- !u!114 &114457681111759554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25777,7 +25796,7 @@ MonoBehaviour:
   AutoAddToPriorityStack: 1
   m_Priority: 2
   LensAttributes:
-    FieldOfView: 40
+    FieldOfView: 20
     NearClipPlane: 0.1
     FarClipPlane: 5000
   m_NoiseSettings: {fileID: 0}
@@ -25820,7 +25839,7 @@ MonoBehaviour:
   AutoAddToPriorityStack: 1
   m_Priority: 1
   LensAttributes:
-    FieldOfView: 8.5
+    FieldOfView: 44
     NearClipPlane: 0.1
     FarClipPlane: 5000
   m_NoiseSettings: {fileID: 0}
