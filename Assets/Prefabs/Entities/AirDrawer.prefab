@@ -4047,6 +4047,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1341593867663032
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4360086623391858}
+  - component: {fileID: 114729003815075396}
+  - component: {fileID: 114627081326989232}
+  - component: {fileID: 114223849822492634}
+  m_Layer: 2
+  m_Name: LocateBearCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1343115253343002
 GameObject:
   m_ObjectHideFlags: 1
@@ -14312,6 +14330,19 @@ Transform:
   m_Father: {fileID: 4172587579799846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4360086623391858
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341593867663032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4952584408028336}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4360219172790496
 Transform:
   m_ObjectHideFlags: 1
@@ -19797,6 +19828,7 @@ Transform:
   - {fileID: 4675534751033174}
   - {fileID: 4637677751495616}
   - {fileID: 4542078643326144}
+  - {fileID: 4360086623391858}
   m_Father: {fileID: 4414562467693204}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25496,6 +25528,25 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
+--- !u!114 &114223849822492634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341593867663032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 0}
+  m_positionLerpScale: 1
+  m_rotationLerpScale: 1
+  m_faceTarget: 1
+  m_matchTargetForward: 0
+  m_offset: {x: 0, y: 0, z: 0}
+  m_followTag: MainCamera
+  followTaggedObj: 1
 --- !u!114 &114230887815904408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25612,9 +25663,9 @@ MonoBehaviour:
   m_targetPositionOffset: {x: 0, y: 0, z: 0}
   m_moveRelative: 1
   relativeToCamera: 1
-  stepPerAxis: {x: 5, y: 5, z: 5}
+  stepPerAxis: {x: 20, y: 5, z: 20}
   maxWalkSpeed: 7
-  maxRunSpeed: 14
+  maxRunSpeed: 20
   sprinting: 0
   m_velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114450351289419642
@@ -25742,6 +25793,19 @@ MonoBehaviour:
   DutchOffset: 0
   NoiseAmplitudeScalar: 1
   NoiseSpeedScalar: 1
+--- !u!114 &114627081326989232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341593867663032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01b456af2be24925a73e4eeea983360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localPlayer: {fileID: 1560549525078014}
+  target: {fileID: 0}
 --- !u!114 &114639453673640702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25765,6 +25829,35 @@ MonoBehaviour:
     type: 2}
   m_ComposerCameraTarget: {fileID: 4560192291183896}
   m_TransposerCameraTarget: {fileID: 4560192291183896}
+  TransposerTrackingOffset: {x: 0, y: 0, z: 0}
+  TransposerDampingOffset: {x: 0, y: 0, z: 0}
+  ComposerTrackingOffset: {x: 0, y: 0, z: 0}
+  ComposerDampingOffset: {x: 0, y: 0}
+  DutchOffset: 0
+  NoiseAmplitudeScalar: 1
+  NoiseSpeedScalar: 1
+--- !u!114 &114729003815075396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341593867663032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223560802, guid: 7c9da65c57324a64ca6cc78d5ecc736e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoAddToPriorityStack: 1
+  m_Priority: 1
+  LensAttributes:
+    FieldOfView: 40
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+  m_NoiseSettings: {fileID: 0}
+  m_ComposerSettings: {fileID: 11400000, guid: 866d77cd113f24847a893607ab2b7eb1, type: 2}
+  m_TransposerSettings: {fileID: 0}
+  m_ComposerCameraTarget: {fileID: 0}
+  m_TransposerCameraTarget: {fileID: 0}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -25875,7 +25968,7 @@ MonoBehaviour:
   modifiable: 1
   setOnStart: 1
   distanceFromTarget: 7.8
-  angleFromTarget: {x: -29.12, y: 90}
+  angleFromTarget: {x: 0, y: 90}
   pitchChangeSpeed: 50
   yawChangeSpeed: 50
   minXAngle: 60

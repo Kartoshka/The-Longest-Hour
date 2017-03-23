@@ -61,6 +61,8 @@ public class BirdController : MonoBehaviour {
         if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
             horizontalLeftStick = 0;
 
+		bool run = Input.GetButton ("Sprint");
+		moverBehaviour.sprinting = run;
         moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
 
         float rightTrigger = Input.GetAxis("RightTrigger");
