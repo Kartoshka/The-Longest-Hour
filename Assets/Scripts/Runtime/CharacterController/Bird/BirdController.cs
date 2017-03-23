@@ -21,8 +21,8 @@ public class BirdController : MonoBehaviour {
 
     private float m_moveInputThreshold = 0.5f;
 
-    private DebugEntities debug;
-
+    public bool invertX;
+    public bool invertY;
 
     //Flag for knowing we're in top down view
     bool topDown = false;
@@ -32,50 +32,29 @@ public class BirdController : MonoBehaviour {
 		topDown = false;
 		targetControl.gameObject.SetActive (topDown);
 
-		GameObject debugObject = GameObject.FindGameObjectWithTag("Debug");
-		if (debugObject)
-		{
-			debug = debugObject.GetComponent<DebugEntities>();
-		}
-		else
-		{
-			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
-		}
-
         targetControl.gameObject.SetActive(true);
     }
 	
-	void Update () {
-        //Camera movement input
-        float verticalInput;
-        if (debug && !debug.m_useWorldCam)
-            verticalInput = Input.GetAxis("VerticalRightStick");
-        else
-            verticalInput = 0;
+	void Update ()
+    {
 
-
-        float horizontalInput;
-        if (debug && !debug.m_useWorldCam)
-            horizontalInput = Input.GetAxis("HorizontalRightStick");
-        else
-            horizontalInput = 0;
-
-        //Move active camera
-        if (debug && !debug.m_useWorldCam)
+        float XaxisInvert = 1.0f;
+        float YaxisInvert = 1.0f;
+       
+        if(invertX)
         {
-            active.increasePitch(-verticalInput);
-            active.increaseYaw(horizontalInput);
-            active.UpdatePosition();
+            XaxisInvert = -1.0f;
         }
-        else
+
+        if(invertY)
         {
-            deactivateCamera();
+            YaxisInvert = -1.0f;
         }
 
         //Movement controls
-        float verticalLeftStick = Input.GetAxis("Vertical");
+        float verticalLeftStick = Input.GetAxis("Vertical") * YaxisInvert;
 
-        float horizontalLeftStick = Input.GetAxis("Horizontal");
+        float horizontalLeftStick = Input.GetAxis("Horizontal") * XaxisInvert;
 
         if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
             verticalLeftStick = 0;
