@@ -7,12 +7,11 @@ using Cinemachine.Assets;
 using Cinemachine;
 
 
-public class Cinemachine3rdPerson :MonoBehaviour  {
+public class Cinemachine3rdPerson :CinemachineController  {
 
 
 	public bool modifiable = true;
 	public bool setOnStart = true;
-	public CinemachineVirtualCamera controlledView;
 
 	private bool toggleView = false;
 	//
@@ -48,7 +47,7 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 	[Range(0,1)]
 	public float zoomFactor =0.5f;
 
-	void Start()
+	public override void init()
 	{
 		
 		if (setOnStart) {
@@ -61,16 +60,13 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 		}
 	}
 
-	public void UpdatePosition()
+	public override void UpdatePosition()
 	{
 		setPosition ();
 		if (fixCollisions) {
 			collisionOffset (cameraPosition + controlledView.CameraTransposerTarget.position);
 		}
-
 		controlledView.TransposerTrackingOffset = cameraPosition;
-
-
 	}
 
 	private void setPosition()
@@ -94,8 +90,6 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 	Vector3 directionRay;
 	Vector3 startRay;
-
-
 
 	private void collisionOffset(Vector3 startPosition){
 		 directionRay = (controlledView.CameraTransposerTarget.position - controlledView.CameraPosition);
@@ -121,7 +115,7 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 			
 	}
 
-	public void increaseYaw(float amt)
+	override public void increaseYaw(float amt)
 	{
 		if (modifiable) {
 			yaw = (yaw + amt*yawChangeSpeed*Time.deltaTime) % 360;
@@ -129,26 +123,18 @@ public class Cinemachine3rdPerson :MonoBehaviour  {
 
 	}
 
-	public void increasePitch(float amt)
+	override public void increasePitch(float amt)
 	{
 		if (modifiable) {
 			pitch = (pitch + amt*pitchChangeSpeed*Time.deltaTime) % 360;
 		}
 	}
 
-	public void resetPitchYaw(){
+	override public void resetPitchYaw(){
 		pitch = 0;
 		yaw = 0; 
 	}
-
-	public void disableCamera(){
-		controlledView.gameObject.SetActive (false);
-	}
-
-	public void enableCamera(){
-		controlledView.gameObject.SetActive (true);
-	}
-
+		
 
 
 }

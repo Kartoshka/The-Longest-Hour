@@ -15,9 +15,10 @@ public class BearController : MonoBehaviour {
 	public FollowTarget targetFollower;
 
 	[Header("Cameras")]
-	public Cinemachine3rdPerson runningCam;
-	public Cinemachine3rdPerson aimCam;
-	public Cinemachine3rdPerson locateBirdCam;
+	public CameraController m_camControlers;
+	public CinemachineController runningCam;
+	public CinemachineController aimCam;
+	public CinemachineController locateBirdCam;
 
 
 	[Space(5)]
@@ -127,9 +128,14 @@ public class BearController : MonoBehaviour {
 				aimForwardMatching.enabled = true;
 			}
 			moverBehaviour.updateInput (Vector3.zero);
-			aimCam.gameObject.SetActive (true);
+			m_camControlers.changeCamera (aimCam);
+			//aimCam.gameObject.SetActive (true);
 			m_animC.startAim ();
 		}
+//		} else if(!isAiming)
+//		{
+//			m_camControlers.changeCamera (runningCam);
+//		}
 	}
 
 	public void stopAim(){
@@ -141,7 +147,11 @@ public class BearController : MonoBehaviour {
 			}
 
 			moverBehaviour.updateInput (Vector3.zero);
-			aimCam.gameObject.SetActive (false);
+			//runningCam.resetPitchYaw ();
+			Debug.Log("wow aimCam");
+			m_camControlers.changeCamera (runningCam);
+
+			//aimCam.gameObject.SetActive (false);
 			m_animC.endAim ();
 		}
 	}
@@ -156,6 +166,7 @@ public class BearController : MonoBehaviour {
 
 //	public GameObject birdTracker;
 //	public GameObject bearTracker;
+	private bool isLocating = false;
 	public void locateOther(bool active){
 		
 //		if (((isIdle || isAsleep || isAttacking) && active))
@@ -165,25 +176,40 @@ public class BearController : MonoBehaviour {
 //		{
 //			runningCam.controlledView.CameraComposerTarget = bearTracker.transform;
 //		}
-		locateBirdCam.gameObject.SetActive (((isIdle || isAsleep || isAttacking) && active));
-	}
+		
+		if ((isIdle) && active)
+		{
+			isLocating = true;
+			m_camControlers.changeCamera (locateBirdCam);
+		} else if(!isAiming)
+		{
+			if (!active && isLocating)
+			{
+				Debug.Log ("fk locate cam");
+				isLocating = false;
+				m_camControlers.changeCamera (runningCam);
+			}
+		}
 
-	public void updateCamera(Vector2 change){
-		Cinemachine3rdPerson active =null;
-		if (isIdle || isAttacking || isAsleep)
-		{
-			active = runningCam;
-		} else if (isAiming)
-		{
-			active = aimCam;
-		}
-		if (active)
-		{
-			active.increasePitch (change.y);
-			active.increaseYaw (change.x);
-			active.UpdatePosition ();
-		}
+		//locateBirdCam.gameObject.SetActive ();
 	}
+//
+//	public void updateCamera(Vector2 change){
+//		CinemachineController active =null;
+//		if (isIdle || isAttacking || isAsleep)
+//		{
+//			active = runningCam;
+//		} else if (isAiming)
+//		{
+//			active = aimCam;
+//		}
+//		if (active)
+//		{
+//			active.increasePitch (change.y);
+//			active.increaseYaw (change.x);
+//			active.UpdatePosition ();
+//		}
+//	}
 
 	public void setTime(float t){
 		t= Mathf.Clamp (t,-1.0f,1.0f);

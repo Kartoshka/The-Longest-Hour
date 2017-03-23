@@ -32,7 +32,7 @@ public class BearInputController : MonoBehaviour {
 //		else
 //			horizontalInput = 0;
 
-		m_bearControls.updateCamera (new Vector2 (horizontalInput, -verticalInput));
+		m_bearControls.m_camControlers.updateCamera (new Vector2 (horizontalInput, -verticalInput));
 //		bearCameras.getActive().increasePitch(-verticalInput);
 //		bearCameras.getActive().increaseYaw(horizontalInput);
 //		bearCameras.getActive().UpdatePosition();

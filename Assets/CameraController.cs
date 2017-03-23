@@ -8,39 +8,54 @@ using Cinemachine.Assets;
 using Cinemachine;
 public class CameraController : MonoBehaviour {
 
-	public Cinemachine3rdPerson defaultCamera;
-	public Cinemachine3rdPerson activeCamera;
+	public CinemachineController defaultCamera;
+	public CinemachineController m_activeCam;
 
 	
 	public void Update(){
-		if (activeCamera == null && defaultCamera!=null)
+		if (m_activeCam == null && defaultCamera!=null)
 		{
 			changeCamera (defaultCamera);
 		}
 
 	}
 
-	public void changeCamera(Cinemachine3rdPerson newCam){
-		
+	public void changeCamera(CinemachineController newCam){
 		if (!this.enabled)
 		{
 			return;
 		}
 
-		if (activeCamera != newCam && newCam !=null)
+		if (m_activeCam != newCam && newCam !=null)
 		{
-			if (activeCamera != null)
+			
+			//newCam.resetPitchYaw ();
+			newCam.enableCamera();
+			if (m_activeCam != null)
 			{
-				activeCamera.gameObject.SetActive (false);
+				m_activeCam.disableCamera ();
 			}
-			activeCamera = newCam;
-			newCam.resetPitchYaw ();
-			newCam.gameObject.SetActive (true);
-
+			m_activeCam = newCam;
 		}
 	}
 
-	public Cinemachine3rdPerson getActive(){
-		return activeCamera;
+	public CinemachineController getActive(){
+		return m_activeCam;
+	}
+
+	public void updateCamera(Vector2 change){
+		if (m_activeCam)
+		{
+			m_activeCam.increasePitch (change.y);
+			m_activeCam.increaseYaw (change.x);
+			m_activeCam.UpdatePosition ();
+		}
+	}
+
+	public void resetPos(){
+		if (m_activeCam && this.enabled)
+		{
+			m_activeCam.resetPitchYaw ();
+		}
 	}
 }

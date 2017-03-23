@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 114570675304191570}
   m_Layer: 0
   m_Name: GroundPlatformer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22306,6 +22306,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199675666265128}
+  - component: {fileID: 114921982378485504}
   m_Layer: 0
   m_Name: Camera Controller
   m_TagString: Untagged
@@ -28263,10 +28264,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4665189699677032}
-  - component: {fileID: 114931983926654454}
   - component: {fileID: 114149065678975214}
   - component: {fileID: 114505837333027280}
   - component: {fileID: 114581574341413726}
+  - component: {fileID: 114007947936206680}
   m_Layer: 0
   m_Name: LookAtBirdCam
   m_TagString: Untagged
@@ -41069,7 +41070,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624026623821890}
-  m_LocalRotation: {x: -0.7049849, y: 0.05474116, z: 0.70617723, w: 0.03624084}
+  m_LocalRotation: {x: -0.7049849, y: 0.05474115, z: 0.70617723, w: 0.03624084}
   m_LocalPosition: {x: 3.3377118e-17, y: 0.20217746, z: -0.23743874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -57845,6 +57846,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bearControls: {fileID: 114301582777173366}
+--- !u!114 &114007947936206680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01b456af2be24925a73e4eeea983360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localPlayer: {fileID: 1015017301963698}
 --- !u!114 &114136612259491140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57903,9 +57916,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFollower: {fileID: 114529071121646760}
+  m_camControlers: {fileID: 114921982378485504}
   runningCam: {fileID: 114983130417015822}
   aimCam: {fileID: 114903739070602264}
-  locateBirdCam: {fileID: 114931983926654454}
+  locateBirdCam: {fileID: 0}
   moverBehaviour: {fileID: 114136612259491140}
   grenadeShooter: {fileID: 114538273771620466}
   bearSwipeTag: {fileID: 114975755756980254}
@@ -58109,7 +58123,7 @@ MonoBehaviour:
   m_projectilePrefab: {fileID: 1000011267774992, guid: 4dd87dedbe30f0544bc011620443530e,
     type: 2}
   m_impulseMagnitude: 100
-  cooldown: 1
+  cooldown: 0.2
   m_collisionObserver: {fileID: 114520039295091304}
 --- !u!114 &114557307756490190
 MonoBehaviour:
@@ -58411,7 +58425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiable: 1
   setOnStart: 1
-  controlledView: {fileID: 114888267780819956}
   distanceFromTarget: 0.1
   angleFromTarget: {x: 0, y: 0}
   pitchChangeSpeed: 0
@@ -58424,32 +58437,19 @@ MonoBehaviour:
     m_Bits: 0
   radiusCollision: 0.2
   zoomFactor: 0.5
---- !u!114 &114931983926654454
+--- !u!114 &114921982378485504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951137649858240}
+  m_GameObject: {fileID: 1757144231876718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf88306375934ec9bea28c5f89f590f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2229064a2203421c93bab996a70974b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifiable: 0
-  setOnStart: 0
-  controlledView: {fileID: 114505837333027280}
-  distanceFromTarget: 0
-  angleFromTarget: {x: 0, y: 0}
-  pitchChangeSpeed: 5
-  yawChangeSpeed: 5
-  minXAngle: -90
-  maxXAngle: 90
-  fixCollisions: 0
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  radiusCollision: 0.2
-  zoomFactor: 0.5
+  defaultCamera: {fileID: 114983130417015822}
+  m_activeCam: {fileID: 0}
 --- !u!114 &114975755756980254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58475,7 +58475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiable: 1
   setOnStart: 1
-  controlledView: {fileID: 114695932065784176}
   distanceFromTarget: 6
   angleFromTarget: {x: 10, y: -88}
   pitchChangeSpeed: 20
