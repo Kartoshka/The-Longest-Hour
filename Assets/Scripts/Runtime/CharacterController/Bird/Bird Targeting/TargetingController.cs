@@ -39,11 +39,11 @@ public class TargetingController : MonoBehaviour {
 		}
 	}
 
-	public void toggle(){
-		disableCurrent ();
-		currentTarget = (currentTarget + 1) % targeters.Count;
-		enableCurrent ();
-	}
+	//public void toggle(){
+	//	disableCurrent ();
+	//	currentTarget = (currentTarget + 1) % targeters.Count;
+	//	enableCurrent ();
+	//}
 
     public void toggleDraw()
     {
@@ -59,12 +59,12 @@ public class TargetingController : MonoBehaviour {
         enableCurrent();
     }
 
-    public void toggleBeacon()
-    {
-        disableCurrent();
-        currentTarget = m_BEACON;
-        enableCurrent();
-    }
+    //public void toggleBeacon()
+    //{
+    //    disableCurrent();
+    //    currentTarget = m_BEACON;
+    //    enableCurrent();
+    //}
 
     public void activateCurrent(){
 		if (targeters [currentTarget] != null) {
