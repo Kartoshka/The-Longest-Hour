@@ -93,9 +93,7 @@ public class LevelManager : NetworkBehaviour {
             }
 
 
-        }
-
-        if (threePuzzleLevel.active)
+        }else if (threePuzzleLevel.active)
         {
             threePuzzleLevel.SetActive(false);
             lastLevel.SetActive(true);
