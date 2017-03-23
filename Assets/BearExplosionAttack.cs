@@ -13,7 +13,6 @@ public class BearExplosionAttack : MonoBehaviour {
 	void Start () {
 		if (m_collisionListener==null && m_collisionObserver!=null)
 		{
-			Debug.Log ("Register :)");
 			Observer<CollisionObserver> observer = m_collisionObserver.getObserver();
 			m_collisionListener = createCollisionListener ();
 			observer.add(m_collisionListener);

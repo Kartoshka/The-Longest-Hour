@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: a0270d8a1f9667346aa30806105bc280
+timeCreated: 1490094617
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body_base
+    100002: body_main
+    100004: //RootNode
+    100006: joint3
+    100008: leg1
+    100010: leg2
+    100012: leg3
+    100014: leg_1
+    100016: leg_1 1
+    100018: leg_1 2
+    100020: leg_2
+    100022: leg_2 1
+    100024: leg_2 2
+    100026: leg_3
+    100028: leg_3 1
+    100030: leg_3 2
+    100032: leg_backLeft_joint_1
+    100034: leg_backLeft_joint_2
+    100036: leg_backLeft_joint_3
+    100038: leg_backRight_joint_1
+    100040: leg_backRight_joint_2
+    100042: leg_backRight_joint_3
+    100044: leg_front_joint_1
+    100046: leg_front_joint_2
+    100048: leg_front_joint_3
+    100050: mainCtrl
+    100052: propeller1
+    100054: propeller1_joint_base
+    100056: propeller1_joint_Tip
+    100058: propeller2
+    100060: propeller2_joint_Tip
+    100062: propeller3
+    100064: propeller3_joint_base
+    100066: propeller3_joint_Tip
+    100068: propeller_Base
+    100070: propeller_base_joint
+    100072: pylonBot
+    100074: root_joint
+    100076: rootCtrl
+    400000: body_base
+    400002: body_main
+    400004: //RootNode
+    400006: joint3
+    400008: leg1
+    400010: leg2
+    400012: leg3
+    400014: leg_1
+    400016: leg_1 1
+    400018: leg_1 2
+    400020: leg_2
+    400022: leg_2 1
+    400024: leg_2 2
+    400026: leg_3
+    400028: leg_3 1
+    400030: leg_3 2
+    400032: leg_backLeft_joint_1
+    400034: leg_backLeft_joint_2
+    400036: leg_backLeft_joint_3
+    400038: leg_backRight_joint_1
+    400040: leg_backRight_joint_2
+    400042: leg_backRight_joint_3
+    400044: leg_front_joint_1
+    400046: leg_front_joint_2
+    400048: leg_front_joint_3
+    400050: mainCtrl
+    400052: propeller1
+    400054: propeller1_joint_base
+    400056: propeller1_joint_Tip
+    400058: propeller2
+    400060: propeller2_joint_Tip
+    400062: propeller3
+    400064: propeller3_joint_base
+    400066: propeller3_joint_Tip
+    400068: propeller_Base
+    400070: propeller_base_joint
+    400072: pylonBot
+    400074: root_joint
+    400076: rootCtrl
+    4300000: leg_2
+    4300002: leg_3
+    4300004: leg_1
+    4300006: leg_2
+    4300008: leg_3
+    4300010: leg_1
+    4300012: leg_2
+    4300014: leg_3
+    4300016: leg_1
+    4300018: propeller_Base
+    4300020: propeller3
+    4300022: propeller2
+    4300024: propeller1
+    4300026: body_base
+    4300028: body_main
+    7400000: hoverBot_fly_enter
+    7400002: hoverBot_fly_loop
+    7400004: hoverBot_fly_exit
+    9500000: //RootNode
+    13700000: body_base
+    13700002: leg_1
+    13700004: leg_1 1
+    13700006: leg_1 2
+    13700008: leg_2
+    13700010: leg_2 1
+    13700012: leg_2 2
+    13700014: leg_3
+    13700016: leg_3 1
+    13700018: leg_3 2
+    13700020: propeller1
+    13700022: propeller2
+    13700024: propeller3
+    13700026: propeller_Base
+    13700028: body_main
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: hoverBot_fly_enter
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.016877636
+        functionName: stopMovement
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9957806
+        functionName: startMovement
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mainCtrl
+        weight: 1
+      - path: mainCtrl/rootCtrl
+        weight: 1
+      - path: pylonBot
+        weight: 1
+      - path: pylonBot/body_base
+        weight: 1
+      - path: pylonBot/body_main
+        weight: 1
+      - path: pylonBot/leg1
+        weight: 1
+      - path: pylonBot/leg1/leg_1
+        weight: 1
+      - path: pylonBot/leg1/leg_2
+        weight: 1
+      - path: pylonBot/leg1/leg_3
+        weight: 1
+      - path: pylonBot/leg2
+        weight: 1
+      - path: pylonBot/leg2/leg_1 1
+        weight: 1
+      - path: pylonBot/leg2/leg_2 1
+        weight: 1
+      - path: pylonBot/leg2/leg_3 1
+        weight: 1
+      - path: pylonBot/leg3
+        weight: 1
+      - path: pylonBot/leg3/leg_1 2
+        weight: 1
+      - path: pylonBot/leg3/leg_2 2
+        weight: 1
+      - path: pylonBot/leg3/leg_3 2
+        weight: 1
+      - path: pylonBot/propeller_Base
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller1
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller2
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller3
+        weight: 1
+      - path: root_joint
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2/leg_backLeft_joint_3
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2/leg_backRight_joint_3
+        weight: 1
+      - path: root_joint/leg_front_joint_1
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2/leg_front_joint_3
+        weight: 1
+      - path: root_joint/propeller_base_joint
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base/propeller1_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip/joint3
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base/propeller3_joint_Tip
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hoverBot_fly_loop
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mainCtrl
+        weight: 1
+      - path: mainCtrl/rootCtrl
+        weight: 1
+      - path: pylonBot
+        weight: 1
+      - path: pylonBot/body_base
+        weight: 1
+      - path: pylonBot/body_main
+        weight: 1
+      - path: pylonBot/leg1
+        weight: 1
+      - path: pylonBot/leg1/leg_1
+        weight: 1
+      - path: pylonBot/leg1/leg_2
+        weight: 1
+      - path: pylonBot/leg1/leg_3
+        weight: 1
+      - path: pylonBot/leg2
+        weight: 1
+      - path: pylonBot/leg2/leg_1 1
+        weight: 1
+      - path: pylonBot/leg2/leg_2 1
+        weight: 1
+      - path: pylonBot/leg2/leg_3 1
+        weight: 1
+      - path: pylonBot/leg3
+        weight: 1
+      - path: pylonBot/leg3/leg_1 2
+        weight: 1
+      - path: pylonBot/leg3/leg_2 2
+        weight: 1
+      - path: pylonBot/leg3/leg_3 2
+        weight: 1
+      - path: pylonBot/propeller_Base
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller1
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller2
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller3
+        weight: 1
+      - path: root_joint
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2/leg_backLeft_joint_3
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2/leg_backRight_joint_3
+        weight: 1
+      - path: root_joint/leg_front_joint_1
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2/leg_front_joint_3
+        weight: 1
+      - path: root_joint/propeller_base_joint
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base/propeller1_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip/joint3
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base/propeller3_joint_Tip
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hoverBot_fly_exit
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: stopMovement
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9367088
+        functionName: stopMovement
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mainCtrl
+        weight: 1
+      - path: mainCtrl/rootCtrl
+        weight: 1
+      - path: pylonBot
+        weight: 1
+      - path: pylonBot/body_base
+        weight: 1
+      - path: pylonBot/body_main
+        weight: 1
+      - path: pylonBot/leg1
+        weight: 1
+      - path: pylonBot/leg1/leg_1
+        weight: 1
+      - path: pylonBot/leg1/leg_2
+        weight: 1
+      - path: pylonBot/leg1/leg_3
+        weight: 1
+      - path: pylonBot/leg2
+        weight: 1
+      - path: pylonBot/leg2/leg_1 1
+        weight: 1
+      - path: pylonBot/leg2/leg_2 1
+        weight: 1
+      - path: pylonBot/leg2/leg_3 1
+        weight: 1
+      - path: pylonBot/leg3
+        weight: 1
+      - path: pylonBot/leg3/leg_1 2
+        weight: 1
+      - path: pylonBot/leg3/leg_2 2
+        weight: 1
+      - path: pylonBot/leg3/leg_3 2
+        weight: 1
+      - path: pylonBot/propeller_Base
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller1
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller2
+        weight: 1
+      - path: pylonBot/propeller_Base/propeller3
+        weight: 1
+      - path: root_joint
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2
+        weight: 1
+      - path: root_joint/leg_backLeft_joint_1/leg_backLeft_joint_2/leg_backLeft_joint_3
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2
+        weight: 1
+      - path: root_joint/leg_backRight_joint_1/leg_backRight_joint_2/leg_backRight_joint_3
+        weight: 1
+      - path: root_joint/leg_front_joint_1
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2
+        weight: 1
+      - path: root_joint/leg_front_joint_1/leg_front_joint_2/leg_front_joint_3
+        weight: 1
+      - path: root_joint/propeller_base_joint
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller1_joint_base/propeller1_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller2_joint_Tip/joint3
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base
+        weight: 1
+      - path: root_joint/propeller_base_joint/propeller3_joint_base/propeller3_joint_Tip
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

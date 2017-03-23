@@ -10,6 +10,7 @@ public class TimeControllable : MonoBehaviour
     public GameObject airTag;
 	public PhysicsTimeCtrl m_physicsController;
 
+    public bool isCar;
     bool timeControllable;
 
     Renderer renderer;
@@ -20,16 +21,20 @@ public class TimeControllable : MonoBehaviour
 		m_physicsController = gameObject.GetComponent<PhysicsTimeCtrl> ();
         renderer = gameObject.GetComponent<Renderer>();
         timeControllable = false;
+        isCar = false;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     public void Activate()
     {
+        if(isCar)
+        {
+            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_activeMaterial;
+            timeControllable = true;
+            airTag.SetActive(true);
+            return;
+        }
+        
         foreach(MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
         {
             childRenderer.material = m_activeMaterial;
@@ -48,6 +53,15 @@ public class TimeControllable : MonoBehaviour
 
     public void Deactivate()
     {
+        if (isCar)
+        {
+            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_inactiveMaterial;
+            airTag.SetActive(false);
+            timeControllable = false;
+            return;
+        }
+
+
         foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
         {
             childRenderer.material = m_inactiveMaterial;

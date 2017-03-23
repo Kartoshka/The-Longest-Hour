@@ -54,7 +54,7 @@ public class LinearInputMoverBehavior : MoverBehavior
 		}
 		else
 		{
-			Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
+			//Debug.LogWarning("No GameObject with the tag 'Debug' was found.");
 		}
     }
        

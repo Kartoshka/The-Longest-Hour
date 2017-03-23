@@ -54,7 +54,7 @@ public class BearController : MonoBehaviour {
 	private bool isIdle = false;
 	private bool isAsleep = true;
 	private bool isAttacking = false;
-	public bool isAiming = false;
+	private bool isAiming = false;
 	private bool isFiring = false;
 
 	Action enable(bool val){

@@ -71,10 +71,10 @@ public class UIHUDManager : MonoBehaviour {
 		showPlayerCharacterIcon ();
 
 		// Set all button images to inactive at start
-		deactivateButtonImages();
+		//deactivateButtonImages();
 
 		// Set all ability icons to inactive at start
-		deactivateAbilityImages ();
+		//deactivateAbilityImages ();
 
 	}
 
