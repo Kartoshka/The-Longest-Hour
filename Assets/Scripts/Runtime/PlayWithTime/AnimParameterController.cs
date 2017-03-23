@@ -81,20 +81,31 @@ public class AnimParameterController : MonoBehaviour
     public void setAnimators(List<GameObject> objs)
     {
         m_animators = new List<Animator>();
-        m_animTimes = new double[objs.Count];
-        int i = 0;
+
         foreach (GameObject go in objs)
         {
             Animator anim = go.GetComponent<Animator>();
-            float currTime = (float) anim.GetTime();
-            float totalTime = anim.GetCurrentAnimatorStateInfo(0).length;
-            anim.SetFloat("time", currTime / totalTime);
+            if (anim == null)
+            {
+                anim = go.GetComponent<TimeControllable>().myAnimator;
+            }
+            if (anim != null) { 
+                float currTime = (float)anim.GetTime();
+                float totalTime = anim.GetCurrentAnimatorStateInfo(0).length;
+                anim.SetFloat("time", currTime / totalTime);
 
-            m_animators.Add(anim);
+                m_animators.Add(anim);
+            }
+        }
+
+        m_animTimes = new double[m_animators.Count];
+        int i = 0;
+        foreach (Animator anim in m_animators)
+        {
             m_animTimes[i] = anim.GetTime();
             i++;
         }
-        
+
     }
 
     public void setActive(bool active)

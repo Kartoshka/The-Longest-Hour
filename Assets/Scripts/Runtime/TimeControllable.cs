@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeControllable : MonoBehaviour
 {
     public Material m_taggedMaterial;
+    public Material m_circledMaterial;
     public Material m_activeMaterial;
     public Material m_inactiveMaterial;
     public GameObject airTag;
@@ -55,27 +56,29 @@ public class TimeControllable : MonoBehaviour
 
     public void Tag()
     {
-        if (isCar)
+        if (!timeControllable)
         {
-            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
-            Material[] temp = smr.materials;
-            temp[1] = m_taggedMaterial;
-            smr.materials = temp;
+            if (isCar)
+            {
+                SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+                Material[] temp = smr.materials;
+                temp[1] = m_taggedMaterial;
+                smr.materials = temp;
+                tagged = true;
+                return;
+            }
+
+            foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+            {
+                childRenderer.material = m_taggedMaterial;
+            }
+            foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
+            {
+                childFlashing.enabled = true;
+            }
+
             tagged = true;
-            airTag.SetActive(true);
-            return;
         }
-
-        foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
-        {
-            childRenderer.material = m_taggedMaterial;
-        }
-        foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
-        {
-            childFlashing.enabled = true;
-        }
-
-        tagged = true;
     }
 
     public void Untag()
@@ -84,20 +87,37 @@ public class TimeControllable : MonoBehaviour
         {
             SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
             Material[] temp = smr.materials;
-            temp[1] = m_inactiveMaterial;
+            if (circled)
+            {
+                temp[1] = m_circledMaterial;
+            }
+            else
+            {
+                temp[1] = m_inactiveMaterial;
+            }
+            
             smr.materials = temp;
             tagged = false;
-            airTag.SetActive(false);
             return;
         }
 
         foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
         {
-            childRenderer.material = m_inactiveMaterial;
+            if (circled)
+            {
+                childRenderer.material = m_circledMaterial;
+            } else
+            {
+                childRenderer.material = m_inactiveMaterial;
+            }
+            
         }
-        foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
+        if (!circled)
         {
-            childFlashing.enabled = false;
+            foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
+            {
+                childFlashing.enabled = false;
+            }
         }
 
         tagged = false;
@@ -105,12 +125,71 @@ public class TimeControllable : MonoBehaviour
 
     public void Circle()
     {
+        if (isCar)
+        {
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            temp[1] = m_circledMaterial;
+            smr.materials = temp;
+            circled = true;
+            airTag.SetActive(true);
+            return;
+        }
+
+        foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            childRenderer.material = m_circledMaterial;
+        }
+        foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
+        {
+            childFlashing.enabled = true;
+        }
+
         airTag.SetActive(true);
         circled = true;
     }
 
     public void Uncircle()
     {
+        if (isCar)
+        {
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            if (tagged)
+            {
+                temp[1] = m_taggedMaterial;
+            }
+            else
+            {
+                temp[1] = m_inactiveMaterial;
+            }
+
+            smr.materials = temp;
+            circled = false;
+            airTag.SetActive(false);
+            return;
+        }
+
+        foreach (MeshRenderer childRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            if (tagged)
+            {
+                childRenderer.material = m_taggedMaterial;
+            }
+            else
+            {
+                childRenderer.material = m_inactiveMaterial;
+            }
+
+        }
+        if (!tagged)
+        {
+            foreach (GroundTagFlashing childFlashing in gameObject.GetComponentsInChildren<GroundTagFlashing>())
+            {
+                childFlashing.enabled = false;
+            }
+        }
+
         airTag.SetActive(false);
         circled = false;
     }
@@ -147,7 +226,19 @@ public class TimeControllable : MonoBehaviour
         {
             SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
             Material[] temp = smr.materials;
-            temp[1] = m_inactiveMaterial;
+            if (tagged)
+            {
+                temp[1] = m_taggedMaterial;
+            }
+            else if (circled)
+            {
+                temp[1] = m_circledMaterial;
+            }
+            else
+            {
+                temp[1] = m_inactiveMaterial;
+            }
+            
             smr.materials = temp;
             airTag.SetActive(false);
             return;
@@ -159,6 +250,10 @@ public class TimeControllable : MonoBehaviour
             if (tagged)
             {
                 childRenderer.material = m_taggedMaterial;
+            }
+            else if (circled)
+            {
+                childRenderer.material = m_circledMaterial;
             }
             else
             {
