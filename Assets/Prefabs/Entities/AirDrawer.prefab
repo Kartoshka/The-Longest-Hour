@@ -6110,8 +6110,8 @@ GameObject:
   - component: {fileID: 114841729182676536}
   - component: {fileID: 114313186452093566}
   - component: {fileID: 114896064793293402}
-  - component: {fileID: 114792616488727984}
   - component: {fileID: 114950997528255160}
+  - component: {fileID: 114640975434628768}
   m_Layer: 2
   m_Name: AirDrawer
   m_TagString: Player
@@ -25663,7 +25663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   d_spline: {fileID: 0}
-  diveCam: {fileID: 0}
+  diveCam: {fileID: 114639453673640702}
   duration: 3
   d_time: 0
   lerpAmount: 0.2
@@ -25857,6 +25857,19 @@ MonoBehaviour:
   DutchOffset: 0
   NoiseAmplitudeScalar: 1
   NoiseSpeedScalar: 1
+--- !u!114 &114640975434628768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a23f1a108aa81a42b620c8b34b05ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reference: {fileID: 114486233376928518}
+  watchOverMe: {fileID: 114565239990862332}
 --- !u!114 &114729003815075396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25943,18 +25956,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   duration: 4
---- !u!114 &114792616488727984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1560549525078014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328c9c8b07d094b499d4034fdf73d31c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_lineDrawerComponent: {fileID: 114011137113088730}
 --- !u!114 &114841729182676536
 MonoBehaviour:
   m_ObjectHideFlags: 1

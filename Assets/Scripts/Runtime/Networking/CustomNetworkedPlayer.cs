@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CustomNetworkedPlayer : NetworkBehaviour
 {
+    private GameObject m_spawnedCharacter;
+
 	public override void OnStartClient()
 	{
 		base.OnStartClient();
@@ -17,7 +19,80 @@ public class CustomNetworkedPlayer : NetworkBehaviour
 		base.OnStartLocalPlayer();
 	}
 
-	private void tryInstantiatePlayerObject()
+    public void resetPlayer(GameObject spawnedCharacter)
+    {
+        if (isLocalPlayer && spawnedCharacter)
+        {
+            tryRespawnPlayerObject(spawnedCharacter);
+        }
+    }
+    public void tryRespawnPlayerObject(GameObject oldCharacter)
+    {
+        NetworkIdentity netId = this.GetComponent<NetworkIdentity>();
+        if (netId)
+        {
+            NetworkConnection netConn = null;
+            if (netId.clientAuthorityOwner != null)
+            {
+                netConn = netId.clientAuthorityOwner;
+            }
+            else
+            {
+                netConn = netId.connectionToServer;
+            }
+            if (netConn != null)
+            {
+                if (isClient)
+                {
+                    CmdRespawnCustomPlayer(netId, oldCharacter);
+                }
+            }
+        }
+    }
+
+    [Command]
+    public void CmdRespawnCustomPlayer(NetworkIdentity playerNetID, GameObject oldCharacter)
+    {
+        instantiateCustomPlayer(playerNetID, oldCharacter);
+    }
+
+    private void respawnCustomPlayer(NetworkIdentity playerNetID, GameObject oldCharacter)
+    {
+        NetworkConnection netConn = null;
+        if (playerNetID.clientAuthorityOwner != null)
+        {
+            netConn = playerNetID.clientAuthorityOwner;
+        }
+        else
+        {
+            netConn = playerNetID.connectionToServer;
+        }
+        if (netConn != null)
+        {
+            Transform spawnTranform = null;
+            if (oldCharacter)
+            {
+                spawnTranform = oldCharacter.transform;
+                Debug.Log(spawnTranform.position);
+            }
+            if (spawnTranform == null)
+            {
+                spawnTranform = NetworkLobbyManager.singleton.startPositions[netConn.connectionId];
+            }
+            Debug.Assert(spawnTranform != null, "Could not find a spawn point for the custom networked character.");
+
+            GameObject playerObject = GameObject.Instantiate(NetworkLobbyManager.singleton.spawnPrefabs[netConn.connectionId], spawnTranform.position, spawnTranform.rotation, this.transform);
+            for (int i = 0; i < playerObject.transform.GetChildCount(); i++)
+            {
+                playerObject.transform.GetChild(i).position = spawnTranform.position;
+            }
+
+            m_spawnedCharacter = playerObject;
+            NetworkServer.SpawnWithClientAuthority(playerObject, netConn);
+        }
+    }
+
+    public void tryInstantiatePlayerObject()
 	{
 		NetworkIdentity netId = this.GetComponent<NetworkIdentity>();
 		if (netId)
@@ -111,7 +186,8 @@ public class CustomNetworkedPlayer : NetworkBehaviour
                 playerObject.transform.GetChild(i).position = spawnTranform.position;
             }
 
-			NetworkServer.SpawnWithClientAuthority(playerObject, netConn);
+            m_spawnedCharacter = playerObject;
+            NetworkServer.SpawnWithClientAuthority(playerObject, netConn);
 		}
 	}
 
