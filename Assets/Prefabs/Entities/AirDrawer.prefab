@@ -6091,6 +6091,7 @@ GameObject:
   - component: {fileID: 114841729182676536}
   - component: {fileID: 114313186452093566}
   - component: {fileID: 114896064793293402}
+  - component: {fileID: 114325362248738574}
   m_Layer: 2
   m_Name: AirDrawer
   m_TagString: Player
@@ -25426,7 +25427,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiable: 0
   setOnStart: 1
-  controlledView: {fileID: 114321040510764246}
   distanceFromTarget: 20
   angleFromTarget: {x: 1, y: 1}
   pitchChangeSpeed: 5
@@ -25465,6 +25465,8 @@ MonoBehaviour:
   topDownView: {fileID: 114084849590432446}
   moverBehaviour: {fileID: 114405295273173800}
   targetControl: {fileID: 114485003667923220}
+  invertX: 0
+  invertY: 0
 --- !u!114 &114138529461071956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25557,6 +25559,19 @@ MonoBehaviour:
   DutchOffset: 0
   NoiseAmplitudeScalar: 1
   NoiseSpeedScalar: 1
+--- !u!114 &114325362248738574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c4afe29f35848d48bec0993af90394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeOnlyAuthority:
+  - {fileID: 1490312840816758}
 --- !u!114 &114388463372143480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25867,13 +25882,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiable: 1
   setOnStart: 1
-  controlledView: {fileID: 114596207234466592}
   distanceFromTarget: 7.8
-  angleFromTarget: {x: -29.12, y: -90}
+  angleFromTarget: {x: -29.12, y: 90}
   pitchChangeSpeed: 50
   yawChangeSpeed: 50
-  minXAngle: 69
-  maxXAngle: 69
+  minXAngle: 60
+  maxXAngle: 90
   fixCollisions: 0
   collisionLayers:
     serializedVersion: 2
