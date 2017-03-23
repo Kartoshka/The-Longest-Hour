@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GeneratorEnd : MonoBehaviour {
+public class GeneratorEnd : NetworkBehaviour {
 
     public Transform startPosForBall;
     public GameObject targetDoor;
@@ -14,13 +15,24 @@ public class GeneratorEnd : MonoBehaviour {
             GeneratorBall gb = other.gameObject.GetComponent<GeneratorBall>();
             if(gb.chargeAmount == 100)
             {
-                Destroy(targetDoor);
-                Destroy(other.gameObject);
+                CmdDestroyStuff();
             }
             else
             {
                 gb.transform.position = startPosForBall.position;
             }
         }
+    }
+
+    [Command]
+    void CmdDestroyStuff()
+    {
+        RpcDestroyStuff();
+    }
+
+    [ClientRpc]
+    void RpcDestroyStuff()
+    {
+        Destroy(targetDoor);
     }
 }

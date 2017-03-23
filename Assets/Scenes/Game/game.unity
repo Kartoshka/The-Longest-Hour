@@ -3645,7 +3645,7 @@ MonoBehaviour:
   - Yes I can. Let me tag the bridge!
   birdLines:
   - Darn. Can you TAG things?
-  - And then I can use RT to draw around it!
+  - And then I can use LT to aim and RT to draw around it!
 --- !u!65 &116467387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9701,6 +9701,7 @@ GameObject:
   - component: {fileID: 340279954}
   - component: {fileID: 340279953}
   - component: {fileID: 340279955}
+  - component: {fileID: 340279956}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -9774,6 +9775,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34756154, y: 0.34866673, z: 0.0073563014}
   m_Center: {x: -0.007895462, y: 0.036826722, z: -0.0024135974}
+--- !u!114 &340279956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 340279951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 134
+    i1: 246
+    i2: 241
+    i3: 18
+    i4: 142
+    i5: 97
+    i6: 215
+    i7: 148
+    i8: 171
+    i9: 222
+    i10: 97
+    i11: 92
+    i12: 250
+    i13: 54
+    i14: 83
+    i15: 113
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &344179192
 Prefab:
   m_ObjectHideFlags: 0
@@ -11017,10 +11050,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bearLines:
   - I cant get across
-  - Yes I can, with the X button. Let me tag the bridge!
+  - Yes I can, with the A button. Let me tag the bridge!
   birdLines:
   - Darn. Can you TAG things?
-  - And then I can use RT to draw around it!
+  - And then I can use LT to aim and  RT to draw around it!
 --- !u!65 &395817721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15873,6 +15906,7 @@ GameObject:
   - component: {fileID: 586307427}
   - component: {fileID: 586307426}
   - component: {fileID: 586307429}
+  - component: {fileID: 586307430}
   m_Layer: 0
   m_Name: Wall_2 (3)
   m_TagString: Untagged
@@ -15957,6 +15991,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018c311186de7ed4a9da2cb13a7a861f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &586307430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586307424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 111
+    i1: 255
+    i2: 99
+    i3: 59
+    i4: 141
+    i5: 237
+    i6: 194
+    i7: 4
+    i8: 138
+    i9: 182
+    i10: 231
+    i11: 229
+    i12: 177
+    i13: 150
+    i14: 153
+    i15: 180
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &586603879
 GameObject:
   m_ObjectHideFlags: 0
@@ -18315,6 +18381,7 @@ GameObject:
   - component: {fileID: 672750429}
   - component: {fileID: 672750428}
   - component: {fileID: 672750430}
+  - component: {fileID: 672750431}
   m_Layer: 0
   m_Name: Roof_Platform
   m_TagString: Untagged
@@ -18388,6 +18455,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34756163, y: 0.34866673, z: 0.0073563014}
   m_Center: {x: -0.007894987, y: 0.036826484, z: -0.0024135825}
+--- !u!114 &672750431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672750426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 156
+    i1: 7
+    i2: 148
+    i3: 90
+    i4: 206
+    i5: 174
+    i6: 161
+    i7: 196
+    i8: 89
+    i9: 32
+    i10: 37
+    i11: 250
+    i12: 233
+    i13: 223
+    i14: 53
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &673549032
 GameObject:
   m_ObjectHideFlags: 0
@@ -24274,7 +24373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bearLines:
-  - Let me hit that door. Y Button
+  - Let me run through that door
   birdLines:
   - Sounds like a plan, stan
 --- !u!65 &855300056
@@ -28090,6 +28189,7 @@ GameObject:
   - component: {fileID: 972561593}
   - component: {fileID: 972561592}
   - component: {fileID: 972561591}
+  - component: {fileID: 972561594}
   m_Layer: 0
   m_Name: Gate (3)
   m_TagString: Untagged
@@ -28163,6 +28263,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972561589}
   m_Mesh: {fileID: 4300000, guid: 6f9f51916cf714826b04d2c4bfcb64e3, type: 3}
+--- !u!114 &972561594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972561589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 134
+    i1: 246
+    i2: 241
+    i3: 18
+    i4: 142
+    i5: 97
+    i6: 215
+    i7: 148
+    i8: 171
+    i9: 222
+    i10: 97
+    i11: 92
+    i12: 250
+    i13: 54
+    i14: 83
+    i15: 113
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &972580281
 GameObject:
   m_ObjectHideFlags: 0
@@ -37805,6 +37937,7 @@ GameObject:
   - component: {fileID: 1257719474}
   - component: {fileID: 1257719473}
   - component: {fileID: 1257719472}
+  - component: {fileID: 1257719475}
   m_Layer: 0
   m_Name: Gate (2)
   m_TagString: Untagged
@@ -37878,6 +38011,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257719470}
   m_Mesh: {fileID: 4300000, guid: 6f9f51916cf714826b04d2c4bfcb64e3, type: 3}
+--- !u!114 &1257719475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257719470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 134
+    i1: 246
+    i2: 241
+    i3: 18
+    i4: 142
+    i5: 97
+    i6: 215
+    i7: 148
+    i8: 171
+    i9: 222
+    i10: 97
+    i11: 92
+    i12: 250
+    i13: 54
+    i14: 83
+    i15: 113
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1258417282
 GameObject:
   m_ObjectHideFlags: 0
@@ -44764,6 +44929,7 @@ GameObject:
   - component: {fileID: 1555797916}
   - component: {fileID: 1555797915}
   - component: {fileID: 1555797917}
+  - component: {fileID: 1555797918}
   m_Layer: 0
   m_Name: Roof_Platform
   m_TagString: Untagged
@@ -44837,6 +45003,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34756163, y: 0.34866673, z: 0.0073563033}
   m_Center: {x: -0.007895524, y: 0.036826663, z: -0.0024135981}
+--- !u!114 &1555797918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555797913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 156
+    i1: 7
+    i2: 148
+    i3: 90
+    i4: 206
+    i5: 174
+    i6: 161
+    i7: 196
+    i8: 89
+    i9: 32
+    i10: 37
+    i11: 250
+    i12: 233
+    i13: 223
+    i14: 53
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!4 &1555798083 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4186369024802302, guid: e9ede753dce5624448c64eb46f3054c3,
@@ -58442,6 +58640,7 @@ GameObject:
   - component: {fileID: 2087452748}
   - component: {fileID: 2087452747}
   - component: {fileID: 2087452746}
+  - component: {fileID: 2087452749}
   m_Layer: 0
   m_Name: Gate (1)
   m_TagString: Untagged
@@ -58515,6 +58714,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2087452744}
   m_Mesh: {fileID: 4300000, guid: 6f9f51916cf714826b04d2c4bfcb64e3, type: 3}
+--- !u!114 &2087452749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2087452744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 134
+    i1: 246
+    i2: 241
+    i3: 18
+    i4: 142
+    i5: 97
+    i6: 215
+    i7: 148
+    i8: 171
+    i9: 222
+    i10: 97
+    i11: 92
+    i12: 250
+    i13: 54
+    i14: 83
+    i15: 113
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &2087792166
 GameObject:
   m_ObjectHideFlags: 0

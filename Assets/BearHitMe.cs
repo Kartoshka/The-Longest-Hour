@@ -1,14 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BearHitMe : MonoBehaviour {
+public class BearHitMe : NetworkBehaviour {
+
+
 
 	void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.name.Equals("AttackCollision"))
+        Debug.Log(other.gameObject.transform.parent.gameObject.name);
+        if(other.gameObject.transform.parent.gameObject.name.Equals("GroundPlatformer(Clone)"))
         {
-            Destroy(gameObject);
+            CmdDestroyMe();
         }
+    }
+
+    [Command]
+    void CmdDestroyMe()
+    {
+        RpcDestroyMe();
+    }
+
+    [ClientRpc]
+    void RpcDestroyMe()
+    {
+        Destroy(gameObject);
     }
 }
