@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114030955145647898}
   - component: {fileID: 114786060179770008}
   - component: {fileID: 114177998569924362}
+  - component: {fileID: 114132219296554018}
   m_Layer: 10
   m_Name: GeneratorBall
   m_TagString: generatorBall
@@ -111,6 +112,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeAmount: 0
+--- !u!114 &114132219296554018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659598657607944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ff05146389914891009a2a7660212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114177998569924362
 MonoBehaviour:
   m_ObjectHideFlags: 1

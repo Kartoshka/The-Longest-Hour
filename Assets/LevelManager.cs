@@ -187,17 +187,23 @@ public class LevelManager : NetworkBehaviour {
 
             spawnPointP1 = GameObject.Find("SpawnPoint_P1");
             spawnPointP2 = GameObject.Find("SpawnPoint_P2");
-
-            GameObject p1 = GameObject.Find("GroundPlatformer(Clone)");
+            try
+            {
+                GameObject p1 = GameObject.Find("GroundPlatformer(Clone)");
             for (int i = 0; i < p1.transform.GetChildCount(); i++)
             {
                 p1.transform.GetChild(i).position = spawnPointP1.transform.position;
             }
+            
+                GameObject p2 = GameObject.Find("AirDrawer(Clone)");
+                for (int i = 0; i < p2.transform.GetChildCount(); i++)
+                {
+                    p2.transform.GetChild(i).position = spawnPointP2.transform.position;
+                }
 
-            GameObject p2 = GameObject.Find("AirDrawer(Clone)");
-            for (int i = 0; i < p2.transform.GetChildCount(); i++)
+            }catch (Exception e)
             {
-                p2.transform.GetChild(i).position = spawnPointP2.transform.position;
+
             }
         }
 

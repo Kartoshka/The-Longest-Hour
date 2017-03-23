@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114821796823372830}
   - component: {fileID: 114745761040250356}
   - component: {fileID: 114461486229780828}
+  - component: {fileID: 114566477446658714}
   m_Layer: 10
   m_Name: GeneratorBall_L2
   m_TagString: generatorBall
@@ -119,6 +120,17 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114566477446658714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1642913729415306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ff05146389914891009a2a7660212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114745761040250356
 MonoBehaviour:
   m_ObjectHideFlags: 1
