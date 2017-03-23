@@ -2878,7 +2878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4452864702940300}
   - component: {fileID: 114888267780819956}
-  - component: {fileID: 114903739070602264}
+  - component: {fileID: 114608477345919414}
   m_Layer: 0
   m_Name: AimCamera
   m_TagString: Untagged
@@ -15077,6 +15077,7 @@ GameObject:
   - component: {fileID: 65969693163781130}
   - component: {fileID: 114864089957105566}
   - component: {fileID: 114336672060263694}
+  - component: {fileID: 114918529568874390}
   m_Layer: 0
   m_Name: MovementController
   m_TagString: Untagged
@@ -37781,7 +37782,6 @@ GameObject:
   - component: {fileID: 4665189699677032}
   - component: {fileID: 114149065678975214}
   - component: {fileID: 114505837333027280}
-  - component: {fileID: 114581574341413726}
   - component: {fileID: 114007947936206680}
   m_Layer: 0
   m_Name: LookAtBirdCam
@@ -77682,8 +77682,8 @@ MonoBehaviour:
   targetFollower: {fileID: 114529071121646760}
   m_camControlers: {fileID: 114921982378485504}
   runningCam: {fileID: 114983130417015822}
-  aimCam: {fileID: 114903739070602264}
-  locateBirdCam: {fileID: 0}
+  aimCam: {fileID: 114608477345919414}
+  locateBirdCam: {fileID: 114007947936206680}
   moverBehaviour: {fileID: 114136612259491140}
   grenadeShooter: {fileID: 114538273771620466}
   bearSwipeTag: {fileID: 114975755756980254}
@@ -77948,23 +77948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grenadeControllerComponent: {fileID: 114538273771620466}
---- !u!114 &114581574341413726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951137649858240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_target: {fileID: 0}
-  m_positionLerpScale: 500000
-  m_rotationLerpScale: 500000
-  m_faceTarget: 0
-  m_matchTargetForward: 0
-  m_offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114599938532382322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77976,6 +77959,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a24c618a2afdab45ab7471d8179a090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114608477345919414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069178193683758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94148a55753934939949f0ac40fa7182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_modFwd: {fileID: 114918529568874390}
+  speed: 10
 --- !u!114 &114676187789910922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78184,38 +78180,24 @@ MonoBehaviour:
     type: 2}
   m_ComposerCameraTarget: {fileID: 4058774087950266}
   m_TransposerCameraTarget: {fileID: 4058774087950266}
-  TransposerTrackingOffset: {x: 0, y: 0, z: 0}
+  TransposerTrackingOffset: {x: 0, y: 0.1, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
   ComposerDampingOffset: {x: 0, y: 0}
   DutchOffset: 0
   NoiseAmplitudeScalar: 1
   NoiseSpeedScalar: 1
---- !u!114 &114903739070602264
+--- !u!114 &114918529568874390
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1069178193683758}
+  m_GameObject: {fileID: 1384996344702180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf88306375934ec9bea28c5f89f590f, type: 3}
+  m_Script: {fileID: 11500000, guid: 00ffd5170374549eca07b7b8b91dedfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifiable: 1
-  setOnStart: 1
-  distanceFromTarget: 0.1
-  angleFromTarget: {x: 0, y: 0}
-  pitchChangeSpeed: 0
-  yawChangeSpeed: 20
-  minXAngle: -90
-  maxXAngle: 90
-  fixCollisions: 0
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  radiusCollision: 0.2
-  zoomFactor: 0.5
 --- !u!114 &114921982378485504
 MonoBehaviour:
   m_ObjectHideFlags: 1
