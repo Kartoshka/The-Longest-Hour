@@ -1916,7 +1916,7 @@ Transform:
   m_GameObject: {fileID: 1010206643331542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4984411522709098}
   - {fileID: 4492176020877628}
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movingEntity: {fileID: 114081843191039878}
   m_animInputController: {fileID: 114975973806126052}
-  m_delayBeforePursue: 5
+  m_delayBeforePursue: 20
   m_materialSwap: {fileID: 114460933084501336}
 --- !u!114 &114855383141685326
 MonoBehaviour:
