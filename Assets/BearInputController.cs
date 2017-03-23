@@ -8,6 +8,7 @@ public class BearInputController : MonoBehaviour {
 
 //	public CameraController bearCameras;
 	public BearController m_bearControls;
+	public float m_timeScale = 0.02f;
 
     public bool invertX;
     public bool invertY;
@@ -126,6 +127,6 @@ public class BearInputController : MonoBehaviour {
 
 	public void setTime(float time)
 	{
-		m_bearControls.setTime(time);
+		m_bearControls.setTime(time * m_timeScale);
 	}
 }
