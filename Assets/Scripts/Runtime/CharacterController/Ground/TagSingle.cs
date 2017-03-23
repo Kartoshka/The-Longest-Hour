@@ -47,7 +47,8 @@ public class TagSingle : MonoBehaviour
                     bool isEntering = collisionObserver.getIsEntering();
                     m_isInTaggableTrigger = isEntering;
 					m_tagTarget = isEntering ? collider.gameObject : null;
-					activateTimeControl();
+                    if(m_tagTarget != null)
+					    activateTimeControl();
                 }
 			}
 		};
@@ -56,22 +57,12 @@ public class TagSingle : MonoBehaviour
 
 	private void activateTimeControl()
 	{
-		TimeControllable timeControllable = m_tagTarget.GetComponent<TimeControllable>();
-        if (timeControllable)
-		{
-			m_tagTarget.GetComponent<TimeControllable>().enabled = true;
-			m_tagTarget.GetComponent<TimeControllable>().Tag();
-		}
+		m_tagTarget.GetComponent<TimeControllable>().Tag();
 	}
 
 	private void deactivateTimeControl()
 	{
-		TimeControllable timeControllable = m_tagTarget.GetComponent<TimeControllable>();
-		if (timeControllable)
-		{
-			m_tagTarget.GetComponent<TimeControllable>().Untag();
-			m_tagTarget.GetComponent<TimeControllable>().enabled = false;
-		}
+		m_tagTarget.GetComponent<TimeControllable>().Untag();
 	}
 
 
