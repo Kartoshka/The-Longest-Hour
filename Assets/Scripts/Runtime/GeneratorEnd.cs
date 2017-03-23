@@ -10,6 +10,7 @@ public class GeneratorEnd : NetworkBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("burh");
         if(other.gameObject.tag.Equals("generatorBall"))
         {
             GeneratorBall gb = other.gameObject.GetComponent<GeneratorBall>();

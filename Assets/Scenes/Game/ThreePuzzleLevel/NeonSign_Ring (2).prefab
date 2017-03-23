@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23368702761022182}
   - component: {fileID: 114341190535565004}
   - component: {fileID: 65882035106634082}
+  - component: {fileID: 114177192048578486}
   m_Layer: 0
   m_Name: NeonSign_Ring (2)
   m_TagString: Untagged
@@ -74,7 +75,6 @@ GameObject:
   - component: {fileID: 33934295996483102}
   - component: {fileID: 23024344791727644}
   - component: {fileID: 64265671983326484}
-  - component: {fileID: 114082449758378632}
   m_Layer: 0
   m_Name: NeonSign_Ring (2)
   m_TagString: Untagged
@@ -289,12 +289,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008000001, y: 0.007999998, z: 0.0036848749}
   m_Center: {x: 0.000000015366822, y: 0.00000002863817, z: -0.0000000037252903}
---- !u!114 &114082449758378632
+--- !u!114 &114177192048578486
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807094631807744}
+  m_GameObject: {fileID: 1135885290977460}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -303,22 +303,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 15
-    i1: 100
-    i2: 6
-    i3: 21
-    i4: 97
-    i5: 139
-    i6: 178
-    i7: 244
-    i8: 75
-    i9: 217
-    i10: 208
-    i11: 15
-    i12: 53
-    i13: 46
-    i14: 175
-    i15: 158
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114341190535565004

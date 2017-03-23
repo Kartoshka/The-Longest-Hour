@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4442578119712364}
   - component: {fileID: 65693963448533632}
   - component: {fileID: 114745857225872750}
+  - component: {fileID: 114797331739450340}
   m_Layer: 0
   m_Name: NeonSign_Ring (2)
   m_TagString: Untagged
@@ -39,7 +40,6 @@ GameObject:
   - component: {fileID: 33506166959535060}
   - component: {fileID: 23033695957154690}
   - component: {fileID: 64545639484855238}
-  - component: {fileID: 114163870783141652}
   m_Layer: 0
   m_Name: LD2
   m_TagString: Untagged
@@ -249,38 +249,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008000002, y: 0.008000003, z: 0.0036848765}
   m_Center: {x: -0.000000059138983, y: -0.000000030966476, z: -0.000000018626451}
---- !u!114 &114163870783141652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094098613561764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 188
-    i1: 189
-    i2: 54
-    i3: 3
-    i4: 58
-    i5: 76
-    i6: 23
-    i7: 228
-    i8: 137
-    i9: 254
-    i10: 32
-    i11: 7
-    i12: 56
-    i13: 171
-    i14: 74
-    i15: 183
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114745857225872750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,3 +262,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosForBall: {fileID: 4605873025427800}
   targetDoor: {fileID: 1377758631946972}
+--- !u!114 &114797331739450340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014551049148838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
