@@ -26,7 +26,7 @@ public class DiveTargetting : SelectableAbility {
 			initialized = true;
 		}
 
-        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
+//        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
 	}
 
 	protected override void OnActivate ()
