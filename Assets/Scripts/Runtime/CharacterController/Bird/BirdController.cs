@@ -52,9 +52,9 @@ public class BirdController : MonoBehaviour {
         }
 
         //Movement controls
-        float verticalLeftStick = Input.GetAxis("Vertical") * YaxisInvert;
+        float verticalLeftStick = Input.GetAxis("Vertical") ;
 
-        float horizontalLeftStick = Input.GetAxis("Horizontal") * XaxisInvert;
+        float horizontalLeftStick = Input.GetAxis("Horizontal");
 
         if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
             verticalLeftStick = 0;
@@ -65,6 +65,15 @@ public class BirdController : MonoBehaviour {
 
         float rightTrigger = Input.GetAxis("RightTrigger");
         float leftTrigger = Input.GetAxis("LeftTrigger");
+
+		float verticalRightStick = Input.GetAxis ("VerticalRightStick") * YaxisInvert;
+		float horizontalRightStick = Input.GetAxis ("HorizontalRightStick") * XaxisInvert;
+		if (active)
+		{
+			active.increasePitch (verticalRightStick);
+			active.increaseYaw (horizontalRightStick);
+			active.UpdatePosition ();
+		}
 
 
         // ability controls
