@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class TimeControllable : MonoBehaviour
+public class TimeControllable : NetworkBehaviour
 {
     public Material m_taggedMaterial;
     public Material m_circledMaterial;
@@ -13,8 +14,13 @@ public class TimeControllable : MonoBehaviour
 
     public bool isCar;
     bool timeControllable;
+
+    [SyncVar]
     bool tagged;
+
+    [SyncVar]
     bool circled;
+
     public Animator myAnimator;
     Renderer renderer;
 
@@ -64,7 +70,7 @@ public class TimeControllable : MonoBehaviour
                 Material[] temp = smr.materials;
                 temp[1] = m_taggedMaterial;
                 smr.materials = temp;
-                tagged = true;
+                CmdTag(true);
                 return;
             }
 
@@ -77,8 +83,14 @@ public class TimeControllable : MonoBehaviour
                 childFlashing.enabled = true;
             }
 
-            tagged = true;
+            CmdTag(true);
         }
+    }
+
+    [Command]
+    void CmdTag(bool val)
+    {
+        tagged = val;
     }
 
     public void Untag()
@@ -97,7 +109,7 @@ public class TimeControllable : MonoBehaviour
             }
             
             smr.materials = temp;
-            tagged = false;
+            CmdTag(false);
             return;
         }
 
@@ -119,8 +131,8 @@ public class TimeControllable : MonoBehaviour
                 childFlashing.enabled = false;
             }
         }
-
-        tagged = false;
+        
+        CmdTag(false);
     }
 
     public void Circle()
@@ -131,7 +143,7 @@ public class TimeControllable : MonoBehaviour
             Material[] temp = smr.materials;
             temp[1] = m_circledMaterial;
             smr.materials = temp;
-            circled = true;
+            CmdCircled(true);
             airTag.SetActive(true);
             return;
         }
@@ -146,7 +158,13 @@ public class TimeControllable : MonoBehaviour
         }
 
         airTag.SetActive(true);
-        circled = true;
+        CmdCircled(true);
+    }
+
+    [Command]
+    void CmdCircled(bool val)
+    {
+        circled = val;
     }
 
     public void Uncircle()
@@ -165,7 +183,7 @@ public class TimeControllable : MonoBehaviour
             }
 
             smr.materials = temp;
-            circled = false;
+            CmdCircled(false);
             airTag.SetActive(false);
             return;
         }
@@ -191,7 +209,7 @@ public class TimeControllable : MonoBehaviour
         }
 
         airTag.SetActive(false);
-        circled = false;
+        CmdCircled(false);
     }
 
     public void Activate()
