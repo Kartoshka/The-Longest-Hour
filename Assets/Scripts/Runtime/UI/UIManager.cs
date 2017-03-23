@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour {
 
@@ -36,6 +38,11 @@ public class UIManager : MonoBehaviour {
 	/// </summary>
 	public static bool canPause;
 
+	[SerializeField]
+	private Toggle _XAxis;
+	[SerializeField]
+	private Toggle _YAxis;
+
 	#endregion
 
 	#region Dialogue Panel Attributes
@@ -56,6 +63,7 @@ public class UIManager : MonoBehaviour {
 
 		setPausePanel ();
 		setDialoguePanel ();
+		setToggles ();
 	}
 
 
@@ -103,6 +111,7 @@ public class UIManager : MonoBehaviour {
 		_PausePanel.gameObject.SetActive (false);
 	}
 
+
 	/// <summary>
 	/// Handles display of Pause Menu when the game is in a paused state
 	/// </summary>
@@ -123,6 +132,50 @@ public class UIManager : MonoBehaviour {
 		_PausePanel.GetComponent<Animator> ().Play ("CloseAnimation");
 	}
 		
+
+
+	/// <summary>
+	/// Inverts the X axis of this player instance
+	/// </summary>
+	public void invertXAxis()
+	{
+
+		// If the Server (Bear) then inverse Bear controls
+		if (Network.isServer) {
+			BearInputController _bearController = GameObject.Find ("GroundPlatformer").GetComponent<BearInputController> ();
+			_bearController.invertX = _XAxis.isOn;
+		}
+
+		// If the Client (Bird) then inverse Bird controls
+		if (Network.isClient) {
+			BirdController _birdController = GameObject.Find ("AirDrawer").GetComponent<BirdController> ();
+			_birdController.invertX = _XAxis.isOn;
+		}
+	}
+
+	/// <summary>
+	/// Invers the Y axis of this player instance
+	/// </summary>
+	public void inverYAxis()
+	{
+		// If the Server (Bear) then inverse Bear controls
+		if (Network.isServer) {
+			BearInputController _bearController = GameObject.Find ("GroundPlatformer").GetComponent<BearInputController> ();
+			_bearController.invertY = _YAxis.isOn;
+		}
+
+		// If the Client (Bird) then inverse Bird controls
+		if (Network.isClient) {
+			BirdController _birdController = GameObject.Find ("AirDrawer").GetComponent<BirdController> ();
+			_birdController.invertY = _YAxis.isOn;
+		}
+	}
+
+	private void setToggles()
+	{
+		
+	}
+
 	/// <summary>
 	/// Plays through dialogue contained in parameter p_Lines
 	/// </summary>
