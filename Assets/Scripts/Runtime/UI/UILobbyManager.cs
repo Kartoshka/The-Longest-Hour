@@ -219,10 +219,8 @@ public class UILobbyManager : MonoBehaviour {
 
 		_Animator.Play ("ShowPlayersReady");
 
-		//TODO : If Bird Player
 		_isBirdReady = true;
 
-		// TODO : If Bear Player
 		_isBearReady = true;
 
 	}
@@ -245,7 +243,7 @@ public class UILobbyManager : MonoBehaviour {
 		yield return new WaitForSeconds (1f);
 		_ImageHour.gameObject.SetActive (true);
 
-		yield return new WaitForSeconds (5.3f);
+		yield return new WaitForSeconds (4.5f);
 		UIManager.canPause = true;
 		gameObject.SetActive (false);
 		
