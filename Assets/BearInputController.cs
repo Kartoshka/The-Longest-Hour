@@ -9,30 +9,47 @@ public class BearInputController : MonoBehaviour {
 //	public CameraController bearCameras;
 	public BearController m_bearControls;
 
+    public bool invertX;
+    public bool invertY;
+
 	private float m_moveInputThreshold = 0.5f;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        float XaxisInvert = 1.0f;
+        float YaxisInvert = 1.0f;
+
+        if(invertX)
+        {
+            XaxisInvert = -1.0f;
+        }
+
+        if(invertY)
+        {
+            YaxisInvert = -1.0f;
+        }
 		//Camera movement input
 		float verticalInput;
 //		if (debug && !debug.m_useWorldCam)
-			verticalInput = Input.GetAxis("VerticalRightStick");
+			verticalInput = Input.GetAxis("VerticalRightStick") * YaxisInvert;
 //		else
 //			verticalInput = 0;
 
 
 		float horizontalInput;
 //		if (debug && !debug.m_useWorldCam)
-			horizontalInput = Input.GetAxis("HorizontalRightStick");
+			horizontalInput = Input.GetAxis("HorizontalRightStick") * XaxisInvert;
 //		else
 //			horizontalInput = 0;
 
-		m_bearControls.updateCamera (new Vector2 (horizontalInput, -verticalInput));
+		m_bearControls.updateCamera (new Vector2 (horizontalInput, verticalInput));
 //		bearCameras.getActive().increasePitch(-verticalInput);
 //		bearCameras.getActive().increaseYaw(horizontalInput);
 //		bearCameras.getActive().UpdatePosition();
