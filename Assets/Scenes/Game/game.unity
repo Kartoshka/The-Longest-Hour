@@ -16303,6 +16303,11 @@ Prefab:
       propertyPath: m_TagString
       value: TimeControllable
       objectReference: {fileID: 0}
+    - target: {fileID: 137295146021300080, guid: ab1c32f6f5ce31043a30db60baabca15,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab1c32f6f5ce31043a30db60baabca15, type: 2}
   m_IsPrefabParent: 0

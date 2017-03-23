@@ -14,7 +14,7 @@ public class TimeControllable : MonoBehaviour
     bool timeControllable;
     bool tagged;
     bool circled;
-
+    public Animator myAnimator;
     Renderer renderer;
 
 	// Use this for initialization
@@ -22,6 +22,17 @@ public class TimeControllable : MonoBehaviour
     {
 		m_physicsController = gameObject.GetComponent<PhysicsTimeCtrl> ();
         renderer = gameObject.GetComponent<Renderer>();
+
+        Animator temp = GetComponent<Animator>();
+        if(temp)
+        {
+            myAnimator = temp;
+        }
+        else
+        {
+            myAnimator = GetComponentInChildren<Animator>();
+        }
+
         airTag.SetActive(false);
         tagged = false;
         circled = false;
