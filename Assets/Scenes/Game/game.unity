@@ -3724,6 +3724,22 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012311339064, guid: 4dd87dedbe30f0544bc011620443530e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012212435216, guid: 4dd87dedbe30f0544bc011620443530e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011267774992, guid: 4dd87dedbe30f0544bc011620443530e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012680789474, guid: 4dd87dedbe30f0544bc011620443530e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dd87dedbe30f0544bc011620443530e, type: 2}
   m_IsPrefabParent: 0
@@ -18070,7 +18086,7 @@ GameObject:
   - component: {fileID: 670750633}
   - component: {fileID: 670750632}
   - component: {fileID: 670750631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51902,8 +51918,8 @@ Transform:
   - {fileID: 1815240557}
   - {fileID: 1012903190}
   - {fileID: 383508566}
-  - {fileID: 843392870}
   - {fileID: 1323450493}
+  - {fileID: 843392870}
   - {fileID: 1119525856}
   - {fileID: 432893607}
   m_Father: {fileID: 1367003564}
@@ -54198,6 +54214,21 @@ Prefab:
     - target: {fileID: 1400383761386756, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995813175887666, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607864299022468, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114045213529700164, guid: ceb7ff8e8a2b84d7eaf1ee317454623d,
+        type: 2}
+      propertyPath: m_Text
+      value: 'A
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}

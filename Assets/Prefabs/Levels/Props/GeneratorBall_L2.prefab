@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114821796823372830}
   - component: {fileID: 114745761040250356}
   - component: {fileID: 114461486229780828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GeneratorBall_L2
   m_TagString: generatorBall
   m_Icon: {fileID: 0}
