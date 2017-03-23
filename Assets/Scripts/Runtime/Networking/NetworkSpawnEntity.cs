@@ -31,15 +31,39 @@ public class NetworkSpawnEntity : NetworkBehaviour
         NetworkServer.Spawn(gameObject);
     }
 
-    // Use this for initialization
-    void Start ()
+	public void spawnCrates()
+	{
+		if (isServer)
+		{
+			spawnEntities(cratePrefabNetworkIndex, m_crateSpawnLocations);
+		}
+	}
+
+	public void spawnTrashBins()
+	{
+		if (isServer)
+		{
+			spawnEntities(trashbinPrefabNetworkIndex, m_trashbinSpawnLocations);
+		}
+	}
+
+	public void spawnEnemies()
+	{
+		if (isServer)
+		{
+			spawnEntities(enemyPrefabNetworkIndex, m_enemySpawnLocations);
+		}
+	}
+
+	// Use this for initialization
+	void Start ()
 	{
 		if(isServer)
 		{
-			spawnEntities(enemyPrefabNetworkIndex, m_enemySpawnLocations);
-			spawnEntities(trashbinPrefabNetworkIndex, m_trashbinSpawnLocations);
-			spawnEntities(cratePrefabNetworkIndex, m_crateSpawnLocations);
-		}
+			spawnEnemies();
+			spawnTrashBins();
+			spawnCrates();
+        }
 	}
 	
 	// Update is called once per frame
