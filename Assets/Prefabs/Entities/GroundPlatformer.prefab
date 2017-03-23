@@ -78187,8 +78187,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc58655c19726ee4f8d6b151aa37bd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_offliineOnlyObjects: []
+  m_offlineOnlyObjects: []
   m_offlineOnlyBehaviours: []
+  m_serverOnlyObjects:
+  - {fileID: 1865315940162308}
+  - {fileID: 1757144231876718}
+  m_serverOnlyBehaviours:
+  - {fileID: 114471006932453710}
+  m_clientOnlyObjects: []
+  m_clientOnlyBehaviours: []
 --- !u!114 &114888267780819956
 MonoBehaviour:
   m_ObjectHideFlags: 1
