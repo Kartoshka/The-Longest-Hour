@@ -152,6 +152,7 @@ public class LineDrawerComponent : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
+		m_globalTime = GameObject.Find("GlobalTimeController");
 		m_bezierSpline = m_bezierSplineComponent;
 		//if(!m_bezierSpline)
 		//{
