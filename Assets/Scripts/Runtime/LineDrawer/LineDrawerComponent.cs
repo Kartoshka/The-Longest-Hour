@@ -134,7 +134,7 @@ public class LineDrawerComponent : MonoBehaviour
 
         for (int i = 0; i < m_encompassed.Count; i++)
         {
-            m_encompassed[i].GetComponent<TimeControllable>().Deactivate();
+            m_encompassed[i].GetComponent<TimeControllable>().Uncircle();
         }
         m_encompassed = new List<GameObject>();
 
@@ -269,7 +269,7 @@ public class LineDrawerComponent : MonoBehaviour
                         if (GeometryHelper.PolyContainsPoint(m_bezierSpline.GetPoints(), controllables[i].transform.position))
                         {
                             m_encompassed.Add(controllables[i]);
-                            controllables[i].gameObject.GetComponent<TimeControllable>().Activate();
+                            controllables[i].gameObject.GetComponent<TimeControllable>().Circle();
                         }
                     }
 
@@ -312,7 +312,7 @@ public class LineDrawerComponent : MonoBehaviour
             
             for(int i = 0; i < m_encompassed.Count; i++)
             {
-                m_encompassed[i].GetComponent<TimeControllable>().Deactivate();
+                m_encompassed[i].GetComponent<TimeControllable>().Uncircle();
             }
             m_encompassed = new List<GameObject>();
 
