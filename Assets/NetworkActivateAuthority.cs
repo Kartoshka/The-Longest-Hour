@@ -6,15 +6,15 @@ using UnityEngine.Networking;
 public class NetworkActivateAuthority : NetworkBehaviour {
 
 	public List<GameObject> activeOnlyAuthority;
+	public bool isBear;
 	// Use this for initialization
 	void Start () {
-		if (this.isServer)
+
+		foreach (GameObject g in activeOnlyAuthority)
 		{
-			foreach (GameObject g in activeOnlyAuthority)
-			{
-				g.gameObject.SetActive (true);
-			}
+			g.gameObject.SetActive ((this.isServer && isBear) || (!this.isServer && !isBear));
 		}
+
 	}
 	
 	// Update is called once per frame

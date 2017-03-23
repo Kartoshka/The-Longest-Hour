@@ -28,6 +28,8 @@ public class FollowTarget : MonoBehaviour
 	public bool m_faceTarget = true;
 	public bool m_matchTargetForward = false;
 	public Vector3 m_offset = Vector3.zero;
+	public string m_followTag;
+	public bool followTaggedObj;
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -50,6 +52,14 @@ public class FollowTarget : MonoBehaviour
 		if (m_matchTargetForward)
 		{
 			m_faceTarget = false;
+		}
+		if (followTaggedObj)
+		{
+			GameObject obj = GameObject.FindGameObjectWithTag (m_followTag);
+			if (obj)
+			{
+				m_target = obj.transform;
+			}
 		}
 	}
 
