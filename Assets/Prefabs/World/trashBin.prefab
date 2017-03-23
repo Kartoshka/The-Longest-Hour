@@ -343,9 +343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeMaterial: {fileID: 2100000, guid: 95ea8a883b34e45999319862c07b5130, type: 2}
+  m_taggedMaterial: {fileID: 2100000, guid: f4b2d59dbcf37ce49839892e8f9a790e, type: 2}
+  m_circledMaterial: {fileID: 2100000, guid: 588971be6733bb7409e11d1416edba6e, type: 2}
+  m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 39e85527b50243446a9048001263e842, type: 2}
   airTag: {fileID: 1297552286539458, guid: 59911ae815e4513488d823cecd8be074, type: 2}
+  m_physicsController: {fileID: 0}
+  isCar: 0
+  myAnimator: {fileID: 0}
 --- !u!114 &114877826439547318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
+  m_TransformSyncMode: 3
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -436,9 +441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8866718dce2dcf4281b9414eed157db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeMaterial: {fileID: 2100000, guid: 95ea8a883b34e45999319862c07b5130, type: 2}
+  m_taggedMaterial: {fileID: 2100000, guid: f4b2d59dbcf37ce49839892e8f9a790e, type: 2}
+  m_circledMaterial: {fileID: 2100000, guid: 588971be6733bb7409e11d1416edba6e, type: 2}
+  m_activeMaterial: {fileID: 2100000, guid: 5683b31ccdb2a9b49aeebc1b5ef86aa0, type: 2}
   m_inactiveMaterial: {fileID: 2100000, guid: 39e85527b50243446a9048001263e842, type: 2}
   airTag: {fileID: 1297552286539458, guid: 59911ae815e4513488d823cecd8be074, type: 2}
+  m_physicsController: {fileID: 0}
+  isCar: 0
+  myAnimator: {fileID: 0}
 --- !u!114 &114996415273737826
 MonoBehaviour:
   m_ObjectHideFlags: 1
