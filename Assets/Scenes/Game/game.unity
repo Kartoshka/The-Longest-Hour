@@ -11752,7 +11752,7 @@ MonoBehaviour:
   threePuzzleBearSpawn: {fileID: 301813537}
   lastLevelBirdSpawn: {fileID: 770444427}
   lastlevelBearSpawn: {fileID: 1445824613}
-  startAtFirstLevel: 0
+  startAtFirstLevel: 1
   startAtSecondLevel: 0
 --- !u!4 &423656455
 Transform:
@@ -12160,7 +12160,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 0.17647058, g: 0.7955376, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
@@ -22924,7 +22924,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 0.42799997, b: 0.9605518, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -22945,7 +22945,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 8
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &823049508
@@ -23335,7 +23335,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 0.428, g: 0.847, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -23356,7 +23356,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 8
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &831088738
@@ -52728,7 +52728,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 3.37
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1861879891
@@ -54332,6 +54332,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1797533123850120, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400383761386756, guid: ceb7ff8e8a2b84d7eaf1ee317454623d, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
