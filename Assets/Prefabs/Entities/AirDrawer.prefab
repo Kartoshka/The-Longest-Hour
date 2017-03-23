@@ -6091,6 +6091,8 @@ GameObject:
   - component: {fileID: 114841729182676536}
   - component: {fileID: 114313186452093566}
   - component: {fileID: 114896064793293402}
+  - component: {fileID: 114792616488727984}
+  - component: {fileID: 114950997528255160}
   m_Layer: 2
   m_Name: AirDrawer
   m_TagString: Player
@@ -7720,7 +7722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1723934986390998
 GameObject:
   m_ObjectHideFlags: 1
@@ -25829,6 +25831,18 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   duration: 4
+--- !u!114 &114792616488727984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328c9c8b07d094b499d4034fdf73d31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lineDrawerComponent: {fileID: 114011137113088730}
 --- !u!114 &114841729182676536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25886,6 +25900,18 @@ MonoBehaviour:
     m_Bits: 0
   radiusCollision: 0.2
   zoomFactor: 0.5
+--- !u!114 &114950997528255160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549525078014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8ce7a94d62939498a1c02f91dd21bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_birdController: {fileID: 114123180541878754}
 --- !u!114 &114955164524268154
 MonoBehaviour:
   m_ObjectHideFlags: 1

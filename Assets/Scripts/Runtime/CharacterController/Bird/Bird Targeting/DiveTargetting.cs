@@ -26,7 +26,11 @@ public class DiveTargetting : SelectableAbility {
 			initialized = true;
 		}
 
-        debug = GameObject.FindGameObjectWithTag("Debug").GetComponent<DebugEntities>();
+		GameObject debugObject = GameObject.FindGameObjectWithTag("Debug");
+		if (debugObject)
+		{
+			debug = debugObject.GetComponent<DebugEntities>();
+		}
 	}
 
 	protected override void OnActivate ()
@@ -38,7 +42,7 @@ public class DiveTargetting : SelectableAbility {
 				if (diveAnim != null && !diving) {
 					diveAnim.initialize (this.transform, target.point.y + heightOffset);
 					diving = true;
-                    if(!debug.m_useWorldCam)
+                    if(debug && !debug.m_useWorldCam)
 					    diveCam.gameObject.SetActive (true);
 				}
 			} else {

@@ -37,47 +37,51 @@ public class BirdController : MonoBehaviour {
 	
 	void Update ()
     {
+		processInputs();
+    }
 
-        float XaxisInvert = 1.0f;
-        float YaxisInvert = 1.0f;
-       
-        if(invertX)
-        {
-            XaxisInvert = -1.0f;
-        }
+	private void processInputs()
+	{
+		float XaxisInvert = 1.0f;
+		float YaxisInvert = 1.0f;
 
-        if(invertY)
-        {
-            YaxisInvert = -1.0f;
-        }
+		if (invertX)
+		{
+			XaxisInvert = -1.0f;
+		}
 
-        //Movement controls
-        float verticalLeftStick = Input.GetAxis("Vertical") ;
+		if (invertY)
+		{
+			YaxisInvert = -1.0f;
+		}
 
-        float horizontalLeftStick = Input.GetAxis("Horizontal");
+		//Movement controls
+		float verticalLeftStick = Input.GetAxis("Vertical");
 
-        if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
-            verticalLeftStick = 0;
-        if(Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
-            horizontalLeftStick = 0;
+		float horizontalLeftStick = Input.GetAxis("Horizontal");
 
-        moverBehaviour.updateInput (new Vector3 (verticalLeftStick,0, horizontalLeftStick));
+		if (Mathf.Abs(verticalLeftStick) < m_moveInputThreshold)
+			verticalLeftStick = 0;
+		if (Mathf.Abs(horizontalLeftStick) < m_moveInputThreshold)
+			horizontalLeftStick = 0;
 
-        float rightTrigger = Input.GetAxis("RightTrigger");
-        float leftTrigger = Input.GetAxis("LeftTrigger");
+		moverBehaviour.updateInput(new Vector3(verticalLeftStick, 0, horizontalLeftStick));
 
-		float verticalRightStick = Input.GetAxis ("VerticalRightStick") * YaxisInvert;
-		float horizontalRightStick = Input.GetAxis ("HorizontalRightStick") * XaxisInvert;
+		float rightTrigger = Input.GetAxis("RightTrigger");
+		float leftTrigger = Input.GetAxis("LeftTrigger");
+
+		float verticalRightStick = Input.GetAxis("VerticalRightStick") * YaxisInvert;
+		float horizontalRightStick = Input.GetAxis("HorizontalRightStick") * XaxisInvert;
 		if (active)
 		{
-			active.increasePitch (verticalRightStick);
-			active.increaseYaw (horizontalRightStick);
-			active.UpdatePosition ();
+			active.increasePitch(verticalRightStick);
+			active.increaseYaw(horizontalRightStick);
+			active.UpdatePosition();
 		}
 
 
-        // ability controls
-        /*
+		// ability controls
+		/*
 		if (Input.GetButtonDown("Jump")) {
 			switchCameras ();
             targetControl.toggle();
@@ -96,55 +100,80 @@ public class BirdController : MonoBehaviour {
 		}
         */
 
-        // hold left trigger to go top down view
-        if (!topDown && leftTrigger == 1)
-        {
-            switchCameras();
-        }
-        else if (topDown && leftTrigger == 0)
-        {
-            switchCameras();
-        }
+		// hold left trigger to go top down view
+		if (!topDown && leftTrigger == 1)
+		{
+			switchCameras();
+		}
+		else if (topDown && leftTrigger == 0)
+		{
+			switchCameras();
+		}
 
-        // press right trigger, draw
-        if(rightTrigger == 1)
-        {
-            targetControl.toggleDraw();
-            targetControl.activateCurrent();
-        }
-        // if detected divable object, press x to dive to it
-        else if (Input.GetButtonDown("Fire3"))
-        {
-            if (topDown)
-            {
-                switchCameras();
-            }
-            targetControl.toggleDive();
-            targetControl.activateCurrent();
-        }
-        // y for beacon
-        /*else if (Input.GetButtonDown("Jump"))
+		// press right trigger, draw
+		if (rightTrigger == 1)
+		{
+			targetControl.toggleDraw();
+			targetControl.activateCurrent();
+		}
+		// if detected divable object, press x to dive to it
+		else if (Input.GetButtonDown("Fire3"))
+		{
+			if (topDown)
+			{
+				switchCameras();
+			}
+			targetControl.toggleDive();
+			targetControl.activateCurrent();
+		}
+		// y for beacon
+		/*else if (Input.GetButtonDown("Jump"))
         {
             
             targetControl.toggleBeacon();
             targetControl.activateCurrent();
         }*/
-        // otherwise, reset abilities
-        else
-        {
-            targetControl.disactivateCurrent();
-        }
+		// otherwise, reset abilities
+		else
+		{
+			targetControl.disactivateCurrent();
+		}
 
 
-        // if holding object, press a to let go? (bcus we might want to dive under something while holding obj?)
-        //if (Input.GetButtonDown("Fire1"))
-        //{
+		// if holding object, press a to let go? (bcus we might want to dive under something while holding obj?)
+		//if (Input.GetButtonDown("Fire1"))
+		//{
 
-        //}
-        
-    }
+		//}
+	}
 
-    private void switchCameras()
+	// TODO: Remove hardcoded keys.
+	// inputKey: 0 = draw; 1 = dive; 2 = reset;
+	public void processInputs(int inputKey)
+	{
+		switch(inputKey)
+		{
+			case (0):
+			{
+				targetControl.toggleDraw();
+				targetControl.activateCurrent();
+				break;
+			}
+			case (1):
+			{
+				targetControl.toggleDive();
+				targetControl.activateCurrent();
+				break;
+			}
+			case (2):
+			{
+				targetControl.disactivateCurrent();
+				break;
+			}
+		}
+	}
+
+	private void switchCameras()
 	{
 		if (active == regularView) {
 			topDown = !topDown;
