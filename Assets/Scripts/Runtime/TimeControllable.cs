@@ -37,7 +37,6 @@ public class TimeControllable : MonoBehaviour
         tagged = false;
         circled = false;
         timeControllable = false;
-        isCar = false;
 	}
 
     private void Update()
@@ -58,7 +57,12 @@ public class TimeControllable : MonoBehaviour
     {
         if (isCar)
         {
-            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_taggedMaterial;
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            temp[1] = m_taggedMaterial;
+            smr.materials = temp;
+            tagged = true;
+            airTag.SetActive(true);
             return;
         }
 
@@ -78,7 +82,12 @@ public class TimeControllable : MonoBehaviour
     {
         if (isCar)
         {
-            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_inactiveMaterial;
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            temp[1] = m_inactiveMaterial;
+            smr.materials = temp;
+            tagged = false;
+            airTag.SetActive(false);
             return;
         }
 
@@ -110,7 +119,10 @@ public class TimeControllable : MonoBehaviour
     {
         if(isCar)
         {
-            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_activeMaterial;
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            temp[1] = m_activeMaterial;
+            smr.materials = temp;
             airTag.SetActive(true);
             return;
         }
@@ -133,7 +145,10 @@ public class TimeControllable : MonoBehaviour
     {
         if (isCar)
         {
-            transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1] = m_inactiveMaterial;
+            SkinnedMeshRenderer smr = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            Material[] temp = smr.materials;
+            temp[1] = m_inactiveMaterial;
+            smr.materials = temp;
             airTag.SetActive(false);
             return;
         }
