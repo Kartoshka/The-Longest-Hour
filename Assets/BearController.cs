@@ -222,23 +222,23 @@ public class BearController : MonoBehaviour {
 		}
 
 	}
-	public void rewind(float t){
-		t= Mathf.Clamp01 (t);
+	//public void rewind(float t){
+	//	t= Mathf.Clamp01 (t);
 
-		if (timeShifter)
-		{
-			timeShifter.setTime (-1 * t);
-		}
-	}
+	//	if (timeShifter)
+	//	{
+	//		timeShifter.setTime (-1 * t);
+	//	}
+	//}
 
-	public void forward(float t){
-		t= Mathf.Clamp01 (t);
+	//public void forward(float t){
+	//	t= Mathf.Clamp01 (t);
 
-		if (timeShifter)
-		{
-			timeShifter.setTime (t);
-		}
-	}
+	//	if (timeShifter)
+	//	{
+	//		timeShifter.setTime (t);
+	//	}
+	//}
 
 	/*
 	 * All the flag setters for our booleans.  

@@ -132,13 +132,13 @@ public class TimeShiftController : MonoBehaviour
 		m_time = t;
 
 	}
-	public void rewind(){
-		m_time = -1 * m_timeIncSize;
-	}
+	//public void rewind(){
+	//	m_time = -1 * m_timeIncSize;
+	//}
 
-	public void forward(){
-		m_time = m_timeIncSize;
-	}
+	//public void forward(){
+	//	m_time = m_timeIncSize;
+	//}
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
