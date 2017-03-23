@@ -8,7 +8,7 @@ public class NetworkActivateAuthority : NetworkBehaviour {
 	public List<GameObject> activeOnlyAuthority;
 	// Use this for initialization
 	void Start () {
-		if (this.hasAuthority)
+		if (this.isServer)
 		{
 			foreach (GameObject g in activeOnlyAuthority)
 			{

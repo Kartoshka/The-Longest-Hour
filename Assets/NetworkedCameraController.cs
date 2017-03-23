@@ -10,7 +10,7 @@ public class NetworkedCameraController :  NetworkBehaviour{
 	void Start () {
 		if (m_camController)
 		{
-			m_camController.gameObject.SetActive (this.hasAuthority);
+			m_camController.gameObject.SetActive (base.isServer);
 		}
 	}
 	
