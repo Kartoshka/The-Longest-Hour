@@ -148,7 +148,6 @@ public class BearController : MonoBehaviour {
 
 			moverBehaviour.updateInput (Vector3.zero);
 			//runningCam.resetPitchYaw ();
-			Debug.Log("wow aimCam");
 			m_camControlers.changeCamera (runningCam);
 
 			//aimCam.gameObject.SetActive (false);
@@ -185,7 +184,6 @@ public class BearController : MonoBehaviour {
 		{
 			if (!active && isLocating)
 			{
-				Debug.Log ("fk locate cam");
 				isLocating = false;
 				m_camControlers.changeCamera (runningCam);
 			}
