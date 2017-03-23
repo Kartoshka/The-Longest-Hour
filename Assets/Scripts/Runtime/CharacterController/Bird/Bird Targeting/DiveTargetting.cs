@@ -16,12 +16,14 @@ public class DiveTargetting : SelectableAbility {
 	public float heightOffset = 0;
 
 	public Capturer captureModule;
-
+    private Collider ignoredCollision;
+    public Rigidbody birdRigidbody;
     private DebugEntities debug;
 
 	protected override void OnEnableTargeting()
 	{
 		if (!initialized) {
+            diveAnim.onDiveComplete+=
 			diveAnim.onDiveComplete += disableAnimCamera;
 			initialized = true;
 		}
@@ -38,11 +40,15 @@ public class DiveTargetting : SelectableAbility {
 				if (diveAnim != null && !diving) {
 					diveAnim.initialize (this.transform, target.point.y + heightOffset);
 					diving = true;
-                    if(!debug.m_useWorldCam)
 					    diveCam.gameObject.SetActive (true);
 				}
 			} else {
 				captureModule.Release ();
+                //if(ignoredCollision)
+                //{
+                //    Physics.IgnoreCollision(ignoredCollision, this.GetComponent<Collider>(),false);
+                //    ignoredCollision = null;
+                //}
 			}
 
 		}
@@ -63,10 +69,27 @@ public class DiveTargetting : SelectableAbility {
 		diving = false;
 	}
 
+    public void zeroOutVelocity()
+    {
+        if(birdRigidbody)
+        {
+            birdRigidbody.velocity = Vector3.zero;
+        }
+    }
+
 	void OnTriggerEnter(Collider c){
 		if (c.gameObject.GetComponent<Capturable> () != null) {
 			captureModule.Capture (c.gameObject.GetComponent<Capturable> ());
-		}
+            Physics.IgnoreCollision(c, this.GetComponent<Collider>(),true);
+            ignoredCollision = c;
+
+        }
 	}
-		
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(ignoredCollision!=null && other == ignoredCollision)
+            Physics.IgnoreCollision(ignoredCollision, this.GetComponent<Collider>(), false);
+    }
+
 }
