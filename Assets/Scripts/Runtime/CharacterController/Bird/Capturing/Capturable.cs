@@ -27,6 +27,7 @@ public abstract class Capturable : MonoBehaviour {
             // lock the angles of the object so it doesn't rotate mid-air, but then it collides with the bird, so figure something out!!
             //rb.velocity = new Vector3(0, 0, 0); 
             //rb.angularVelocity = new Vector3(0, 0, 0);
+
             rb.isKinematic = false;
 		}
 	}

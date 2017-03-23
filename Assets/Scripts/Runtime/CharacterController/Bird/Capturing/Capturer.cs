@@ -7,7 +7,8 @@ public class Capturer : MonoBehaviour {
 	public bool containing{
 		get{ return captured != null; }
 	}
-	private Capturable captured;
+	public Capturable captured;
+    public float dropOffset = 0;
 
 	public void Capture(Capturable c){
 		if (captured == null) {
@@ -18,7 +19,8 @@ public class Capturer : MonoBehaviour {
 
 	public void Release(){
 		if (captured != null) {
-			captured.Release ();
+            captured.transform.position = this.gameObject.transform.position - Vector3.up* dropOffset;
+            captured.Release ();
 			captured = null;
 		}
 	}
