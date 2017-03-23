@@ -9,6 +9,7 @@ public class DiveAnimation : MoverBehavior {
 	public CallBack onDiveComplete;
 
 	public AnimationCurve heightAnimation;
+	public Rigidbody birdRigidbody;
 
 	private Vector3 initialPosition;
 	private float targetHeight;
@@ -51,6 +52,10 @@ public class DiveAnimation : MoverBehavior {
 			m_active = false;
 			elapsedTime = 0;
 			onDiveComplete ();
+			if (birdRigidbody)
+			{
+				birdRigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+			}
 		}
 
 		if (m_active) {

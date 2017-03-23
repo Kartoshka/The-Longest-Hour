@@ -42,6 +42,10 @@ public class DiveTargetting : SelectableAbility {
 		if (findTarget (out target)) {
 			if (!captureModule.containing) {
 				if (diveAnim != null && !diving) {
+					if(birdRigidbody)
+					{
+						birdRigidbody.constraints = RigidbodyConstraints.None;
+                    }
 					diveAnim.initialize (this.transform, target.point.y + heightOffset);
 					diving = true;
 
