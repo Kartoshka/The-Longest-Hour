@@ -123,12 +123,17 @@ public class BearController : MonoBehaviour {
 	public void startAim(){
 		if (isIdle && !isAiming)
 		{
-			if (aimForwardMatching)
-			{
-				aimForwardMatching.enabled = true;
-			}
+//			if (aimForwardMatching)
+//			{
+//				aimForwardMatching.enabled = true;
+//			}
 			moverBehaviour.updateInput (Vector3.zero);
+			if (aimCam is CinemachineRotateObj)
+			{
+				((CinemachineRotateObj)aimCam).matchCamera ();
+			}
 			m_camControlers.changeCamera (aimCam);
+
 			//aimCam.gameObject.SetActive (true);
 			m_animC.startAim ();
 		}
