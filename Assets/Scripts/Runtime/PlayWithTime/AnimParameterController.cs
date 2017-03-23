@@ -12,6 +12,7 @@ public class AnimParameterController : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	public List<Animator> m_animators;
+    public double[] m_animTimes;
 	public string timeParameter;
 
     private bool m_active = false;
@@ -54,8 +55,11 @@ public class AnimParameterController : MonoBehaviour
     {
         if (m_active)
         {
+            int i = 0;
             foreach (Animator animator in m_animators)
             {
+                //animator.enabled = true;
+
                 float totalTime = animator.GetCurrentAnimatorStateInfo(0).length;
                 float incrementedTime = (float) (animator.GetTime() + value);
 
@@ -67,6 +71,9 @@ public class AnimParameterController : MonoBehaviour
                 float newTime = Mathf.Clamp01(incrementedTime / totalTime);
                 animator.SetFloat(parameterName, newTime);
                 animator.SetTime(incrementedTime);
+
+                m_animTimes[i] = incrementedTime;
+                i++;
             }
         }
     }
@@ -74,6 +81,8 @@ public class AnimParameterController : MonoBehaviour
     public void setAnimators(List<GameObject> objs)
     {
         m_animators = new List<Animator>();
+        m_animTimes = new double[objs.Count];
+        int i = 0;
         foreach (GameObject go in objs)
         {
             Animator anim = go.GetComponent<Animator>();
@@ -82,7 +91,10 @@ public class AnimParameterController : MonoBehaviour
             anim.SetFloat("time", currTime / totalTime);
 
             m_animators.Add(anim);
+            m_animTimes[i] = anim.GetTime();
+            i++;
         }
+        
     }
 
     public void setActive(bool active)
@@ -105,6 +117,22 @@ public class AnimParameterController : MonoBehaviour
 		//setParamValue(timeParameter, m_startTime);
     }
 
+    private void Update()
+    {
+        int i = 0;
+        foreach (Animator animator in m_animators)
+        {
+            animator.SetTime(m_animTimes[i]);
+            i++;
+        }
+    }
+
+
+    #endregion
+    //////////////////////////////////////////////////////////////////////////////////////////
+    #region Persistence
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
 
 	#endregion
 	//////////////////////////////////////////////////////////////////////////////////////////
