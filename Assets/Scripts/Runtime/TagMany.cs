@@ -24,7 +24,7 @@ public class TagMany : MonoBehaviour {
         if (other.gameObject.tag == "TimeControllable")
         {
             other.gameObject.GetComponent<TimeControllable>().enabled = true;
-            other.gameObject.GetComponent<TimeControllable>().Activate();
+            other.gameObject.GetComponent<TimeControllable>().Tag();
         }
     }
 

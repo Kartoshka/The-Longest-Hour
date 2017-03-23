@@ -60,7 +60,7 @@ public class TagSingle : MonoBehaviour
         if (timeControllable)
 		{
 			m_tagTarget.GetComponent<TimeControllable>().enabled = true;
-			m_tagTarget.GetComponent<TimeControllable>().Activate();
+			m_tagTarget.GetComponent<TimeControllable>().Tag();
 		}
 	}
 
@@ -69,7 +69,7 @@ public class TagSingle : MonoBehaviour
 		TimeControllable timeControllable = m_tagTarget.GetComponent<TimeControllable>();
 		if (timeControllable)
 		{
-			m_tagTarget.GetComponent<TimeControllable>().Deactivate();
+			m_tagTarget.GetComponent<TimeControllable>().Untag();
 			m_tagTarget.GetComponent<TimeControllable>().enabled = false;
 		}
 	}
