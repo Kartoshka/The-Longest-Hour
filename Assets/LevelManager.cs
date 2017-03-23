@@ -31,17 +31,46 @@ public class LevelManager : NetworkBehaviour {
     {
         doOnce = false;
 
-        if(startAtFirstLevel)
+        tutorial.SetActive(true);
+        threePuzzleLevel.SetActive(true);
+        lastLevel.SetActive(true);
+        StartCoroutine(requiredDelay());
+    }
+
+    IEnumerator requiredDelay()
+    {
+        yield return new WaitForSeconds(3.0f);
+        if(isServer)
         {
-            tutorial.SetActive(true);
+            CmdDisableNonTutorials();
         }
-        else if(startAtSecondLevel)
+    }
+
+    [Command]
+    void CmdDisableNonTutorials()
+    {
+        RpcDisableNonTutorials();
+    }
+
+    [ClientRpc]
+    void RpcDisableNonTutorials()
+    {
+        threePuzzleLevel.SetActive(false);
+        lastLevel.SetActive(false);
+
+        spawnPointP1 = GameObject.Find("SpawnPoint_P1_1");
+        spawnPointP2 = GameObject.Find("SpawnPoint_P2_1");
+
+        GameObject p1 = GameObject.Find("GroundPlatformer(Clone)");
+        for (int i = 0; i < p1.transform.GetChildCount(); i++)
         {
-            threePuzzleLevel.SetActive(true);
+            p1.transform.GetChild(i).position = spawnPointP1.transform.position;
         }
-        else
+
+        GameObject p2 = GameObject.Find("AirDrawer(Clone)");
+        for (int i = 0; i < p2.transform.GetChildCount(); i++)
         {
-            lastLevel.SetActive(true);
+            p2.transform.GetChild(i).position = spawnPointP2.transform.position;
         }
     }
 

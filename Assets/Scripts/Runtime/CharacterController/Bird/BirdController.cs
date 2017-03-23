@@ -125,12 +125,12 @@ public class BirdController : MonoBehaviour {
             targetControl.activateCurrent();
         }
         // y for beacon
-        else if (Input.GetButtonDown("Jump"))
+        /*else if (Input.GetButtonDown("Jump"))
         {
             
             targetControl.toggleBeacon();
             targetControl.activateCurrent();
-        }
+        }*/
         // otherwise, reset abilities
         else
         {
