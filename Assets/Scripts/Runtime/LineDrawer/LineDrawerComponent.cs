@@ -178,7 +178,7 @@ public class LineDrawerComponent : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		ProcessInputs();
+		//ProcessInputs();
 
         // calculate raycasted position
         RaycastHit hit;
@@ -297,24 +297,49 @@ public class LineDrawerComponent : MonoBehaviour
 		}
 	}
 
-	private void ProcessInputs()
+	//private void ProcessInputs()
+	//{
+	//	if (m_currentState == DrawState.Uncreated)
+	//	{
+	//		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+	//		{
+	//			m_currentState = DrawState.Adding;
+	//		}
+	//	}
+	//	if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+	//	{
+	//		reset();
+
+	//           for(int i = 0; i < m_encompassed.Count; i++)
+	//           {
+	//               m_encompassed[i].GetComponent<TimeControllable>().Uncircle();
+	//           }
+	//           m_encompassed = new List<GameObject>();
+
+	//		m_currentState = DrawState.Uncreated;
+	//	}
+	//}
+
+	// TODO: Remove hardcoded keys.
+	// inputKey: 1 = add; 2 = reset;
+	public void updateState(int inputKey)
 	{
 		if (m_currentState == DrawState.Uncreated)
 		{
-			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+			if (inputKey == 1)
 			{
 				m_currentState = DrawState.Adding;
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+		if (inputKey == 2)
 		{
 			reset();
-            
-            for(int i = 0; i < m_encompassed.Count; i++)
-            {
-                m_encompassed[i].GetComponent<TimeControllable>().Uncircle();
-            }
-            m_encompassed = new List<GameObject>();
+
+			for (int i = 0; i < m_encompassed.Count; i++)
+			{
+				m_encompassed[i].GetComponent<TimeControllable>().Uncircle();
+			}
+			m_encompassed = new List<GameObject>();
 
 			m_currentState = DrawState.Uncreated;
 		}
