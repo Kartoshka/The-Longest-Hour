@@ -5,7 +5,7 @@ using UnityEngine;
 public class CinemachineLocatorCam : CinemachineController {
 
 	public GameObject localPlayer;
-	private GameObject target;
+	public GameObject target;
 
 	public override void init ()
 	{
@@ -21,6 +21,8 @@ public class CinemachineLocatorCam : CinemachineController {
 		{
 			target = localPlayer;
 		}
+
+		this.controlledView.CameraComposerTarget = target.transform;
 	}
 
 	public override void increaseYaw (float amt)

@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 114755415586859490}
   - component: {fileID: 114570675304191570}
   - component: {fileID: 114471006932453710}
+  - component: {fileID: 114041213803005292}
   m_Layer: 0
   m_Name: GroundPlatformer
   m_TagString: Player
@@ -37784,6 +37785,7 @@ GameObject:
   - component: {fileID: 114149065678975214}
   - component: {fileID: 114505837333027280}
   - component: {fileID: 114007947936206680}
+  - component: {fileID: 114936257290021862}
   m_Layer: 0
   m_Name: LookAtBirdCam
   m_TagString: Untagged
@@ -77623,6 +77625,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localPlayer: {fileID: 1015017301963698}
+  target: {fileID: 0}
+--- !u!114 &114041213803005292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015017301963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c4afe29f35848d48bec0993af90394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeOnlyAuthority:
+  - {fileID: 1865315940162308}
 --- !u!114 &114136612259491140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77862,9 +77878,10 @@ MonoBehaviour:
     FarClipPlane: 5000
   m_NoiseSettings: {fileID: 0}
   m_ComposerSettings: {fileID: 11400000, guid: fdd6ae348e5cf4d028579882c49b18ac, type: 2}
-  m_TransposerSettings: {fileID: 0}
+  m_TransposerSettings: {fileID: 11400000, guid: 0a798dcf908ee443e8afa3e4bc6e5ef8,
+    type: 2}
   m_ComposerCameraTarget: {fileID: 0}
-  m_TransposerCameraTarget: {fileID: 0}
+  m_TransposerCameraTarget: {fileID: 4538496212092058}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -77900,6 +77917,8 @@ MonoBehaviour:
   m_faceTarget: 0
   m_matchTargetForward: 1
   m_offset: {x: 0, y: 0, z: 0}
+  m_followTag: 
+  followTaggedObj: 0
 --- !u!114 &114538273771620466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78224,6 +78243,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCamera: {fileID: 114983130417015822}
   m_activeCam: {fileID: 0}
+--- !u!114 &114936257290021862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951137649858240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 0}
+  m_positionLerpScale: 1
+  m_rotationLerpScale: 1
+  m_faceTarget: 1
+  m_matchTargetForward: 0
+  m_offset: {x: 0, y: 0, z: 0}
+  m_followTag: MainCamera
+  followTaggedObj: 1
 --- !u!114 &114975755756980254
 MonoBehaviour:
   m_ObjectHideFlags: 1
