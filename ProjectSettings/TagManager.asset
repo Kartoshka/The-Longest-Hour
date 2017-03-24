@@ -28,6 +28,7 @@ TagManager:
   - LevelManager
   - UI
   - SpawnPointManager
+  - LocateTrack
   layers:
   - Default
   - TransparentFX

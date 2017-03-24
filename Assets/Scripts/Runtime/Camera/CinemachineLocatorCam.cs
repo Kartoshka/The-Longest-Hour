@@ -9,7 +9,7 @@ public class CinemachineLocatorCam : CinemachineController {
 	public bool findBear;
 	public override void init ()
 	{
-		GameObject[] players =GameObject.FindGameObjectsWithTag ("Player");
+		GameObject[] players =GameObject.FindGameObjectsWithTag ("LocateTrack");
 		foreach (GameObject p in players)
 		{
 			MoverComponent cmpareTo = p.GetComponent<MoverComponent> ();

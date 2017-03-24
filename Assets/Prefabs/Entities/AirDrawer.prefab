@@ -25513,6 +25513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularView: {fileID: 114936025009980720}
   topDownView: {fileID: 114084849590432446}
+  locator: {fileID: 114627081326989232}
   moverBehaviour: {fileID: 114405295273173800}
   targetControl: {fileID: 114485003667923220}
   invertX: 0
@@ -25825,8 +25826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01b456af2be24925a73e4eeea983360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localPlayer: {fileID: 1560549525078014}
+  localPlayer: {fileID: 0}
   target: {fileID: 0}
+  findBear: 0
 --- !u!114 &114639453673640702
 MonoBehaviour:
   m_ObjectHideFlags: 1
