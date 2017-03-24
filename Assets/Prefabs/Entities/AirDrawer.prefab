@@ -4058,7 +4058,6 @@ GameObject:
   - component: {fileID: 4360086623391858}
   - component: {fileID: 114729003815075396}
   - component: {fileID: 114627081326989232}
-  - component: {fileID: 114223849822492634}
   m_Layer: 2
   m_Name: LocateBearCamera
   m_TagString: Untagged
@@ -25548,25 +25547,6 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
---- !u!114 &114223849822492634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341593867663032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_target: {fileID: 0}
-  m_positionLerpScale: 1
-  m_rotationLerpScale: 1
-  m_faceTarget: 1
-  m_matchTargetForward: 0
-  m_offset: {x: 0, y: 0, z: 0}
-  m_followTag: MainCamera
-  followTaggedObj: 1
 --- !u!114 &114230887815904408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25826,7 +25806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01b456af2be24925a73e4eeea983360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localPlayer: {fileID: 0}
+  localPlayer: {fileID: 114565239990862332}
   target: {fileID: 0}
   findBear: 0
 --- !u!114 &114639453673640702
