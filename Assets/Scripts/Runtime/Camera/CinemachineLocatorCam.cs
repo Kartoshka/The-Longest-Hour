@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class CinemachineLocatorCam : CinemachineController {
 
-	public GameObject localPlayer;
-	public GameObject target;
-
+	public MoverComponent localPlayer;
+	public MoverComponent target;
+	public bool findBear;
 	public override void init ()
 	{
 		GameObject[] players =GameObject.FindGameObjectsWithTag ("Player");
 		foreach (GameObject p in players)
 		{
-			if (p != localPlayer)
+			MoverComponent cmpareTo = p.GetComponent<MoverComponent> ();
+				if (cmpareTo && (cmpareTo!=localPlayer))
 			{
-				target = p;
+				target = cmpareTo;
 			}
 		}
+		
 		if (!target)
 		{
 			target = localPlayer;
