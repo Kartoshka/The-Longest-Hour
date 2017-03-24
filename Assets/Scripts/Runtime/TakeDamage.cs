@@ -20,7 +20,7 @@ public class TakeDamage : MonoBehaviour
 		if(!m_isDamaged)
 		{
 			m_isDamaged = true;
-			//setPlayerInputsActive(false);
+			setPlayerInputsActive(false);
 		}
     }
 
@@ -53,14 +53,14 @@ public class TakeDamage : MonoBehaviour
 	private void recovered()
 	{
 		m_isDamaged = false;
-		//setPlayerInputsActive(true);
+		setPlayerInputsActive(true);
     }
 
 	private void setPlayerInputsActive(bool isActive)
 	{
 		foreach (GameObject gameObject in m_playerInputObjects)
 		{
-			//gameObject.SetActive(isActive);
+			gameObject.SetActive(isActive);
 		}
 	}
 

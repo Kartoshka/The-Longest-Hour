@@ -2896,7 +2896,7 @@ MonoBehaviour:
   m_sightSource: {fileID: 4984411522709098}
   m_obstacleTag: Terrain
   m_enemyTag: Player
-  m_obstacleLayerIndex: 10
+  m_obstacleLayerIndex: 9
 --- !u!114 &114767431492723044
 MonoBehaviour:
   m_ObjectHideFlags: 1

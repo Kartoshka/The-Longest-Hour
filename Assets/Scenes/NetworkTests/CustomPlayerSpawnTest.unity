@@ -2531,15 +2531,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1347348263650876, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114719979164752066, guid: 34354644d19e94142b1edbc360f3389a,
-        type: 2}
-      propertyPath: m_obstacleLayerIndex
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34354644d19e94142b1edbc360f3389a, type: 2}
   m_IsPrefabParent: 0
