@@ -77719,10 +77719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9a86b6aaa948d48b1a5da205fedf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerInputObjects:
-  - {fileID: 1384996344702180}
-  - {fileID: 1865315940162308}
-  m_visualEntity: {fileID: 1629953229469050}
+  m_playerInputObjects: []
+  m_visualEntity: {fileID: 1359469405497824}
   m_blinkTimer: 0.1
   m_frozenTimer: 2
 --- !u!114 &114301582777173366

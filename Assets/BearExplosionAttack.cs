@@ -35,6 +35,10 @@ public class BearExplosionAttack : MonoBehaviour {
 			{
 				collider.attachedRigidbody.AddExplosionForce(forceAmount,collisionObserver.transform.position,radius);
 			}
+			if (collider != null && collider.tag == "Enemy")
+			{
+				Destroy(collider.gameObject);
+			}
 		};
 		return m_collisionListener;
 	}

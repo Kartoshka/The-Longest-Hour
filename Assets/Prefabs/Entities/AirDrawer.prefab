@@ -25429,7 +25429,7 @@ MonoBehaviour:
   diveCam: {fileID: 114639453673640702}
   heightOffset: 1
   captureModule: {fileID: 114450351289419642}
-  birdRigidbody: {fileID: 0}
+  birdRigidbody: {fileID: 54184026539344956}
 --- !u!114 &114070548272137154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25955,6 +25955,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  birdRigidbody: {fileID: 54184026539344956}
   duration: 4
 --- !u!114 &114841729182676536
 MonoBehaviour:

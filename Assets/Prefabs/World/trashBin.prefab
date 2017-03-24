@@ -26,7 +26,8 @@ GameObject:
   - component: {fileID: 114003055949902024}
   - component: {fileID: 114909688279625728}
   - component: {fileID: 114613387557487124}
-  m_Layer: 0
+  - component: {fileID: 114927394556872376}
+  m_Layer: 10
   m_Name: trash_body
   m_TagString: TimeControllable
   m_Icon: {fileID: 0}
@@ -67,7 +68,8 @@ GameObject:
   - component: {fileID: 114996415273737826}
   - component: {fileID: 114921843003264850}
   - component: {fileID: 114989805576197322}
-  m_Layer: 0
+  - component: {fileID: 114401389060114498}
+  m_Layer: 10
   m_Name: trash_lid
   m_TagString: TimeControllable
   m_Icon: {fileID: 0}
@@ -313,6 +315,17 @@ MonoBehaviour:
     i15: 158
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114401389060114498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540281909382816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ff05146389914891009a2a7660212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114567231905996922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,6 +424,17 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114927394556872376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472109435749670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ff05146389914891009a2a7660212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114945449119664272
 MonoBehaviour:
   m_ObjectHideFlags: 1

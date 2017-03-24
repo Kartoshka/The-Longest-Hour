@@ -172,6 +172,13 @@ public class LevelManager : NetworkBehaviour {
                 {
                     p2.transform.GetChild(i).position = spawnPointP2.transform.position;
                 }
+
+				NetworkSpawnEntity networkSpawner = tutorial.GetComponentInChildren<NetworkSpawnEntity>();
+				if (networkSpawner)
+				{
+					Debug.Log("gonna spawn");
+					networkSpawner.spawnCrates();
+				}
             }
             catch(Exception e)
             {
