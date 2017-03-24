@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: TopDownBirdComposer
   m_EditorClassIdentifier: 
   TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_HorizontalSoftDampening: 0.5
-  m_VerticalSoftDampening: 0.5
-  m_SoftGuideScreenPercents: {x: 0.45, y: 0.55, z: 0.55, w: 0.45}
-  m_HardGuideScreenPercents: {x: 0.2, y: 0.8, z: 0.8, w: 0.2}
+  m_HorizontalSoftDampening: 8
+  m_VerticalSoftDampening: 8
+  m_SoftGuideScreenPercents: {x: 0.284, y: 0.681, z: 0.687, w: 0.29}
+  m_HardGuideScreenPercents: {x: 0.111, y: 0.901, z: 0.895, w: 0.117}
   m_Dutch: 0
