@@ -2523,7 +2523,7 @@ GameObject:
   - component: {fileID: 114059341573561496}
   m_Layer: 2
   m_Name: MovementController
-  m_TagString: Untagged
+  m_TagString: LocateTrack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4058,7 +4058,6 @@ GameObject:
   - component: {fileID: 4360086623391858}
   - component: {fileID: 114729003815075396}
   - component: {fileID: 114627081326989232}
-  - component: {fileID: 114223849822492634}
   m_Layer: 2
   m_Name: LocateBearCamera
   m_TagString: Untagged
@@ -25513,6 +25512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularView: {fileID: 114936025009980720}
   topDownView: {fileID: 114084849590432446}
+  locator: {fileID: 114627081326989232}
   moverBehaviour: {fileID: 114405295273173800}
   targetControl: {fileID: 114485003667923220}
   invertX: 0
@@ -25547,25 +25547,6 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
---- !u!114 &114223849822492634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341593867663032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d6bdcea75eab7e4589a90a75e24b904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_target: {fileID: 0}
-  m_positionLerpScale: 1
-  m_rotationLerpScale: 1
-  m_faceTarget: 1
-  m_matchTargetForward: 0
-  m_offset: {x: 0, y: 0, z: 0}
-  m_followTag: MainCamera
-  followTaggedObj: 1
 --- !u!114 &114230887815904408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25825,8 +25806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01b456af2be24925a73e4eeea983360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localPlayer: {fileID: 1560549525078014}
+  localPlayer: {fileID: 114565239990862332}
   target: {fileID: 0}
+  findBear: 0
 --- !u!114 &114639453673640702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25889,9 +25871,10 @@ MonoBehaviour:
     FarClipPlane: 5000
   m_NoiseSettings: {fileID: 0}
   m_ComposerSettings: {fileID: 11400000, guid: 866d77cd113f24847a893607ab2b7eb1, type: 2}
-  m_TransposerSettings: {fileID: 0}
+  m_TransposerSettings: {fileID: 11400000, guid: 67644e34503fb432283f035a927fa525,
+    type: 2}
   m_ComposerCameraTarget: {fileID: 0}
-  m_TransposerCameraTarget: {fileID: 0}
+  m_TransposerCameraTarget: {fileID: 4164879700888222}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -26004,8 +25987,8 @@ MonoBehaviour:
   setOnStart: 1
   distanceFromTarget: 7.8
   angleFromTarget: {x: 0, y: 90}
-  pitchChangeSpeed: 50
-  yawChangeSpeed: 50
+  pitchChangeSpeed: 60
+  yawChangeSpeed: 60
   minXAngle: 60
   maxXAngle: 90
   fixCollisions: 0

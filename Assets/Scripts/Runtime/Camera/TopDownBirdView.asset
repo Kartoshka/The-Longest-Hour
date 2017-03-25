@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: TopDownBirdView
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_XDampening: 1
-  m_YDampening: 1
-  m_ZDampening: 1
+  m_XDampening: 2
+  m_YDampening: 2
+  m_ZDampening: 2
   m_TransposerOffsetMode: 1

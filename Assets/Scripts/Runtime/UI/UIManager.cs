@@ -130,6 +130,7 @@ public class UIManager : MonoBehaviour {
 	public void unpauseGame()
 	{
 		_PausePanel.GetComponent<Animator> ().Play ("CloseAnimation");
+		_PausePanel.gameObject.SetActive (false);
 	}
 		
 
@@ -140,17 +141,21 @@ public class UIManager : MonoBehaviour {
 	public void invertXAxis()
 	{
 
-		// If the Server (Bear) then inverse Bear controls
-		if (Network.isServer) {
-			BearInputController _bearController = GameObject.Find ("GroundPlatformer").GetComponent<BearInputController> ();
+			BearInputController _bearController = GameObject.Find ("GroundPlatformer(Clone)").GetComponent<BearInputController> ();
+		if (_bearController)
+		{
+
 			_bearController.invertX = _XAxis.isOn;
 		}
 
-		// If the Client (Bird) then inverse Bird controls
-		if (Network.isClient) {
-			BirdController _birdController = GameObject.Find ("AirDrawer").GetComponent<BirdController> ();
+
+			BirdController _birdController = GameObject.Find ("AirDrawer(Clone)").GetComponent<BirdController> ();
+		if (_birdController)
+		{
+
 			_birdController.invertX = _XAxis.isOn;
 		}
+
 	}
 
 	/// <summary>
@@ -159,16 +164,24 @@ public class UIManager : MonoBehaviour {
 	public void inverYAxis()
 	{
 		// If the Server (Bear) then inverse Bear controls
-		if (Network.isServer) {
-			BearInputController _bearController = GameObject.Find ("GroundPlatformer").GetComponent<BearInputController> ();
+
+			BearInputController _bearController = GameObject.Find ("GroundPlatformer(Clone)").GetComponent<BearInputController> ();
+		if (_bearController)
+		{
+
 			_bearController.invertY = _YAxis.isOn;
 		}
 
+
 		// If the Client (Bird) then inverse Bird controls
-		if (Network.isClient) {
-			BirdController _birdController = GameObject.Find ("AirDrawer").GetComponent<BirdController> ();
+
+			BirdController _birdController = GameObject.Find ("AirDrawer(Clone)").GetComponent<BirdController> ();
+		if (_birdController)
+		{
+
 			_birdController.invertY = _YAxis.isOn;
 		}
+
 	}
 
 	private void setToggles()

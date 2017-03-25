@@ -5,11 +5,12 @@ using UnityEngine;
 public class BirdController : MonoBehaviour {
 
 	[Header("Cameras")]
-	public Cinemachine3rdPerson regularView;	
-	public Cinemachine3rdPerson topDownView;
+	public CinemachineController regularView;	
+	public CinemachineController topDownView;
+	public CinemachineController locator;
 
 	//Active camera being modified
-	Cinemachine3rdPerson active;
+	CinemachineController active;
 
 	[Space(5)]
 	[Tooltip("Character movement")]
@@ -27,6 +28,7 @@ public class BirdController : MonoBehaviour {
     //Flag for knowing we're in top down view
     bool topDown = false;
 
+	
 	void Start () {
 		activateCamera (regularView);
 		topDown = false;
@@ -42,6 +44,8 @@ public class BirdController : MonoBehaviour {
 
 	private void processInputs()
 	{
+
+
 		float XaxisInvert = 1.0f;
 		float YaxisInvert = 1.0f;
 
@@ -141,6 +145,16 @@ public class BirdController : MonoBehaviour {
 			targetControl.disactivateCurrent();
 		}
 
+		if (locator && (active == regularView || active == locator))
+		{
+			if (Input.GetButton ("LocateOther"))
+			{
+				locator.gameObject.SetActive (true);
+			} else 
+			{
+				locator.gameObject.SetActive (false);
+			}
+		}
 
 		// if holding object, press a to let go? (bcus we might want to dive under something while holding obj?)
 		//if (Input.GetButtonDown("Fire1"))
@@ -187,7 +201,7 @@ public class BirdController : MonoBehaviour {
 		}
 	}
 
-	private void activateCamera(Cinemachine3rdPerson cam)
+	private void activateCamera(CinemachineController cam)
 	{
 		if (active != null) {
 			active.gameObject.SetActive (false);
