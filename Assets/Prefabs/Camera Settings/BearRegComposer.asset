@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: BearRegComposer
   m_EditorClassIdentifier: 
   TrackedObjectOffset: {x: 0.6, y: 1, z: 0}
-  m_HorizontalSoftDampening: 1.2
-  m_VerticalSoftDampening: 1.2
+  m_HorizontalSoftDampening: 10
+  m_VerticalSoftDampening: 10
   m_SoftGuideScreenPercents: {x: 0.33, y: 0.52, z: 0.36, w: 0.48}
   m_HardGuideScreenPercents: {x: 0.1, y: 0.9, z: 0.94, w: 0.1}
   m_Dutch: 0

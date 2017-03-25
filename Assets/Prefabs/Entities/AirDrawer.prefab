@@ -25871,9 +25871,10 @@ MonoBehaviour:
     FarClipPlane: 5000
   m_NoiseSettings: {fileID: 0}
   m_ComposerSettings: {fileID: 11400000, guid: 866d77cd113f24847a893607ab2b7eb1, type: 2}
-  m_TransposerSettings: {fileID: 0}
+  m_TransposerSettings: {fileID: 11400000, guid: 67644e34503fb432283f035a927fa525,
+    type: 2}
   m_ComposerCameraTarget: {fileID: 0}
-  m_TransposerCameraTarget: {fileID: 0}
+  m_TransposerCameraTarget: {fileID: 4164879700888222}
   TransposerTrackingOffset: {x: 0, y: 0, z: 0}
   TransposerDampingOffset: {x: 0, y: 0, z: 0}
   ComposerTrackingOffset: {x: 0, y: 0, z: 0}
@@ -25986,8 +25987,8 @@ MonoBehaviour:
   setOnStart: 1
   distanceFromTarget: 7.8
   angleFromTarget: {x: 0, y: 90}
-  pitchChangeSpeed: 50
-  yawChangeSpeed: 50
+  pitchChangeSpeed: 60
+  yawChangeSpeed: 60
   minXAngle: 60
   maxXAngle: 90
   fixCollisions: 0

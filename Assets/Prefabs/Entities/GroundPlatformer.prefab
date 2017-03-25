@@ -78053,7 +78053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_modFwd: {fileID: 114918529568874390}
-  speed: 10
+  speed: 5
 --- !u!114 &114676187789910922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78331,7 +78331,7 @@ MonoBehaviour:
   yawChangeSpeed: 65
   minXAngle: 58.7
   maxXAngle: 111.6
-  fixCollisions: 1
+  fixCollisions: 0
   collisionLayers:
     serializedVersion: 2
     m_Bits: 512
