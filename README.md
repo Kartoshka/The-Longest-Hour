@@ -27,4 +27,6 @@ Several requirements were set for the game
 Special thanks to our mentors from Ubisoft Montreal. 
 
 ## Screenshots
-//TODO
+![img](https://i.imgur.com/ukIz7Le.png)
+![img](https://i.imgur.com/758yfAc.png)
+![img](https://i.imgur.com/MA8VxjN.png)
